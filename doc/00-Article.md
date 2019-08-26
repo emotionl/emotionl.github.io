@@ -37,3 +37,7 @@
 - [正则+replace函数批量处理数据](doc/article/018-正则+replace函数批量处理数据.md)
 
 - [初识Nginx](doc/article/019-初识Nginx.md)
+
+- [Vim操作](doc/article/020-Vim操作.md)
+
+- [Linux使用命令](doc/article/021-Linux使用命令.md)

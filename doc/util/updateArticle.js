@@ -34,5 +34,5 @@ async function updateArticle(config) {
     fs.writeFileSync(outputPath, content, 'utf8')
     console.log(`${title} has been written!`)
 }
-// updateArticle(ARTICLE_CONFIG)
-updateArticle(MATH_CONFIG)
+updateArticle(ARTICLE_CONFIG)
+// updateArticle(MATH_CONFIG)
