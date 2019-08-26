@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tech Resource List</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/mermaid.min.css" />
+    <link rel="stylesheet" href="./assets/css/theme-simple-dark.css">
+
+    <style>
+        @font-face {
+            font-family: Operator;
+            src: url(assets/font/Operator-Mono/OperatorMono-Light.otf) format("opentype");
+        }
+        .app-name-link img {
+            width: 75px;
+        }
+        *{
+            font-family: Operator !important;
+            /* font-family: Quicksand; */
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./assets/js/mermaid.min.js"></script>
+    <script src="./assets/js/docsify-themeable@0.js"></script>
+    <script src="./assets/js/docsify.min.js"></script>
+    <script>
+        var num = 0
+        mermaid.initialize({ startOnLoad: false })
+        window.$docsify = {
+            name: 'Emotionl',
+            loadSidebar: true,
+            logo: './assets/logo.svg',
+            markdown: {
+                renderer: {
+                    code: function (code, lang) {
+                        if (lang === 'mermaid') {
+                            return '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + '</div>'
+                        }
+                        return this.origin.code.apply(this, arguments)
+                    }
+                }
+            },
+            themeable: {
+                readyTransition: true,
+                responsiveTables: true
+            }
+        }
+
+    </script>
+</body>
+
+</html>
