@@ -19,7 +19,6 @@ async function updateSidebar() {
         })
     })
     let content = contentList.join('\n\n')
-    console.log(content)
     for (let i = 0; i < UPDATE_PATH_LIST.length; i++) {
         let outputPath = UPDATE_PATH_LIST[i] + '/' + '_sidebar.md'
         fs.writeFileSync(outputPath, content, 'utf8')

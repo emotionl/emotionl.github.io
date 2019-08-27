@@ -28,6 +28,6 @@
 
 [RegExp](doc/14-RegExp.md)
 
-[Chord](doc/15-Chord.md)
+[Math](doc/15-Math.md)
 
-[Math](doc/16-Math.md)
+[Chord](doc/16-Chord.md)
