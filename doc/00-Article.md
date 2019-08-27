@@ -40,6 +40,6 @@
 
 - [Vim操作](doc/article/020-Vim操作.md)
 
-- [Linux使用命令](doc/article/021-Linux使用命令.md)
+- [Linux命令](doc/article/021-Linux命令.md)
 
 - [Nginx反向代理](doc/article/022-Nginx反向代理.md)
