@@ -1,17 +1,33 @@
-- [Article](doc/00-Article.md)
-- [Design](doc/01-Design.md)
-- [Doc](doc/02-Doc.md)
-- [CS](doc/03-CS.md)
-- [JavaScript](doc/04-JavaScript.md)
-- [CSS](doc/05-CSS.md)
-- [Framework](doc/06-Framework.md)
-- [Back-End](doc/07-Back-End.md)
-- [Database](doc/11-Database.md)
-- [Mobile](doc/08-Mobile.md)
-- [Skills](doc/09-Skills.md)
-- [Website](doc/12-Website.md)
-- [Other](doc/10-Other.md)
-- [RegExp](doc/15-RegExp.md)
-- [Function](doc/14-Function.md)
-- [Math](doc/17-Math.md)
-- [Chord](doc/16-Chord.md)
+[Article](doc/00-Article.md)
+
+[Design](doc/01-Design.md)
+
+[Doc](doc/02-Doc.md)
+
+[CS](doc/03-CS.md)
+
+[JavaScript](doc/04-JavaScript.md)
+
+[CSS](doc/05-CSS.md)
+
+[Framework](doc/06-Framework.md)
+
+[Back-End](doc/07-Back-End.md)
+
+[Mobile](doc/08-Mobile.md)
+
+[Skills](doc/09-Skills.md)
+
+[Other](doc/10-Other.md)
+
+[Database](doc/11-Database.md)
+
+[Website](doc/12-Website.md)
+
+[Function](doc/13-Function.md)
+
+[RegExp](doc/14-RegExp.md)
+
+[Chord](doc/15-Chord.md)
+
+[Math](doc/16-Math.md)
