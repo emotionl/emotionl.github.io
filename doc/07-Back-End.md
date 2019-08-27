@@ -8,3 +8,5 @@
 ## Nginx
 - [初识Nginx](doc/article/019-初识Nginx)
 
+- [Nginx反向代理](doc/article/022-Nginx反向代理)
+

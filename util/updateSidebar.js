@@ -23,5 +23,6 @@ async function updateSidebar() {
         let outputPath = UPDATE_PATH_LIST[i] + '/' + '_sidebar.md'
         fs.writeFileSync(outputPath, content, 'utf8')
     }
+    console.log('侧边栏更新完成')
 }
 updateSidebar()
