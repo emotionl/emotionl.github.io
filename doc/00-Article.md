@@ -43,3 +43,5 @@
 - [Linux命令](doc/article/021-Linux命令.md)
 
 - [Nginx反向代理](doc/article/022-Nginx反向代理.md)
+
+- [GoAccess使用指北](doc/article/023-GoAccess使用指北.md)
