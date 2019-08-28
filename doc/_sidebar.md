@@ -30,4 +30,6 @@
 
 [Math](doc/15-Math.md)
 
-[Chord](doc/16-Chord.md)
+[Linux](doc/16-Linux.md)
+
+[Chord](doc/17-Chord.md)
