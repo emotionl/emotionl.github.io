@@ -64,14 +64,6 @@
 | **命令** | **结果**                          |
 | -------- | --------------------------------- |
 | `rm file1` | 静默删除 file1。 |
-| `rm -i file1` | 与上一条命令相似，不同的是 file2 被删除前会提示用户。 |
-| `rm -r file1 dir1` | 把 file1 和 file2 移动到 dir1，前提是 dir1 一定要存在。 |
-| `rm -rf file1 dir1` | 如果 dir2 不存在, 创建 dir2 并把 dir1 的内容移动到 dir2 并删除 dir1.。如果 dir2 存在，把 dir1移动到 dir2，成为 dir2 的子文件夹。 |
-### rm - Remove Files and Directories
-
-| **命令** | **结果**                          |
-| -------- | --------------------------------- |
-| `rm file1` | 静默删除 file1。 |
 | `rm -i file1` | 与上一条命令类似，区别是在执行删除之前会提示用户确认。 |
 | `rm -r file1 dir1` | 删除 file1 和 dir1 以及 dir1 中的内容 |
 | `rm -rf file1 dir1` | 与上一条命令类似，但如果 file1 或 dir1 不存在，rm 将静默继续。|
