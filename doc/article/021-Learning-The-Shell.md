@@ -36,16 +36,70 @@
 | `rm`     | Remove files and directories      | 删除文件和文件夹        |
 | `ln`     | Create hard and symbolic links    | 创建硬链接和符号链接    |
 
-### cp
+### rm - Remove Files and Directories
 
 | **命令** | **结果**                          |
 | -------- | --------------------------------- |
-| `cp file1 file2`     | Copy files and directoriesCopy file1 to file2 . If file2 exists, it is overwritten with the contents of file1 . If file2 does not exist, it is created.       |
-| `cp -i file1 file2`     | Same as previous command, except that if file2 exists, the user is prompted before it is overwritten. |
-| `cp file1 file2 dir1`  | Copy file1 and file2 into directory dir1 . The directory dir1 must already exist.               |
-| `cp dir1/* dir2 `     | Using a wildcard, copy all the files in dir1 into dir2 . The directory dir2 must already exist.     |
-| `cp -r dir1 dir2`     | Copy the contents of directory dir1 to directory dir2 . If directory dir2 does not exist, it is created and, after the copy, will contain the same contents as directory dir1 . If directory dir2 does exist, then directory dir1 (and its contents) will be copied into dir2     |
+| `rm file1` | 静默删除 file1。 |
+| `rm -i file1` | 与上一条命令类似，区别是在执行删除之前会提示用户确认。 |
+| `rm -r file1 dir1` | 删除 file1 和 dir1 以及 dir1 中的内容 |
+| `rm -rf file1 dir1` | 与上一条命令类似，但如果 file1 或 dir1 不存在，rm 将静默继续。|
 
+> **注意**
+>
+> 类 Unix 的操作系统比如 Linux 是没有撤销删除命令的。
+>
+> 一旦你使用 `rm` 命令删除一些文件，它就不存在了。Linux 假定你很聪明并且知道你在做什么。
+>
+> 要特别小心使用通配符。 请考虑下面这个经典的例子。 比方说，你想在一个目录仅删除`HTML`文件。 为此，请键入以下内容：
+>
+> ```shell
+> rm *.html
+> ```
+>
+> 这是正确的，但如果你不小心在 `*` 和 `.html` 之间放置了一个空格
+>
+> ```shell
+> rm * .html
+> ```
+>
+> `rm` 命令将删除目录中的所有文件，然后抱怨没有名为`.html`的文件。
+>
+> 这里有一个实用的提示：每当你使用带有通配符的`rm`命令之前（除了仔细检查你的输入！），先用`ls`测试通配符。 这会让你看到即将被删除的文件。 然后按向上箭头调用该命令并用`rm`替换`ls`。
+
+### ln - Create Links
+
+
+#### Hard Links
+
+```shell
+ln file link 
+```
+
+#### Symbolic Links
+
+```shell
+ln -s item link`
+```
+#### 区别
+![11](./../../assets/image/11.jpg)
+
+由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：
+
+- 文件有相同的 inode 及 data block；
+- 只能对已存在的文件进行创建；
+- 不能交叉文件系统进行硬链接的创建；
+- 不能对目录进行创建，只可对文件创建；
+- 删除一个硬链接文件并不影响其他有相同 inode 号的文件。
+
+软链接与硬链接不同，若文件用户数据块中存放的内容是另一文件的路径名的指向，则该文件就是软连接。软链接就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块。因此软链接的创建与使用没有类似硬链接的诸多限制：
+
+- 软链接有自己的文件属性及权限等；
+- 可对不存在的文件或目录创建软链接；
+- 软链接可交叉文件系统；
+- 软链接可对文件或目录创建；
+- 创建软链接时，链接计数 i_nlink 不会增加；
+- 删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。
 
 ## todo Working With Commands 使用命令
 
