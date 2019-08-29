@@ -5,14 +5,15 @@
 /* Flowchart variables */
 /* Sequence Diagram variables */
 /* Gantt chart variables */
-.sidebar-nav ul li:last-child a {
+.sidebar-nav p:last-child a {
     color: rgba(0, 0, 0, .04);
     cursor: default;
     background-image: none !important;
 }
 
 .mermaid {
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    /* background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%); */
+    background-image: linear-gradient(to left bottom, hsl(122, 100%, 85%) 0%,hsl(179, 100%, 85%) 100%);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
