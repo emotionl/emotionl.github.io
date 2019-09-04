@@ -45,3 +45,5 @@
 - [Nginx反向代理](doc/article/022-Nginx反向代理.md)
 
 - [GoAccess使用指北](doc/article/023-GoAccess使用指北.md)
+
+- [自定义Linux登录页面](doc/article/024-自定义Linux登录页面.md)
