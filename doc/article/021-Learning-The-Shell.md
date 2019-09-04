@@ -201,7 +201,7 @@ ll is aliased to `ls -l --color=auto'
 /usr/bin/yum
 [root@golinux /]# which type
 /usr/bin/which: no type in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)
-[root@izbp13gye2rcpn1at3vj69z /]# which ll
+[root@golinux /]# which ll
 alias ll='ls -l --color=auto'
 	/usr/bin/ls
 ```
@@ -266,11 +266,62 @@ For complete documentation, run: info coreutils 'mkdir invocation'
 
 #### man - 在线参考手册界面
 
-#### apropos - 搜索手册页名称和描述
+#### apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）
 
-#### whatis - 显示手册页描述
+```shell
+[root@golinux ~]# apropos partition
+addpart (8)          - simple wrapper around the "add partition" ioctl
+cfdisk (8)           - display or manipulate disk partition table
+delpart (8)          - simple wrapper around the "del partition" ioctl
+fdisk (8)            - manipulate disk partition table
+iostat (1)           - Report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions.
+kpartx (8)           - Create device maps from partition tables
+os-prober (1)        - Discover bootable partitions on the local system.
+parted (8)           - a partition manipulation program
+partprobe (8)        - inform the OS of partition table changes
+partx (8)            - tell the Linux kernel about the presence and numbering of on-disk partitions
+resizepart (8)       - simple wrapper around the "resize partition" ioctl
+sfdisk (8)           - partition table manipulator for Linux
+systemd-efi-boot-generator (8) - Generator for automatically mounting the EFI System Partition used by the current boot to /boot
+systemd-gpt-auto-generator (8) - Generator for automatically discovering and mounting root, /home and /srv partitions, as well as discover...
+```
+
+#### whatis - 一行描述手册页
+
+```shell
+[root@golinux ~]# whatis ls
+ls (1)               - list directory contents
+[root@golinux ~]# whatis yum
+yum (8)              - Yellowdog Updater Modified
+[root@golinux ~]# whatis type
+type (1)             - bash built-in commands, see bash(1)
+```
 
 ### 使用 `alias` 创建自己的命令
+
+```shell
+[root@golinux ~]# alias la='ls -la'
+[root@golinux ~]# la
+total 104
+dr-xr-x---.  8 root root 4096 Aug 29 17:38 .
+dr-xr-xr-x. 18 root root 4096 May 10 15:12 ..
+-rw-------   1 root root 8694 Sep  4 16:22 .bash_history
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root  176 Sep  4 16:21 .bashrc
+drwx------   3 root root 4096 Oct 15  2017 .cache
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+drwxr-xr-x   7 root root 4096 Dec 21  2018 .nvm
+drwxr-xr-x   2 root root 4096 Oct 15  2017 .pip
+drwxr-----   3 root root 4096 Dec 21  2018 .pki
+-rw-r--r--   1 root root   64 Oct 15  2017 .pydistutils.cfg
+-rw-------   1 root root   37 Feb 16  2019 .python_history
+drwx------   2 root root 4096 Dec 20  2018 .ssh
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+drwxr-xr-x   6 root root 4096 Aug 26 15:15 .vim
+-rw-------   1 root root 5324 Aug 29 17:38 .viminfo
+-rw-------   1 root root 5121 Aug 26 23:19 .viminfo.tmp
+```
 
 ## todo Redirection 重定向
 

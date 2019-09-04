@@ -14,6 +14,7 @@
 -  [云盘精灵](https://www.yunpanjingling.com/)
 -  [磁力链 BT](http://cililianbt.pw/)
 -  [音乐资源](https://audioz.download/)
+-  [IT资源整合](https://www.yeahhub.com/)
 
 ## Github
 -  [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
@@ -23,3 +24,4 @@
 ## 动漫
 - [ACG.RIP](https://acg.rip)
 - [ZzzFun动漫视频网](http://www.zzzfun.com/)
+- [关于浪漫、讽刺、数学和语言的网络漫画](https://xkcd.com/)

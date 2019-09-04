@@ -6,4 +6,4 @@
 
 ## 教程
 
-- [基礎學習篇目錄 - for CentOS7](https://linux.vbird.org/linux_basic/centos7/)
+- [基礎學習篇目錄 - CentOS7](https://linux.vbird.org/linux_basic/centos7/)
