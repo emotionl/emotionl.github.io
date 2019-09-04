@@ -31,7 +31,7 @@ E --> D
 
 ### 实现思路
 
-使用`nginx`的`upstream`控制上游服务器，`用proxy_pass进行反向代理`
+使用`nginx`的`upstream`控制上游服务器，用`proxy_pass`进行反向代理
 
 ### 操作
 
