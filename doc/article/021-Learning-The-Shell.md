@@ -76,13 +76,13 @@
 >
 > 要特别小心使用通配符。 请考虑下面这个经典的例子。 比方说，你想在一个目录仅删除`HTML`文件。 为此，请键入以下内容：
 >
-> ```shell
+> ```bash
 > rm *.html
 > ```
 >
 > 这是正确的，但如果你不小心在 `*` 和 `.html` 之间放置了一个空格
 >
-> ```shell
+> ```bash
 > rm * .html
 > ```
 >
@@ -94,13 +94,13 @@
 
 #### Hard Links
 
-```shell
+```bash
 ln file link
 ```
 
 #### Symbolic Links
 
-```shell
+```bash
 ln -s item link
 ```
 
@@ -183,7 +183,7 @@ G -.-> B
 
 #### type - 显示一个命令的类型
 
-```shell
+```bash
 [root@golinux /]# type yum
 yum is /usr/bin/yum
 [root@golinux /]# type type
@@ -196,7 +196,7 @@ ll is aliased to `ls -l --color=auto'
 
 有时，系统上安装了多个版本的可执行程序。 虽然这在桌面系统上并不常见，但在较大的服务器上并不罕见。 要确定给定可执行文件的确切位置，请使用which命令。
 
-```shell
+```bash
 [root@golinux /]# which yum
 /usr/bin/yum
 [root@golinux /]# which type
@@ -210,7 +210,7 @@ alias ll='ls -l --color=auto'
 
 #### help - 显示内置 shell 的帮助信息
 
-```shell
+```bash
 [root@golinux /]# help cd
 cd: cd [-L|[-P [-e]]] [dir]
     Change the shell working directory.
@@ -243,7 +243,7 @@ cd: cd [-L|[-P [-e]]] [dir]
 
 #### --help  - 显示可执行程序的帮助信息
 
-```shell
+```bash
 [root@golinux /]# mkdir --help
 Usage: mkdir [OPTION]... DIRECTORY...
 Create the DIRECTORY(ies), if they do not already exist.
@@ -268,7 +268,7 @@ For complete documentation, run: info coreutils 'mkdir invocation'
 
 #### apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）
 
-```shell
+```bash
 [root@golinux ~]# apropos partition
 addpart (8)          - simple wrapper around the "add partition" ioctl
 cfdisk (8)           - display or manipulate disk partition table
@@ -288,7 +288,7 @@ systemd-gpt-auto-generator (8) - Generator for automatically discovering and mou
 
 #### whatis - 一行描述手册页
 
-```shell
+```bash
 [root@golinux ~]# whatis ls
 ls (1)               - list directory contents
 [root@golinux ~]# whatis yum
@@ -299,7 +299,7 @@ type (1)             - bash built-in commands, see bash(1)
 
 ### 使用 `alias` 创建自己的命令
 
-```shell
+```bash
 [root@golinux ~]# alias la='ls -la'
 [root@golinux ~]# la
 total 104

@@ -16,7 +16,7 @@
 ## 编译出适合自己的Nginx
 ### 下载
 
-```shell
+```bash
 wget https://nginx.org/download/nginx-1.16.1.tar.gz
 tar -xzf nginx-1.16.1.tar.gz 
 ```
@@ -47,7 +47,7 @@ tar -xzf nginx-1.16.1.tar.gz
 
 ### Configure
 
-```shell
+```bash
 ./configure --help | more
 ```
 

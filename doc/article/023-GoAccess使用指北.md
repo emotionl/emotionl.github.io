@@ -2,7 +2,7 @@
 
 ## 安装
 
-```shell
+```bash
 yum install goaccess
 ```
 
@@ -14,13 +14,13 @@ yum install goaccess
 
     - 实时版本
 
-      ```shell
+      ```bash
       goaccess access.log -o ../html/report.html --log-format=COMBINED --real-time-html
       ```
 
     - 静态版本
 
-      ```shell
+      ```bash
       goaccess access.log -o ../html/report.html --log-format=COMBINED
       ```
 
