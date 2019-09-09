@@ -36,6 +36,7 @@
     <script src="./assets/js/docsify.min.js"></script>
     <script src="./assets/js/prism-bash.min.js"></script>
     <script src="./assets/js/prism-nginx.min.js"></script>
+    <script src="./assets/js/docsify-copy-code.min.js"></script>
 
     <script>
         var num = 0
@@ -57,6 +58,11 @@
             themeable: {
                 readyTransition: true,
                 responsiveTables: true
+            },
+            copyCode: {
+                buttonText: 'Copy to clipboard',
+                errorText: 'Error',
+                successText: 'Copied'
             }
         }
 
