@@ -12,3 +12,4 @@
 
 - [Nginx反向代理](doc/article/022-Nginx反向代理)
 
+- [Nginx架构](doc/article/026-Nginx架构)

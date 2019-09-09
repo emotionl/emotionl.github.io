@@ -47,3 +47,7 @@
 - [GoAccess使用指北](doc/article/023-GoAccess使用指北.md)
 
 - [自定义Linux登录页面](doc/article/024-自定义Linux登录页面.md)
+
+- [OpenResty集成Lua代码](doc/article/025-OpenResty集成Lua代码.md)
+
+- [Nginx架构](doc/article/026-Nginx架构.md)
