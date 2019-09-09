@@ -32,12 +32,6 @@
 <body>
     <div id="app"></div>
     <script src="./assets/js/mermaid.min.js"></script>
-    <script src="./assets/js/docsify-themeable@0.js"></script>
-    <script src="./assets/js/docsify.min.js"></script>
-    <script src="./assets/js/prism-bash.min.js"></script>
-    <script src="./assets/js/prism-nginx.min.js"></script>
-    <script src="./assets/js/docsify-copy-code.min.js"></script>
-
     <script>
         var num = 0
         mermaid.initialize({ startOnLoad: false })
@@ -60,13 +54,19 @@
                 responsiveTables: true
             },
             copyCode: {
-                buttonText: 'Copy to clipboard',
-                errorText: 'Error',
-                successText: 'Copied'
+                buttonText: '点击复制',
+                errorText: '错误',
+                successText: '已复制'
             }
         }
 
     </script>
+    <script src="./assets/js/docsify.min.js"></script>
+    <script src="./assets/js/docsify-copy-code.min.js"></script>
+    <script src="./assets/js/docsify-themeable@0.js"></script>
+    <script src="./assets/js/prism-bash.min.js"></script>
+    <script src="./assets/js/prism-nginx.min.js"></script>
+
 </body>
 
 </html>
