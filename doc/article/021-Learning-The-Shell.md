@@ -323,7 +323,91 @@ drwxr-xr-x   6 root root 4096 Aug 26 15:15 .vim
 -rw-------   1 root root 5121 Aug 26 23:19 .viminfo.tmp
 ```
 
-## todo Redirection 重定向
+## Redirection 重定向
+| **命令**  | **EN**                                            | **ZH**                       |
+| --------- | ------------------------------------------------- | ---------------------------- |
+| `cat` | Concatenate files | |
+| `sort` | Sort lines of text | |
+| `uniq` | Report or omit repeated lines | |
+| `grep` | Print lines matching a pattern | |
+| `wc` | Print newline, word, and byte counts for each file | |
+| `head` | Output the first part of a file | |
+| `tail` | Output the last part of a file | |
+| `tee` | Read from standard input and write to standard output and files | |
+
+### Standard Input, Output, and Error 标准输入，输出和错误
+
+Many of the programs that we have used so far produce output of some kind. This output often consists of two types.
+
+- The program’s results; that is, the data the program is designed to produce
+- Status and error messages that tell us how the program is getting along 
+
+如果我们使用`ls`这样的命令，我们可以在屏幕上看到它显示的结果和错误消息。
+保持`Unix`主题“一切都是文件”，像`ls`这样的程序实际上是将结果发送到一个名为标准输出（通常表示为`stdout`）的特殊文件，并将其状态消息发送到另一个名为标准错误（`stderr`）的文件。 默认情况下，标准输出和标准错误都会链接到屏幕上，而不是保存到磁盘文件中。
+此外，许多程序从名为标准输入（stdin）的工具获取输入，默认情况下，该工具连接到键盘。
+I / O重定向允许我们改变输出的位置和输入的来源。 通常，输出从屏幕上显示而输入则来自于键盘，但是通过I / O重定向，我们可以改变它。
+
+### Redirecting Standard Output 重定向标准输出
+
+把`ls -l /usr/bin`的结果通过`>`重定向到`ls-output.txt`这个文件
+
+```
+ls -l /usr/bin > ls-output.txt
+```
+
+当你想把`ls -l /bin/usr`的结果通过`>`重定向到`ls-output.txt`这个文件时，你会发现并不可行，因为`ls`这个命令不会把它的错误信息通过标准输出的方式进行输出
+
+```bash
+[root@golinux playground]# ls -l /bin/usr > ls-output.txt
+ls: cannot access /bin/usr: No such file or directory
+```
+
+| 操作符 | 功能     |
+| ------ | -------- |
+| `>`    | 重写内容 |
+| `>>`   | 追加内容 |
+
+### Redirecting Standard Error 重定向标准错误
+
+要重定向标准错误，我们必须引用其文件描述符。 程序可以在几个编号的文件流中的任何一个上产生输出。 虽然我们将前三个文件流称为标准输入，输出和错误，但shell在内部分别将它们作为文件描述符0,1和2引用。 shell提供了使用文件描述符编号重定向文件的表示法。 由于标准错误与文件描述符编号2相同，因此我们可以使用以下表示法重定向标准错误：
+
+文件描述符（File Descriptor）是计算机科学中的一个术语，是一个用于表述指向[文件](https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6)的引用的抽象化概念。
+| 整数值 | 名称                                                    | <unistd.h>符号常量 | <stdio.h>文件流 |
+| ------ | ------------------------------------------------------- | ------------------ | --------------- |
+| 0      | [Standard input](https://zh.wikipedia.org/wiki/Stdin)   | STDIN_FILENO       | stdin           |
+| 1      | [Standard output](https://zh.wikipedia.org/wiki/Stdout) | STDOUT_FILENO      | stdout          |
+| 2      | [Standard error](https://zh.wikipedia.org/wiki/Stderr)  | STDERR_FILENO      | stderr          |
+
+重定向标准错误到文件
+
+
+```bash
+ls -l /bin/usr 2> ls-error.txt
+```
+
+重定向标准输出和标准错误到同一个文件
+
+```bash
+ls -l /bin/usr > ls-output.txt 2>&1
+# 或者
+ls -l /bin/usr &> ls-output.txt
+```
+
+处理不需要的输出
+
+```bash
+ls -l /bin/usr 2> /dev/null
+```
+
+> [关于/dev/null的趣闻](https://zh.wikipedia.org/wiki//dev/null)
+
+### Redirecting Standard Input 重定向标准输入
+
+#### cat - Concatenate Files
+
+### Pipelines 管道操作符
+
+
 
 ## todo Seeing the World as the Shell Sees it 用脚本的方式解决问题
 
