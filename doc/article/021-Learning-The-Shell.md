@@ -372,14 +372,14 @@ ls: cannot access /bin/usr: No such file or directory
 要重定向标准错误，我们必须引用其文件描述符。 程序可以在几个编号的文件流中的任何一个上产生输出。 虽然我们将前三个文件流称为标准输入，输出和错误，但shell在内部分别将它们作为文件描述符0,1和2引用。 shell提供了使用文件描述符编号重定向文件的表示法。 由于标准错误与文件描述符编号2相同，因此我们可以使用以下表示法重定向标准错误：
 
 文件描述符（File Descriptor）是计算机科学中的一个术语，是一个用于表述指向[文件](https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6)的引用的抽象化概念。
-| 整数值 | 名称                                                    | <unistd.h>符号常量 | <stdio.h>文件流 |
-| ------ | ------------------------------------------------------- | ------------------ | --------------- |
+
+| 整数值 | 名称 | <unistd.h>符号常量 | <stdio.h>文件流 |
+| ------ | ---- | ------------------ | --------------- |
 | 0      | [Standard input](https://zh.wikipedia.org/wiki/Stdin)   | STDIN_FILENO       | stdin           |
 | 1      | [Standard output](https://zh.wikipedia.org/wiki/Stdout) | STDOUT_FILENO      | stdout          |
 | 2      | [Standard error](https://zh.wikipedia.org/wiki/Stderr)  | STDERR_FILENO      | stderr          |
 
 重定向标准错误到文件
-
 
 ```bash
 ls -l /bin/usr 2> ls-error.txt
@@ -403,7 +403,45 @@ ls -l /bin/usr 2> /dev/null
 
 ### Redirecting Standard Input 重定向标准输入
 
-#### cat - Concatenate Files
+#### cat - 合并输出文件
+
+显示内容不多的文本文件
+
+```bash
+cat ls-output.txt
+```
+
+合并文件，比如我们有 `movie.mpeg.001 movie.mpeg.002 ... movie.mpeg.099` 这些文件，使用如下命令就可以合并成一个文件
+
+```bash
+cat movie.mpeg.0* > movie.mpeg
+```
+
+只输入`cat`就变成了输入什么输出什么的交互命令行
+
+```bash
+[root@golinux playground]# cat
+hello world
+hello world
+```
+
+利用这个特性可以用`cat`创建内容不多的文本文件
+
+```bash
+[root@izbp13gye2rcpn1at3vj69z playground]# cat > little.txt
+this is a little.txt # 输入文件内容
+[root@izbp13gye2rcpn1at3vj69z playground]# cat little.txt 
+this is a little.txt # 打印文件内容
+```
+
+使用`<` 重定向操作符，我们将标准输入源从键盘更改为`little.txt` 文件。
+
+我们可以看到结果与`cat little.txt`这种传递单个文件名参数的结果相同
+
+```bash
+[root@izbp13gye2rcpn1at3vj69z playground]# cat < little.txt 
+this is the little.txt
+```
 
 ### Pipelines 管道操作符
 
