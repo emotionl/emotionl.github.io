@@ -50,6 +50,4 @@
 
 - [OpenResty集成Lua代码](doc/article/025-OpenResty集成Lua代码.md)
 
-- [Nginx架构](doc/article/026-Nginx架构.md)
-
 - [常用正则表达式](doc/article/027-常用正则表达式.md)

@@ -26,5 +26,3 @@ async function updateSidebar() {
     console.log('侧边栏更新完成')
 }
 updateSidebar()
-
-
