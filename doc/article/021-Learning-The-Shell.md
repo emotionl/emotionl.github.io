@@ -445,9 +445,57 @@ this is the little.txt
 
 ### Pipelines 管道操作符
 
+管道运算符`|` 可以把一个命令的标准输出传递到另一命令的标准输入
+
+```mermaid
+graph LR
+A[前一个命令的标准输出]
+B[前一个命令的标准输出]
+%% 定义样式类
+classDef one fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef two fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
+%% 应用样式类，markdown里没效果
+class A one
+class B two
+A --管道运算符--> B
+
+```
+
+举个栗子 通过管道运算符 我们可以把 `/`的目录信息通过`less`命令打印出来
+
+```bash
+[root@golinux playground]# ll / | less
+```
+
+管道通常用于对数据执行复杂的操作。 可以将几个命令放到管道中。 通常，以这种方式使用的命令称为过滤器。 过滤器接受输入，以某种方式对其进行更改，然后输出。 我们将尝试的第一个是`sort`。 想象我们想在`/bin`和`/usr/bin`中列出所有可执行程序的组合列表，将它们按排序顺序放置，然后查看结果列表。
+
+```bash
+ls /bin /usr/bin/ | sort | less
+```
+
+> `>`与 `|`的区别
+>
+> 简单来讲，重定向操作符`|`将命令与文件连接，而管道操作符`|`将一个命令的输出与第二个命令的输入连接。
+>
+> ```bash
+> command1 > file1
+> command1 | command2
+> ```
+
+#### uniq: Report or Omit Repeated Lines 忽略重复的行
+
+#### wc: Print Line, Word, and Byte Counts 打印行数，字数和字节数
+
+#### grep: Print Lines Matching a Pattern 匹配模式
+
+#### head/tail: Print First/Last Part of Files 打印文件的最前/最后一部分
+
+#### tee: Read from Stdin and Output to Stdout and Files 从Stdin读取并输出到Stdout和文件
 
 
-## todo Seeing the World as the Shell Sees it 用脚本的方式解决问题
+
+## todo Seeing the World as the Shell Sees it 用脚本解决问题
 
 ## todo Advanced Keyboard Tricks 高级键盘技巧
 
