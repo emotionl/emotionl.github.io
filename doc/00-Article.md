@@ -1,7 +1,5 @@
 # 文章
 
-- [小程序登录](doc/article/001-小程序登录.md)
-
 - [小程序开发的坑](doc/article/002-小程序开发的坑.md)
 
 - [axios中POST请求与qs.stringify](doc/article/003-axios中POST请求与qs.stringify.md)
@@ -29,8 +27,6 @@
 - [Mongoose入门](doc/article/014-Mongoose入门.md)
 
 - [React常用插件](doc/article/015-React常用插件.md)
-
-- [JS](doc/article/016-JS.md)
 
 - [深入浅出JS对象原型](doc/article/017-深入浅出JS对象原型.md)
 
