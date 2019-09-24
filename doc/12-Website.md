@@ -16,7 +16,8 @@
 -  [磁力链 BT](http://cililianbt.pw/)
 -  [音乐资源](https://audioz.download/)
 -  [IT资源整合](https://www.yeahhub.com/)
--  [BT磁力搜索引擎索引](https://hao.su/909/)
+-  [BT磁力搜索引擎索引-在线](https://hao.su/909/)
+-  [BT磁力搜索引擎索引-本地](doc/article/028-BT-Website.md)
 
 ## Github
 -  [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
