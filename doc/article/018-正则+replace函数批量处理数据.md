@@ -2,9 +2,9 @@
 
 ## 需求
 
-提取字符串中数据转化成数组嵌套对象的格式
+提取字符串中数据处理成数组嵌套对象的格式
 
-转化前
+处理前
 
 ```javascript
 let str = `1.辅导
@@ -211,7 +211,7 @@ Discipline, focus and prioritizing are the three pillars of wise time management
 Understand your audience and craft your words carefully to fully convey your thought.`
 ```
 
-转化后
+处理后
 
 ```javascript
 [{"id":"1","name":"辅导","docZh":"如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。","docEn":"Need a unique potential? Mastering coaching skill can catalyze people’s potential."},{"id":"2","name":"培养员工","docZh":"员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。","docEn":"Develop your employees to make your team and organization successful."}]
