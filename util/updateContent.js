@@ -15,9 +15,17 @@ const MATH_CONFIG = {
     title: '数学'
 }
 
+const INTERVIEW_CONFIG = {
+    dirPath: path.resolve(__dirname, './../doc/interview'),
+    outputPath: path.resolve(__dirname, './../doc/18-Interview.md'),
+    bridgePath: 'doc/interview/',
+    title: '面试'
+}
+
 async function updateContent(config) {
     let { dirPath, outputPath, bridgePath, title } = config
     let files = fs.readdirSync(dirPath)
+    console.log(files)
     // let isFilesAlready = files.every(file => fs.statSync(articlePath + '/' + file).isFile())
     files.pop()
     let contentList = files
@@ -30,6 +38,7 @@ async function updateContent(config) {
         })
     contentList.unshift(`# ${title}`)
     let content = contentList.join('\n\n')
+    console.log(content)
     fs.writeFileSync(outputPath, content, 'utf8')
     console.log(`${title} has been written!`)
 }
@@ -39,6 +48,8 @@ if (mode === 'article') {
     updateContent(ARTICLE_CONFIG)
 } else if (mode === 'math') {
     updateContent(MATH_CONFIG)
+} else if (mode === 'interview') {
+    updateContent(INTERVIEW_CONFIG)
 } else {
     console.log('参数错误')
 }

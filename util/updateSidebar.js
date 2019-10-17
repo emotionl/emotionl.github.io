@@ -1,7 +1,14 @@
 const fs = require('fs')
 const path = require('path')
 
-const UPDATE_PATH_LIST = [path.resolve(__dirname, './../doc'), path.resolve(__dirname, './../'), path.resolve(__dirname, './../doc/math'), path.resolve(__dirname, './../doc/chord'), path.resolve(__dirname, './../doc/article')]
+const UPDATE_PATH_LIST = [
+    path.resolve(__dirname, './../doc'), 
+    path.resolve(__dirname, './../'), 
+    path.resolve(__dirname, './../doc/math'), 
+    path.resolve(__dirname, './../doc/chord'), 
+    path.resolve(__dirname, './../doc/article'),
+    path.resolve(__dirname, './../doc/interview'),
+]
 
 const SIDEBAR_DIR_PATH = path.resolve(__dirname, './../doc')
 
