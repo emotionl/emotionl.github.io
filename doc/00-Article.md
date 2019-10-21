@@ -49,3 +49,7 @@
 - [正则+replace提取字符串](doc/article/029-正则+replace提取字符串.md)
 
 - [字符串的比较](doc/article/030-字符串的比较.md)
+
+- [JavaScript-Function](doc/article/031-JavaScript-Function.md)
+
+- [Node.js-Function](doc/article/032-Node.js-Function.md)
