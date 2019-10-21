@@ -25,11 +25,11 @@ const INTERVIEW_CONFIG = {
 async function updateContent(config) {
     let { dirPath, outputPath, bridgePath, title } = config
     let files = fs.readdirSync(dirPath)
-    console.log(files)
+    // console.log(files)
     // let isFilesAlready = files.every(file => fs.statSync(articlePath + '/' + file).isFile())
     files.pop()
     let contentList = files
-        .filter(item => !item.includes('Todo'))
+        .filter(item => !item.includes('Todo') && item.includes('.md'))
         .map(item => {
             let regex = /\d{3}\-(.+)\.md/
             return item.replace(regex, (match, pad) => {
@@ -40,7 +40,7 @@ async function updateContent(config) {
     let content = contentList.join('\n\n')
     console.log(content)
     fs.writeFileSync(outputPath, content, 'utf8')
-    console.log(`${title} has been written!`)
+    console.log(`\n${title} has been written!`)
 }
 
 let mode = process.argv[2]
