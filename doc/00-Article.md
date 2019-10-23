@@ -53,3 +53,5 @@
 - [JavaScript-Function](doc/article/031-JavaScript-Function.md)
 
 - [Node.js-Function](doc/article/032-Node.js-Function.md)
+
+- [单例模式](doc/article/033-单例模式.md)
