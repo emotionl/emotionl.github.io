@@ -54,4 +54,6 @@
 
 - [Node.js-Function](doc/article/032-Node.js-Function.md)
 
-- [单例模式](doc/article/033-单例模式.md)
+- [JavaScript设计模式](doc/article/033-JavaScript设计模式.md)
+
+- [小脚本](doc/article/034-小脚本.md)
