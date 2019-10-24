@@ -6,7 +6,7 @@
 
 - [木易杨前端进阶](https://muyiy.cn/)
 
-- [前端进阶之道](https://yuchengkai.cn/docs/frontend/)
+- [Interview Map](https://github.com/InterviewMap/CS-Interview-Knowledge-Map)
 
 - [前端面试手册](https://github.com/yangshun/front-end-interview-handbook/blob/master/Translations/Chinese/README.md)
 
