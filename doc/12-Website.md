@@ -17,7 +17,7 @@
 -  [音乐资源](https://audioz.download/)
 -  [IT资源整合](https://www.yeahhub.com/)
 -  [BT磁力搜索引擎索引-在线](https://hao.su/909/)
--  [BT磁力搜索引擎索引-本地](doc/article/028-BT-Website.md)
+-  [磁力搜 - 磁力聚合搜索](https://bt.lansou.pw/)
 
 ## Github
 -  [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
@@ -28,3 +28,6 @@
 - [ACG.RIP](https://acg.rip)
 - [ZzzFun动漫视频网](http://www.zzzfun.com/)
 - [关于浪漫、讽刺、数学和语言的网络漫画](https://xkcd.com/)
+
+## 教程
+- [Sonic PI教程](https://www.bilibili.com/video/av47554214/)
