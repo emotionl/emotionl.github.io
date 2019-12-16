@@ -31,3 +31,6 @@
 
 ## 教程
 - [Sonic PI教程](https://www.bilibili.com/video/av47554214/)
+
+## Blog
+- [ROBIN WIERUCH](https://www.robinwieruch.de/)
