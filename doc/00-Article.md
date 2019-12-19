@@ -26,8 +26,6 @@
 
 - [Mongoose入门](doc/article/014-Mongoose入门.md)
 
-- [React常用插件](doc/article/015-React常用插件.md)
-
 - [正则+replace函数批量处理数据](doc/article/018-正则+replace函数批量处理数据.md)
 
 - [初识Nginx](doc/article/019-初识Nginx.md)
