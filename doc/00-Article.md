@@ -61,3 +61,5 @@
 - [前端项目中的路径解析](doc/article/037-前端项目中的路径解析.md)
 
 - [Antd-Pro使用笔记](doc/article/038-Antd-Pro使用笔记.md)
+
+- [我的Prettier配置](doc/article/039-我的Prettier配置.md)
