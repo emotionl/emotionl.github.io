@@ -19,6 +19,10 @@
 -  [BT磁力搜索引擎索引-在线](https://hao.su/909/)
 -  [磁力搜 - 磁力聚合搜索](https://bt.lansou.pw/)
 
+## CDN
+-  [cdnjs](https://cdnjs.com/)
+-  [UNPKG](https://unpkg.com/)
+-  [jsDelivr – Open Source CDN](https://www.jsdelivr.com/)
 ## Github
 -  [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
 -  [掘金翻译计划](https://github.com/xitu/gold-miner)
