@@ -17,7 +17,7 @@
 -  [音乐资源](https://audioz.download/)
 -  [IT资源整合](https://www.yeahhub.com/)
 -  [BT磁力搜索引擎索引-在线](https://hao.su/909/)
--  [磁力搜 - 磁力聚合搜索](https://bt.lansou.pw/)
+-  [磁力搜 - 磁力聚合搜索](https://biedian.me/)
 
 ## CDN
 -  [cdnjs](https://cdnjs.com/)

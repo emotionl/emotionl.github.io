@@ -122,11 +122,52 @@ export function createElement(type, config, children) {
 }
 ```
 
+## ReactComponent
 
+核心代码
 
-## react-component
-## react-ref
-## forward-ref
+```js
+// Component 相关
+function Component(props, context, updater) {
+    // ...
+}
+Component.prototype.isReactComponent = {};
+Component.prototype.setState = function(partialState, callback) {
+	// ...
+};
+Component.prototype.forceUpdate = function(callback) {
+    // ...
+};
+
+// PureComponent 相关
+function ComponentDummy() {}
+ComponentDummy.prototype = Component.prototype;
+
+function PureComponent(props, context, updater) {
+	// ...
+}
+
+const pureComponentPrototype = (PureComponent.prototype = new ComponentDummy()); // 原型链继承
+pureComponentPrototype.constructor = PureComponent;
+// Avoid an extra prototype jump for these methods.
+Object.assign(pureComponentPrototype, Component.prototype);
+pureComponentPrototype.isPureReactComponent = true;
+```
+
+## createRef & Ref
+
+关键代码
+
+```js
+export function createRef(): RefObject {
+  const refObject = {
+    current: null,
+  };
+  return refObject;
+}
+```
+
+## forwardRef
 ## context
 ## concurrent-mode
 ## suspense-and-lazy
