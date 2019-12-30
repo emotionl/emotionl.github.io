@@ -37,4 +37,5 @@
 - [Sonic PI教程](https://www.bilibili.com/video/av47554214/)
 
 ## Blog
-- [ROBIN WIERUCH](https://www.robinwieruch.de/)
+- [Dan Abramov](https://overreacted.io/)
+- [Robin Wieruch](https://www.robinwieruch.de/)
