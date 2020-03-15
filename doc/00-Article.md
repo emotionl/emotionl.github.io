@@ -72,4 +72,4 @@
 
 - [使用nvm管理Nodejs](doc/article/043-使用nvm管理Nodejs.md)
 
-- [R语言的标准差](doc/article/045-R语言的标准差.md)
+- [R语言入门](doc/article/044-R语言入门.md)
