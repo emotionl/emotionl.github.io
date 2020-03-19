@@ -14,4 +14,5 @@
 
 ## 文章
 
-- [深入浅出Javascript对象原型](doc/article/017-深入浅出javascript对象原型.md)
+- [深入浅出javascript对象原型](https://www.jianshu.com/p/aa2f885ba871)
+
