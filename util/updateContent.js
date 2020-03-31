@@ -10,7 +10,7 @@ const ARTICLE_CONFIG = {
 
 const MATH_CONFIG = {
     dirPath: path.resolve(__dirname, './../doc/math'),
-    outputPath: path.resolve(__dirname, './../doc/16-Math.md'),
+    outputPath: path.resolve(__dirname, './../doc/15-Math.md'),
     bridgePath: 'doc/math/',
     title: '数学'
 }
