@@ -75,3 +75,5 @@
 - [R语言知识点杂记](doc/article/044-R语言知识点杂记.md)
 
 - [R语言日期与时间](doc/article/045-R语言日期与时间.md)
+
+- [Better-Scroll使用小例子](doc/article/046-Better-Scroll使用小例子.md)
