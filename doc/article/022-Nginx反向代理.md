@@ -13,12 +13,12 @@
 ```mermaid
 graph LR
 A[一级域名 emotionl.fun]
-B[二级域名 jazz.emotionl.fun]
-C[二级域名 blues.emotionl.fun]
+B[二级域名 site1.emotionl.fun]
+C[二级域名 site2.emotionl.fun]
 D[服务器]
-E[外网IP 43.147.36.429]
-F[端口一 43.147.36.429:1234]
-G[端口二 43.147.36.429:2342]
+E[外网IP 11.123.44.555]
+F[端口一 11.123.44.555:4444]
+G[端口二 11.123.44.555:6666]
 A --> B
 A --> C
 B --> F
@@ -54,9 +54,9 @@ E --> D
         gzip_comp_level 2;
         gzip_types text/plain text/css application/x-javascript application/javascript application/xml;
         server {
-            listen 1234;
+            listen 4444;
             location / {
-                alias test_website/jazz/;
+                alias test_website/site1/;
             }
             location = /50x.html {
                 root html;
@@ -64,9 +64,9 @@ E --> D
             error_page 500 502 503 504  /50x.html;
         }
         server {
-            listen 2345;
+            listen 6666;
             location / {
-                alias test_website/blues/;
+                alias test_website/site2/;
             }
             location = /50x.html {
                 root html;
@@ -90,20 +90,20 @@ E --> D
         default_type application/octet-stream;
         sendfile on;
         keepalive_timeout 65;
-        upstream jazz {
+        upstream site1 {
             server 127.0.0.1:1234;
         }
-        upstream blues {
+        upstream site2 {
             server 127.0.0.1:2342;
         }
         server {
             listen 80;
-            server_name jazz.emotionl.fun;
+            server_name site1.emotionl.fun;
             location / {
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_pass http://jazz;
+                proxy_pass http://site1;
             }
             location = /50x.html {
                 root html;
@@ -112,12 +112,12 @@ E --> D
         }
         server {
             listen 80;
-            server_name blues.emotionl.fun;
+            server_name site2.emotionl.fun;
             location / {
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_pass http://blues;
+                proxy_pass http://site2;
             }
             location = /50x.html {
                 root html;
