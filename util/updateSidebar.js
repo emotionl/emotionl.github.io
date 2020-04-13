@@ -8,6 +8,7 @@ const UPDATE_PATH_LIST = [
     path.resolve(__dirname, './../doc/chord'), 
     path.resolve(__dirname, './../doc/article'),
     path.resolve(__dirname, './../doc/interview'),
+    path.resolve(__dirname, './../doc/js-advanced'),
 ]
 
 const SIDEBAR_DIR_PATH = path.resolve(__dirname, './../doc')
