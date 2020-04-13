@@ -200,4 +200,17 @@
 })()
 ```
 
-## 模拟 bind call apply
+## 模拟 bind call apply TODO
+
+### bind
+
+
+
+### call
+
+
+
+### apply
+
+
+

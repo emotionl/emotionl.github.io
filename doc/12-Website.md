@@ -48,3 +48,4 @@
 
 - [Dan Abramov](https://overreacted.io/)
 - [Robin Wieruch](https://www.robinwieruch.de/)
+- [LucasHC](https://www.jianshu.com/u/452568260db5)
