@@ -12,8 +12,11 @@
 - [可视化正则](https://regex101.com/)
 - [渐变色生成](https://webgradients.com/)
 - [工具集合](https://tools.imiku.me/)
-- [可复制的 CSS 特效](https://cssfx.dev/)
 - [Markdown 表格在线生成](https://tableconvert.com/)
+- [可复制的 CSS特效](https://cssfx.dev/)
+- [pattern-css 背景图CSS](https://bansal.io/pattern-css)
+- [heropatterns 背景图CSS](http://www.heropatterns.com/)
+- [Win98风 CSS](https://jdan.github.io/98.css/)
 
 ## 资源
 
