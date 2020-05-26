@@ -9,6 +9,7 @@
 ```javascript
 const text1 = '@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)'
 const text2 = '@9-090-9-09-(111)(111)(123)Asdasdasdasdasd@1asd(111)'
+const text3 = '@wadsf=dfsd-(111)(111)(123)Asdasdasdasdasd@1asd(111)'
 ```
 
 处理后
