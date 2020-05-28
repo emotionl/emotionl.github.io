@@ -10,10 +10,13 @@
 
 ## 文章
 
-[正则+replace 函数批量处理数据](doc/article/018-正则+replace函数批量处理数据.md)
+[正则案例1](doc/article/018-正则案例1.md)
 
-[正则+replace 提取字符串](doc/article/029-正则+replace提取字符串.md)
+[正则案例2](doc/article/029-正则案例2.md)
 
-[正则+match 提取字段](doc/article/049-正则+match提取字段.md)
+[正则案例3](doc/article/049-正则案例3.md)
+
+[正则案例4](doc/article/050-正则案例4.md)
+
 
 [常用正则表达式](doc/article/027-常用正则表达式.md)
