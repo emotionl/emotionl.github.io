@@ -8,8 +8,8 @@
 ## Nginx
 - [OpenResty 最佳实践](https://moonbingbing.gitbooks.io/openresty-best-practices/)
 
-- [初识Nginx](doc/article/019-初识Nginx)
+- [初识Nginx](/doc/article/019-初识Nginx)
 
-- [Nginx反向代理](doc/article/022-Nginx反向代理)
+- [Nginx反向代理](/doc/article/022-Nginx反向代理)
 
-- [Nginx架构](doc/article/026-Nginx架构)
+- [Nginx架构](/doc/article/026-Nginx架构)

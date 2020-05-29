@@ -2,7 +2,7 @@
 
 ## 命令
 
-- [Learning-The-Shell](doc/article/021-Learning-The-Shell.md)
+- [Learning-The-Shell](/doc/article/021-Learning-The-Shell.md)
 
 ## 教程
 

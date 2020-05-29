@@ -12,7 +12,7 @@
 <br/><br/>
 
 <p align="center">
-  <img src="/assets/image/regexp-cn.png" alt="Regular expression">
+  <img src="./../../assets/image/regexp-cn.png" alt="Regular expression">
 </p>
 
 以上的正则表达式可以接受 `john_doe`、`jo-hn_doe`、`john12_as`。

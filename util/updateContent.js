@@ -4,29 +4,36 @@ const path = require('path')
 const ARTICLE_CONFIG = {
   dirPath: path.resolve(__dirname, './../doc/article'),
   outputPath: path.resolve(__dirname, './../doc/00-Article.md'),
-  bridgePath: 'doc/article/',
+  bridgePath: '/doc/article/',
   title: '文章'
 }
 
 const MATH_CONFIG = {
   dirPath: path.resolve(__dirname, './../doc/math'),
   outputPath: path.resolve(__dirname, './../doc/15-Math.md'),
-  bridgePath: 'doc/math/',
+  bridgePath: '/doc/math/',
   title: '数学'
 }
 
 const JS_CONFIG = {
   dirPath: path.resolve(__dirname, './../doc/js-advanced'),
   outputPath: path.resolve(__dirname, './../doc/20-JS-Advanced.md'),
-  bridgePath: 'doc/js-advanced/',
+  bridgePath: '/doc/js-advanced/',
   title: 'JS Advanced'
 }
 
 const INTERVIEW_CONFIG = {
   dirPath: path.resolve(__dirname, './../doc/interview'),
   outputPath: path.resolve(__dirname, './../doc/18-Interview.md'),
-  bridgePath: 'doc/interview/',
+  bridgePath: '/doc/interview/',
   title: '面试'
+}
+
+const ALGORITHM_CONFIG = {
+  dirPath: path.resolve(__dirname, './../doc/algorithm'),
+  outputPath: path.resolve(__dirname, './../doc/21-Algorithm.md'),
+  bridgePath: '/doc/algorithm/',
+  title: '算法'
 }
 
 async function updateContent(config) {
@@ -51,14 +58,16 @@ async function updateContent(config) {
 }
 
 let mode = process.argv[2]
-if (mode === 'article') {
+if (mode === 'at') {
   updateContent(ARTICLE_CONFIG)
 } else if (mode === 'math') {
   updateContent(MATH_CONFIG)
-} else if (mode === 'interview') {
+} else if (mode === 'iv') {
   updateContent(INTERVIEW_CONFIG)
 } else if (mode === 'js') {
   updateContent(JS_CONFIG)
+} else if (mode === 'ag') {
+  updateContent(ALGORITHM_CONFIG)
 } else {
   console.log('参数错误')
 }

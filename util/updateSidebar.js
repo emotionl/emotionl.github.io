@@ -9,6 +9,8 @@ const UPDATE_PATH_LIST = [
     path.resolve(__dirname, './../doc/article'),
     path.resolve(__dirname, './../doc/interview'),
     path.resolve(__dirname, './../doc/js-advanced'),
+    path.resolve(__dirname, './../doc/algorithm'),
+
 ]
 
 const SIDEBAR_DIR_PATH = path.resolve(__dirname, './../doc')
@@ -23,7 +25,7 @@ async function updateSidebar() {
     let contentList = sidebarFiles.map(item => {
         let regex = /\d{2}\-(.+)\.md/
         return item.replace(regex, (match, pad) => {
-            return `[${pad}](doc/${match})`
+            return `[${pad}](/doc/${match})`
         })
     })
     let content = contentList.join('\n\n')
