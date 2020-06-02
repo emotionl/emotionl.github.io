@@ -16,12 +16,15 @@
 
 ## 学习
 
-- [CSS Battle - 在线比拼 CSS](https://cssbattle.dev/)
 - [Flexbox Froggy - 学习 Flex 布局的小游戏](http://flexboxfroggy.com/)
-- [GRID GARDEN - 学习 Grid 布局的小游戏](https://cssgridgarden.com/)
+- [Grid Garden - 学习 Grid 布局的小游戏](https://cssgridgarden.com/)
+- [CSS Battle - 在线比拼 CSS](https://cssbattle.dev/)
 - [CSS-Tricks - CSS 技巧](https://css-tricks.com/)
+- [learnlayout - 学习 CSS 布局](https://learnlayout.com/)
+- [Learn to Code Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
+- [SQLZoo - SQL 教程](https://sqlzoo.net/wiki/SQL_Tutorial/zh)
+- [SQLJoin - SQL 联接运算](http://www.sql-join.com/)
 - [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
-
 
 ## 资源
 
