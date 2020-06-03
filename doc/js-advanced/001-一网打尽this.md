@@ -174,6 +174,8 @@
 
 ### 例题组合 5：箭头函数中的 this 指向
 
+箭头函数中的`this`要看它外层的函数或对象的`this`
+
 ```javascript
 ;(function (arguments) {
   const foo = {
@@ -200,17 +202,42 @@
 })()
 ```
 
-## 模拟 bind call apply TODO
+### 最后一道
 
-### bind
+```javascript
+const bar = {
+  f1: function () {
+    console.log(this)
+  },
+  f2: () => {
+    console.log(this)
+  },
+  f3: function () {
+    const fun = () => {
+      console.log(this)
+    }
+    fun()
+  },
+  f4: () => {
+    function fun() {
+      console.log(this)
+    }
+    fun()
+  }
+}
 
+bar.f1() // bar | f1 被 bar 调用，所以打印的 this 是 bar
+bar.f2() // window | f2 的 this 是 f2 外层的 bar 的 this，所以打印的 this 是 window
+bar.f3() // bar | f3 中 fun 的 this 是 fun 外层的 f3 的 this， f3 被 bar 调用，f3 的 this 是 bar，所以打印的 this 是 window
+bar.f4() // f4 中的 fun 的执行属于普通函数调用，只是自执行，此时 fun 是一个全局函数，因此打印的 this 是 window
 
-
-### call
-
-
-
-### apply
-
-
+const f1 = bar.f1
+f1() // window
+const f2 = bar.f2
+f2() // window
+const f3 = bar.f3
+f3() // window
+const f4 = bar.f4
+f4() // window
+```
 
