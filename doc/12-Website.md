@@ -24,8 +24,11 @@
 - [Learn to Code Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
 - [SQLZoo - SQL 教程](https://sqlzoo.net/wiki/SQL_Tutorial/zh)
 - [SQLJoin - SQL 联接运算](http://www.sql-join.com/)
+- [javascript-questions - JS 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
+- [Learn Git Branching - 交互式 GIT 教程](https://learngitbranching.js.org/)
+- [Backlog - 猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
 - [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
-- [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
+- [掘金翻译计划](https://github.com/xitu/gold-miner)
 
 ## 资源
 
@@ -40,7 +43,10 @@
 - [IT 资源整合](https://www.yeahhub.com/)
 - [BT 磁力搜索引擎索引-在线](https://hao.su/909/)
 - [磁力搜 - 磁力聚合搜索](https://biedian.me/)
-- [Sketch 设计资源](https://www.sketchappsources.com/)
+- [Sketch App Sources - Sketch 设计资源](https://www.sketchappsources.com/)
+- [Awesome Public Datasets - 公共数据](https://github.com/awesomedata/awesome-public-datasets)
+- [Public APIs - 公共接口](https://github.com/public-apis/public-apis)
+- [程序员找工作黑名单](https://github.com/shengxinjing/programmer-job-blacklist)
 
 ## Blog
 

@@ -16,15 +16,9 @@
 
 [Mobile](/doc/08-Mobile.md)
 
-[Skills](/doc/09-Skills.md)
-
-[Other](/doc/10-Other.md)
-
 [Database](/doc/11-Database.md)
 
 [Website](/doc/12-Website.md)
-
-[Function](/doc/13-Function.md)
 
 [RegExp](/doc/14-RegExp.md)
 
