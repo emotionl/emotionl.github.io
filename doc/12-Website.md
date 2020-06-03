@@ -25,6 +25,7 @@
 - [SQLZoo - SQL 教程](https://sqlzoo.net/wiki/SQL_Tutorial/zh)
 - [SQLJoin - SQL 联接运算](http://www.sql-join.com/)
 - [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
+- [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
 
 ## 资源
 
@@ -41,11 +42,17 @@
 - [磁力搜 - 磁力聚合搜索](https://biedian.me/)
 - [Sketch 设计资源](https://www.sketchappsources.com/)
 
-## 动漫
+## Blog
 
-- [ACG.RIP](https://acg.rip)
-- [ZzzFun 动漫视频网](http://www.zzzfun.com/)
-- [关于浪漫、讽刺、数学和语言的网络漫画](https://xkcd.com/)
+- [Dan Abramov](https://overreacted.io/)
+- [Robin Wieruch](https://www.robinwieruch.de/)
+- [LucasHC](https://www.jianshu.com/u/452568260db5)
+- [Lydia Hallie](https://dev.to/lydiahallie)
+
+## 社区
+
+- [DEV](https://dev.to/)
+- [掘金](https://juejin.im/)
 
 ## CDN
 
@@ -53,8 +60,8 @@
 - [UNPKG](https://unpkg.com/)
 - [jsDelivr – Open Source CDN](https://www.jsdelivr.com/)
 
-## Blog
+## 动漫
 
-- [Dan Abramov](https://overreacted.io/)
-- [Robin Wieruch](https://www.robinwieruch.de/)
-- [LucasHC](https://www.jianshu.com/u/452568260db5)
+- [ACG.RIP](https://acg.rip)
+- [ZzzFun 动漫视频网](http://www.zzzfun.com/)
+- [关于浪漫、讽刺、数学和语言的网络漫画](https://xkcd.com/)
