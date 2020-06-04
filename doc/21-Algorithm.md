@@ -4,4 +4,4 @@
 
 - [给我来棵二叉树](/doc/algorithm/002-给我来棵二叉树.md)
 
-- [实现一个堆](/doc/algorithm/003-实现一个堆.md)
+- [实现一个集合](/doc/algorithm/003-实现一个集合.md)
