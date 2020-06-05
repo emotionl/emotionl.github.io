@@ -35,6 +35,7 @@
 - [ThemeLock - 模板库](http://www.themelock.com)
 - [bootstrapmb - 模板库](http://www.bootstrapmb.com/muban/houtai)
 - [云核 - 模板库](http://www.yunnut.com/)
+- [FTUApps.Dev - Crack 软件](https://ftuapps.dev/)
 - [SaltTiger - 电子书](https://salttiger.com/)
 - [Course Club -IT 课程](https://courseclub.net/)
 - [云盘精灵 - 云盘搜索](https://www.yunpanjingling.com/)
