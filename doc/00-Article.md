@@ -26,6 +26,8 @@
 
 - [Mongoose入门](/doc/article/014-Mongoose入门.md)
 
+- [深入浅出JS对象原型](/doc/article/017-深入浅出JS对象原型.md)
+
 - [正则案例1](/doc/article/018-正则案例1.md)
 
 - [初识Nginx](/doc/article/019-初识Nginx.md)
@@ -83,3 +85,5 @@
 - [正则案例3](/doc/article/049-正则案例3.md)
 
 - [正则案例4](/doc/article/050-正则案例4.md)
+
+- [一条很骚的CSS](/doc/article/052-一条很骚的CSS.md)
