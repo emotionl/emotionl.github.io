@@ -38,6 +38,7 @@
 - [云核 - 模板库](http://www.yunnut.com/)
 - [FTUApps.Dev - Crack 软件](https://ftuapps.dev/)
 - [SaltTiger - 电子书](https://salttiger.com/)
+- [ZLibrary.China - 电子书](https://b-ok.as/)
 - [Course Club -IT 课程](https://courseclub.net/)
 - [云盘精灵 - 云盘搜索](https://www.yunpanjingling.com/)
 - [磁力链 BT - BT 站点](http://cililianbt.pw/)
