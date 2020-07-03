@@ -57,6 +57,7 @@
 - [Robin Wieruch](https://www.robinwieruch.de/)
 - [LucasHC](https://www.jianshu.com/u/452568260db5)
 - [Lydia Hallie](https://dev.to/lydiahallie)
+- [Samantha Ming](https://www.samanthaming.com/)
 
 ## 社区
 
