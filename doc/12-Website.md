@@ -22,6 +22,7 @@
 - [CSS Battle - 在线比拼 CSS](https://cssbattle.dev/)
 - [CSS-Tricks - CSS 技巧](https://css-tricks.com/)
 - [learnlayout - 学习 CSS 布局](https://learnlayout.com/)
+- [Learn D3 for free - 学习 D3](https://scrimba.com/g/gd3js)
 - [Learn to Code Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
 - [SQLZoo - SQL 教程](https://sqlzoo.net/wiki/SQL_Tutorial/zh)
 - [SQLJoin - SQL 联接运算](http://www.sql-join.com/)
@@ -30,7 +31,6 @@
 - [Backlog - 猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
 - [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
 - [掘金翻译计划](https://github.com/xitu/gold-miner)
-
 ## 资源
 
 - [ThemeLock - 模板库](http://www.themelock.com)
