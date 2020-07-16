@@ -1,15 +1,15 @@
-# Awesome React 
+# Awesome React
 
 ## 日期
 
-[ReactBigCalendar](<https://github.com/jquense/react-big-calendar>)
-[flatpickr](<https://flatpickr.js.org/>)
+[ReactBigCalendar](https://github.com/jquense/react-big-calendar)
+[flatpickr](https://flatpickr.js.org/)
 
 ## 表单
 
-[Formik](<https://jaredpalmer.com/formik/>)
+[Formik](https://jaredpalmer.com/formik/)
 
-[ReactSelect](<https://react-select.com/home>)
+[ReactSelect](https://react-select.com/home)
 
 [ReactToggle](https://github.com/aaronshaf/react-toggle)
 
@@ -23,35 +23,47 @@
 
 ## 表格
 
-[ReactDataTableComponent](<https://github.com/jbetancur/react-data-table-component>)
+[ReactDataTableComponent](https://github.com/jbetancur/react-data-table-component)
 
-[agGridReact](<https://www.ag-grid.com/react-grid/>)
+[agGridReact](https://www.ag-grid.com/react-grid/)
 
 [ReactTable](https://github.com/tannerlinsley/react-table)
 
 ## 反馈
 
-[ReactToastify](<https://github.com/fkhadra/react-toastify>)
+[ReactToastify](https://github.com/fkhadra/react-toastify)
 
 ## 图表
 
-[ReactApexcharts](<https://apexcharts.com/docs/react-charts/>)
+[ReactApexcharts](https://apexcharts.com/docs/react-charts/)
 
 [ReactChartjs2](https://github.com/jerairrest/react-chartjs-2)
 
-[ReactLeaflet](<https://react-leaflet.js.org/>)
+[ReactLeaflet](https://react-leaflet.js.org/)
+
+[Recharts](http://recharts.org/en-US/)
+
+[Victory](https://formidable.com/open-source/victory/)
+
+[Nivo](https://nivo.rocks/)
+
+[ReactVis](https://uber.github.io/react-vis/)
+
+[VX](https://vx-demo.now.sh/)
 
 ## 组件库
 
-[ReactStrap](<https://reactstrap.github.io/>)
+[ReactStrap](https://reactstrap.github.io/)
 
 ## 图标
 
-[ReactFeather](<https://www.npmjs.com/package/react-feather>)
+[React Icons](https://react-icons.github.io/react-icons/)
+
+[ReactFeather](https://www.npmjs.com/package/react-feather)
 
 ## 文档
 
-[SheetJS(XLSX)](<https://flatpickr.js.org/>)
+[SheetJS(XLSX)](https://flatpickr.js.org/)
 
 ## MOCK
 
