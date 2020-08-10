@@ -44,16 +44,22 @@ cookieText.split('; ').forEach(item => {
 console.log('cookie', cookie) // { k1: '100', k2: '200', k3: '300' }
 ```
 
-#### 修改 Cookie
+#### 修改 Cookie 
 
 ```javascript
 // 设置一个 Cookie
 res.setHeader('Set-Cookie', 's1=100; path=/')
-// 设置多个 Cookie
+// 设置多个 Cookie (使用数组)
 res.setHeader('Set-Cookie', ['s1=100; path=/', 's2=200; path=/'])
-// 禁止客户端修改 Cookie
+// 限制客户端修改 Cookie (httpOnly)
 res.setHeader('Set-Cookie', 's1=100; path=/; httpOnly')
+// 添加过期时间 (使用 Date.prototype.toUTCString())
+res.setHeader('Set-Cookie', 's1=100; path=/; httpOnly; Wed, 01 Aug 2020 06:00:00 GMT')
 ```
 
-#### 实现登录验证
+#### 实现登录验证 Todo
+
+不能在 Cookie 
+
+## Session
 
