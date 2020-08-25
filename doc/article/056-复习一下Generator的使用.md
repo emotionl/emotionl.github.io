@@ -15,7 +15,7 @@ console.log(g.next()) // 2> {value: NaN, done: false}
 console.log(g.next()) // 3> {value: NaN, done: true}
 /* 
   1> g.next() 返回的 value 是 x + 5 => 6
-  2> g.next() 返回的 value 是 y / 3，由于上一个 g.next() 并未传值 y = undefined * 2 => NaN，所以本次的 value 是 NaN / 3 => NaN
+  2> g.next() 返回的 value 是 y / 3，由于本次 g.next() 并未传值，所以 y = undefined * 2 => NaN，所以本次的 value 是 NaN / 3 => NaN
   3> g.next() 返回的 value 是 x + y + z => 1 + NaN + NaN => NaN
 */
 
