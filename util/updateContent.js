@@ -57,17 +57,12 @@ async function updateContent(config) {
   console.log(`\n${title} has been written!`)
 }
 
-let mode = process.argv[2]
-if (mode === 'at') {
-  updateContent(ARTICLE_CONFIG)
-} else if (mode === 'math') {
-  updateContent(MATH_CONFIG)
-} else if (mode === 'iv') {
-  updateContent(INTERVIEW_CONFIG)
-} else if (mode === 'js') {
-  updateContent(JS_CONFIG)
-} else if (mode === 'ag') {
-  updateContent(ALGORITHM_CONFIG)
-} else {
-  console.log('参数错误')
+const mode = process.argv[2]
+const UPDATE_MAP = {
+  at: ARTICLE_CONFIG,
+  math: MATH_CONFIG,
+  iv: INTERVIEW_CONFIG,
+  js: JS_CONFIG,
+  ag: ALGORITHM_CONFIG
 }
+if (UPDATE_MAP[mode]) updateContent(UPDATE_MAP[mode])
