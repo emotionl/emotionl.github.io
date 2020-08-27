@@ -39,4 +39,59 @@ for (const key in p) {
 }
 ```
 
+来个综合案例
+
+```javascript
+const userInfo = {
+  name: 'Jack',
+  age: 17,
+  _address: 'London UK'
+}
+
+const p = new Proxy(userInfo, {
+  get(target, prop) {
+    if (prop.startsWith('_')) {
+      throw new Error(`${prop} 不可访问`)
+    } else {
+      return target[prop] || 'N/A'
+    }
+  },
+  set(target, prop, value) {
+    if (prop.startsWith('_')) {
+      throw new Error(`不能设置 ${prop}`)
+    } else {
+      target[prop] = value
+      return true
+    }
+  },
+  deleteProperty(target, prop) {
+    if (prop.startsWith('_')) {
+      throw new Error(`不能删除${prop}`)
+    } else {
+      delete target[prop]
+      return true
+    }
+  },
+  ownKeys(target) {
+    return Object.keys(target).filter((key) => !key.startsWith('_'))
+  }
+})
+```
+
+使用 `apply`拦截函数的调用（包装函数）
+
+```javascript
+const sum = (a, b) => {
+  return a + b
+}
+
+const sumText = new Proxy(sum, {
+  apply(target, thisArg, argArray) {
+    return `total number is ${target(...argArray)}`
+  }
+})
+
+sumText(10, 20)
+```
+
 ## Reflect
