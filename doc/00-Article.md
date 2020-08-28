@@ -91,3 +91,7 @@
 - [百度地图与React](/doc/article/053-百度地图与React.md)
 
 - [Nestjs](/doc/article/055-Nestjs.md)
+
+- [复习一下Generator的使用](/doc/article/056-复习一下Generator的使用.md)
+
+- [试试Proxy](/doc/article/057-试试Proxy.md)
