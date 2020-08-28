@@ -78,13 +78,6 @@ console.log(50 in checkRange)	// false
 console.log(150 in checkRange)	// true
 ```
 
-使用`ownKeys`拦截
-
-- `Object.getOwnPropertyNames()`
-- `Object.getOwnPropertySymbols() `
-- `Object.keys()`
-- `Reflect.ownKeys()`
-- `for in loop`
 使用`ownKeys`拦截 `Reflect.ownKeys()`也可以拦截 `Object.keys() ; for in Loop ; Object.getOwnPropertySymbols()` 中的部分的 key 
 
 ```javascript
