@@ -53,6 +53,7 @@
 - [Awesome Public Datasets - 公共数据](https://github.com/awesomedata/awesome-public-datasets)
 - [Public APIs - 公共接口](https://github.com/public-apis/public-apis)
 - [程序员找工作黑名单](https://github.com/shengxinjing/programmer-job-blacklist)
+- [合集网](https://www.heji.ltd/)
 
 ## Blog
 
