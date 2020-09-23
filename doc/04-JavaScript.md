@@ -14,6 +14,7 @@
 
 - [JavaScript 20 年](https://cn.history.js.org/)
 
+- [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 ## 文章
 
