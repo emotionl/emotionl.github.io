@@ -12,8 +12,6 @@
 
 [Framework](/doc/06-Framework.md)
 
-[Back-End](/doc/07-Back-End.md)
-
 [Mobile](/doc/08-Mobile.md)
 
 [Database](/doc/11-Database.md)
@@ -24,15 +22,7 @@
 
 [Math](/doc/15-Math.md)
 
-[Linux](/doc/16-Linux.md)
-
 [Math](/doc/16-Math.md)
-
-[Chord](/doc/17-Chord.md)
-
-[Interview](/doc/18-Interview.md)
-
-[Airport](/doc/19-Airport.md)
 
 [JS-Advanced](/doc/20-JS-Advanced.md)
 
