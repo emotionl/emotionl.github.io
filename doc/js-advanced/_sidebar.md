@@ -22,8 +22,6 @@
 
 [Math](/doc/15-Math.md)
 
-[Math](/doc/16-Math.md)
-
 [JS-Advanced](/doc/20-JS-Advanced.md)
 
 [Algorithm](/doc/21-Algorithm.md)
