@@ -23,19 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta name="description" content="对于类似这种无穷数列的问题，我们通常可以采用数学归纳法（Mathematical Induction）来证明。 在数论中，数学归纳法用来证明任意一个给定的情形都是正确的，也就是说，第一个、第二个、第三个，一直到所有情形，概不例外。 数学归纳法的一般步骤是这样的：  证明基本情况（通常是 n &#x3D; 1 的时候）是否成立； 假设 n &#x3D; k − 1 成立，再证明 n &#x3D; k 也是成立的（k 为任意大于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学归纳法">
+<meta property="og:url" content="http://example.com/2020/03/31/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:description" content="对于类似这种无穷数列的问题，我们通常可以采用数学归纳法（Mathematical Induction）来证明。 在数论中，数学归纳法用来证明任意一个给定的情形都是正确的，也就是说，第一个、第二个、第三个，一直到所有情形，概不例外。 数学归纳法的一般步骤是这样的：  证明基本情况（通常是 n &#x3D; 1 的时候）是否成立； 假设 n &#x3D; k − 1 成立，再证明 n &#x3D; k 也是成立的（k 为任意大于">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-14T13:36:20.000Z">
+<meta property="article:published_time" content="2020-03-31T00:00:00.000Z">
 <meta property="article:modified_time" content="2020-12-14T07:40:54.543Z">
 <meta property="article:author" content="ZV">
-<meta property="article:tag" content="👨‍💻🎸🍺">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/">
+<link rel="canonical" href="http://example.com/2020/03/31/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/">
 
 
 <script class="page-configurations">
@@ -43,12 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>标签 | ZV-Blogs
-</title>
+<title>数学归纳法 | ZV-Blogs</title>
   
 
 
@@ -156,7 +157,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -169,6 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3-VS-%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">迭代 VS 数学归纳法</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -219,43 +221,102 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/31/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/">
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
 
-<h1 class="post-title" itemprop="name headline">标签
-</h1>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数学归纳法
+        </h1>
 
-<div class="post-meta-container">
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-31 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-31T00:00:00+00:00">2020-03-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-14 07:40:54" itemprop="dateModified" datetime="2020-12-14T07:40:54+00:00">2020-12-14</time>
+      </span>
+
+  
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body"><div class="tag-cloud">
-  <div class="tag-cloud-title">
-    目前共计 3 个标签
-  </div>
-  <div class="tag-cloud-tags">
-    <a href="/tags/JavaScript/" style="font-size: 12px;" class="tag-cloud-0">JavaScript</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 30px;" class="tag-cloud-10">数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12px;" class="tag-cloud-0">算法</a>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>对于类似这种无穷数列的问题，我们通常可以采用<strong>数学归纳法（Mathematical Induction）</strong>来证明。</p>
+<p>在数论中，数学归纳法用来证明任意一个给定的情形都是正确的，也就是说，第一个、第二个、第三个，一直到所有情形，概不例外。</p>
+<p>数学归纳法的一般步骤是这样的：</p>
+<ul>
+<li>证明基本情况（通常是 <code>n = 1</code> 的时候）是否成立；</li>
+<li>假设 <code>n = k − 1</code> 成立，再证明 <code>n = k</code> 也是成立的（k 为任意大于 11 的自然数）</li>
+</ul>
+<h2 id="迭代-VS-数学归纳法"><a href="#迭代-VS-数学归纳法" class="headerlink" title="迭代 VS 数学归纳法"></a>迭代 VS 数学归纳法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> TOTAL_GRID = <span class="number">64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代法</span></span><br><span class="line"><span class="keyword">const</span> iterativeFunc = <span class="function"><span class="params">totalGrid</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> currentGrid = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (currentGrid &lt; totalGrid) &#123;</span><br><span class="line">    sum += <span class="number">1</span> * <span class="built_in">Math</span>.pow(<span class="number">2</span>, currentGrid)</span><br><span class="line">    currentGrid += <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 数学归纳法</span></span><br><span class="line"><span class="keyword">const</span> inductionFunc = <span class="function"><span class="params">totalGrid</span> =&gt;</span> <span class="built_in">Math</span>.pow(<span class="number">2</span>, totalGrid) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res1 = iterativeFunc(TOTAL_GRID)</span><br><span class="line"><span class="keyword">const</span> res2 = inductionFunc(TOTAL_GRID)</span><br></pre></td></tr></table></figure>
 
-      </div>
-      
-      
-      
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/12/25/%E9%93%BE%E8%A1%A8%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%9F/" rel="prev" title="链表了解一下？">
+                  <i class="fa fa-chevron-left"></i> 链表了解一下？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/04/13/%E4%B8%80%E7%BD%91%E6%89%93%E5%B0%BDthis/" rel="next" title="一网打尽 this">
+                  一网打尽 this <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 
