@@ -81,13 +81,14 @@ creative_commons:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home  
-  #about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
-  # categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  常用站点: /websites/ || fa fa-star
+  # about: /about/ || fa fa-user
+  # categories: /categories/ || fa fa-th
+  # schedule: /schedule/ || fa fa-calendar
+  # sitemap: /sitemap.xml || fa fa-sitemap
+  # commonweal: /404/ || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -810,7 +811,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
