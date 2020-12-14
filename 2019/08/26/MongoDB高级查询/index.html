@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="MongoDB 聚合管道使用聚合管道可以对集合中的文档进行变换和组合实际运用：表关联查询、数据的统计MongoDB 中使用 db.COLLECTION_NAME.aggregate([&amp;#123;&amp;#125;,...]) 方法来构建和使用聚合管道 Aggregation Pipeline Stages &amp; OperatorsStages 操作   操作符 S 描述    $project">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB 高级查询">
+<meta property="og:url" content="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/index.html">
+<meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:description" content="MongoDB 聚合管道使用聚合管道可以对集合中的文档进行变换和组合实际运用：表关联查询、数据的统计MongoDB 中使用 db.COLLECTION_NAME.aggregate([&amp;#123;&amp;#125;,...]) 方法来构建和使用聚合管道 Aggregation Pipeline Stages &amp; OperatorsStages 操作   操作符 S 描述    $project">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-14T17:02:28.497Z">
+<meta property="article:author" content="ZV">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="MongoDB">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>MongoDB 高级查询 | ZV-Blogs</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZV-Blogs</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">致过去的时光</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB-%E8%81%9A%E5%90%88%E7%AE%A1%E9%81%93"><span class="nav-number">1.</span> <span class="nav-text">MongoDB 聚合管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregation-Pipeline-Stages-amp-Operators"><span class="nav-number">2.</span> <span class="nav-text">Aggregation Pipeline Stages &amp; Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stages-%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">Stages 操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operators-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">Operators 运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%8B%9F"><span class="nav-number">3.</span> <span class="nav-text">数据模拟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#project"><span class="nav-number">4.</span> <span class="nav-text">$project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">5.</span> <span class="nav-text">$match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group"><span class="nav-number">6.</span> <span class="nav-text">$group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">7.</span> <span class="nav-text">$sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limit"><span class="nav-number">8.</span> <span class="nav-text">$limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#skip"><span class="nav-number">9.</span> <span class="nav-text">$skip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lookup"><span class="nav-number">10.</span> <span class="nav-text">$lookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8"><span class="nav-number">11.</span> <span class="nav-text">综合运用</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZV"
+      src="/images/guitar.svg">
+  <p class="site-author-name" itemprop="name">ZV</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MongoDB 高级查询
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-14 17:02:28" itemprop="dateModified" datetime="2020-12-14T17:02:28+00:00">2020-12-14</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="MongoDB-聚合管道"><a href="#MongoDB-聚合管道" class="headerlink" title="MongoDB 聚合管道"></a>MongoDB 聚合管道</h2><p>使用聚合管道可以对集合中的文档进行变换和组合<br>实际运用：表关联查询、数据的统计<br><code>MongoDB</code> 中使用 <code>db.COLLECTION_NAME.aggregate([&#123;&#125;,...])</code> 方法来构建和使用聚合管道</p>
+<h2 id="Aggregation-Pipeline-Stages-amp-Operators"><a href="#Aggregation-Pipeline-Stages-amp-Operators" class="headerlink" title="Aggregation Pipeline Stages &amp; Operators"></a>Aggregation Pipeline Stages &amp; Operators</h2><h3 id="Stages-操作"><a href="#Stages-操作" class="headerlink" title="Stages 操作"></a>Stages 操作</h3><table>
+<thead>
+<tr>
+<th>操作符 S</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$project</code></td>
+<td>修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档</td>
+</tr>
+<tr>
+<td><code>$match</code></td>
+<td>用于过滤数据，只输出符合条件的文档。<code>$match</code> 使用 MongoDB 的标准查询操作</td>
+</tr>
+<tr>
+<td><code>$limit</code></td>
+<td>用来限制 MongoDB 聚合管道返回的文档数</td>
+</tr>
+<tr>
+<td><code>$skip</code></td>
+<td>在聚合管道中跳过指定数量的文档，并返回余下的文档</td>
+</tr>
+<tr>
+<td><code>$group</code></td>
+<td>将集合中的文档分组，可用于统计结果</td>
+</tr>
+<tr>
+<td><code>$sort</code></td>
+<td>将输入文档排序后输出</td>
+</tr>
+<tr>
+<td><code>$lookup</code></td>
+<td>用以引入其它集合的数据 （表关联查询）</td>
+</tr>
+</tbody></table>
+<h3 id="Operators-运算符"><a href="#Operators-运算符" class="headerlink" title="Operators 运算符"></a>Operators 运算符</h3><table>
+<thead>
+<tr>
+<th align="left">Operators</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>$sum</code></td>
+<td align="left">计算总和</td>
+</tr>
+<tr>
+<td align="left"><code>$avg</code></td>
+<td align="left">计算平均值</td>
+</tr>
+<tr>
+<td align="left"><code>$min</code></td>
+<td align="left">获取集合中所有文档对应值得最小值</td>
+</tr>
+<tr>
+<td align="left"><code>$max</code></td>
+<td align="left">获取集合中所有文档对应值得最大值</td>
+</tr>
+<tr>
+<td align="left"><code>$push</code></td>
+<td align="left">在结果文档中插入值到一个数组中</td>
+</tr>
+<tr>
+<td align="left"><code>$addToSet</code></td>
+<td align="left">在结果文档中插入值到一个数组中，但不创建副本</td>
+</tr>
+<tr>
+<td align="left"><code>$first</code></td>
+<td align="left">根据资源文档的排序获取第一个文档数据</td>
+</tr>
+<tr>
+<td align="left"><code>$last</code></td>
+<td align="left">根据资源文档的排序获取最后一个文档数据</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>管道操作符作为<strong>键</strong>，所对应的<strong>值</strong>叫做管道表达式<br>例如<code>&#123;$match:&#123;status:&quot;A&quot;&#125;&#125;</code>，<code>$match</code> 称为管道操作符，而 <code>status:&quot;A&quot;</code>称为管道表达式<br>每个管道表达式是一个文档结构，它是由字段名、字段值、和一些表达式操作符组成的</p>
+</blockquote>
+<h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">10</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;111&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">100</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">7</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;222&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">90</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">9</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;333&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">20</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">6</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品鼠标 1&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 2&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 3&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">0</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;牛奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;酸奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">40</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;矿泉水&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">2</span>,<span class="attr">num</span>:<span class="number">5</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;毛巾&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">10</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>自定义文档的结构，可以用来重命名、增加或删除文档中的字段</p>
+<p>查找 order 只返回文档中 trade_no 和 all_price 字段</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            trade_no: <span class="number">1</span>,</span><br><span class="line">            all_price: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>过滤。用法类似于 <code>find()</code> 方法中的参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123; <span class="attr">all_price</span>: &#123; <span class="attr">$gte</span>: <span class="number">90</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>分组，可用于统计结果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.order_item.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123; <span class="attr">_id</span>: <span class="string">&#x27;$order_id&#x27;</span>, <span class="attr">total</span>: &#123; <span class="attr">$sum</span>: <span class="string">&#x27;$num&#x27;</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><p>排序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $sort: &#123; <span class="attr">all_price</span>: -<span class="number">1</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="limit"><a href="#limit" class="headerlink" title="$limit"></a>$limit</h2><p>限制数量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $limit: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="skip"><a href="#skip" class="headerlink" title="$skip"></a>$skip</h2><p>跳过</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $skip: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>表关联</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123;</span><br><span class="line">            all_price: &#123;</span><br><span class="line">                $gt: <span class="number">90</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            items: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="next" title="二进制">
+                  二进制 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZV</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
