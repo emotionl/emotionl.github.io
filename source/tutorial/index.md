@@ -39,7 +39,7 @@ date: 2020-12-29 13:53:08
 
 - [Awesome JavaScript](https://github.com/sorrycc/awesome-javascript)
 - [JavaScript 20 年](https://cn.history.js.org/)
-- [Javascript 现代教程](http://zh.javascript.info/)
+- [JavaScript 现代教程](http://zh.javascript.info/)
 - [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
 - [木易杨前端进阶](https://muyiy.cn/)
 - [前端进阶之道](https://yuchengkai.cn/docs/frontend/)
