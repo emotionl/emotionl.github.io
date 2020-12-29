@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="开发规范 项目规范  技术提升 有哪些必看的 JS 库？ - 若川的回答 - 知乎 可视化拖拽组件库一些技术要点原理分析 JavaScript 里的奇葩知识 早知道 CSS 有这 5 个伪元素，代码也不至于写那么复杂了！ 「一次写过瘾」手写 Promise 全家桶 + Generator + Async &#x2F; Await 8个非常实用的 Vue 自定义指令 Vue 源码中值得学习的方法 Vue 开发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="文章">
+<meta property="og:url" content="http://example.com/article/index.html">
+<meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:description" content="开发规范 项目规范  技术提升 有哪些必看的 JS 库？ - 若川的回答 - 知乎 可视化拖拽组件库一些技术要点原理分析 JavaScript 里的奇葩知识 早知道 CSS 有这 5 个伪元素，代码也不至于写那么复杂了！ 「一次写过瘾」手写 Promise 全家桶 + Generator + Async &#x2F; Await 8个非常实用的 Vue 自定义指令 Vue 源码中值得学习的方法 Vue 开发">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-29T18:17:18.000Z">
+<meta property="article:modified_time" content="2020-12-29T16:36:33.612Z">
+<meta property="article:author" content="ZV">
+<meta property="article:tag" content="👨‍💻🎸🍺">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/article/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>文章 | ZV-Blogs
+</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZV-Blogs</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">致过去的时光</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-归档">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-教程">
+
+    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
+
+  </li>
+        <li class="menu-item menu-item-站点">
+
+    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
+
+  </li>
+        <li class="menu-item menu-item-文章">
+
+    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83"><span class="nav-number">1.</span> <span class="nav-text">开发规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87"><span class="nav-number">2.</span> <span class="nav-text">技术提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%90%BD%E5%9C%B0%E5%AE%9E%E8%B7%B5"><span class="nav-number">3.</span> <span class="nav-text">落地实践</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZV"
+      src="/images/guitar.svg">
+  <p class="site-author-name" itemprop="name">ZV</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+  
+  
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">文章
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md">项目规范</a></li>
+</ul>
+<h2 id="技术提升"><a href="#技术提升" class="headerlink" title="技术提升"></a>技术提升</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/429436558/answer/1575251772">有哪些必看的 JS 库？ - 若川的回答 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6908502083075325959">可视化拖拽组件库一些技术要点原理分析</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023941089">JavaScript 里的奇葩知识</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/_aRkgMtek31KRkotPUOcHQ">早知道 CSS 有这 5 个伪元素，代码也不至于写那么复杂了！</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038537123">「一次写过瘾」手写 Promise 全家桶 + Generator + Async / Await</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6906028995133833230">8个非常实用的 Vue 自定义指令</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000025157159">Vue 源码中值得学习的方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020620972">Vue 开发必须知道的 36 个技巧</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Css/Css.md">CSS 面试知识点总结</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OlrRhVTivnvIMKvTyVh93Q">前端入门机器学习 Tensorflow.js 简明教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6865557155102064648">Node 模块之战：为什么 CommonJS 和 ES Module 不能共存</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Y0ZBxpGdlr3fE8BtkjtvGw">可视化库的设计空间</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ix_odYG5S1l99bpjk_0rlw">你不知道的 React Hooks</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/p2vLrtfdoxrMEYDNuViIEA">面试再被问到，别说小鹿没给你整理</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LG4ZVfvbiB7cxLah3L09Kw">我在 BAT 写 React 是如何进行性能优化的</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ui0qaMup-KWXiz3RBM14Kw">开源富文本编辑器技术的演进</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jZD2yn20bqdSBeiK-qLCQQ">JavaScript 代码加不加分号有什么区别</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/s6fVoY31MqUXrW8RPka3pA">编写高质量可维护的代码：异步优化</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/CyWuIcad9jb7OVhgdYT6Aw">你不知道的 Webkit 内核</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/K23rEdntvw-9N1FkohfDpA">4 个未听说过的强大 JavaScript 操作符</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/-62WEoFxdHPpNbpI8nDSAA">动手写一个 JavaScript 解释器</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/6WB_pUwJ9y1XQbJ2MmVORg">探讨浏览器指纹</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q">助力打工人！20个数组reduce高级用法</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6895214607170797582">React 的7种代码异味</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/skMG5kLdjXB7H-74K9ltew">跨域，不止CORS</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/6U8zMpnBk9nBI_bQAobdfw">编写高质量可维护的代码：组件的抽象与粒度</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/NuZyCgDwEqrZ0GNrkQNsuA">来 45 道 Promise 面试题一次爽到底</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/danistefanovic/build-your-own-x">封神之作！Github 84k+点赞！一个手把手教你造轮子的项目！</a></li>
+</ul>
+<h2 id="落地实践"><a href="#落地实践" class="headerlink" title="落地实践"></a>落地实践</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903938051964941">移动 Web 最佳实践</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6911496724938752007">最全汇总之微前端知识和实战（EMP技术方案）</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md">Node.js 最佳实践</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6905913200060366862">捕获用户在该页面停留的时长，我是这样做的（前端监测）</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/yzJt4y2WRXdI4zoCalYd2Q">敏感数据加密方案及实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ulrxuaYiCF7dcDzX1mHOuw">如何使用 JavaScript 实现前端导入和导出 Excel 文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6845166891393089544">前端登录，这一篇就够了</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ny5ThbZmM5hzwn1k7defFQ">史上最详细浏览器端网页截图方案解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/w_RPZ05XPlZsmG_I6SOhoA">使用 Vue3 和 TypeScript 重构740+ Star WebSocket 插件</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/dMYAeHuczAuOsc3UCcnRyw">响应式布局新方案</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000037752931">手把手带你入门前端工程化 - 超详细教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qsrwU6bPTVK6JY-czvXhgQ">Web 现代应用程序架构下的性能优化，渐进式的极致艺术</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/HCLon99kKPz_e14O3uUUTw">聊一聊如何搭建高性能网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/nJZk-0WtEW6C8mTeJCSUzQ">如何搭建一套 “无痕埋点” 体系？</a></li>
+</ul>
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZV</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
