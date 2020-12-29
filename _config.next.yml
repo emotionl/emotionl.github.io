@@ -83,6 +83,7 @@ menu:
   home: / || fa fa-home  
   tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
+  教程: /tutorial/ || fa fa-code
   常用站点: /websites/ || fa fa-star
   # about: /about/ || fa fa-user
   # categories: /categories/ || fa fa-th
