@@ -80,11 +80,12 @@ creative_commons:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  home: / || fa fa-home  
-  tags: /tags/ || fa fa-tags
-  archives: /archives/ || fa fa-archive
+  首页: / || fa fa-home  
+  标签: /tags/ || fa fa-tags
+  归档: /archives/ || fa fa-archive
   教程: /tutorial/ || fa fa-code
-  常用站点: /websites/ || fa fa-star
+  站点: /websites/ || fa fa-star
+  文章: /article/ || fa fa-newspaper
   # about: /about/ || fa fa-user
   # categories: /categories/ || fa fa-th
   # schedule: /schedule/ || fa fa-calendar
