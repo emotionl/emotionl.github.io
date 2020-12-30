@@ -54,7 +54,6 @@ date: 2020-12-29 13:53:08
 - [learnlayout - 学习 CSS 布局](https://learnlayout.com/)
 - [Learn to Code Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
 - [You-need-to-know-css - Web 开发者应该掌握的 CSS tricks](https://lhammer.cn/You-need-to-know-css/#/)
-- [迅速提高设计美感，你需要这七个“作弊”小窍门](http://libx.fun/2019/04/19/design/)
 - [30 Seconds of CSS - 三十秒 CSS 教程](https://30-seconds.github.io/30-seconds-of-css/)
 - [comehope - 前端每日实战](https://segmentfault.com/u/comehope)
 - [Online Tutorials - CSS 特效教程](https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog)
