@@ -8,6 +8,8 @@ date: 2020-12-29 18:17:18
 - [项目规范](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
 - [编写高质量可维护的代码：一目了然的注释](https://mp.weixin.qq.com/s/4Qq3-QFdyurL2ajbi4N0oQ)
 - [最强代码规范之-理解 ESLint、Prettier、EditorConfig](https://mp.weixin.qq.com/s/A1nx4T1KcS6pjjgnWXwKig)
+- [阿里前端开发规范](https://w3ctim.com/post/1d821dd8)
+- [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
 
 ## 技术
 
@@ -21,6 +23,8 @@ date: 2020-12-29 18:17:18
 - [Lodash 严重安全漏洞背后 你不得不知道的 JavaScript 知识](https://zhuanlan.zhihu.com/p/73186974)
 - [编写高质量可维护的代码：异步优化](https://mp.weixin.qq.com/s/s6fVoY31MqUXrW8RPka3pA)
 - [4 个未听说过的强大 JavaScript 操作符](https://mp.weixin.qq.com/s/K23rEdntvw-9N1FkohfDpA)
+- [总结了工作中常用的 ES6 代码片段，整理后的 24 个值得拥有](https://juejin.cn/post/6906398702269628424)
+- [重磅！超详细的 JS 数组方法整理出来了](https://juejin.cn/post/6907109642917117965)
 - [动图学 JavaScript 之：JS 引擎原理](https://segmentfault.com/a/1190000021507035)
 - [动图学 JavaScript 之：原型继承](https://segmentfault.com/a/1190000021584179)
 - [动图学 JavaScript 之：事件循环（Event Loop）](https://segmentfault.com/a/1190000021445387)
@@ -30,9 +34,13 @@ date: 2020-12-29 18:17:18
 - [写好 JS 条件语句的 5 条守则](https://mp.weixin.qq.com/s/84R1C5_NngJBwrpyXBXX6w)
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
 - [TS 学习指南，从零学到熟练](https://mp.weixin.qq.com/s/Zxu6CQBwdBXGAd-D-UtVhQ)
+- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
+- [Node.js 实现抢票小工具&短信通知提醒](https://mp.weixin.qq.com/s/BWPaFI1Pakm-ucZ8OeUL4A)
+- [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s/aMU_WpTeKTXdyP84WSh4ew)
 
 ### CSS
 
+- [CSS 现状和如何学习](https://mp.weixin.qq.com/s/1Zg1sQyP186UNpr2GtDvqw)
 - [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
 - [响应式布局新方案](https://mp.weixin.qq.com/s/dMYAeHuczAuOsc3UCcnRyw)
 - [关于移动端适配，你必须要知道的](https://mp.weixin.qq.com/s/j-Q3NMe2ZgCAaeomqbK49A)
@@ -43,9 +51,12 @@ date: 2020-12-29 18:17:18
 - [一行 CSS 为网页添加暗黑模式支持](https://mp.weixin.qq.com/s/1Rr-t-M6E5kJr7_2h1GPCA)
 - [CSS 变量对 JS 交互组件开发带来的提升与变革](https://mp.weixin.qq.com/s/MjzeeFr7pglIRzcZ27xwgQ)
 - [你不知道的 Animation 动画技巧与细节](https://mp.weixin.qq.com/s/-bFPU7Yi-DlFlUqjv15lgQ)
+- [冬天到了，女朋友想让我的网站也下雪，我立马打开电脑撸代码…](https://mp.weixin.qq.com/s/9lsQAYR7y3X8SJ0dkKeslQ)
+- [牛 B！纯 CSS 制作赛博朋克 2077 “故障风”按钮](https://juejin.cn/post/6908565208596217863)
 
 ### 框架
 
+- [React 组件到底什么时候 render 啊](https://mp.weixin.qq.com/s/pd4Gf8h4_4zKn8SoEDgz2A)
 - [我在 BAT 写 React 是如何进行性能优化的](https://mp.weixin.qq.com/s/LG4ZVfvbiB7cxLah3L09Kw)
 - [React 的 7 种代码异味](https://juejin.cn/post/6895214607170797582)
 - [从 Loading 的 9 种写法谈 React 业务开发](https://mp.weixin.qq.com/s/wot_4KmwrK8uNsK4YsBQ5g)
@@ -78,7 +89,6 @@ date: 2020-12-29 18:17:18
 - [探讨浏览器指纹](https://mp.weixin.qq.com/s/6WB_pUwJ9y1XQbJ2MmVORg)
 - [跨域，不止 CORS](https://mp.weixin.qq.com/s/skMG5kLdjXB7H-74K9ltew)
 - [还分不清 Cookie、Session、Token、JWT？](https://zhuanlan.zhihu.com/p/164696755?utm_source=wechat_session&utm_medium=social&utm_oi=55977860661248)
-- [偷偷告诉你，Chrome 自带的小恐龙游戏，被我破解了...](https://mp.weixin.qq.com/s/PQkY9CGDyfYN4skJ3waUYg)
 - [动图学 CORS](https://juejin.cn/post/6856556746706518024)
 - [动图学 Git](https://mp.weixin.qq.com/s/CwO2owC0t8sMnuSOoEyebw)
 - [图解你身边的 SOLID 原则](https://segmentfault.com/a/1190000022384751)
@@ -86,6 +96,9 @@ date: 2020-12-29 18:17:18
 - [移动 Web 最佳实践](https://juejin.cn/post/6844903938051964941)
 - [Node.js 最佳实践](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md)
 - [Github 上怎么修改别人的项目并且提交给原作者！图文并茂！](https://blog.csdn.net/qq_26787115/article/details/52133008)
+- [恕我直言，你可能连 GitHub 搜索都不会用 - 如何精准搜索的神仙技巧](https://mp.weixin.qq.com/s/deQd0VgxfWhfFl084KgYrA)
+- [偷偷告诉你，Chrome 自带的小恐龙游戏，被我破解了...](https://mp.weixin.qq.com/s/PQkY9CGDyfYN4skJ3waUYg)
+- [初学前端用代码实现一个网页老虎机游戏](https://mp.weixin.qq.com/s/F4nenflGD28bqkSwGa7Ayw)
 
 ### 教程
 
@@ -101,6 +114,7 @@ date: 2020-12-29 18:17:18
 - [唤起 App 在转转的实践](https://mp.weixin.qq.com/s/TdaIZbHR0-7NBK1LFR4nRQ)
 - [如何实现前端导入和导出 Excel 文件](https://mp.weixin.qq.com/s/ulrxuaYiCF7dcDzX1mHOuw)
 - [我的 input 不可能这么可爱](https://juejin.cn/post/6844903933287071751)
+- [仅靠 H5 标签就能实现收拉效果？我说的是真的！](https://juejin.cn/post/6912374170743472135)
 
 ## 设计/架构
 
