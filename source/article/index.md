@@ -102,12 +102,12 @@ date: 2020-12-29 18:17:18
 - [Github 上怎么修改别人的项目并且提交给原作者！图文并茂！](https://blog.csdn.net/qq_26787115/article/details/52133008)
 - [恕我直言，你可能连 GitHub 搜索都不会用 - 如何精准搜索的神仙技巧](https://mp.weixin.qq.com/s/deQd0VgxfWhfFl084KgYrA)
 
-## 网路
+## 网络
 
-- [动图学 CORS](https://juejin.cn/post/6856556746706518024)
 - [带你看看从输入 URL 到页面显示背后的故事](https://mp.weixin.qq.com/s/QV0ozPPSvcvINtaLmNCY9w)
-- [GET 和 POST 请求的本质区别是什么？](https://mp.weixin.qq.com/s/UK9XlxOOsSt4h6xAhcGuDQ)
+- [动图学 CORS](https://juejin.cn/post/6856556746706518024)
 - [跨域，不止 CORS](https://mp.weixin.qq.com/s/skMG5kLdjXB7H-74K9ltew)
+- [GET 和 POST 请求的本质区别是什么？](https://mp.weixin.qq.com/s/UK9XlxOOsSt4h6xAhcGuDQ)
 - [还分不清 Cookie、Session、Token、JWT？](https://zhuanlan.zhihu.com/p/164696755?utm_source=wechat_session&utm_medium=social&utm_oi=55977860661248)
 
 ## 文档
