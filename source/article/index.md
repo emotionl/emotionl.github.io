@@ -11,9 +11,7 @@ date: 2020-12-29 18:17:18
 - [阿里前端开发规范](https://w3ctim.com/post/1d821dd8)
 - [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
 
-## 技术
-
-### JavaScript/TypeScript/Node.js
+## JavaScript/TypeScript/Node.js
 
 - [有哪些必看的 JavaScript 库](https://www.zhihu.com/question/429436558/answer/1575251772)
 - [前端网红框架的插件机制全梳理（Axios、Koa、Redux、Vuex）](https://mp.weixin.qq.com/s/8vxF3dqspsxS4-KPYfqNtg)
@@ -34,12 +32,15 @@ date: 2020-12-29 18:17:18
 - [写好 JS 条件语句的 5 条守则](https://mp.weixin.qq.com/s/84R1C5_NngJBwrpyXBXX6w)
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
 - [TS 学习指南，从零学到熟练](https://mp.weixin.qq.com/s/Zxu6CQBwdBXGAd-D-UtVhQ)
-- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
+- [你不知道的 TypeScript 泛型](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
+- [编写高质量可维护的代码：Awesome TypeScript](https://mp.weixin.qq.com/s/gAwvcmSNYMwQKk6RY-GaEw)
 - [Node.js 实现抢票小工具&短信通知提醒](https://mp.weixin.qq.com/s/BWPaFI1Pakm-ucZ8OeUL4A)
 - [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s/aMU_WpTeKTXdyP84WSh4ew)
 
-### CSS
+## HTML/CSS
 
+- [我的 input 不可能这么可爱](https://juejin.cn/post/6844903933287071751)
+- [仅靠 H5 标签就能实现收拉效果？我说的是真的！](https://juejin.cn/post/6912374170743472135)
 - [CSS 现状和如何学习](https://mp.weixin.qq.com/s/1Zg1sQyP186UNpr2GtDvqw)
 - [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
 - [响应式布局新方案](https://mp.weixin.qq.com/s/dMYAeHuczAuOsc3UCcnRyw)
@@ -51,10 +52,9 @@ date: 2020-12-29 18:17:18
 - [一行 CSS 为网页添加暗黑模式支持](https://mp.weixin.qq.com/s/1Rr-t-M6E5kJr7_2h1GPCA)
 - [CSS 变量对 JS 交互组件开发带来的提升与变革](https://mp.weixin.qq.com/s/MjzeeFr7pglIRzcZ27xwgQ)
 - [你不知道的 Animation 动画技巧与细节](https://mp.weixin.qq.com/s/-bFPU7Yi-DlFlUqjv15lgQ)
-- [冬天到了，女朋友想让我的网站也下雪，我立马打开电脑撸代码…](https://mp.weixin.qq.com/s/9lsQAYR7y3X8SJ0dkKeslQ)
-- [牛 B！纯 CSS 制作赛博朋克 2077 “故障风”按钮](https://juejin.cn/post/6908565208596217863)
+- [纯 CSS 制作赛博朋克 2077 “故障风”按钮](https://juejin.cn/post/6908565208596217863)
 
-### 框架
+## 框架
 
 - [React 组件到底什么时候 render 啊](https://mp.weixin.qq.com/s/pd4Gf8h4_4zKn8SoEDgz2A)
 - [我在 BAT 写 React 是如何进行性能优化的](https://mp.weixin.qq.com/s/LG4ZVfvbiB7cxLah3L09Kw)
@@ -62,64 +62,77 @@ date: 2020-12-29 18:17:18
 - [从 Loading 的 9 种写法谈 React 业务开发](https://mp.weixin.qq.com/s/wot_4KmwrK8uNsK4YsBQ5g)
 - [你不知道的 React Hooks](https://mp.weixin.qq.com/s/ix_odYG5S1l99bpjk_0rlw)
 - [这就是你日思夜想的 React 原生动态加载](https://mp.weixin.qq.com/s/l_kv6rzUXSF3R9bfIko5BQ)
+- [新搭建一个 Vue 项目后，我有了这 15 点思考](https://juejin.cn/post/6901466994478940168)
 - [Vue 源码中值得学习的方法](https://segmentfault.com/a/1190000025157159)
+- [Vue.js 中那些空间换时间的操作](https://mp.weixin.qq.com/s/iLn-cGMVxbLBye1HCJaIjA)
 - [Vue 开发必须知道的 36 个技巧](https://segmentfault.com/a/1190000020620972)
 - [使用 Vue3 和 TypeScript 重构 740+ Star WebSocket 插件](https://mp.weixin.qq.com/s/w_RPZ05XPlZsmG_I6SOhoA)
 - [使用 Vue 自定义指令实现右键菜单](https://mp.weixin.qq.com/s/8Ol9iZQd_UIxvrShkox15Q)
 - [8 个非常实用的 Vue 自定义指令](https://juejin.cn/post/6906028995133833230)
 
-### 模块/打包
+## 模块/打包
 
-- [你的 import 被 webpack 编译成了什么？](https://juejin.cn/post/6859569958742196237)
+- [你的 import 被 Webpack 编译成了什么？](https://juejin.cn/post/6859569958742196237)
 - [Node 模块之战：为什么 CommonJS 和 ES Module 不能共存](https://juejin.cn/post/6865557155102064648)
 - [看了就懂的 AST 和 Babel 工作流程](https://mp.weixin.qq.com/s/m-EJljsARM5dUlu-IXJnKQ)
 - [JavaScript 代码加不加分号有什么区别](https://mp.weixin.qq.com/s/jZD2yn20bqdSBeiK-qLCQQ)
 - [动手写一个 JavaScript 解释器](https://mp.weixin.qq.com/s/-62WEoFxdHPpNbpI8nDSAA)
 - [npm 依赖管理中被忽略的那些细节](https://mp.weixin.qq.com/s/JHDVh9wGj_YaTLtSz4AH7g)
+- [CodeSandbox 浏览器端的 Webpack 是如何工作的？ 上篇](https://juejin.cn/post/6844903880652750862)
 
-### 错误处理
+## 错误处理
 
 - [JavaScript 错误处理大全](https://segmentfault.com/a/1190000024442361)
 - [如何优雅处理前端异常？](https://mp.weixin.qq.com/s/8PUD0qYGnKMjBDysogEhWg)
 
-### 拓展
+## 拓展
 
 - [开源富文本编辑器技术的演进](https://mp.weixin.qq.com/s/Ui0qaMup-KWXiz3RBM14Kw)
+- [实现一个简易版在线集成开发环境(IDE)](https://vince.xin/2019/11/02/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%89%88%E5%9C%A8%E7%BA%BF%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-IDE/)
 - [你不知道的 Webkit 内核](https://mp.weixin.qq.com/s/CyWuIcad9jb7OVhgdYT6Aw)
 - [探讨浏览器指纹](https://mp.weixin.qq.com/s/6WB_pUwJ9y1XQbJ2MmVORg)
-- [跨域，不止 CORS](https://mp.weixin.qq.com/s/skMG5kLdjXB7H-74K9ltew)
-- [还分不清 Cookie、Session、Token、JWT？](https://zhuanlan.zhihu.com/p/164696755?utm_source=wechat_session&utm_medium=social&utm_oi=55977860661248)
-- [动图学 CORS](https://juejin.cn/post/6856556746706518024)
-- [动图学 Git](https://mp.weixin.qq.com/s/CwO2owC0t8sMnuSOoEyebw)
 - [图解你身边的 SOLID 原则](https://segmentfault.com/a/1190000022384751)
 - [图解你身边的 SOLID 原则 - JS 实例版](https://segmentfault.com/a/1190000022436472)
 - [移动 Web 最佳实践](https://juejin.cn/post/6844903938051964941)
 - [Node.js 最佳实践](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md)
+
+## GIT/Github
+
+- [动图学 Git](https://mp.weixin.qq.com/s/CwO2owC0t8sMnuSOoEyebw)
 - [Github 上怎么修改别人的项目并且提交给原作者！图文并茂！](https://blog.csdn.net/qq_26787115/article/details/52133008)
 - [恕我直言，你可能连 GitHub 搜索都不会用 - 如何精准搜索的神仙技巧](https://mp.weixin.qq.com/s/deQd0VgxfWhfFl084KgYrA)
-- [偷偷告诉你，Chrome 自带的小恐龙游戏，被我破解了...](https://mp.weixin.qq.com/s/PQkY9CGDyfYN4skJ3waUYg)
-- [初学前端用代码实现一个网页老虎机游戏](https://mp.weixin.qq.com/s/F4nenflGD28bqkSwGa7Ayw)
 
-### 教程
+## 网路
 
-- [前端入门机器学习 Tensorflow.js 简明教程](https://mp.weixin.qq.com/s/OlrRhVTivnvIMKvTyVh93Q)
-- [全网最详 bpmn.js 教材目录](https://juejin.cn/post/6844904017567416328)
-- [Github 84k Star 一个手把手教你造轮子的项目！](https://github.com/danistefanovic/build-your-own-x)
+- [动图学 CORS](https://juejin.cn/post/6856556746706518024)
+- [带你看看从输入 URL 到页面显示背后的故事](https://mp.weixin.qq.com/s/QV0ozPPSvcvINtaLmNCY9w)
+- [GET 和 POST 请求的本质区别是什么？](https://mp.weixin.qq.com/s/UK9XlxOOsSt4h6xAhcGuDQ)
+- [跨域，不止 CORS](https://mp.weixin.qq.com/s/skMG5kLdjXB7H-74K9ltew)
+- [还分不清 Cookie、Session、Token、JWT？](https://zhuanlan.zhihu.com/p/164696755?utm_source=wechat_session&utm_medium=social&utm_oi=55977860661248)
 
-### 难点
+## 文档
+
+- [什么是好用的 API 文档](https://zhuanlan.zhihu.com/p/36729484)
+- [如何写一个通用的 README 规范](https://juejin.im/post/5aaa06e4f265da237b21cf63)
+- [如何写一个高逼格 README](https://juejin.im/post/5abc4c0d6fb9a028d3757884)
+- [使用 Gitbook 打造你的电子书](https://blog.csdn.net/stu059074244/article/details/77767835?tdsourcetag=s_pctim_aiomsg)
+- [中文技术文档的写作规范](http://www.ruanyifeng.com/blog/2016/10/document_style_guide.html)
+- [收集一些好的技术文档](https://segmentfault.com/a/1190000008177780)
+- [What nobody tells you about documentation](https://www.divio.com/blog/documentation/)
+
+## 难点
 
 - [可视化拖拽组件库一些技术要点原理分析](https://juejin.cn/post/6908502083075325959)
 - [史上最详细浏览器端网页截图方案解析](https://mp.weixin.qq.com/s/Ny5ThbZmM5hzwn1k7defFQ)
 - [正则表达式是如何让你的网页卡住的](https://segmentfault.com/a/1190000038320217)
 - [唤起 App 在转转的实践](https://mp.weixin.qq.com/s/TdaIZbHR0-7NBK1LFR4nRQ)
 - [如何实现前端导入和导出 Excel 文件](https://mp.weixin.qq.com/s/ulrxuaYiCF7dcDzX1mHOuw)
-- [我的 input 不可能这么可爱](https://juejin.cn/post/6844903933287071751)
-- [仅靠 H5 标签就能实现收拉效果？我说的是真的！](https://juejin.cn/post/6912374170743472135)
 
-## 设计/架构
+## 架构/设计
 
 - [最全汇总之微前端知识和实战（EMP 技术方案）](https://juejin.cn/post/6911496724938752007)
 - [捕获用户在该页面停留的时长，我是这样做的（前端监测）](https://juejin.cn/post/6905913200060366862)
+- [埋点自动收集方案-路由依赖分析](https://mp.weixin.qq.com/s/IQ19WporiQKodHVvsHMMlw)
 - [敏感数据加密方案及实现](https://mp.weixin.qq.com/s/yzJt4y2WRXdI4zoCalYd2Q)
 - [前端登录，这一篇就够了](https://juejin.cn/post/6845166891393089544)
 - [手把手带你入门前端工程化](https://segmentfault.com/a/1190000037752931)
@@ -134,6 +147,15 @@ date: 2020-12-29 18:17:18
 - [做 B 端后台产品很复杂？一份完整的设计流程和规范](https://mp.weixin.qq.com/s/Bczkng_9kKWhIZa0z21KlQ)
 - [设计 B 端后台，必须搞清楚这些组件(一)](https://mp.weixin.qq.com/s/38kYTW1NJ8eSzht4WpvpZQ)
 - [从第一代 iPhone 细数到 iPhone 12，iPhone 屏幕尺寸进化历程背后的 app 设计哲学](https://mp.weixin.qq.com/s/a_oa8K17npsOM34O7Nq3Fw)
+
+## 有趣
+
+- [偷偷告诉你，Chrome 自带的小恐龙游戏，被我破解了...](https://mp.weixin.qq.com/s/PQkY9CGDyfYN4skJ3waUYg)
+- [初学前端用代码实现一个网页老虎机游戏](https://mp.weixin.qq.com/s/F4nenflGD28bqkSwGa7Ayw)
+- [冬天到了，女朋友想让我的网站也下雪，我立马打开电脑撸代码…](https://mp.weixin.qq.com/s/9lsQAYR7y3X8SJ0dkKeslQ)
+- [JavaScript 那些写出来会被同事揍的骚操作](https://mp.weixin.qq.com/s/rfsHwY6lNA1pn6BftgZH4Q)
+- [老码农冒死揭开行业黑幕：如何编写无法维护的代码](https://zhuanlan.zhihu.com/p/35157406)
+- [中国程序员开发的抢茅台脚本，在 Github 上霸榜了](https://mp.weixin.qq.com/s/Al4xNRdfBUy_wkp-SD0KgA)
 
 ## 总结
 

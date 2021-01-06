@@ -28,7 +28,6 @@ date: 2020-12-29 13:53:08
 
 - [Learn Git Branching - 交互式 GIT 教程](https://learngitbranching.js.org/)
 - [Backlog - 猴子都能懂的 GIT 入门](https://backlog.com/git-tutorial/cn/)
-- [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
 
 ## 正则表达式
 
@@ -63,13 +62,10 @@ date: 2020-12-29 13:53:08
 - [Learn D3 for free - 学习 D3](https://scrimba.com/g/gd3js)
 - [D3.js Graph Gallery - D3 Gallery](https://www.d3-graph-gallery.com/)
 - [SVG Tutorial - SVG 入门教程](https://svg.brucewar.cn/)
+- [全网最详 bpmn.js 教材目录](https://juejin.cn/post/6844904017567416328)
 
-## 文档
+## 其他
 
-- [什么是好用的 API 文档](https://zhuanlan.zhihu.com/p/36729484)
-- [如何写一个通用的 README 规范](https://juejin.im/post/5aaa06e4f265da237b21cf63)
-- [如何写一个高逼格 README](https://juejin.im/post/5abc4c0d6fb9a028d3757884)
-- [使用 Gitbook 打造你的电子书](https://blog.csdn.net/stu059074244/article/details/77767835?tdsourcetag=s_pctim_aiomsg)
-- [中文技术文档的写作规范](http://www.ruanyifeng.com/blog/2016/10/document_style_guide.html)
-- [收集一些好的技术文档](https://segmentfault.com/a/1190000008177780)
-- [What nobody tells you about documentation](https://www.divio.com/blog/documentation/)
+- [前端入门机器学习 Tensorflow.js 简明教程](https://mp.weixin.qq.com/s/OlrRhVTivnvIMKvTyVh93Q)
+- [Github 84k Star 一个手把手教你造轮子的项目！](https://github.com/danistefanovic/build-your-own-x)
+- [Sonic PI 教程](https://www.bilibili.com/video/av47554214/)
