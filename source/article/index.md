@@ -70,6 +70,7 @@ date: 2020-12-29 18:17:18
 - [8 个非常实用的 Vue 自定义指令](https://juejin.cn/post/6906028995133833230)
 - [使用 Vue3 和 TypeScript 重构 740+ Star WebSocket 插件](https://mp.weixin.qq.com/s/w_RPZ05XPlZsmG_I6SOhoA)
 - [深入解析 Vue 3 组件库 Element-Plus 架构源码](https://mp.weixin.qq.com/s/yC2Xc1V5H-m7YSKo_YMq1w)
+- [从 0 到 1 封装表单组件(TypeScript + Vue3)](https://mp.weixin.qq.com/s/f8u_1cXo3n_Ugh76vpBRcg)
 
 ## 模块/打包
 
