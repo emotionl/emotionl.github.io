@@ -22,17 +22,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZV-Blogs">
-<meta property="og:url" content="http://example.com/archives/page/3/index.html">
+<meta name="description" content="背景在实验 Vue3 的时候，提示 Error: Cannot find module &#39;vue-loader-v16&#x2F;package.json&#39;，排查后发现是Node.js npm的问题于是安装了最新的 14.15.4 LTS，但是在解决完 Vue3的问题后，使用 npm打包老项目又挂了，所以决定使用 nvm去管理 Node.js的版本 安装因为是使用 windows开发，所以使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用nvm管理Node.js版本">
+<meta property="og:url" content="http://example.com/2021/01/07/%E4%BD%BF%E7%94%A8nvm%E7%AE%A1%E7%90%86Node-js%E7%89%88%E6%9C%AC/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:description" content="背景在实验 Vue3 的时候，提示 Error: Cannot find module &#39;vue-loader-v16&#x2F;package.json&#39;，排查后发现是Node.js npm的问题于是安装了最新的 14.15.4 LTS，但是在解决完 Vue3的问题后，使用 npm打包老项目又挂了，所以决定使用 nvm去管理 Node.js的版本 安装因为是使用 windows开发，所以使">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-07T17:12:09.000Z">
+<meta property="article:modified_time" content="2021-01-08T05:35:45.957Z">
 <meta property="article:author" content="ZV">
-<meta property="article:tag" content="👨‍💻🎸🍺">
+<meta property="article:tag" content="Node.js">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/page/3/">
+<link rel="canonical" href="http://example.com/2021/01/07/%E4%BD%BF%E7%94%A8nvm%E7%AE%A1%E7%90%86Node-js%E7%89%88%E6%9C%AC/">
 
 
 <script class="page-configurations">
@@ -40,11 +44,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>归档 | ZV-Blogs</title>
+<title>使用nvm管理Node.js版本 | ZV-Blogs</title>
   
 
 
@@ -167,7 +171,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -180,6 +184,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -228,233 +233,106 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/07/%E4%BD%BF%E7%94%A8nvm%E7%AE%A1%E7%90%86Node-js%E7%89%88%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用nvm管理Node.js版本
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-07 17:12:09" itemprop="dateCreated datePublished" datetime="2021-01-07T17:12:09+00:00">2021-01-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在实验 <code>Vue3</code> 的时候，提示 <code>Error: Cannot find module &#39;vue-loader-v16/package.json&#39;</code>，排查后发现是<code>Node.js npm</code>的问题于是安装了最新的 <code>14.15.4 LTS</code>，但是在解决完 <code>Vue3</code>的问题后，使用 <code>npm</code>打包老项目又挂了，所以决定使用 <code>nvm</code>去管理 <code>Node.js</code>的版本</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>因为是使用 <code>windows</code>开发，所以使用 <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a>，版本选择最新的就可以。</p>
+<p>安装完毕之后，需要去 <code>C:\Users\&#123;用户名&#125;\AppData\Roaming\nvm</code>目录下，给 <code>settings.txt</code>添加 <code>node_mirror</code>和 <code>npm_mirror</code>配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root: C:\Users\emotionl\AppData\Roaming\nvm</span><br><span class="line">path: D:\Program Files\nodejs</span><br><span class="line">node_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;</span><br><span class="line">npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装想要使用的 Node.js 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install &lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看已安装的 Node.js 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list [available]  </span><br></pre></td></tr></table></figure>
+
+<p>使用已经安装的 Node.js 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use [version]</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
         
-        <span class="collection-header">还行! 目前共计 33 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-24T00:00:00+00:00"
-              content="2019-12-24">
-          12-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/24/%E5%88%86%E6%9E%90%E4%B8%80%E4%B8%8B%E8%BF%99%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" itemprop="url">
-            <span itemprop="name">分析一下这段代码的时间复杂度</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/26/%E8%AF%95%E8%AF%95%20Proxy%20%E5%92%8C%20Reflect/" rel="prev" title="试试 Proxy 和 Reflect">
+                  <i class="fa fa-chevron-left"></i> 试试 Proxy 和 Reflect
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-19T00:00:00+00:00"
-              content="2019-12-19">
-          12-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/19/%E6%88%91%E7%9A%84Prettier%E9%85%8D%E7%BD%AE/" itemprop="url">
-            <span itemprop="name">我的 Prettier 设置</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-11-21T00:00:00+00:00"
-              content="2019-11-21">
-          11-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/11/21/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90/" itemprop="url">
-            <span itemprop="name">前端项目中的路径解析</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-10-16T00:00:00+00:00"
-              content="2019-10-16">
-          10-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/10/16/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/" itemprop="url">
-            <span itemprop="name">字符串的比较</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-09-04T00:00:00+00:00"
-              content="2019-09-04">
-          09-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/04/%E8%87%AA%E5%AE%9A%E4%B9%89Linux%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/" itemprop="url">
-            <span itemprop="name">自定义Linux登录页面</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-27T00:00:00+00:00"
-              content="2019-08-27">
-          08-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/27/Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" itemprop="url">
-            <span itemprop="name">Nginx 反向代理</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-27T00:00:00+00:00"
-              content="2019-08-27">
-          08-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/27/GoAccess%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" itemprop="url">
-            <span itemprop="name">GoAccess使用指北</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-26T00:00:00+00:00"
-              content="2019-08-26">
-          08-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/" itemprop="url">
-            <span itemprop="name">二进制</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-26T00:00:00+00:00"
-              content="2019-08-26">
-          08-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" itemprop="url">
-            <span itemprop="name">迭代法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-26T00:00:00+00:00"
-              content="2019-08-26">
-          08-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/" itemprop="url">
-            <span itemprop="name">小试 MongoDB</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+
+
+
 
 
 <script>

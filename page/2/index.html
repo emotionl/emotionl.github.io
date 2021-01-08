@@ -194,13 +194,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -229,6 +229,85 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B3/" class="post-title-link" itemprop="url">正则案例3</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-28 00:00:02" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:02+00:00">2020-05-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>提取字符串中的指定片段</p>
+<p>处理前</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> text = <span class="string">`1234@Chesh我ire我 f我（qegqg3(2604)  @Cheshire fqegqg3(2604)@(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@张=阿萨德(0)1111@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)   @辉煌（……！&amp;（*……*（！……（&amp;）（E(111)`</span></span><br></pre></td></tr></table></figure>
+
+<p>处理后</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  <span class="string">&#x27;@Chesh我ire我 f我（qegqg3(2604)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@Cheshire fqegqg3(2604)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@(111)(111)(123)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@张=阿萨德-阿1(111)(111)(123)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@张=阿萨德(0)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@张=阿萨德-阿1(111)(111)(123)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@张=阿萨德-阿1(111)(111)(123)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@1asd(111)&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;@辉煌（……！&amp;（*……*（！……（&amp;）（E(111)&#x27;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 确定处理函数</span></span><br><span class="line"><span class="keyword">const</span> getFormatText = <span class="function"><span class="params">text</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> regex = <span class="regexp">/\@[^(]*(?=\()((\(\d*\)))+/gm</span></span><br><span class="line">  <span class="keyword">return</span> text.match(regex)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 准备数据</span></span><br><span class="line"><span class="keyword">const</span> text = <span class="string">`1234@Chesh我ire我 f我（qegqg3(2604)  @Cheshire fqegqg3(2604)@(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@张=阿萨德(0)1111@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)   @辉煌（……！&amp;（*……*（！……（&amp;）（E(111)`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line"><span class="keyword">const</span> formatText = getFormatText(text)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">console</span>.log(formatText)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -269,7 +348,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -352,7 +431,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -431,7 +510,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -524,7 +603,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -596,7 +675,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -674,7 +753,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -840,7 +919,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -1145,7 +1224,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -1217,7 +1296,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
+        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
       </span>
 
   
@@ -1280,103 +1359,6 @@
 <p><a target="_blank" rel="noopener" href="https://www.imooc.com/learn/942">移动web开发适配秘籍Rem</a></p>
 <p><a target="_blank" rel="noopener" href="https://juejin.im/post/5cddf289f265da038f77696c">关于移动端适配，你必须要知道的</a></p>
 </blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/24/%E5%88%86%E6%9E%90%E4%B8%80%E4%B8%8B%E8%BF%99%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/24/%E5%88%86%E6%9E%90%E4%B8%80%E4%B8%8B%E8%BF%99%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="post-title-link" itemprop="url">分析一下这段代码的时间复杂度</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-24T00:00:00+00:00">2019-12-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-07 06:52:06" itemprop="dateModified" datetime="2021-01-07T06:52:06+00:00">2021-01-07</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">let</span> len = <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向数组中添加一个元素</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 数组空间不够了</span></span><br><span class="line">    <span class="comment">// 重新申请一个2倍大小的数组空间</span></span><br><span class="line">    <span class="keyword">if</span> (i &gt;= len) &#123;</span><br><span class="line">        <span class="comment">// 把原来array数组中的数据依次copy到new_array</span></span><br><span class="line">        <span class="keyword">let</span> new_array = <span class="keyword">new</span> <span class="built_in">Array</span>(len * <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">            new_array[j] = array[j]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// new_array复制给array，array现在大小就是2倍len了</span></span><br><span class="line">        array = new_array</span><br><span class="line">        len = <span class="number">2</span> * len</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 将element放到下标为i的位置，下标i加一</span></span><br><span class="line">    array[i] = element</span><br><span class="line">    ++i</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>分析：</p>
-<ul>
-<li>  当<code>i &lt; len</code>时，即<code>i = 0,1,2...n-1</code>的时候，不走<code>for</code>循环，所以这<code>n</code>次的时间复杂度都是<code>O(1)</code></li>
-<li>  当<code>i &gt;= len</code>时，即<code>i = n</code>的时候，需要走<code>for</code>循环拷贝 <code>array</code>到<code>new_array</code>，所以这<code>1</code>次的时间复杂度是<code>O(n)</code></li>
-</ul>
-<p>由此可知：</p>
-<ul>
-<li><p>最好情况时间复杂度<code>(best case time complexity)</code>为<code>O(1)</code></p>
-</li>
-<li><p>最坏情况时间复杂度<code>(worst case time complexity)</code>为<code>O(n)</code></p>
-</li>
-<li><p>平均情况时间复杂度<code>(average case time complexity)</code></p>
-<ul>
-<li><p>方法一：<br>$$<br>\frac{1+1+…+1+n}{n+1}=\frac{2n}{n+1}<br>$$<br>所以时间复杂度为<code>O(n)</code></p>
-<p>注：<code>1+1+...+1</code>中有<code>n</code>个<code>1</code></p>
-</li>
-<li><p>方法二（加权平均法，也称期望）：<br>$$<br>1<em>\frac{1}{n+1}+1</em>\frac{1}{n+1}+…+1<em>\frac{1}{n+1}+n</em>\frac{1}{n+1}=\frac{2n}{n+1}<br>$$<br>所以时间复杂度为<code>O(n)</code></p>
-<p>注：<code>1*(1/n+1)+1*(1/n+1)+...+1*(1/n+1)</code>中有<code>n</code>个<code>1*(1/n+1)</code></p>
-</li>
-<li><p>方法三（均摊时间复杂度）：</p>
-<p>前 <code>n</code> 个操作复杂度都是 <code>O(1)</code>，第 <code>n+1</code> 次操作的复杂度是 <code>O(n)</code>，所以把最后一次的复杂度分摊到前 <code>n</code> 次上，那么均摊下来每次操作的复杂度为 <code>O(1)</code></p>
-</li>
-</ul>
-</li>
-</ul>
 
       
     </div>
