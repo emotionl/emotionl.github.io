@@ -4,7 +4,7 @@ date: 2021-01-11 23:48:21
 tags:
 - Linux
 ---
-## What Is the shell 什么是脚本
+## 01 - What Is the shell 什么是脚本
 
 | **命令** | **EN**                                   | **ZH**             |
 | -------- | ---------------------------------------- | ------------------ |
@@ -14,7 +14,7 @@ tags:
 | `free`   | Display the amount of free memor         | 剩余内存           |
 | `exit`   | Ending a Terminal Session.               | 关闭一个命令行会话 |
 
-## Navigation 导航
+## 02 - Navigation 导航
 
 | **命令** | **EN**                                   | **ZH**         |
 | -------- | ---------------------------------------- | -------------- |
@@ -22,7 +22,7 @@ tags:
 | `cd`     | Change directory.                        | 切换文件夹     |
 | `ls`     | List directory contents.                 | 显示文件夹内容 |
 
-## Exploring the System 探索系统
+## 03 - Exploring the System 探索系统
 
 | **命令** | **EN**                    | **ZH**         |
 | -------- | ------------------------- | -------------- |
@@ -30,7 +30,7 @@ tags:
 | `file`   | Determining a File’s Type | 查看文件类型   |
 | `less`   | Viewing File Contents     | 查看文件内容   |
 
-## Manipulating Files and Directories 操作文件和目录
+## 04 - Manipulating Files and Directories 操作文件和目录
 
 | **命令** | **EN**                            | **ZH**                  |
 | -------- | --------------------------------- | ----------------------- |
@@ -157,7 +157,7 @@ G -.-> B
 
 > [理解 Linux 的硬链接与软链接](https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html)
 
-## Working With Commands 使用命令
+## 05 - Working With Commands 使用命令
 
 | **命令**  | **EN**                                            | **ZH**                       |
 | --------- | ------------------------------------------------- | ---------------------------- |
@@ -325,7 +325,7 @@ drwxr-xr-x   6 root root 4096 Aug 26 15:15 .vim
 -rw-------   1 root root 5121 Aug 26 23:19 .viminfo.tmp
 ```
 
-## Redirection 重定向
+## 06 - Redirection 重定向
 | **命令**  | **EN**                                            | **ZH**                       |
 | --------- | ------------------------------------------------- | ---------------------------- |
 | `cat` | Concatenate files | |
@@ -483,28 +483,26 @@ ls /bin /usr/bin/ | sort | less
 > command1 | command2
 > ```
 
-#### uniq: Report or Omit Repeated Lines 忽略重复的行
-
-#### wc: Print Line, Word, and Byte Counts 打印行数，字数和字节数
-
-#### grep: Print Lines Matching a Pattern 匹配模式
-
-#### head/tail: Print First/Last Part of Files 打印文件的最前/最后一部分
-
-#### tee: Read from Stdin and Output to Stdout and Files 从Stdin读取并输出到Stdout和文件
+| 命令      | EN                                             | ZH                              |
+| --------- | ---------------------------------------------- | ------------------------------- |
+| uniq      | Report or Omit Repeated Lines                  | 忽略重复的行                    |
+| wc        | Print Line, Word, and Byte Counts              | 打印行数，字数和字节数          |
+| grep      | Print Lines Matching a Pattern                 | 匹配模式                        |
+| head/tail | Print First/Last Part of Files                 | 打印文件的最前/最后一部分       |
+| tee       | Read from Stdin and Output to Stdout and Files | 从Stdin读取并输出到Stdout和文件 |
 
 
 
-## todo Seeing the World as the Shell Sees it 用脚本解决问题
+## 07 - Seeing the World as the Shell Sees it 用脚本解决问题
 
-## todo Advanced Keyboard Tricks 高级键盘技巧
+## 08 - Advanced Keyboard Tricks 高级键盘技巧
 
-## todo Permissions 权限
+## 09 - Permissions 权限
 
-## todo Processes 进程
+## 10 -  Processes 进程
 
-## todo The Environment 环境
+## 11 - The Environment 环境
 
-## todo A Gentle Introduction to VIM 一个柔和的 VIM 介绍
+## 12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍
 
-## todo Customizing the Prompt 自定义提示
+## 13 - Customizing the Prompt 自定义提示
