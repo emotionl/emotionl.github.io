@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="常用命令   命令 作用    cls 清屏   show dbs 查看所有数据库   show collections 显示当前数据库中的所有集合   NoSQL( Not Only SQL) vs SQLMySQL 中的许多概念在 MongoDB 中具有相近的类比。本表概述了每个系统中的一些常见概念。    MySQL MongoDB    表 集合   行 文档   列 字段   joins">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="常用命令   命令 作用    cls 清屏   show dbs 查看所有数据库   show collections 显示当前数据库中的所有集合   NoSQL( Not Only SQL) vs SQLMySQL 中的许多概念在 MongoDB 中具有相近的类比。本表概述了每个系统中的一些常见概念。    MySQL MongoDB    表 集合   行 文档   列 字段   joins">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-26T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T05:35:45.957Z">
+<meta property="article:modified_time" content="2021-01-11T16:15:06.041Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="MongoDB">
@@ -51,6 +51,7 @@
 </script>
 <title>小试 MongoDB | ZV-Blogs</title>
   
+
 
 
 
@@ -98,7 +99,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -125,36 +126,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -164,7 +141,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -184,12 +161,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL-Not-Only-SQL-vs-SQL"><span class="nav-number">2.</span> <span class="nav-text">NoSQL( Not Only SQL) vs SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="nav-number">5.</span> <span class="nav-text">增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="nav-number">5.1.</span> <span class="nav-text">增加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE"><span class="nav-number">5.2.</span> <span class="nav-text">查找数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">5.3.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="nav-number">5.4.</span> <span class="nav-text">删除数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#explain"><span class="nav-number">6.</span> <span class="nav-text">explain</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%9F%A5%E8%AF%A2%E6%97%B6%E9%97%B4%EF%BC%88%E5%8D%95%E4%BD%8D-%E6%AF%AB%E7%A7%92%EF%BC%89"><span class="nav-number">6.1.</span> <span class="nav-text">获取查询时间（单位:毫秒）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">7.</span> <span class="nav-text">索引</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -200,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -214,7 +191,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -224,7 +201,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -276,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -341,119 +318,81 @@
 </blockquote>
 <h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><ul>
 <li><p>开启<code>MongoDB</code>服务</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath D:\data\db</span><br></pre></td></tr></table></figure>
-</li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath D:\data\db</span><br></pre></td></tr></table></figure></li>
 <li><p>管理数据库</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo 127.0.0.1:27017</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2></li>
 </ul>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><ol>
+<ol>
 <li><p>使用并创建数据库</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use user</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use user</span><br></pre></td></tr></table></figure></li>
 <li><p>在数据库<code>user</code>中的集合<code>member</code>中插入一条数据（集合需要通过向其插入数据进行创建）</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>删除数据库<code>user</code>中的集合<code>member</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
 <li><p>删除数据库<code>user</code></p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use user <span class="comment">// 需要先使用数据库</span></span><br><span class="line">db.dropDatabase();</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2></li>
 </ol>
-<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.表名.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
-
+<h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.表名.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ol>
 <li><p>查找所有记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find()</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find()</span><br></pre></td></tr></table></figure></li>
 <li><p>查询一个字段的所有值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.distinct(name)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.distinct(name)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age = 25 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: <span class="number">25</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: <span class="number">25</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age &gt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age &lt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 age &gt;= 20 并且 age &lt;= 25</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span>, <span class="attr">$lte</span>: <span class="number">25</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span>, <span class="attr">$lte</span>: <span class="number">25</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 name 中包含 im 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/im/</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/im/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 name 中以 J 开头的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/^J/</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/^J/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 name 中以 m 结尾的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/m$/</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/m$/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询指定列 name 数据, age &gt; 20</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>按照年龄排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: <span class="number">1</span> &#125;) <span class="comment">// 升序</span></span><br><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: -<span class="number">1</span> &#125;) <span class="comment">// 降序</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: <span class="number">1</span> &#125;) <span class="comment">// 升序</span></span><br><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: -<span class="number">1</span> &#125;) <span class="comment">// 降序</span></span><br></pre></td></tr></table></figure></li>
 <li><p>查询前 3 条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().limit(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().limit(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
 <li><p>查询 3 条以后的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().skip(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().skip(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
 <li><p>查询在 3-5 之间的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.member</span><br><span class="line">    .find()</span><br><span class="line">    .limit(<span class="number">3</span>)</span><br><span class="line">    .skip(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.member</span><br><span class="line">    .find()</span><br><span class="line">    .limit(<span class="number">3</span>)</span><br><span class="line">    .skip(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p>or 查询（年龄为 19 或 25 的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $or: [&#123; <span class="attr">age</span>: <span class="number">19</span> &#125;, &#123; <span class="attr">age</span>: <span class="number">25</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $or: [&#123; <span class="attr">age</span>: <span class="number">19</span> &#125;, &#123; <span class="attr">age</span>: <span class="number">25</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>and 查询（年龄大于 20 的性别为男的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $and: [&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">25</span> &#125; &#125;, &#123; <span class="attr">sex</span>: <span class="literal">true</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $and: [&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">25</span> &#125; &#125;, &#123; <span class="attr">sex</span>: <span class="literal">true</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询第一条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.findOne()</span><br><span class="line">db.member.find().limit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.findOne()</span><br><span class="line">db.member.find().limit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p>查询某个结果集的记录条数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;).count()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3><ol>
+<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3></li>
 <li><p>查找名字叫做 Jack 的，把年龄更改为 30 岁：</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.update(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;, &#123; <span class="attr">$set</span>: &#123; <span class="attr">age</span>: <span class="number">30</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><ol>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3></li>
 <li><p>删除 age = 20 岁的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>删除 age &gt; 20 记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>删除 age = 20 的一条记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>删除集合</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
 <li><p>删除数据库</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2></li>
 </ol>
-<h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2><h3 id="获取查询时间（单位-毫秒）"><a href="#获取查询时间（单位-毫秒）" class="headerlink" title="获取查询时间（单位:毫秒）"></a>获取查询时间（单位:毫秒）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.itemlist.find(&#123; <span class="attr">name</span>: <span class="string">&#x27;xxx&#x27;</span> &#125;).explain(<span class="string">&#x27;executionStats&#x27;</span>).executionStats.executionTimeMillis</span><br></pre></td></tr></table></figure>
-
+<h3 id="获取查询时间（单位-毫秒）"><a href="#获取查询时间（单位-毫秒）" class="headerlink" title="获取查询时间（单位:毫秒）"></a>获取查询时间（单位:毫秒）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.itemlist.find(&#123; <span class="attr">name</span>: <span class="string">&#x27;xxx&#x27;</span> &#125;).explain(<span class="string">&#x27;executionStats&#x27;</span>).executionStats.executionTimeMillis</span><br></pre></td></tr></table></figure>
 <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
 <p>索引是对数据库表中一列或多列的值进行排序的一种结构</p>
 <p>索引通常能够极大的提高查询的效率，如果没有索引，MongoDB 在读取数据时必须扫描集合中的每个文件并选取那些符合查询条件的记录。</p>
@@ -461,17 +400,13 @@
 </blockquote>
 <ol>
 <li><p>创建索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>获取当前集合的索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.getIndexes()</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.getIndexes()</span><br></pre></td></tr></table></figure></li>
 <li><p>删除索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.dropIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.dropIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>创建复合索引</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">age</span>: -<span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>该索引被创建后，基于 <code>name</code> 和 <code>age</code> 的查询将会用到该索引，或者是基于 <code>name</code> 的查询也会用到该索引，但是只是基于 <code>age</code> 的查询将不会用到该复合索引。因此可以说，如果想用到复合索引，必须在查询条件中包含复合索引中的前 N 个索引列。</p>
 <p>然而如果查询条件中的键值顺序和复合索引中的创建顺序不一致的话，MongoDB 可以智能的帮助我们调<br>整该顺序，以便使复合索引可以为查询所用。</p>
@@ -479,12 +414,10 @@
 </blockquote>
 </li>
 <li><p>在创建索引时为其指定索引名</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">&#x27;username&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">&#x27;username&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 <li><p>创建唯一索引</p>
 <p> 不允许具有索引值相同的行，从而禁止重复的索引或键值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">unique</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">unique</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -503,13 +436,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/08/26/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83/" rel="prev" title="关于进制的思考">
-                  <i class="fa fa-chevron-left"></i> 关于进制的思考
+                <a href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" rel="prev" title="迭代法">
+                  <i class="fa fa-chevron-left"></i> 迭代法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" rel="next" title="迭代法">
-                  迭代法 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="next" title="二进制">
+                  二进制 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -574,10 +507,9 @@
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -591,7 +523,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 

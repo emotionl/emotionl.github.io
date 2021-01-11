@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="graph LR A[Entity] B[Repository] C[Service] D[Controller] A --&gt; B B --&gt; C C --&gt; D    Entity定义数据 1234567891011121314151617import &amp;#123; BaseEntity, Entity, PrimaryGeneratedColumn, Column &amp;#12">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="graph LR A[Entity] B[Repository] C[Service] D[Controller] A --&gt; B B --&gt; C C --&gt; D    Entity定义数据 1234567891011121314151617import &amp;#123; BaseEntity, Entity, PrimaryGeneratedColumn, Column &amp;#12">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-13T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T05:35:45.957Z">
+<meta property="article:modified_time" content="2021-01-11T16:15:06.041Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -50,6 +50,7 @@
 </script>
 <title>Nestjs 开发流 | ZV-Blogs</title>
   
+
 
 
 
@@ -97,7 +98,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -124,36 +125,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -163,7 +140,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -183,12 +160,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Entity"><span class="nav-number">1.</span> <span class="nav-text">Entity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repository"><span class="nav-number">2.</span> <span class="nav-text">Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service"><span class="nav-number">3.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">4.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text"></span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -199,7 +176,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,7 +190,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -223,7 +200,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -275,7 +252,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -302,16 +279,12 @@ C --&gt; D
 
 <h2 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h2><p>定义数据</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BaseEntity, Entity, PrimaryGeneratedColumn, Column &#125; <span class="keyword">from</span> <span class="string">&#x27;typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">BaseEntity</span> </span>&#123;</span><br><span class="line">  <span class="meta">@PrimaryGeneratedColumn</span>() <span class="comment">// 定义主键</span></span><br><span class="line">  id: <span class="built_in">number</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  title: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  description: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  status: TaskStatus</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>操作数据</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; EntityRepository, Repository &#125; <span class="keyword">from</span> <span class="string">&#x27;typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@EntityRepository</span>(Task)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TaskRepository</span> <span class="keyword">extends</span> <span class="title">Repository</span>&lt;<span class="title">Task</span>&gt; </span>&#123; <span class="comment">// 继承 Repository 享用 findOne delete 等操作</span></span><br><span class="line">  <span class="keyword">async</span> getTasks(filterDto: GetTasksFilterDto): <span class="built_in">Promise</span>&lt;Task[]&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; status, search &#125; = filterDto</span><br><span class="line">    <span class="keyword">const</span> query = <span class="built_in">this</span>.createQueryBuilder(<span class="string">&#x27;task&#x27;</span>) <span class="comment">// 使用 QueryBuilder 生成 SQL</span></span><br><span class="line">    <span class="keyword">if</span> (status) &#123;</span><br><span class="line">      query.andWhere(<span class="string">&#x27;task.status = :status&#x27;</span>, &#123; status &#125;) <span class="comment">// 添加条件</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (search) &#123;</span><br><span class="line">      query.andWhere(</span><br><span class="line">        <span class="string">&#x27;task.title LIKE :search OR task.description LIKE :search&#x27;</span>,</span><br><span class="line">        &#123; <span class="attr">search</span>: <span class="string">`%<span class="subst">$&#123;search&#125;</span>%`</span> &#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> tasks = <span class="keyword">await</span> query.getMany() <span class="comment">// 执行 SQL 获取数据</span></span><br><span class="line">    <span class="keyword">return</span> tasks</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> createTask(createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; title, description &#125; = createTaskDto</span><br><span class="line">    <span class="keyword">const</span> task = <span class="keyword">new</span> Task()</span><br><span class="line">    task.title = title</span><br><span class="line">    task.description = description</span><br><span class="line">    task.status = TaskStatus.OPEN</span><br><span class="line">    <span class="keyword">await</span> task.save()</span><br><span class="line">    <span class="keyword">return</span> task</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>提供服务</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTaskStatusDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/update-task-status.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskRepository &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.repository&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; InjectRepository &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TasksService</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="meta">@InjectRepository</span>(TaskRepository)</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> taskRepository: TaskRepository</span></span><br><span class="line"><span class="params">  </span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> getTasks(filterDto: GetTasksFilterDto): <span class="built_in">Promise</span>&lt;Task[]&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskRepository.getTasks(filterDto) <span class="comment">// 调用 TaskRepository 中封装好的数据操作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> getTaskById(id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="comment">// 当数据操作比较简单时 可以直接调用 Repository 的方法</span></span><br><span class="line">    <span class="keyword">const</span> foundTask = <span class="keyword">await</span> <span class="built_in">this</span>.taskRepository.findOne(id) </span><br><span class="line">    <span class="keyword">if</span> (!foundTask) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(<span class="string">`Task with ID <span class="subst">$&#123;id&#125;</span> not found`</span>)</span><br><span class="line">    <span class="keyword">return</span> foundTask</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> createTask(createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskRepository.createTask(createTaskDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> deleteTask(id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;<span class="built_in">any</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="built_in">this</span>.taskRepository.delete(id)</span><br><span class="line">    <span class="keyword">if</span> (result.affected === <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(<span class="string">`Task with ID <span class="subst">$&#123;id&#125;</span> not found`</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> updateTaskStatus(</span><br><span class="line">    updateTaskStatusDto: UpdateTaskStatusDto</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; id, status &#125; = updateTaskStatusDto</span><br><span class="line">    <span class="keyword">const</span> foundTask = <span class="keyword">await</span> <span class="built_in">this</span>.getTaskById(id)</span><br><span class="line">    foundTask.status = TaskStatus[status]</span><br><span class="line">    <span class="keyword">await</span> foundTask.save()</span><br><span class="line">    <span class="keyword">return</span> foundTask</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>处理请求</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Controller,</span><br><span class="line">  Get,</span><br><span class="line">  Post,</span><br><span class="line">  Body,</span><br><span class="line">  Param,</span><br><span class="line">  Query,</span><br><span class="line">  UsePipes,</span><br><span class="line">  ValidationPipe,</span><br><span class="line">  ParseIntPipe</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TasksService &#125; <span class="keyword">from</span> <span class="string">&#x27;./tasks.service&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTaskStatusDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/update-task-status.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span>(<span class="string">&#x27;tasks&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TasksController</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"><span class="keyword">private</span> taskService: TasksService</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Get</span>()</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe) <span class="comment">// 使用 ValidationPipe 和 DTO 进行字段的校验</span></span><br><span class="line">  <span class="function"><span class="title">getTasks</span>(<span class="params"><span class="meta">@Query</span>() filterDto: GetTasksFilterDto</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.getTasks(filterDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Get</span>(<span class="string">&#x27;/:id&#x27;</span>)</span><br><span class="line">  getTaskById(<span class="meta">@Param</span>(<span class="string">&#x27;id&#x27;</span>, ParseIntPipe) id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;Task&gt; &#123; </span><br><span class="line">    <span class="comment">// ParseIntPipe string=&gt;number (如果转换失败将抛出异常)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.getTaskById(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/create&#x27;</span>)</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe)</span><br><span class="line">  createTask(<span class="meta">@Body</span>() createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.createTask(createTaskDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/delete&#x27;</span>)</span><br><span class="line">  deleteTask(<span class="meta">@Body</span>(<span class="string">&#x27;id&#x27;</span>, ParseIntPipe) id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.deleteTask(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/status/update&#x27;</span>)</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe)</span><br><span class="line">  <span class="keyword">async</span> updateTaskStatus(</span><br><span class="line">    <span class="meta">@Body</span>() updateTaskStatusDto: UpdateTaskStatusDto</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.updateTaskStatus(updateTaskStatusDto)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
     </div>
 
@@ -399,10 +372,9 @@ C --&gt; D
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -416,7 +388,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 

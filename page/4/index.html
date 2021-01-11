@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZV-Blogs">
@@ -46,6 +46,7 @@
 </script>
 <title>ZV-Blogs</title>
   
+
 
 
 
@@ -93,7 +94,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -120,36 +121,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -159,7 +136,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -179,11 +156,11 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-        </section>
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -194,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,7 +185,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -218,7 +195,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -229,6 +206,77 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" class="post-title-link" itemprop="url">迭代法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>在<code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</code>中查找<code>&#39;f&#39;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> searchWord = <span class="function">(<span class="params">dictionary, wordToFind</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> right = dictionary.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">let</span> middle = <span class="built_in">Math</span>.floor((left + right) / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (dictionary[middle] === wordToFind) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (dictionary[middle] &gt; wordToFind) &#123;</span><br><span class="line">                right = middle - <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = middle + <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> dictionary = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;h&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> wordToFind = <span class="string">&#x27;f&#x27;</span></span><br><span class="line">searchWord(dictionary, wordToFind)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -269,7 +317,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -347,8 +395,7 @@
 <p>在 C 语言中 int 与 char 是可以无缝转换的</p>
 </li>
 <li><p>string 类型的的本质是个数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此时 a 是一个整形数字 即 int 类型</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>						</span><br><span class="line"><span class="comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 &quot;d&quot;</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">String</span>.fromCharCode(a)	</span><br><span class="line"><span class="comment">// 然而把 a 从 int 转换成 string 得到 &quot;100&quot; 后其实得到的是一个装满 char 的一个数组</span></span><br><span class="line"><span class="comment">// 每一个 char 都可以找到它的 int 类型</span></span><br><span class="line"><span class="keyword">let</span> c = a.toString()			<span class="comment">// &quot;100&quot;</span></span><br><span class="line">c.charCodeAt(<span class="number">0</span>)					<span class="comment">// 54</span></span><br><span class="line">c.charCodeAt(<span class="number">1</span>)					<span class="comment">// 52</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此时 a 是一个整形数字 即 int 类型</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>						</span><br><span class="line"><span class="comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 &quot;d&quot;</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">String</span>.fromCharCode(a)	</span><br><span class="line"><span class="comment">// 然而把 a 从 int 转换成 string 得到 &quot;100&quot; 后其实得到的是一个装满 char 的一个数组</span></span><br><span class="line"><span class="comment">// 每一个 char 都可以找到它的 int 类型</span></span><br><span class="line"><span class="keyword">let</span> c = a.toString()			<span class="comment">// &quot;100&quot;</span></span><br><span class="line">c.charCodeAt(<span class="number">0</span>)					<span class="comment">// 54</span></span><br><span class="line">c.charCodeAt(<span class="number">1</span>)					<span class="comment">// 52</span></span><br></pre></td></tr></table></figure></li>
 <li><p>同一个数由于进制不同而导致的显示方式不同并不影响他们相等</p>
 <p>但是一个 int 类型的 100 和一个 string 类型的 “100”是完全不同的</p>
 <p>存储一个 int 的 100 用 1 Byte 又就可以了</p>
@@ -431,7 +478,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -460,7 +507,6 @@
 <li>最后将第一位和第三位交换。</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加密</span></span><br><span class="line"><span class="keyword">const</span> hashEncrypt = <span class="function">(<span class="params">value, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> quotient = <span class="built_in">Math</span>.floor((item + salt) / <span class="number">7</span>)</span><br><span class="line">        <span class="keyword">let</span> rem = (item + salt) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            quotient,</span><br><span class="line">            rem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> encryptValue = +result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.rem).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> iv = result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.quotient)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        encryptValue,</span><br><span class="line">        iv</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解密</span></span><br><span class="line"><span class="keyword">const</span> hashDecrypt = <span class="function">(<span class="params">value, iv, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).reverse().map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> iv[index] * <span class="number">7</span> + item - salt</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> decryptValue = +result.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> decryptValue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> testValue = <span class="number">751</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="number">4523645</span></span><br><span class="line"><span class="keyword">let</span> &#123; encryptValue, iv &#125; = hashEncrypt(testValue, salt)</span><br><span class="line"><span class="keyword">let</span> decryptValue = hashDecrypt(encryptValue, iv, salt)</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
@@ -517,7 +563,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -611,31 +657,22 @@
 <p>管道操作符作为<strong>键</strong>，所对应的<strong>值</strong>叫做管道表达式<br>例如<code>&#123;$match:&#123;status:&quot;A&quot;&#125;&#125;</code>，<code>$match</code> 称为管道操作符，而 <code>status:&quot;A&quot;</code>称为管道表达式<br>每个管道表达式是一个文档结构，它是由字段名、字段值、和一些表达式操作符组成的</p>
 </blockquote>
 <h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">10</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;111&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">100</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">7</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;222&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">90</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">9</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;333&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">20</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">6</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品鼠标 1&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 2&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 3&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">0</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;牛奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;酸奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">40</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;矿泉水&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">2</span>,<span class="attr">num</span>:<span class="number">5</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;毛巾&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">10</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
-
 <h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>自定义文档的结构，可以用来重命名、增加或删除文档中的字段</p>
 <p>查找 order 只返回文档中 trade_no 和 all_price 字段</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            trade_no: <span class="number">1</span>,</span><br><span class="line">            all_price: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>过滤。用法类似于 <code>find()</code> 方法中的参数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123; <span class="attr">all_price</span>: &#123; <span class="attr">$gte</span>: <span class="number">90</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>分组，可用于统计结果</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.order_item.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123; <span class="attr">_id</span>: <span class="string">&#x27;$order_id&#x27;</span>, <span class="attr">total</span>: &#123; <span class="attr">$sum</span>: <span class="string">&#x27;$num&#x27;</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><p>排序</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $sort: &#123; <span class="attr">all_price</span>: -<span class="number">1</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="limit"><a href="#limit" class="headerlink" title="$limit"></a>$limit</h2><p>限制数量</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $limit: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="skip"><a href="#skip" class="headerlink" title="$skip"></a>$skip</h2><p>跳过</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $skip: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>表关联</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
 <h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123;</span><br><span class="line">            all_price: &#123;</span><br><span class="line">                $gt: <span class="number">90</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            items: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -710,10 +747,9 @@
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -727,7 +763,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 

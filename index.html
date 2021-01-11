@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZV-Blogs">
@@ -46,6 +46,7 @@
 </script>
 <title>ZV-Blogs</title>
   
+
 
 
 
@@ -93,7 +94,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -120,36 +121,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -159,7 +136,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -179,11 +156,11 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-        </section>
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -194,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,7 +185,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -218,7 +195,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -229,6 +206,561 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/Learning-The-Shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/11/Learning-The-Shell/" class="post-title-link" itemprop="url">Learning-The-Shell</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-01-11 23:48:21 / 修改时间：16:15:06" itemprop="dateCreated datePublished" datetime="2021-01-11T23:48:21+00:00">2021-01-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="What-Is-the-shell-什么是脚本"><a href="#What-Is-the-shell-什么是脚本" class="headerlink" title="What Is the shell 什么是脚本"></a>What Is the shell 什么是脚本</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>date</code></td>
+<td>Displays the current time and date.</td>
+<td>显示当前日期</td>
+</tr>
+<tr>
+<td><code>cal</code></td>
+<td>Displays a calendar of thecurrent month.</td>
+<td>显示日历</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>Disk free</td>
+<td>剩余磁盘</td>
+</tr>
+<tr>
+<td><code>free</code></td>
+<td>Display the amount of free memor</td>
+<td>剩余内存</td>
+</tr>
+<tr>
+<td><code>exit</code></td>
+<td>Ending a Terminal Session.</td>
+<td>关闭一个命令行会话</td>
+</tr>
+</tbody></table>
+<h2 id="Navigation-导航"><a href="#Navigation-导航" class="headerlink" title="Navigation 导航"></a>Navigation 导航</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pwd</code></td>
+<td>Print name of current working directory.</td>
+<td>显示当前文件夹</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change directory.</td>
+<td>切换文件夹</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List directory contents.</td>
+<td>显示文件夹内容</td>
+</tr>
+</tbody></table>
+<h2 id="Exploring-the-System-探索系统"><a href="#Exploring-the-System-探索系统" class="headerlink" title="Exploring the System 探索系统"></a>Exploring the System 探索系统</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td>List directory contents.</td>
+<td>显示文件夹内容</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>Determining a File’s Type</td>
+<td>查看文件类型</td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>Viewing File Contents</td>
+<td>查看文件内容</td>
+</tr>
+</tbody></table>
+<h2 id="Manipulating-Files-and-Directories-操作文件和目录"><a href="#Manipulating-Files-and-Directories-操作文件和目录" class="headerlink" title="Manipulating Files and Directories 操作文件和目录"></a>Manipulating Files and Directories 操作文件和目录</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cp</code></td>
+<td>Copy files and directories</td>
+<td>拷贝文件和文件夹</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>Move/rename files and directories</td>
+<td>移动/重命名文件和文件夹</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Create directories</td>
+<td>创建文件夹</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Remove files and directories</td>
+<td>删除文件和文件夹</td>
+</tr>
+<tr>
+<td><code>ln</code></td>
+<td>Create hard and symbolic links</td>
+<td>创建硬链接和符号链接</td>
+</tr>
+</tbody></table>
+<h3 id="cp-Copy-Files-and-Directories"><a href="#cp-Copy-Files-and-Directories" class="headerlink" title="cp - Copy Files and Directories"></a>cp - Copy Files and Directories</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cp file1 file2</code></td>
+<td>把 file1 拷贝到 file2 . 如果 file2 存在， 那么 file2 的内容被 file1 的内容覆盖 . 如果 file2 不存在，那么 创建 file2 ，并把 file1 的内容拷贝到 file2。</td>
+</tr>
+<tr>
+<td><code>cp -i file1 file2</code></td>
+<td>与上一条命令相似，不同的是如果 file2 存在，那么 file2 被覆盖前会提示用户。</td>
+</tr>
+<tr>
+<td><code>cp file1 file2 dir1</code></td>
+<td>把 file1 和 file2 拷贝进 dir1，前提是 dir1 一定要存在。</td>
+</tr>
+<tr>
+<td><code>cp dir1/* dir2</code></td>
+<td>使用通配符，把 dir1 的内容都拷贝进 dir 中，前提是 dir2 一定要存在。</td>
+</tr>
+<tr>
+<td><code>cp -r dir1 dir2</code></td>
+<td>把 dir1 的内容拷贝进 dir2 ，如果 dir2 不存在，就新建 dir2，并把 dir1 的内容拷贝进 dir2 .如果 dir2 存在就把 dir1 这个文件夹整个拷贝进 dir2，成为 dir2 的子文件夹。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>-i</code> 代表 <code>interactive</code>交互的（会有提示问你要不要这样做）</p>
+<p><code>-r</code> 代表 <code>recursive</code>递归的（递归地复制目录及其内容）</p>
+</blockquote>
+<h3 id="mv-Move-and-Rename-Files"><a href="#mv-Move-and-Rename-Files" class="headerlink" title="mv - Move and Rename Files"></a>mv - Move and Rename Files</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mv file1 file2</code></td>
+<td>把 file1 移动到 file2 .。如果 file2 存在， 那么 file2 的内容被 file1 的内容覆盖 .。如果 file2 不存在，那么 创建 file2 ，并把 file1 的内容拷贝到 file2，file1 不再存在。</td>
+</tr>
+<tr>
+<td><code>mv -i file1 file2</code></td>
+<td>与上一条命令相似，不同的是如果 file2 存在，那么 file2 被覆盖前会提示用户。</td>
+</tr>
+<tr>
+<td><code>mv file1 file2 dir1</code></td>
+<td>把 file1 和 file2 移动到 dir1，前提是 dir1 一定要存在。</td>
+</tr>
+<tr>
+<td><code>mv dir1 dir2</code></td>
+<td>如果 dir2 不存在, 创建 dir2 并把 dir1 的内容移动到 dir2 并删除 dir1.。如果 dir2 存在，把 dir1 移动到 dir2，成为 dir2 的子文件夹。</td>
+</tr>
+</tbody></table>
+<h3 id="rm-Remove-Files-and-Directories"><a href="#rm-Remove-Files-and-Directories" class="headerlink" title="rm - Remove Files and Directories"></a>rm - Remove Files and Directories</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rm file1</code></td>
+<td>静默删除 file1。</td>
+</tr>
+<tr>
+<td><code>rm -i file1</code></td>
+<td>与上一条命令类似，区别是在执行删除之前会提示用户确认。</td>
+</tr>
+<tr>
+<td><code>rm -r file1 dir1</code></td>
+<td>删除 file1 和 dir1 以及 dir1 中的内容</td>
+</tr>
+<tr>
+<td><code>rm -rf file1 dir1</code></td>
+<td>与上一条命令类似，但如果 file1 或 dir1 不存在，rm 将静默继续。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>类 Unix 的操作系统比如 Linux 是没有撤销删除命令的。</p>
+<p>一旦你使用 <code>rm</code> 命令删除一些文件，它就不存在了。Linux 假定你很聪明并且知道你在做什么。</p>
+<p>要特别小心使用通配符。 请考虑下面这个经典的例子。 比方说，你想在一个目录仅删除<code>HTML</code>文件。 为此，请键入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm *.html</span><br></pre></td></tr></table></figure>
+
+<p>这是正确的，但如果你不小心在 <code>*</code> 和 <code>.html</code> 之间放置了一个空格</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm * .html</span><br></pre></td></tr></table></figure>
+
+<p><code>rm</code> 命令将删除目录中的所有文件，然后抱怨没有名为<code>.html</code>的文件。</p>
+<p>这里有一个实用的提示：每当你使用带有通配符的<code>rm</code>命令之前（除了仔细检查你的输入！），先用<code>ls</code>测试通配符。 这会让你看到即将被删除的文件。 然后按向上箭头调用该命令并用<code>rm</code>替换<code>ls</code>。</p>
+</blockquote>
+<h3 id="ln-Create-Links"><a href="#ln-Create-Links" class="headerlink" title="ln - Create Links"></a>ln - Create Links</h3><h4 id="Hard-Links"><a href="#Hard-Links" class="headerlink" title="Hard Links"></a>Hard Links</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln file link</span><br></pre></td></tr></table></figure>
+<h4 id="Symbolic-Links"><a href="#Symbolic-Links" class="headerlink" title="Symbolic Links"></a>Symbolic Links</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s item link</span><br></pre></td></tr></table></figure>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><div class="mermaid">
+graph LR
+A[hard link]
+B[file]
+C[soft link]
+D[inode]
+E[inode]
+F[data block]
+G[data block]
+%% 定义样式类
+classDef one fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef two fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
+%% 应用样式类，markdown里没效果
+class A one
+class B one
+class C one
+class D two
+class E two
+class F three
+class G three
+A --&gt; D
+B --&gt; D
+C --&gt; E
+D --&gt; F
+E --&gt; G
+G -.-&gt; B
+</div>
+
+<p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
+<ul>
+<li>  文件有相同的 inode 及 data block；</li>
+<li>  只能对已存在的文件进行创建；</li>
+<li>  不能交叉文件系统进行硬链接的创建；</li>
+<li>  不能对目录进行创建，只可对文件创建；</li>
+<li>  删除一个硬链接文件并不影响其他有相同 inode 号的文件。</li>
+</ul>
+<p>软链接与硬链接不同，若文件用户数据块中存放的内容是另一文件的路径名的指向，则该文件就是软连接。软链接就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块。因此软链接的创建与使用没有类似硬链接的诸多限制：</p>
+<ul>
+<li>  软链接有自己的文件属性及权限等；</li>
+<li>  可对不存在的文件或目录创建软链接；</li>
+<li>  软链接可交叉文件系统；</li>
+<li>  软链接可对文件或目录创建；</li>
+<li>  创建软链接时，链接计数 i_nlink 不会增加；</li>
+<li>  删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html">理解 Linux 的硬链接与软链接</a></p>
+</blockquote>
+<h2 id="Working-With-Commands-使用命令"><a href="#Working-With-Commands-使用命令" class="headerlink" title="Working With Commands 使用命令"></a>Working With Commands 使用命令</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td>Indicate how a command name is interpreted</td>
+<td>显示指定命令的类型</td>
+</tr>
+<tr>
+<td><code>which</code></td>
+<td>Display which executable program will be executed</td>
+<td>查找并显示给定命令的绝对路径</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Get help for shell builtins</td>
+<td>显示内置 shell 的帮助信息</td>
+</tr>
+<tr>
+<td><code>man</code></td>
+<td>Display a command’s manual page</td>
+<td>查看 Linux 中的指令帮助</td>
+</tr>
+<tr>
+<td><code>apropos</code></td>
+<td>Display a list of appropriate commands</td>
+<td>在 whatis 数据库中查找字符串</td>
+</tr>
+<tr>
+<td><code>info</code></td>
+<td>Display a command’s info entry</td>
+<td>Linux 下 info 格式的帮助指令</td>
+</tr>
+<tr>
+<td><code>whatis</code></td>
+<td>Display one-line manual page descriptions</td>
+<td>查询一个命令执行什么功能</td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>Create an alias for a command</td>
+<td>用来设置指令的别名</td>
+</tr>
+</tbody></table>
+<h3 id="什么是命令"><a href="#什么是命令" class="headerlink" title="什么是命令"></a>什么是命令</h3><p>命令可以是以下四种类型之一</p>
+<table>
+<thead>
+<tr>
+<th><strong>概念</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可执行程序</td>
+<td>就像我们在 <code>/usr/bin</code>这个文件夹中看到的文件一样。比如常用的 <code>yum</code>。</td>
+</tr>
+<tr>
+<td>内置 shell</td>
+<td>Bash 支持一些叫作内置 shell 的命令。举个例子 <code>cd</code>就是一个内置命令。</td>
+</tr>
+<tr>
+<td>shell 函数</td>
+<td>脚本。</td>
+</tr>
+<tr>
+<td>别名</td>
+<td>通过组合其他命令构成的一个自定义命令。</td>
+</tr>
+</tbody></table>
+<h3 id="认识命令"><a href="#认识命令" class="headerlink" title="认识命令"></a>认识命令</h3><h4 id="type-显示一个命令的类型"><a href="#type-显示一个命令的类型" class="headerlink" title="type - 显示一个命令的类型"></a>type - 显示一个命令的类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux /]<span class="comment"># type yum</span></span><br><span class="line">yum is /usr/bin/yum</span><br><span class="line">[root@golinux /]<span class="comment"># type type</span></span><br><span class="line"><span class="built_in">type</span> is a shell <span class="built_in">builtin</span></span><br><span class="line">[root@golinux /]<span class="comment"># type ll</span></span><br><span class="line">ll is aliased to `ls -l --color=auto<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="which-显示可执行文件的位置"><a href="#which-显示可执行文件的位置" class="headerlink" title="which - 显示可执行文件的位置"></a>which - 显示可执行文件的位置</h4><p>有时，系统上安装了多个版本的可执行程序。 虽然这在桌面系统上并不常见，但在较大的服务器上并不罕见。 要确定给定可执行文件的确切位置，请使用which命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux /]<span class="comment"># which yum</span></span><br><span class="line">/usr/bin/yum</span><br><span class="line">[root@golinux /]<span class="comment"># which type</span></span><br><span class="line">/usr/bin/<span class="built_in">which</span>: no <span class="built_in">type</span> <span class="keyword">in</span> (/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/root/bin)</span><br><span class="line">[root@golinux /]<span class="comment"># which ll</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">&#x27;ls -l --color=auto&#x27;</span></span><br><span class="line">	/usr/bin/ls</span><br></pre></td></tr></table></figure>
+<h3 id="获取命令文档"><a href="#获取命令文档" class="headerlink" title="获取命令文档"></a>获取命令文档</h3><h4 id="help-显示内置-shell-的帮助信息"><a href="#help-显示内置-shell-的帮助信息" class="headerlink" title="help - 显示内置 shell 的帮助信息"></a>help - 显示内置 shell 的帮助信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux /]<span class="comment"># help cd</span></span><br><span class="line"><span class="built_in">cd</span>: <span class="built_in">cd</span> [-L|[-P [-e]]] [dir]</span><br><span class="line">    Change the shell working directory.</span><br><span class="line">    </span><br><span class="line">    Change the current directory to DIR.  The default DIR is the value of the</span><br><span class="line">    HOME shell variable.</span><br><span class="line">    </span><br><span class="line">    The variable CDPATH defines the search path <span class="keyword">for</span> the directory containing</span><br><span class="line">    DIR.  Alternative directory names <span class="keyword">in</span> CDPATH are separated by a colon (:).</span><br><span class="line">    A null directory name is the same as the current directory.  If DIR begins</span><br><span class="line">    with a slash (/), <span class="keyword">then</span> CDPATH is not used.</span><br><span class="line">    </span><br><span class="line">    If the directory is not found, and the shell option `cdable_vars<span class="string">&#x27; is set,</span></span><br><span class="line"><span class="string">    the word is assumed to be  a variable name.  If that variable has a value,</span></span><br><span class="line"><span class="string">    its value is used for DIR.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Options:</span></span><br><span class="line"><span class="string">        -L	force symbolic links to be followed</span></span><br><span class="line"><span class="string">        -P	use the physical directory structure without following symbolic</span></span><br><span class="line"><span class="string">    	links</span></span><br><span class="line"><span class="string">        -e	if the -P option is supplied, and the current working directory</span></span><br><span class="line"><span class="string">    	cannot be determined successfully, exit with a non-zero status</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    The default is to follow symbolic links, as if `-L&#x27;</span> were specified.</span><br><span class="line">    </span><br><span class="line">    Exit Status:</span><br><span class="line">    Returns 0 <span class="keyword">if</span> the directory is changed, and <span class="keyword">if</span> <span class="variable">$PWD</span> is <span class="built_in">set</span> successfully when</span><br><span class="line">    -P is used; non-zero otherwise.</span><br></pre></td></tr></table></figure>
+<h4 id="–help-显示可执行程序的帮助信息"><a href="#–help-显示可执行程序的帮助信息" class="headerlink" title="–help  - 显示可执行程序的帮助信息"></a>–help  - 显示可执行程序的帮助信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux /]<span class="comment"># mkdir --help</span></span><br><span class="line">Usage: mkdir [OPTION]... DIRECTORY...</span><br><span class="line">Create the DIRECTORY(ies), <span class="keyword">if</span> they <span class="keyword">do</span> not already exist.</span><br><span class="line"></span><br><span class="line">Mandatory arguments to long options are mandatory <span class="keyword">for</span> short options too.</span><br><span class="line">  -m, --mode=MODE   <span class="built_in">set</span> file mode (as <span class="keyword">in</span> chmod), not a=rwx - <span class="built_in">umask</span></span><br><span class="line">  -p, --parents     no error <span class="keyword">if</span> existing, make parent directories as needed</span><br><span class="line">  -v, --verbose     <span class="built_in">print</span> a message <span class="keyword">for</span> each created directory</span><br><span class="line">  -Z                   <span class="built_in">set</span> SELinux security context of each created directory</span><br><span class="line">                         to the default <span class="built_in">type</span></span><br><span class="line">      --context[=CTX]  like -Z, or <span class="keyword">if</span> CTX is specified <span class="keyword">then</span> <span class="built_in">set</span> the SELinux</span><br><span class="line">                         or SMACK security context to CTX</span><br><span class="line">      --<span class="built_in">help</span>     display this <span class="built_in">help</span> and <span class="built_in">exit</span></span><br><span class="line">      --version  output version information and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">GNU coreutils online <span class="built_in">help</span>: &lt;http://www.gnu.org/software/coreutils/&gt;</span><br><span class="line">For complete documentation, run: info coreutils <span class="string">&#x27;mkdir invocation&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="man-在线参考手册界面"><a href="#man-在线参考手册界面" class="headerlink" title="man - 在线参考手册界面"></a>man - 在线参考手册界面</h4><h4 id="apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）"><a href="#apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）" class="headerlink" title="apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）"></a>apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux ~]<span class="comment"># apropos partition</span></span><br><span class="line">addpart (8)          - simple wrapper around the <span class="string">&quot;add partition&quot;</span> ioctl</span><br><span class="line">cfdisk (8)           - display or manipulate disk partition table</span><br><span class="line">delpart (8)          - simple wrapper around the <span class="string">&quot;del partition&quot;</span> ioctl</span><br><span class="line">fdisk (8)            - manipulate disk partition table</span><br><span class="line">iostat (1)           - Report Central Processing Unit (CPU) statistics and input/output statistics <span class="keyword">for</span> devices and partitions.</span><br><span class="line">kpartx (8)           - Create device maps from partition tables</span><br><span class="line">os-prober (1)        - Discover bootable partitions on the <span class="built_in">local</span> system.</span><br><span class="line">parted (8)           - a partition manipulation program</span><br><span class="line">partprobe (8)        - inform the OS of partition table changes</span><br><span class="line">partx (8)            - tell the Linux kernel about the presence and numbering of on-disk partitions</span><br><span class="line">resizepart (8)       - simple wrapper around the <span class="string">&quot;resize partition&quot;</span> ioctl</span><br><span class="line">sfdisk (8)           - partition table manipulator <span class="keyword">for</span> Linux</span><br><span class="line">systemd-efi-boot-generator (8) - Generator <span class="keyword">for</span> automatically mounting the EFI System Partition used by the current boot to /boot</span><br><span class="line">systemd-gpt-auto-generator (8) - Generator <span class="keyword">for</span> automatically discovering and mounting root, /home and /srv partitions, as well as discover...</span><br></pre></td></tr></table></figure>
+<h4 id="whatis-一行描述手册页"><a href="#whatis-一行描述手册页" class="headerlink" title="whatis - 一行描述手册页"></a>whatis - 一行描述手册页</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux ~]<span class="comment"># whatis ls</span></span><br><span class="line">ls (1)               - list directory contents</span><br><span class="line">[root@golinux ~]<span class="comment"># whatis yum</span></span><br><span class="line">yum (8)              - Yellowdog Updater Modified</span><br><span class="line">[root@golinux ~]<span class="comment"># whatis type</span></span><br><span class="line"><span class="built_in">type</span> (1)             - bash built-in commands, see bash(1)</span><br></pre></td></tr></table></figure>
+<h3 id="使用-alias-创建自己的命令"><a href="#使用-alias-创建自己的命令" class="headerlink" title="使用 alias 创建自己的命令"></a>使用 <code>alias</code> 创建自己的命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux ~]<span class="comment"># alias la=&#x27;ls -la&#x27;</span></span><br><span class="line">[root@golinux ~]<span class="comment"># la</span></span><br><span class="line">total 104</span><br><span class="line">dr-xr-x---.  8 root root 4096 Aug 29 17:38 .</span><br><span class="line">dr-xr-xr-x. 18 root root 4096 May 10 15:12 ..</span><br><span class="line">-rw-------   1 root root 8694 Sep  4 16:22 .bash_history</span><br><span class="line">-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout</span><br><span class="line">-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile</span><br><span class="line">-rw-r--r--.  1 root root  176 Sep  4 16:21 .bashrc</span><br><span class="line">drwx------   3 root root 4096 Oct 15  2017 .cache</span><br><span class="line">-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc</span><br><span class="line">drwxr-xr-x   7 root root 4096 Dec 21  2018 .nvm</span><br><span class="line">drwxr-xr-x   2 root root 4096 Oct 15  2017 .pip</span><br><span class="line">drwxr-----   3 root root 4096 Dec 21  2018 .pki</span><br><span class="line">-rw-r--r--   1 root root   64 Oct 15  2017 .pydistutils.cfg</span><br><span class="line">-rw-------   1 root root   37 Feb 16  2019 .python_history</span><br><span class="line">drwx------   2 root root 4096 Dec 20  2018 .ssh</span><br><span class="line">-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc</span><br><span class="line">drwxr-xr-x   6 root root 4096 Aug 26 15:15 .vim</span><br><span class="line">-rw-------   1 root root 5324 Aug 29 17:38 .viminfo</span><br><span class="line">-rw-------   1 root root 5121 Aug 26 23:19 .viminfo.tmp</span><br></pre></td></tr></table></figure>
+<h2 id="Redirection-重定向"><a href="#Redirection-重定向" class="headerlink" title="Redirection 重定向"></a>Redirection 重定向</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cat</code></td>
+<td>Concatenate files</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort lines of text</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uniq</code></td>
+<td>Report or omit repeated lines</td>
+<td></td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>Print lines matching a pattern</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wc</code></td>
+<td>Print newline, word, and byte counts for each file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>Output the first part of a file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>Output the last part of a file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tee</code></td>
+<td>Read from standard input and write to standard output and files</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Standard-Input-Output-and-Error-标准输入，输出和错误"><a href="#Standard-Input-Output-and-Error-标准输入，输出和错误" class="headerlink" title="Standard Input, Output, and Error 标准输入，输出和错误"></a>Standard Input, Output, and Error 标准输入，输出和错误</h3><p>Many of the programs that we have used so far produce output of some kind. This output often consists of two types.</p>
+<ul>
+<li>The program’s results; that is, the data the program is designed to produce</li>
+<li>Status and error messages that tell us how the program is getting along </li>
+</ul>
+<p>如果我们使用<code>ls</code>这样的命令，我们可以在屏幕上看到它显示的结果和错误消息。<br>保持<code>Unix</code>主题“一切都是文件”，像<code>ls</code>这样的程序实际上是将结果发送到一个名为标准输出（通常表示为<code>stdout</code>）的特殊文件，并将其状态消息发送到另一个名为标准错误（<code>stderr</code>）的文件。 默认情况下，标准输出和标准错误都会链接到屏幕上，而不是保存到磁盘文件中。<br>此外，许多程序从名为标准输入（stdin）的工具获取输入，默认情况下，该工具连接到键盘。<br>I / O重定向允许我们改变输出的位置和输入的来源。 通常，输出从屏幕上显示而输入则来自于键盘，但是通过I / O重定向，我们可以改变它。</p>
+<h3 id="Redirecting-Standard-Output-重定向标准输出"><a href="#Redirecting-Standard-Output-重定向标准输出" class="headerlink" title="Redirecting Standard Output 重定向标准输出"></a>Redirecting Standard Output 重定向标准输出</h3><p>把<code>ls -l /usr/bin</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l &#x2F;usr&#x2F;bin &gt; ls-output.txt</span><br></pre></td></tr></table></figure>
+<p>当你想把<code>ls -l /bin/usr</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件时，你会发现并不可行，因为<code>ls</code>这个命令不会把它的错误信息通过标准输出的方式进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux playground]<span class="comment"># ls -l /bin/usr &gt; ls-output.txt</span></span><br><span class="line">ls: cannot access /bin/usr: No such file or directory</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&gt;</code></td>
+<td>重写内容</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>追加内容</td>
+</tr>
+</tbody></table>
+<h3 id="Redirecting-Standard-Error-重定向标准错误"><a href="#Redirecting-Standard-Error-重定向标准错误" class="headerlink" title="Redirecting Standard Error 重定向标准错误"></a>Redirecting Standard Error 重定向标准错误</h3><p>要重定向标准错误，我们必须引用其文件描述符。 程序可以在几个编号的文件流中的任何一个上产生输出。 虽然我们将前三个文件流称为标准输入，输出和错误，但shell在内部分别将它们作为文件描述符0,1和2引用。 shell提供了使用文件描述符编号重定向文件的表示法。 由于标准错误与文件描述符编号2相同，因此我们可以使用以下表示法重定向标准错误：</p>
+<p>文件描述符（File Descriptor）是计算机科学中的一个术语，是一个用于表述指向<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6">文件</a>的引用的抽象化概念。</p>
+<table>
+<thead>
+<tr>
+<th>整数值</th>
+<th>名称</th>
+<th>&lt;unistd.h&gt;符号常量</th>
+<th>&lt;stdio.h&gt;文件流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stdin">Standard input</a></td>
+<td>STDIN_FILENO</td>
+<td>stdin</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stdout">Standard output</a></td>
+<td>STDOUT_FILENO</td>
+<td>stdout</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stderr">Standard error</a></td>
+<td>STDERR_FILENO</td>
+<td>stderr</td>
+</tr>
+</tbody></table>
+<p>重定向标准错误到文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /bin/usr 2&gt; ls-error.txt</span><br></pre></td></tr></table></figure>
+<p>重定向标准输出和标准错误到同一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l /bin/usr &gt; ls-output.txt 2&gt;&amp;1</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">ls -l /bin/usr &amp;&gt; ls-output.txt</span><br></pre></td></tr></table></figure>
+<p>处理不需要的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /bin/usr 2&gt; /dev/null</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki//dev/null">关于/dev/null的趣闻</a></p>
+</blockquote>
+<h3 id="Redirecting-Standard-Input-重定向标准输入"><a href="#Redirecting-Standard-Input-重定向标准输入" class="headerlink" title="Redirecting Standard Input 重定向标准输入"></a>Redirecting Standard Input 重定向标准输入</h3><h4 id="cat-合并输出文件"><a href="#cat-合并输出文件" class="headerlink" title="cat - 合并输出文件"></a>cat - 合并输出文件</h4><p>显示内容不多的文本文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ls-output.txt</span><br></pre></td></tr></table></figure>
+<p>合并文件，比如我们有 <code>movie.mpeg.001 movie.mpeg.002 ... movie.mpeg.099</code> 这些文件，使用如下命令就可以合并成一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat movie.mpeg.0* &gt; movie.mpeg</span><br></pre></td></tr></table></figure>
+<p>只输入<code>cat</code>就变成了输入什么输出什么的交互命令行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux playground]<span class="comment"># cat</span></span><br><span class="line">hello world</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+<p>利用这个特性可以用<code>cat</code>创建内容不多的文本文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@izbp13gye2rcpn1at3vj69z playground]<span class="comment"># cat &gt; little.txt</span></span><br><span class="line">this is a little.txt <span class="comment"># 输入文件内容</span></span><br><span class="line">[root@izbp13gye2rcpn1at3vj69z playground]<span class="comment"># cat little.txt </span></span><br><span class="line">this is a little.txt <span class="comment"># 打印文件内容</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>&lt;</code> 重定向操作符，我们将标准输入源从键盘更改为<code>little.txt</code> 文件。</p>
+<p>我们可以看到结果与<code>cat little.txt</code>这种传递单个文件名参数的结果相同</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@izbp13gye2rcpn1at3vj69z playground]<span class="comment"># cat &lt; little.txt </span></span><br><span class="line">this is the little.txt</span><br></pre></td></tr></table></figure>
+<h3 id="Pipelines-管道操作符"><a href="#Pipelines-管道操作符" class="headerlink" title="Pipelines 管道操作符"></a>Pipelines 管道操作符</h3><p>管道运算符<code>|</code> 可以把一个命令的标准输出传递到另一命令的标准输入</p>
+<div class="mermaid">
+graph TD
+A[前一个命令的标准输出]
+B[前一个命令的标准输出]
+%% 定义样式类
+classDef one fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef two fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
+%% 应用样式类，markdown里没效果
+class A one
+class B two
+A --管道运算符--&gt; B
+</div>
+
+<p>举个栗子 通过管道运算符 我们可以把 <code>/</code>的目录信息通过<code>less</code>命令打印出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@golinux playground]<span class="comment"># ll / | less</span></span><br></pre></td></tr></table></figure>
+<p>管道通常用于对数据执行复杂的操作。 可以将几个命令放到管道中。 通常，以这种方式使用的命令称为过滤器。 过滤器接受输入，以某种方式对其进行更改，然后输出。 我们将尝试的第一个是<code>sort</code>。 想象我们想在<code>/bin</code>和<code>/usr/bin</code>中列出所有可执行程序的组合列表，将它们按排序顺序放置，然后查看结果列表。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /bin /usr/bin/ | sort | less</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>&gt;</code>与 <code>|</code>的区别</p>
+<p>简单来讲，重定向操作符<code>|</code>将命令与文件连接，而管道操作符<code>|</code>将一个命令的输出与第二个命令的输入连接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">command1 &gt; file1</span><br><span class="line">command1 | command2</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="uniq-Report-or-Omit-Repeated-Lines-忽略重复的行"><a href="#uniq-Report-or-Omit-Repeated-Lines-忽略重复的行" class="headerlink" title="uniq: Report or Omit Repeated Lines 忽略重复的行"></a>uniq: Report or Omit Repeated Lines 忽略重复的行</h4><h4 id="wc-Print-Line-Word-and-Byte-Counts-打印行数，字数和字节数"><a href="#wc-Print-Line-Word-and-Byte-Counts-打印行数，字数和字节数" class="headerlink" title="wc: Print Line, Word, and Byte Counts 打印行数，字数和字节数"></a>wc: Print Line, Word, and Byte Counts 打印行数，字数和字节数</h4><h4 id="grep-Print-Lines-Matching-a-Pattern-匹配模式"><a href="#grep-Print-Lines-Matching-a-Pattern-匹配模式" class="headerlink" title="grep: Print Lines Matching a Pattern 匹配模式"></a>grep: Print Lines Matching a Pattern 匹配模式</h4><h4 id="head-tail-Print-First-Last-Part-of-Files-打印文件的最前-最后一部分"><a href="#head-tail-Print-First-Last-Part-of-Files-打印文件的最前-最后一部分" class="headerlink" title="head/tail: Print First/Last Part of Files 打印文件的最前/最后一部分"></a>head/tail: Print First/Last Part of Files 打印文件的最前/最后一部分</h4><h4 id="tee-Read-from-Stdin-and-Output-to-Stdout-and-Files-从Stdin读取并输出到Stdout和文件"><a href="#tee-Read-from-Stdin-and-Output-to-Stdout-and-Files-从Stdin读取并输出到Stdout和文件" class="headerlink" title="tee: Read from Stdin and Output to Stdout and Files 从Stdin读取并输出到Stdout和文件"></a>tee: Read from Stdin and Output to Stdout and Files 从Stdin读取并输出到Stdout和文件</h4><h2 id="todo-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题"><a href="#todo-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题" class="headerlink" title="todo Seeing the World as the Shell Sees it 用脚本解决问题"></a>todo Seeing the World as the Shell Sees it 用脚本解决问题</h2><h2 id="todo-Advanced-Keyboard-Tricks-高级键盘技巧"><a href="#todo-Advanced-Keyboard-Tricks-高级键盘技巧" class="headerlink" title="todo Advanced Keyboard Tricks 高级键盘技巧"></a>todo Advanced Keyboard Tricks 高级键盘技巧</h2><h2 id="todo-Permissions-权限"><a href="#todo-Permissions-权限" class="headerlink" title="todo Permissions 权限"></a>todo Permissions 权限</h2><h2 id="todo-Processes-进程"><a href="#todo-Processes-进程" class="headerlink" title="todo Processes 进程"></a>todo Processes 进程</h2><h2 id="todo-The-Environment-环境"><a href="#todo-The-Environment-环境" class="headerlink" title="todo The Environment 环境"></a>todo The Environment 环境</h2><h2 id="todo-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍"><a href="#todo-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍" class="headerlink" title="todo A Gentle Introduction to VIM 一个柔和的 VIM 介绍"></a>todo A Gentle Introduction to VIM 一个柔和的 VIM 介绍</h2><h2 id="todo-Customizing-the-Prompt-自定义提示"><a href="#todo-Customizing-the-Prompt-自定义提示" class="headerlink" title="todo Customizing the Prompt 自定义提示"></a>todo Customizing the Prompt 自定义提示</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -269,7 +801,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -286,16 +818,12 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>因为是使用 <code>windows</code>开发，所以使用 <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a>，版本选择最新的就可以。</p>
 <p>安装完毕之后，需要去 <code>C:\Users\&#123;用户名&#125;\AppData\Roaming\nvm</code>目录下，给 <code>settings.txt</code>添加 <code>node_mirror</code>和 <code>npm_mirror</code>配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root: C:\Users\emotionl\AppData\Roaming\nvm</span><br><span class="line">path: D:\Program Files\nodejs</span><br><span class="line">node_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;</span><br><span class="line">npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;</span><br></pre></td></tr></table></figure>
-
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装想要使用的 Node.js 版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install &lt;version&gt;</span><br></pre></td></tr></table></figure>
-
 <p>查看已安装的 Node.js 版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list [available]  </span><br></pre></td></tr></table></figure>
-
 <p>使用已经安装的 Node.js 版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use [version]</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -353,7 +881,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -368,22 +896,16 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>使用 <code>Object.defineProperty()</code>模拟<code>Vue</code>的数据绑定</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VData</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">&#123; data &#125;</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = data</span><br><span class="line">    <span class="built_in">this</span>.bindData(data)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">bindData</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> newData = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.hasOwnProperty(key)) &#123;</span><br><span class="line">        newData[key] = data[key]</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">          <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> newData[key]</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function"><span class="title">set</span>(<span class="params">val</span>)</span> &#123;</span><br><span class="line">            newData[key] = val</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> v = <span class="keyword">new</span> VData(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>使用<code>Proxy</code>封装一个可设置类型的数组<code>TypeArray</code>，并且对数组中不存在的值返回默认值</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> TypeArray = <span class="function">(<span class="params">type, defaultValue = <span class="string">&#x27;N/A&#x27;</span>, initArray = []</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(initArray, &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[prop] || defaultValue</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">target, prop, value</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> value === type || prop === <span class="string">&#x27;length&#x27;</span>) &#123;</span><br><span class="line">        target[prop] = value</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numArr = TypeArray(<span class="string">&#x27;number&#x27;</span>)</span><br><span class="line">numArr.push(<span class="number">1</span>)   <span class="comment">// Proxy 代理数组 数组本身的方法属性不会被破坏</span></span><br><span class="line">numArr.push(<span class="string">&quot;2&quot;</span>) <span class="comment">// Uncaught TypeError: &#x27;set&#x27; on proxy: trap returned falsish for property &#x27;2&#x27; at Proxy.push (&lt;anonymous&gt;)</span></span><br></pre></td></tr></table></figure>
-
 <p>使用 <code>has</code>方法捕获<code>in</code>操作符</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> checkRange = <span class="keyword">new</span> <span class="built_in">Proxy</span>(</span><br><span class="line">  &#123;</span><br><span class="line">    start: <span class="number">0</span>,</span><br><span class="line">    end: <span class="number">100</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="function"><span class="title">has</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> prop &gt;= target.start &amp;&amp; prop &lt;= target.end</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">50</span> <span class="keyword">in</span> checkRange)	<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">150</span> <span class="keyword">in</span> checkRange)	<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
 <p>使用<code>ownKeys</code>拦截 <code>Reflect.ownKeys()</code>也可以拦截 <code>Object.keys() ; for in Loop ; Object.getOwnPropertySymbols()</code> 中的部分的 key </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  attr: <span class="string">&#x27;attr&#x27;</span>,</span><br><span class="line">  _attr: <span class="string">&#x27;_attr&#x27;</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">&#x27;attr&#x27;</span>)]: <span class="string">&#x27;Symbol(attr)&#x27;</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">&#x27;_attr&#x27;</span>)]: <span class="string">&#x27;Symbol(_attr)&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 未使用 Proxy 的 ownKeys 拦截</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)) <span class="comment">// [&quot;attr&quot;, &quot;_attr&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(obj)) <span class="comment">// [Symbol(attr), Symbol(_attr)]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj)) <span class="comment">// [&quot;attr&quot;, &quot;_attr&quot;, Symbol(attr), Symbol(_attr)]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">// attr _attr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 Proxy 的 ownKeys 拦截</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="function"><span class="title">ownKeys</span>(<span class="params">target</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> normalKeys = <span class="built_in">Object</span>.keys(target)</span><br><span class="line">    <span class="keyword">const</span> normalFilterKeys = normalKeys.filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.startsWith(<span class="string">&#x27;_&#x27;</span>)) <span class="comment">// 拦截以下划线开头的 key</span></span><br><span class="line">    <span class="keyword">const</span> symbolKeys = <span class="built_in">Object</span>.getOwnPropertySymbols(target)</span><br><span class="line">    <span class="keyword">const</span> symbolFilterKeys = symbolKeys.filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.toString().startsWith(<span class="string">&#x27;Symbol(_&#x27;</span>)) <span class="comment">// 拦截以下划线开头的 key</span></span><br><span class="line">    <span class="keyword">return</span> [...normalFilterKeys, ...symbolFilterKeys]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(p)) <span class="comment">// [&quot;attr&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(p)) <span class="comment">// [Symbol(attr)]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(p)) <span class="comment">// [&quot;attr&quot;, Symbol(attr)]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> p) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">// attr</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>来个综合案例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> userInfo = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Jack&#x27;</span>,</span><br><span class="line">  age: <span class="number">17</span>,</span><br><span class="line">  _address: <span class="string">&#x27;London UK&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(userInfo, &#123;</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`<span class="subst">$&#123;prop&#125;</span> 不可访问`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[prop] || <span class="string">&#x27;N/A&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">set</span>(<span class="params">target, prop, value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`不能设置 <span class="subst">$&#123;prop&#125;</span>`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      target[prop] = value</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">deleteProperty</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`不能删除<span class="subst">$&#123;prop&#125;</span>`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">delete</span> target[prop]</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">ownKeys</span>(<span class="params">target</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(target).filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.startsWith(<span class="string">&#x27;_&#x27;</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>使用 <code>apply</code>拦截函数的调用（包装函数）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sumText = <span class="keyword">new</span> <span class="built_in">Proxy</span>(sum, &#123;</span><br><span class="line">  <span class="function"><span class="title">apply</span>(<span class="params">target, thisArg, argArray</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`total number is <span class="subst">$&#123;target(...argArray)&#125;</span>`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">sumText(<span class="number">10</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -441,7 +963,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -456,19 +978,15 @@
     <div class="post-body" itemprop="articleBody">
           <p>先来个例题 看一下结果</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">addGen</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> y = (<span class="keyword">yield</span> x + <span class="number">5</span>) * <span class="number">2</span></span><br><span class="line">  <span class="keyword">let</span> z = <span class="keyword">yield</span> y / <span class="number">4</span></span><br><span class="line">  <span class="keyword">return</span> x + y + z</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = addGen(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(g.next()) <span class="comment">// 1&gt; &#123;value: 6, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next()) <span class="comment">// 2&gt; &#123;value: NaN, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(g.next()) <span class="comment">// 3&gt; &#123;value: NaN, done: true&#125;</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  1&gt; g.next() 返回的 value 是 x + 5 =&gt; 6</span></span><br><span class="line"><span class="comment">  2&gt; g.next() 返回的 value 是 y / 3，由于本次 g.next() 并未传值，所以 y = undefined * 2 =&gt; NaN，所以本次的 value 是 NaN / 3 =&gt; NaN</span></span><br><span class="line"><span class="comment">  3&gt; g.next() 返回的 value 是 x + y + z =&gt; 1 + NaN + NaN =&gt; NaN</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>如何让以上代码执行的更符合一般的逻辑<code>y = (1 + 5) * 2 ; z = y / 4</code>，最后返回 16</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">addGen</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> y = (<span class="keyword">yield</span> x + <span class="number">5</span>) * <span class="number">2</span></span><br><span class="line">  <span class="keyword">let</span> z = <span class="keyword">yield</span> y / <span class="number">4</span></span><br><span class="line">  <span class="keyword">return</span> x + y + z</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = addGen(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">let</span> v1 = g.next().value</span><br><span class="line"><span class="keyword">let</span> v2 = g.next(v1).value</span><br><span class="line"><span class="keyword">let</span> v3 = g.next(v2).value</span><br><span class="line"><span class="built_in">console</span>.log(v3)</span><br></pre></td></tr></table></figure>
-
 <p>再来个实例，以 “敲七” 这个游戏为例，从零开始获取每一个符合 “敲七” 的数字</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">count7Gen</span>(<span class="params">count = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (count % <span class="number">7</span> === <span class="number">0</span> || count % <span class="number">10</span> === <span class="number">7</span>) &#123;</span><br><span class="line">      <span class="keyword">yield</span> count</span><br><span class="line">    &#125;</span><br><span class="line">    count++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c7g = count7Gen()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c7g.next()) <span class="comment">// &#123;value: 7, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c7g.next()) <span class="comment">// &#123;value: 14, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c7g.next()) <span class="comment">// &#123;value: 17, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c7g.next()) <span class="comment">// &#123;value: 21, done: false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c7g.next()) <span class="comment">// &#123;value: 27, done: false&#125;</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p><code>count7Gen</code>这个函数本身是一个死循环，但是 <code>Generator</code>这种模式使其能在特定的节点停止或继续</p>
 </blockquote>
 <p>模拟一个简单的 <code>Generator</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> makeGenerator = <span class="function">(<span class="params">list</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> index = <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    next: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> value = index &gt;= list.length</span><br><span class="line">      <span class="keyword">const</span> done = list[index++]</span><br><span class="line">      <span class="keyword">return</span> &#123; value, done &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = makeGenerator([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>])</span><br><span class="line"><span class="built_in">console</span>.log(g.next())</span><br><span class="line"><span class="built_in">console</span>.log(g.next())</span><br><span class="line"><span class="built_in">console</span>.log(g.next())</span><br><span class="line"><span class="built_in">console</span>.log(g.next())</span><br></pre></td></tr></table></figure>
-
 
 
 
@@ -528,7 +1046,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -555,16 +1073,12 @@ C --&gt; D
 
 <h2 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h2><p>定义数据</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BaseEntity, Entity, PrimaryGeneratedColumn, Column &#125; <span class="keyword">from</span> <span class="string">&#x27;typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">BaseEntity</span> </span>&#123;</span><br><span class="line">  <span class="meta">@PrimaryGeneratedColumn</span>() <span class="comment">// 定义主键</span></span><br><span class="line">  id: <span class="built_in">number</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  title: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  description: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column</span>()</span><br><span class="line">  status: TaskStatus</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>操作数据</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; EntityRepository, Repository &#125; <span class="keyword">from</span> <span class="string">&#x27;typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@EntityRepository</span>(Task)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TaskRepository</span> <span class="keyword">extends</span> <span class="title">Repository</span>&lt;<span class="title">Task</span>&gt; </span>&#123; <span class="comment">// 继承 Repository 享用 findOne delete 等操作</span></span><br><span class="line">  <span class="keyword">async</span> getTasks(filterDto: GetTasksFilterDto): <span class="built_in">Promise</span>&lt;Task[]&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; status, search &#125; = filterDto</span><br><span class="line">    <span class="keyword">const</span> query = <span class="built_in">this</span>.createQueryBuilder(<span class="string">&#x27;task&#x27;</span>) <span class="comment">// 使用 QueryBuilder 生成 SQL</span></span><br><span class="line">    <span class="keyword">if</span> (status) &#123;</span><br><span class="line">      query.andWhere(<span class="string">&#x27;task.status = :status&#x27;</span>, &#123; status &#125;) <span class="comment">// 添加条件</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (search) &#123;</span><br><span class="line">      query.andWhere(</span><br><span class="line">        <span class="string">&#x27;task.title LIKE :search OR task.description LIKE :search&#x27;</span>,</span><br><span class="line">        &#123; <span class="attr">search</span>: <span class="string">`%<span class="subst">$&#123;search&#125;</span>%`</span> &#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> tasks = <span class="keyword">await</span> query.getMany() <span class="comment">// 执行 SQL 获取数据</span></span><br><span class="line">    <span class="keyword">return</span> tasks</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> createTask(createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; title, description &#125; = createTaskDto</span><br><span class="line">    <span class="keyword">const</span> task = <span class="keyword">new</span> Task()</span><br><span class="line">    task.title = title</span><br><span class="line">    task.description = description</span><br><span class="line">    task.status = TaskStatus.OPEN</span><br><span class="line">    <span class="keyword">await</span> task.save()</span><br><span class="line">    <span class="keyword">return</span> task</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>提供服务</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTaskStatusDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/update-task-status.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskRepository &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.repository&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; InjectRepository &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/typeorm&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TaskStatus &#125; <span class="keyword">from</span> <span class="string">&#x27;./task-status.enum&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TasksService</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="meta">@InjectRepository</span>(TaskRepository)</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> taskRepository: TaskRepository</span></span><br><span class="line"><span class="params">  </span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> getTasks(filterDto: GetTasksFilterDto): <span class="built_in">Promise</span>&lt;Task[]&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskRepository.getTasks(filterDto) <span class="comment">// 调用 TaskRepository 中封装好的数据操作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> getTaskById(id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="comment">// 当数据操作比较简单时 可以直接调用 Repository 的方法</span></span><br><span class="line">    <span class="keyword">const</span> foundTask = <span class="keyword">await</span> <span class="built_in">this</span>.taskRepository.findOne(id) </span><br><span class="line">    <span class="keyword">if</span> (!foundTask) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(<span class="string">`Task with ID <span class="subst">$&#123;id&#125;</span> not found`</span>)</span><br><span class="line">    <span class="keyword">return</span> foundTask</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> createTask(createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskRepository.createTask(createTaskDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> deleteTask(id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;<span class="built_in">any</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="built_in">this</span>.taskRepository.delete(id)</span><br><span class="line">    <span class="keyword">if</span> (result.affected === <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(<span class="string">`Task with ID <span class="subst">$&#123;id&#125;</span> not found`</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> updateTaskStatus(</span><br><span class="line">    updateTaskStatusDto: UpdateTaskStatusDto</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; id, status &#125; = updateTaskStatusDto</span><br><span class="line">    <span class="keyword">const</span> foundTask = <span class="keyword">await</span> <span class="built_in">this</span>.getTaskById(id)</span><br><span class="line">    foundTask.status = TaskStatus[status]</span><br><span class="line">    <span class="keyword">await</span> foundTask.save()</span><br><span class="line">    <span class="keyword">return</span> foundTask</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>处理请求</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Controller,</span><br><span class="line">  Get,</span><br><span class="line">  Post,</span><br><span class="line">  Body,</span><br><span class="line">  Param,</span><br><span class="line">  Query,</span><br><span class="line">  UsePipes,</span><br><span class="line">  ValidationPipe,</span><br><span class="line">  ParseIntPipe</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; TasksService &#125; <span class="keyword">from</span> <span class="string">&#x27;./tasks.service&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; CreateTaskDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-task.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; GetTasksFilterDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/get-tasks-filter-dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTaskStatusDto &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/update-task-status.dto&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Task &#125; <span class="keyword">from</span> <span class="string">&#x27;./task.entity&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span>(<span class="string">&#x27;tasks&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TasksController</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"><span class="keyword">private</span> taskService: TasksService</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Get</span>()</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe) <span class="comment">// 使用 ValidationPipe 和 DTO 进行字段的校验</span></span><br><span class="line">  <span class="function"><span class="title">getTasks</span>(<span class="params"><span class="meta">@Query</span>() filterDto: GetTasksFilterDto</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.getTasks(filterDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Get</span>(<span class="string">&#x27;/:id&#x27;</span>)</span><br><span class="line">  getTaskById(<span class="meta">@Param</span>(<span class="string">&#x27;id&#x27;</span>, ParseIntPipe) id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;Task&gt; &#123; </span><br><span class="line">    <span class="comment">// ParseIntPipe string=&gt;number (如果转换失败将抛出异常)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.getTaskById(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/create&#x27;</span>)</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe)</span><br><span class="line">  createTask(<span class="meta">@Body</span>() createTaskDto: CreateTaskDto): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.createTask(createTaskDto)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/delete&#x27;</span>)</span><br><span class="line">  deleteTask(<span class="meta">@Body</span>(<span class="string">&#x27;id&#x27;</span>, ParseIntPipe) id: <span class="built_in">number</span>): <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.deleteTask(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Post</span>(<span class="string">&#x27;/status/update&#x27;</span>)</span><br><span class="line">  <span class="meta">@UsePipes</span>(ValidationPipe)</span><br><span class="line">  <span class="keyword">async</span> updateTaskStatus(</span><br><span class="line">    <span class="meta">@Body</span>() updateTaskStatusDto: UpdateTaskStatusDto</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;Task&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.taskService.updateTaskStatus(updateTaskStatusDto)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       
     </div>
@@ -622,7 +1136,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -644,14 +1158,11 @@ C --&gt; D
 <h2 id="与-React-结合"><a href="#与-React-结合" class="headerlink" title="与 React 结合"></a>与 React 结合</h2><p>以 <code>JavaScript API GL v1.0</code> 版本的 <code>SDK</code>为例</p>
 <ol>
 <li><p>首先在<code>public\index.html</code>添加引入 <code>BMapGL</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">dir</span>=<span class="string">&quot;ltr&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/favicon.ico&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;theme-color&quot;</span> <span class="attr">content</span>=<span class="string">&quot;#000000&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;manifest&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/manifest.json&quot;</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 引入 BMapGL --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://api.map.baidu.com/api?type=webgl&amp;v=1.0&amp;ak=4gaWxQf2AUtC51IhrHLVVUW5f10K1GTN&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">dir</span>=<span class="string">&quot;ltr&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/favicon.ico&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;theme-color&quot;</span> <span class="attr">content</span>=<span class="string">&quot;#000000&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;manifest&quot;</span> <span class="attr">href</span>=<span class="string">&quot;%PUBLIC_URL%/manifest.json&quot;</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 引入 BMapGL --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://api.map.baidu.com/api?type=webgl&amp;v=1.0&amp;ak=4gaWxQf2AUtC51IhrHLVVUW5f10K1GTN&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>修改<code>config-overrides.js</code>添加<code>externals</code>配置</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  override,</span><br><span class="line">  addWebpackPlugin,</span><br><span class="line">  addPostcssPlugins,</span><br><span class="line">  addWebpackExternals</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">&#x27;customize-cra&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> WebpackBuildNotifierPlugin = <span class="built_in">require</span>(<span class="string">&#x27;webpack-build-notifier&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> WebpackBar = <span class="built_in">require</span>(<span class="string">&#x27;webpackbar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  webpack: override(</span><br><span class="line">    addWebpackPlugin(</span><br><span class="line">      <span class="keyword">new</span> WebpackBar(),</span><br><span class="line">      <span class="keyword">new</span> WebpackBuildNotifierPlugin(&#123;</span><br><span class="line">        title: <span class="string">&#x27;MISSION SUCCESS!&#x27;</span>,</span><br><span class="line">        logo: path.resolve(<span class="string">&#x27;./src/logo.svg&#x27;</span>),</span><br><span class="line">        suppressSuccess: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ),</span><br><span class="line">    addPostcssPlugins([<span class="built_in">require</span>(<span class="string">&#x27;postcss-rtl&#x27;</span>)()]),</span><br><span class="line">    <span class="comment">// 添加 externals 配置</span></span><br><span class="line">    addWebpackExternals(&#123;</span><br><span class="line">      BMapGL: <span class="string">&#x27;BMapGL&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  override,</span><br><span class="line">  addWebpackPlugin,</span><br><span class="line">  addPostcssPlugins,</span><br><span class="line">  addWebpackExternals</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">&#x27;customize-cra&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> WebpackBuildNotifierPlugin = <span class="built_in">require</span>(<span class="string">&#x27;webpack-build-notifier&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> WebpackBar = <span class="built_in">require</span>(<span class="string">&#x27;webpackbar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  webpack: override(</span><br><span class="line">    addWebpackPlugin(</span><br><span class="line">      <span class="keyword">new</span> WebpackBar(),</span><br><span class="line">      <span class="keyword">new</span> WebpackBuildNotifierPlugin(&#123;</span><br><span class="line">        title: <span class="string">&#x27;MISSION SUCCESS!&#x27;</span>,</span><br><span class="line">        logo: path.resolve(<span class="string">&#x27;./src/logo.svg&#x27;</span>),</span><br><span class="line">        suppressSuccess: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ),</span><br><span class="line">    addPostcssPlugins([<span class="built_in">require</span>(<span class="string">&#x27;postcss-rtl&#x27;</span>)()]),</span><br><span class="line">    <span class="comment">// 添加 externals 配置</span></span><br><span class="line">    addWebpackExternals(&#123;</span><br><span class="line">      BMapGL: <span class="string">&#x27;BMapGL&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>最后导入并使用<code>BMapGL</code></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useRef, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> BMapGL <span class="keyword">from</span> <span class="string">&#x27;BMapGL&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Card &#125; <span class="keyword">from</span> <span class="string">&#x27;reactstrap&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> BMapDemo = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> bMapContainerRef = useRef(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 创建 BMapGL 实例</span></span><br><span class="line">    <span class="keyword">const</span> bMap = <span class="keyword">new</span> BMapGL.Map(bMapContainerRef.current)</span><br><span class="line">    <span class="comment">// 初始化中心点坐标</span></span><br><span class="line">    <span class="keyword">const</span> point = <span class="keyword">new</span> BMapGL.Point(<span class="number">116.404</span>, <span class="number">39.915</span>)</span><br><span class="line">    <span class="comment">// 初始化地图，设置中心点坐标和地图级别</span></span><br><span class="line">    bMap.centerAndZoom(point, <span class="number">12</span>)</span><br><span class="line">    bMap.enableScrollWheelZoom(<span class="literal">true</span>)</span><br><span class="line">  &#125;, [])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Card</span><br><span class="line">      style=&#123;&#123;</span><br><span class="line">        width: <span class="string">&#x27;100%&#x27;</span>,</span><br><span class="line">        height: <span class="string">&#x27;300px&#x27;</span></span><br><span class="line">      &#125;&#125;&gt;</span><br><span class="line">      &lt;div</span><br><span class="line">        ref=&#123;bMapContainerRef&#125;</span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          width: <span class="string">&#x27;100%&#x27;</span>,</span><br><span class="line">          height: <span class="string">&#x27;100%&#x27;</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/Card&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 
@@ -711,7 +1222,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -726,10 +1237,8 @@ C --&gt; D
     <div class="post-body" itemprop="articleBody">
           <p>题目：实现一个 <code>LazyMan</code>，按照以下方式调用时，得到相关输出：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">LazyMan(<span class="string">&#x27;Hank&#x27;</span>)</span><br><span class="line"><span class="comment">// Hi! This is Hank!</span></span><br><span class="line">LazyMan(<span class="string">&#x27;Hank&#x27;</span>).sleep(<span class="number">10</span>).eat(<span class="string">&#x27;dinner&#x27;</span>)</span><br><span class="line"><span class="comment">// Hi! This is Hank!</span></span><br><span class="line"><span class="comment">// 等待 10 秒..</span></span><br><span class="line"><span class="comment">// Wake up after 10</span></span><br><span class="line"><span class="comment">// Eat dinner~</span></span><br><span class="line">LazyMan(<span class="string">&#x27;Hank&#x27;</span>).eat(<span class="string">&#x27;dinner&#x27;</span>).eat(<span class="string">&#x27;supper&#x27;</span>)</span><br><span class="line"><span class="comment">// Hi This is Hank!</span></span><br><span class="line"><span class="comment">// Eat dinner~</span></span><br><span class="line"><span class="comment">// Eat supper~</span></span><br><span class="line">LazyMan(<span class="string">&#x27;Hank&#x27;</span>).sleepFirst(<span class="number">5</span>).eat(<span class="string">&#x27;supper&#x27;</span>)</span><br><span class="line"><span class="comment">// 等待 5 秒</span></span><br><span class="line"><span class="comment">// Wake up after 5</span></span><br><span class="line"><span class="comment">// Hi This is Hank!</span></span><br><span class="line"><span class="comment">// Eat supper</span></span><br></pre></td></tr></table></figure>
-
 <p>代码实现：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LazyManCreator</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.taskList = []</span><br><span class="line">    <span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`Hi! This is <span class="subst">$&#123;name&#125;</span>!`</span>)</span><br><span class="line">      <span class="built_in">this</span>.next()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.taskList.push(task)</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.next()</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">next</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> task = <span class="built_in">this</span>.taskList.shift()</span><br><span class="line">    task &amp;&amp; task()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">sleep</span>(<span class="params">timeout</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`Wake up after <span class="subst">$&#123;timeout&#125;</span>`</span>)</span><br><span class="line">        <span class="built_in">this</span>.next()</span><br><span class="line">      &#125;, timeout * <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.taskList.push(task)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">sleepFirst</span>(<span class="params">timeout</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`Wake up after <span class="subst">$&#123;timeout&#125;</span>`</span>)</span><br><span class="line">        <span class="built_in">this</span>.next()</span><br><span class="line">      &#125;, timeout * <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.taskList.unshift(task)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">eat</span>(<span class="params">meal</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`Eat <span class="subst">$&#123;meal&#125;</span>`</span>)</span><br><span class="line">      <span class="built_in">this</span>.next()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.taskList.push(task)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> LazyMan = <span class="function"><span class="params">name</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> LazyManCreator(name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;==============&#x27;</span>)</span><br><span class="line">LazyMan(<span class="string">&#x27;Hank&#x27;</span>).sleepFirst(<span class="number">5</span>).eat(<span class="string">&#x27;supper&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -787,7 +1296,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -801,7 +1310,6 @@ C --&gt; D
     
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomSet</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.items = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">getKeyForValue</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Symbol</span>.for(value)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">add</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">this</span>.has(value)) <span class="built_in">this</span>.items[<span class="built_in">this</span>.getKeyForValue(value)] = value</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">clear</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.items = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">delete</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.has(value)) <span class="keyword">delete</span> <span class="built_in">this</span>.items[<span class="built_in">this</span>.getKeyForValue(value)]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">has</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> key = <span class="built_in">this</span>.getKeyForValue(value)</span><br><span class="line">    <span class="keyword">const</span> keyList = <span class="built_in">Object</span>.getOwnPropertySymbols(<span class="built_in">this</span>.items)</span><br><span class="line">    <span class="keyword">return</span> keyList.some(<span class="function"><span class="params">item</span> =&gt;</span> item === key)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">size</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.getOwnPropertySymbols(<span class="built_in">this</span>.items).length</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">values</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.getOwnPropertySymbols(<span class="built_in">this</span>.items).map(<span class="function"><span class="params">key</span> =&gt;</span> <span class="built_in">this</span>.items[key])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 并集</span></span><br><span class="line">  <span class="function"><span class="title">union</span>(<span class="params">otherSet</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> unionSet = <span class="keyword">new</span> CustomSet()</span><br><span class="line">    <span class="built_in">this</span>.values().forEach(<span class="function"><span class="params">values</span> =&gt;</span> unionSet.add(values))</span><br><span class="line">    otherSet.values().forEach(<span class="function"><span class="params">values</span> =&gt;</span> unionSet.add(values))</span><br><span class="line">    <span class="keyword">return</span> unionSet</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 交集</span></span><br><span class="line">  <span class="function"><span class="title">intersection</span>(<span class="params">otherSet</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> intersectionSet = <span class="keyword">new</span> CustomSet()</span><br><span class="line">    <span class="built_in">this</span>.values().forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (otherSet.has(value)) &#123;</span><br><span class="line">        intersectionSet.add(value)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> intersectionSet</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 差集</span></span><br><span class="line">  <span class="function"><span class="title">difference</span>(<span class="params">otherSet</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> differenceSet = <span class="keyword">new</span> CustomSet()</span><br><span class="line">    <span class="built_in">this</span>.values().forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!otherSet.has(value)) &#123;</span><br><span class="line">        differenceSet.add(value)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> differenceSet</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 子集</span></span><br><span class="line">  <span class="function"><span class="title">isSubsetOf</span>(<span class="params">otherSet</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.size() &gt; otherSet.size()) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.values().every(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> otherSet.has(value)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> CustomSet()</span><br><span class="line">s1.add(<span class="number">1</span>).add(<span class="number">2</span>).add(<span class="number">3</span>).add(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">const</span> s2 = <span class="keyword">new</span> CustomSet()</span><br><span class="line">s2.add(<span class="string">&#x27;Jack&#x27;</span>).add(<span class="string">&#x27;Tim&#x27;</span>).add(<span class="string">&#x27;David&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> s3 = s1.union(s2)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;======================================&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s3.values())</span><br><span class="line"><span class="keyword">const</span> s4 = <span class="keyword">new</span> CustomSet()</span><br><span class="line">s4.add(<span class="number">3</span>).add(<span class="number">4</span>).add(<span class="number">5</span>).add(<span class="number">6</span>)</span><br><span class="line"><span class="keyword">const</span> s5 = s1.intersection(s4)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;======================================&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s5.values())</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;======================================&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> s6 = s1.difference(s4)</span><br><span class="line"><span class="built_in">console</span>.log(s6.values())</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;======================================&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> s7 = <span class="keyword">new</span> CustomSet()</span><br><span class="line">s7.add(<span class="number">1</span>).add(<span class="number">2</span>).add(<span class="number">3</span>).add(<span class="number">4</span>).add(<span class="number">5</span>).add(<span class="number">6</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s1.isSubsetOf(s7))</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -859,7 +1367,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -874,7 +1382,6 @@ C --&gt; D
     <div class="post-body" itemprop="articleBody">
           <h2 id="实现-new-操作"><a href="#实现-new-操作" class="headerlink" title="实现 new 操作"></a>实现 <code>new</code> 操作</h2><p>首先，我们先来看看<code>new</code>操作起了什么作用</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数 People (无显式返回值)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name</span><br><span class="line">  <span class="built_in">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">People.prototype.printInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span> and <span class="subst">$&#123;<span class="built_in">this</span>.age&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 构造函数 Student (有显式返回值，且返回值为对象类型)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">ps</span>: <span class="string">&#x27;balabala&#x27;</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> People(<span class="string">&#x27;Jack&#x27;</span>, <span class="number">17</span>)</span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> Student(<span class="string">&#x27;David&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1.name)        <span class="comment">// Jack</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.age)         <span class="comment">// 17</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.printInfo()) <span class="comment">// My name is Jack and 17</span></span><br><span class="line"><span class="built_in">console</span>.log(s1)             <span class="comment">// &#123;ps: &quot;balabala&quot;&#125;</span></span><br></pre></td></tr></table></figure>
-
 <p>可以看出 <code>new</code>关键字大体上有一下几个作用</p>
 <ul>
 <li>构造函数无显式返回值时（例如<code>Person</code>），通过<code>new</code>操作得到的<code>p1</code> 可以访问到构造函数<code>Person</code>里的属性和<code>Person.prototype</code>里的属性</li>
@@ -888,7 +1395,6 @@ C --&gt; D
 <li>根据构造函数执行逻辑，返回第一步创建的对象或者构造函数的显式返回值</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> customNew = <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title">constructor</span> = <span class="title">args</span>.<span class="title">shift</span>(<span class="params"></span>)</span><br><span class="line">  <span class="title">const</span> <span class="title">obj</span> = &#123;&#125;</span><br><span class="line">  obj.__proto__ = <span class="title">constructor</span>.<span class="title">prototype</span></span><br><span class="line">  // 以上两行等价于 <span class="title">const</span> <span class="title">obj</span> = <span class="title">Object</span>.<span class="title">create</span>(<span class="params">constructor.prototype</span>)</span><br><span class="line">  <span class="title">const</span> <span class="title">res</span> = <span class="title">constructor</span>.<span class="title">apply</span>(<span class="params">obj, args</span>)</span><br><span class="line">  <span class="title">return</span> <span class="title">typeof</span> <span class="title">res</span> === &#x27;<span class="title">object</span>&#x27; ? <span class="title">res</span> : <span class="title">obj</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">const</span> <span class="title">p2</span> = <span class="title">customNew</span>(<span class="params">People, <span class="string">&#x27;Jason&#x27;</span>, <span class="number">18</span></span>)</span><br><span class="line"><span class="title">const</span> <span class="title">s2</span> = <span class="title">customNew</span>(<span class="params">Student, <span class="string">&#x27;Doug&#x27;</span></span>)</span><br><span class="line"><span class="title">console</span>.<span class="title">log</span>(<span class="params">p2</span>)</span><br><span class="line"><span class="title">console</span>.<span class="title">log</span>(<span class="params">s2</span>)</span><br></pre></td></tr></table></figure>
-
 
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/mqyqingfeng/Blog/issues/13">JavaScript深入之new的模拟实现</a></p>
@@ -951,7 +1457,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -965,102 +1471,6 @@ C --&gt; D
     
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明节点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">key</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.key = key</span><br><span class="line">    <span class="built_in">this</span>.left = <span class="literal">null</span></span><br><span class="line">    <span class="built_in">this</span>.right = <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.root = <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 新增节点</span></span><br><span class="line">  <span class="function"><span class="title">insert</span>(<span class="params">key</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.root === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.root = <span class="keyword">new</span> Node(key)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>._insertNode(<span class="built_in">this</span>.root, key)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_insertNode</span>(<span class="params">node, key</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node === <span class="literal">null</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> (key &lt; node.key) &#123;</span><br><span class="line">      <span class="keyword">if</span> (node.left === <span class="literal">null</span>) &#123;</span><br><span class="line">        node.left = <span class="keyword">new</span> Node(key)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._insertNode(node.left, key)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (node.right === <span class="literal">null</span>) &#123;</span><br><span class="line">        node.right = <span class="keyword">new</span> Node(key)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._insertNode(node.right, key)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 中序遍历</span></span><br><span class="line">  <span class="function"><span class="title">inOrder</span>(<span class="params">callback</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>._inOrderNode(<span class="built_in">this</span>.root, callback)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_inOrderNode</span>(<span class="params">node, callback</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>._inOrderNode(node.left, callback)</span><br><span class="line">      callback(node.key)</span><br><span class="line">      <span class="built_in">this</span>._inOrderNode(node.right, callback)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 先序遍历</span></span><br><span class="line">  <span class="function"><span class="title">preOrder</span>(<span class="params">callback</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>._preOrderNode(<span class="built_in">this</span>.root, callback)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_preOrderNode</span>(<span class="params">node, callback</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node !== <span class="literal">null</span>) &#123;</span><br><span class="line">      callback(node.key)</span><br><span class="line">      <span class="built_in">this</span>._preOrderNode(node.left, callback)</span><br><span class="line">      <span class="built_in">this</span>._preOrderNode(node.right, callback)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 后续遍历</span></span><br><span class="line">  <span class="function"><span class="title">postOrder</span>(<span class="params">callback</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>._postOrderNode(<span class="built_in">this</span>.root, callback)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_postOrderNode</span>(<span class="params">node, callback</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>._postOrderNode(node.left, callback)</span><br><span class="line">      <span class="built_in">this</span>._postOrderNode(node.right, callback)</span><br><span class="line">      callback(node.key)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 最小值</span></span><br><span class="line">  <span class="function"><span class="title">min</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>._minNode(<span class="built_in">this</span>.root)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_minNode</span>(<span class="params">node</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> currentNode = node</span><br><span class="line">    <span class="keyword">while</span> (currentNode !== <span class="literal">null</span> &amp;&amp; currentNode.left !== <span class="literal">null</span>) &#123;</span><br><span class="line">      currentNode = currentNode.left</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentNode</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 最大值</span></span><br><span class="line">  <span class="function"><span class="title">max</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>._maxNode(<span class="built_in">this</span>.root)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_maxNode</span>(<span class="params">node</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> currentNode = node</span><br><span class="line">    <span class="keyword">while</span> (currentNode !== <span class="literal">null</span> &amp;&amp; currentNode.right !== <span class="literal">null</span>) &#123;</span><br><span class="line">      currentNode = currentNode.right</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentNode</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 搜索节点</span></span><br><span class="line">  <span class="function"><span class="title">search</span>(<span class="params">key</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>._searchNode(<span class="built_in">this</span>.root, key)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_searchNode</span>(<span class="params">node, key</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key &lt; node.key) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>._searchNode(node.left, key)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; node.key) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>._searchNode(node.right, key)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 移除节点</span></span><br><span class="line">  <span class="function"><span class="title">remove</span>(<span class="params">key</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.root = <span class="built_in">this</span>._removeNode(<span class="built_in">this</span>.root, key)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">_removeNode</span>(<span class="params">node, key</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 节点为空 返回null</span></span><br><span class="line">    <span class="keyword">if</span> (node === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    <span class="comment">// key 小于或大于 node.key 继续调用 _removeNode</span></span><br><span class="line">    <span class="keyword">if</span> (key &lt; node.key) &#123;</span><br><span class="line">      node.left = <span class="built_in">this</span>._removeNode(node.left, key)</span><br><span class="line">      <span class="keyword">return</span> node</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; node.key) &#123;</span><br><span class="line">      node.right = <span class="built_in">this</span>._removeNode(node.right, key)</span><br><span class="line">      <span class="keyword">return</span> node</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// key 等于 node.key</span></span><br><span class="line">      <span class="comment">// 第一种情况 搜索到的 node 没有左子树和右子树</span></span><br><span class="line">      <span class="keyword">if</span> (node.left === <span class="literal">null</span> &amp;&amp; node.right === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 第二种情况 搜索到的 node 只有一个左子树或右子树</span></span><br><span class="line">      <span class="keyword">if</span> (node.left === <span class="literal">null</span>) &#123;</span><br><span class="line">        node = node.right</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.right === <span class="literal">null</span>) &#123;</span><br><span class="line">        node = node.left</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 第三种情况 搜索到的 node 不仅有左子树还有右子树</span></span><br><span class="line">      <span class="comment">// (1) 当找到了要移除的节点后，需要找到它右边子树中最小的节点。</span></span><br><span class="line">      <span class="comment">// (2) 然后，用它右侧子树中最小节点的键去更新这个节点的值。通过这一步，我们改变了这个节点的键，也就是说它被移除了。</span></span><br><span class="line">      <span class="comment">// (3) 但是，这样在树中就有两个拥有相同键的节点了，这是不行的。要继续把右侧子树中的最小节点移除，毕竟它已经被移至要移除的节点的位置了。</span></span><br><span class="line">      <span class="comment">// (4) 最后，向它的父节点返回更新后节点的引用。</span></span><br><span class="line">      <span class="keyword">const</span> aux = <span class="built_in">this</span>._minNode(node.right) <span class="comment">// 找到搜索到的 node 的右子树中的最小节点</span></span><br><span class="line">      node.key = aux.key <span class="comment">// 把 aux 的 key 赋值给搜索到的 node</span></span><br><span class="line">      node.right = <span class="built_in">this</span>._removeNode(node.right, aux.key) <span class="comment">// 递归调用 removeNode 用于删除 aux 这个节点</span></span><br><span class="line">      <span class="keyword">return</span> node</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bst = <span class="keyword">new</span> BST()</span><br><span class="line"><span class="keyword">const</span> keyList = [<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>]</span><br><span class="line">keyList.forEach(<span class="function"><span class="params">key</span> =&gt;</span> bst.insert(key))</span><br><span class="line"><span class="built_in">console</span>.log(bst)</span><br><span class="line"><span class="keyword">const</span> print = <span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(val)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line">bst.inOrder(print)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line">bst.preOrder(print)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line">bst.postOrder(print)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(bst.min())</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(bst.max())</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`key 2 <span class="subst">$&#123;bst.search(<span class="number">2</span>) ? <span class="string">&#x27;is exist&#x27;</span> : <span class="string">&#x27;not exist&#x27;</span>&#125;</span>`</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`key 3 <span class="subst">$&#123;bst.search(<span class="number">3</span>) ? <span class="string">&#x27;is exist&#x27;</span> : <span class="string">&#x27;not exist&#x27;</span>&#125;</span>`</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`key 10 <span class="subst">$&#123;bst.search(<span class="number">10</span>) ? <span class="string">&#x27;is exist&#x27;</span> : <span class="string">&#x27;not exist&#x27;</span>&#125;</span>`</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`key 6 <span class="subst">$&#123;bst.search(<span class="number">100</span>) ? <span class="string">&#x27;is exist&#x27;</span> : <span class="string">&#x27;not exist&#x27;</span>&#125;</span>`</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;========================&#x27;</span>)</span><br><span class="line">bst.remove(<span class="number">8</span>)</span><br><span class="line">bst.remove(<span class="number">7</span>)</span><br><span class="line">bst.remove(<span class="number">2</span>)</span><br><span class="line">bst.inOrder(print)</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B4/" class="post-title-link" itemprop="url">正则案例4</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-28 00:00:03" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:03+00:00">2020-05-28</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>根据需求匹配数据并提取所需数据</p>
-<p>处理前</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> textList = [</span><br><span class="line">    <span class="string">&#x27;@[]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">    <span class="string">&#x27;@[123]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">    <span class="string">&#x27;@asd[133]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">    <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">    <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">    <span class="string">&#x27;@阿里巴巴[444]&#x27;</span> <span class="comment">// 匹配</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>处理后</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;asd&#x27;</span>, <span class="attr">id</span>: <span class="string">&#x27;133&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;阿里巴巴(杭州)(西湖)&#x27;</span>, <span class="attr">id</span>: <span class="string">&#x27;546789&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;阿里巴巴(杭州)(西湖)&#x27;</span>, <span class="attr">id</span>: <span class="string">&#x27;12113&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;阿里巴巴&#x27;</span>, <span class="attr">id</span>: <span class="string">&#x27;444&#x27;</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 确定处理函数</span></span><br><span class="line"><span class="keyword">const</span> getFormatTextList = <span class="function">(<span class="params">textList</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> regex = <span class="regexp">/\@([^\[]+)(?&lt;=\@.+)\[(\d+)\]/</span></span><br><span class="line">  <span class="keyword">return</span> textList</span><br><span class="line">    .filter(<span class="function">(<span class="params">item</span>) =&gt;</span> regex.test(item))</span><br><span class="line">    .map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> [_, name, id] = item.match(regex)</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        name,</span><br><span class="line">        id</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 准备数据</span></span><br><span class="line"><span class="keyword">const</span> textList = [</span><br><span class="line">  <span class="string">&#x27;@[]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">  <span class="string">&#x27;@[123]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">  <span class="string">&#x27;@asd[133]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴[444]&#x27;</span> <span class="comment">// 匹配</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line"><span class="keyword">const</span> formatTextList = getFormatTextList(textList)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">console</span>.log(formatTextList)</span><br></pre></td></tr></table></figure>
-
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>在解决问题之前先了解一下<strong>贪婪匹配模式</strong>和<strong>惰性匹配模式</strong>。</p>
-<blockquote>
-<p>正则表达式默认采用贪婪匹配模式，在该模式下意味着会匹配尽可能长的子串。我们可以使用 <code>?</code> 将贪婪匹配模式转化为惰性匹配模式。</p>
-<p>贪婪匹配模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;/(.*at)/&quot;</span> =&gt; The fat cat sat on the mat. </span><br></pre></td></tr></table></figure>
-
-<p>贪婪匹配模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;/(.*?at)/&quot;</span> =&gt; The fat cat sat on the mat. </span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>基于<strong>惰性匹配模式</strong>，我们用代码来实现一下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 确定处理函数</span></span><br><span class="line"><span class="keyword">const</span> getFormatTextList = <span class="function">(<span class="params">textList</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> regex = <span class="regexp">/\@(.+?)\[(\d+)\]/</span></span><br><span class="line">  <span class="keyword">return</span> textList</span><br><span class="line">    .filter(<span class="function">(<span class="params">item</span>) =&gt;</span> regex.test(item))</span><br><span class="line">    .map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> [_, name, id] = item.match(regex)</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        name,</span><br><span class="line">        id</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 准备数据</span></span><br><span class="line"><span class="keyword">const</span> textList = [</span><br><span class="line">  <span class="string">&#x27;@[]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">  <span class="string">&#x27;@[123]&#x27;</span>, <span class="comment">// 不匹配</span></span><br><span class="line">  <span class="string">&#x27;@asd[133]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴(杭州)(西湖)[12113]&#x27;</span>, <span class="comment">// 匹配</span></span><br><span class="line">  <span class="string">&#x27;@阿里巴巴[444]&#x27;</span> <span class="comment">// 匹配</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line"><span class="keyword">const</span> formatTextList = getFormatTextList(textList)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">console</span>.log(formatTextList)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 
       
     </div>
@@ -1135,10 +1545,9 @@ C --&gt; D
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -1152,7 +1561,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 

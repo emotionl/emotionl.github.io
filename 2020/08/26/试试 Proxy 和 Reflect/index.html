@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="Proxy使用 Object.defineProperty()模拟Vue的数据绑定 12345678910111213141516171819202122232425262728class VData &amp;#123;  constructor(&amp;#123; data &amp;#125;) &amp;#123;    this.data &#x3D; data    this.bindData(data)  &amp;#125;">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="Proxy使用 Object.defineProperty()模拟Vue的数据绑定 12345678910111213141516171819202122232425262728class VData &amp;#123;  constructor(&amp;#123; data &amp;#125;) &amp;#123;    this.data &#x3D; data    this.bindData(data)  &amp;#125;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-26T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T05:35:45.957Z">
+<meta property="article:modified_time" content="2021-01-11T16:15:06.041Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -50,6 +50,7 @@
 </script>
 <title>试试 Proxy 和 Reflect | ZV-Blogs</title>
   
+
 
 
 
@@ -97,7 +98,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -124,36 +125,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -163,7 +140,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -183,12 +160,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy"><span class="nav-number">1.</span> <span class="nav-text">Proxy</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -199,7 +176,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,7 +190,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -223,7 +200,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -275,7 +252,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -290,22 +267,16 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>使用 <code>Object.defineProperty()</code>模拟<code>Vue</code>的数据绑定</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VData</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">&#123; data &#125;</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = data</span><br><span class="line">    <span class="built_in">this</span>.bindData(data)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">bindData</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> newData = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.hasOwnProperty(key)) &#123;</span><br><span class="line">        newData[key] = data[key]</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">          <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> newData[key]</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function"><span class="title">set</span>(<span class="params">val</span>)</span> &#123;</span><br><span class="line">            newData[key] = val</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> v = <span class="keyword">new</span> VData(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>使用<code>Proxy</code>封装一个可设置类型的数组<code>TypeArray</code>，并且对数组中不存在的值返回默认值</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> TypeArray = <span class="function">(<span class="params">type, defaultValue = <span class="string">&#x27;N/A&#x27;</span>, initArray = []</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(initArray, &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[prop] || defaultValue</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">target, prop, value</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> value === type || prop === <span class="string">&#x27;length&#x27;</span>) &#123;</span><br><span class="line">        target[prop] = value</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numArr = TypeArray(<span class="string">&#x27;number&#x27;</span>)</span><br><span class="line">numArr.push(<span class="number">1</span>)   <span class="comment">// Proxy 代理数组 数组本身的方法属性不会被破坏</span></span><br><span class="line">numArr.push(<span class="string">&quot;2&quot;</span>) <span class="comment">// Uncaught TypeError: &#x27;set&#x27; on proxy: trap returned falsish for property &#x27;2&#x27; at Proxy.push (&lt;anonymous&gt;)</span></span><br></pre></td></tr></table></figure>
-
 <p>使用 <code>has</code>方法捕获<code>in</code>操作符</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> checkRange = <span class="keyword">new</span> <span class="built_in">Proxy</span>(</span><br><span class="line">  &#123;</span><br><span class="line">    start: <span class="number">0</span>,</span><br><span class="line">    end: <span class="number">100</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="function"><span class="title">has</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> prop &gt;= target.start &amp;&amp; prop &lt;= target.end</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">50</span> <span class="keyword">in</span> checkRange)	<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">150</span> <span class="keyword">in</span> checkRange)	<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
 <p>使用<code>ownKeys</code>拦截 <code>Reflect.ownKeys()</code>也可以拦截 <code>Object.keys() ; for in Loop ; Object.getOwnPropertySymbols()</code> 中的部分的 key </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  attr: <span class="string">&#x27;attr&#x27;</span>,</span><br><span class="line">  _attr: <span class="string">&#x27;_attr&#x27;</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">&#x27;attr&#x27;</span>)]: <span class="string">&#x27;Symbol(attr)&#x27;</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">&#x27;_attr&#x27;</span>)]: <span class="string">&#x27;Symbol(_attr)&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 未使用 Proxy 的 ownKeys 拦截</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)) <span class="comment">// [&quot;attr&quot;, &quot;_attr&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(obj)) <span class="comment">// [Symbol(attr), Symbol(_attr)]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj)) <span class="comment">// [&quot;attr&quot;, &quot;_attr&quot;, Symbol(attr), Symbol(_attr)]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">// attr _attr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 Proxy 的 ownKeys 拦截</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="function"><span class="title">ownKeys</span>(<span class="params">target</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> normalKeys = <span class="built_in">Object</span>.keys(target)</span><br><span class="line">    <span class="keyword">const</span> normalFilterKeys = normalKeys.filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.startsWith(<span class="string">&#x27;_&#x27;</span>)) <span class="comment">// 拦截以下划线开头的 key</span></span><br><span class="line">    <span class="keyword">const</span> symbolKeys = <span class="built_in">Object</span>.getOwnPropertySymbols(target)</span><br><span class="line">    <span class="keyword">const</span> symbolFilterKeys = symbolKeys.filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.toString().startsWith(<span class="string">&#x27;Symbol(_&#x27;</span>)) <span class="comment">// 拦截以下划线开头的 key</span></span><br><span class="line">    <span class="keyword">return</span> [...normalFilterKeys, ...symbolFilterKeys]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(p)) <span class="comment">// [&quot;attr&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(p)) <span class="comment">// [Symbol(attr)]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(p)) <span class="comment">// [&quot;attr&quot;, Symbol(attr)]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> p) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">// attr</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>来个综合案例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> userInfo = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Jack&#x27;</span>,</span><br><span class="line">  age: <span class="number">17</span>,</span><br><span class="line">  _address: <span class="string">&#x27;London UK&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(userInfo, &#123;</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`<span class="subst">$&#123;prop&#125;</span> 不可访问`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[prop] || <span class="string">&#x27;N/A&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">set</span>(<span class="params">target, prop, value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`不能设置 <span class="subst">$&#123;prop&#125;</span>`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      target[prop] = value</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">deleteProperty</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (prop.startsWith(<span class="string">&#x27;_&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`不能删除<span class="subst">$&#123;prop&#125;</span>`</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">delete</span> target[prop]</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">ownKeys</span>(<span class="params">target</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(target).filter(<span class="function">(<span class="params">key</span>) =&gt;</span> !key.startsWith(<span class="string">&#x27;_&#x27;</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>使用 <code>apply</code>拦截函数的调用（包装函数）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sumText = <span class="keyword">new</span> <span class="built_in">Proxy</span>(sum, &#123;</span><br><span class="line">  <span class="function"><span class="title">apply</span>(<span class="params">target, thisArg, argArray</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`total number is <span class="subst">$&#123;target(...argArray)&#125;</span>`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">sumText(<span class="number">10</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
-
 
     </div>
 
@@ -393,10 +364,9 @@
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -410,7 +380,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 

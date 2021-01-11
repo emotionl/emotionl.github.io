@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="获取当前的日期和时间在编程中，为了获得当前的日期和时间，有两个常用的函数，这两个函数以 Sys 开头，返回的时间受到操作系统区域设置的影响，因此，返回的时间采用本地格式，符合本地的阅读习惯： 123456789&gt; Sys.Date()[1] &quot;2020-03-18&quot;&gt; class(Sys.Date())[1] &quot;Date&quot;&gt; Sys.tim">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="获取当前的日期和时间在编程中，为了获得当前的日期和时间，有两个常用的函数，这两个函数以 Sys 开头，返回的时间受到操作系统区域设置的影响，因此，返回的时间采用本地格式，符合本地的阅读习惯： 123456789&gt; Sys.Date()[1] &quot;2020-03-18&quot;&gt; class(Sys.Date())[1] &quot;Date&quot;&gt; Sys.tim">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T05:35:45.957Z">
+<meta property="article:modified_time" content="2021-01-11T16:15:06.041Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="R">
 <meta name="twitter:card" content="summary">
@@ -50,6 +50,7 @@
 </script>
 <title>R 语言日期与时间 | ZV-Blogs</title>
   
+
 
 
 
@@ -97,7 +98,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -124,36 +125,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-首页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-归档">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-教程">
-
-    <a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a>
-
-  </li>
-        <li class="menu-item menu-item-站点">
-
-    <a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a>
-
-  </li>
-        <li class="menu-item menu-item-文章">
-
-    <a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a>
-
-  </li>
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
   </ul>
 </nav>
 
@@ -163,7 +140,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -183,12 +160,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">获取当前的日期和时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC-gt-gt-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">文本 &gt;&gt; 日期和时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4-gt-gt-%E6%96%87%E6%9C%AC"><span class="nav-number">3.</span> <span class="nav-text">日期和时间 &gt;&gt; 文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">4.</span> <span class="nav-text">日期的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">格式转换</span></a></li></ol></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="ZV"
       src="/images/guitar.svg">
@@ -199,7 +176,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,7 +190,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -223,7 +200,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -275,7 +252,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-08 05:35:45" itemprop="dateModified" datetime="2021-01-08T05:35:45+00:00">2021-01-08</time>
+        <time title="修改时间：2021-01-11 16:15:06" itemprop="dateModified" datetime="2021-01-11T16:15:06+00:00">2021-01-11</time>
       </span>
 
   
@@ -290,14 +267,11 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="获取当前的日期和时间"><a href="#获取当前的日期和时间" class="headerlink" title="获取当前的日期和时间"></a>获取当前的日期和时间</h2><p>在编程中，为了获得当前的日期和时间，有两个常用的函数，这两个函数以 Sys 开头，返回的时间受到操作系统区域设置的影响，因此，返回的时间采用本地格式，符合本地的阅读习惯：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; Sys.Date()</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2020-03-18&quot;</span></span><br><span class="line">&gt; <span class="built_in">class</span>(Sys.Date())</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;Date&quot;</span></span><br><span class="line"></span><br><span class="line">&gt; Sys.time()</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2020-03-18 09:07:53 CST&quot;</span></span><br><span class="line">&gt; <span class="built_in">class</span>(Sys.time())</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;POSIXct&quot;</span> <span class="string">&quot;POSIXt&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>R 还有一个函数 date()，用于返回当前时间对应的文本</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; date()</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;Wed Mar 18 09:12:28 2020&quot;</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="文本-gt-gt-日期和时间"><a href="#文本-gt-gt-日期和时间" class="headerlink" title="文本 &gt;&gt; 日期和时间"></a>文本 &gt;&gt; 日期和时间</h2><ol>
 <li><p><code>as.Date()</code> 把文本转换为日期</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">as.Date(x, format)</span><br></pre></td></tr></table></figure>
-
 <p><code>format</code> 参数用于指定输入的格式，常用的日期格式符号是：</p>
 <ul>
 <li><code>%y</code>：两位数字表示的年份（00-99），不带世纪，例如，数值是 18，格式%y，表示 2018 年 </li>
@@ -310,12 +284,10 @@
 <li><code>%a</code>：星期的缩写（Mon、Tue、Wed、Thur、Fri、Sat、Sun）                             </li>
 <li><code>%A</code>：星期的全名（Monday、Tuesday、Wednesday 等）  </li>
 </ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date_vec &lt;- <span class="built_in">c</span>(<span class="string">&quot;2020-01-01&quot;</span>, <span class="string">&quot;2020-12-31&quot;</span>)</span><br><span class="line">date_vec_format &lt;- as.Date(date_vec, format = <span class="string">&quot;%Y-%m-%d&quot;</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date_vec &lt;- <span class="built_in">c</span>(<span class="string">&quot;2020-01-01&quot;</span>, <span class="string">&quot;2020-12-31&quot;</span>)</span><br><span class="line">date_vec_format &lt;- as.Date(date_vec, format = <span class="string">&quot;%Y-%m-%d&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p><code>strptime()</code> 解析日期</p>
 <p>函数<code>strptime()</code>，是<code>string parse time</code>的简称，返回<code>POSIXlt</code>日期。在解析日期时，必须指定文本和日期对应的位置，日期的格式使用<code>%+字母</code>来指定。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">format(x, format = <span class="string">&quot;&quot;</span>, tz = <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>参数<code>tz</code>是时区<code>（time zone）</code>，默认值是空，在解析时，如果不指定时区，R 会调用 <code>Sys.timezone</code></p>
 <p>日期格式和 format()函数相同，常用的时间格式符号是：</p>
 <ul>
@@ -326,27 +298,20 @@
 <li><code>%S</code>： 秒 </li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cur_date &lt;- date()</span><br><span class="line">cur_date_parse &lt;- strptime(current_date, format = <span class="string">&quot;%a %b %d %H:%M:%S %Y&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="日期和时间-gt-gt-文本"><a href="#日期和时间-gt-gt-文本" class="headerlink" title="日期和时间 &gt;&gt; 文本"></a>日期和时间 &gt;&gt; 文本</h2><ol>
+<h2 id="日期和时间-gt-gt-文本"><a href="#日期和时间-gt-gt-文本" class="headerlink" title="日期和时间 &gt;&gt; 文本"></a>日期和时间 &gt;&gt; 文本</h2></li>
 <li><p><code>format()</code> 把日期转换为文本</p>
 <p>对日期进行格式化，转换为可读的文本，<code>format()</code>函数的定义是：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">format(x, format = <span class="string">&quot;&quot;</span>, tz = <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>x 是日期参数，<code>format</code>是输出的格式，<code>tz</code>是时区，该函数按照指定的格式输出文本：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">today &lt;- Sys.Date()</span><br><span class="line">mydate &lt;- format(today,format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">today &lt;- Sys.Date()</span><br><span class="line">mydate &lt;- format(today,format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p><code>strftime()</code>格式化日期</p>
 <p>函数<code>strftime()</code>，是<code>string formated time</code>的简称，用于把时间转换为字符串</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strptime(x, format, tz = <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>该函数和<code>format()</code>函数的功能和使用方式几乎完全相同。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">today &lt;- Sys.Date()</span><br><span class="line">mydate &lt;- strftime(today,format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="日期的比较"><a href="#日期的比较" class="headerlink" title="日期的比较"></a>日期的比较</h2></li>
 </ol>
-<h2 id="日期的比较"><a href="#日期的比较" class="headerlink" title="日期的比较"></a>日期的比较</h2><p>由于<code>POSIXct</code>类是以秒为单位来计算时间，<code>Date</code>类是以天为单位类计算日期，这意味着可以在日期值上执行比较运算和算术运算：</p>
+<p>由于<code>POSIXct</code>类是以秒为单位来计算时间，<code>Date</code>类是以天为单位类计算日期，这意味着可以在日期值上执行比较运算和算术运算：</p>
 <ul>
 <li>将数字和<code>Date</code>类相加，增加或减少相应的天数</li>
 <li>将数字和<code>POSIXct</code>类相加，增加或减少相应的秒数</li>
@@ -355,17 +320,14 @@
 <li><p>时间和数字相加</p>
 <p>时间以秒为单位</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; time1 &lt;- Sys.time()</span><br><span class="line">&gt; print(time1)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-08 13:16:36 CST&quot;</span></span><br><span class="line">&gt; print(time1+<span class="number">60</span>*<span class="number">60</span>)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-08 14:16:36 CST&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>日期以天为单位</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; date1 &lt;- Sys.Date()</span><br><span class="line">&gt; print(date1)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-08&quot;</span></span><br><span class="line">&gt; print(date1+<span class="number">1</span>)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-09&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; date1 &lt;- Sys.Date()</span><br><span class="line">&gt; print(date1)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-08&quot;</span></span><br><span class="line">&gt; print(date1+<span class="number">1</span>)</span><br><span class="line">[<span class="number">1</span>] <span class="string">&quot;2018-05-09&quot;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>时间比较</p>
 <p>由于<code>Date</code>类和<code>POSIXct</code>类实际上都是一个整数，可以直接比较大小</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">date1 &lt;- as.Date(<span class="string">&#x27;2018-01-01&#x27;</span>)</span><br><span class="line">date2 &lt;- as.Date(<span class="string">&#x27;2018-02-01&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (date2 &gt; date1)</span><br><span class="line">  print (<span class="string">&#x27;gt&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h3><table>
+<h3 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h3><table>
 <thead>
 <tr>
 <th>文本 &gt;&gt; 日期和时间</th>
@@ -471,10 +433,9 @@
 
 
 
-
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
@@ -488,7 +449,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
 
   
-
 
 
 
