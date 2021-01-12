@@ -18,6 +18,7 @@ date: 2020-12-29 18:17:18
 - [怎样设计一个 JavaScript 插件系统](https://mp.weixin.qq.com/s/QMN6fNisBEIGTgH0Xl46mQ)
 - [「一次写过瘾」手写 Promise 全家桶 + Generator + Async / Await](https://segmentfault.com/a/1190000038537123)
 - [JavaScript 里的奇葩知识](https://segmentfault.com/a/1190000023941089)
+- [重构几次代码后，我总结了一些 JavaScript 代码整洁清晰的注意点](https://mp.weixin.qq.com/s/okFyaRkMSL4vGHsUJAJaKw)
 - [Lodash 严重安全漏洞背后 你不得不知道的 JavaScript 知识](https://zhuanlan.zhihu.com/p/73186974)
 - [编写高质量可维护的代码：异步优化](https://mp.weixin.qq.com/s/s6fVoY31MqUXrW8RPka3pA)
 - [4 个未听说过的强大 JavaScript 操作符](https://mp.weixin.qq.com/s/K23rEdntvw-9N1FkohfDpA)
@@ -33,6 +34,7 @@ date: 2020-12-29 18:17:18
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
 - [TS 学习指南，从零学到熟练](https://mp.weixin.qq.com/s/Zxu6CQBwdBXGAd-D-UtVhQ)
 - [你不知道的 TypeScript 泛型](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
+- [TypeScript 高级类型与实用程序](https://mp.weixin.qq.com/s/Yk1ciWQJsVmHUEEouw7yTg)
 - [编写高质量可维护的代码：Awesome TypeScript](https://mp.weixin.qq.com/s/gAwvcmSNYMwQKk6RY-GaEw)
 - [Node.js 实现抢票小工具&短信通知提醒](https://mp.weixin.qq.com/s/BWPaFI1Pakm-ucZ8OeUL4A)
 - [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s/aMU_WpTeKTXdyP84WSh4ew)
@@ -44,6 +46,7 @@ date: 2020-12-29 18:17:18
 - [CSS 现状和如何学习](https://mp.weixin.qq.com/s/1Zg1sQyP186UNpr2GtDvqw)
 - [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
 - [响应式布局新方案](https://mp.weixin.qq.com/s/dMYAeHuczAuOsc3UCcnRyw)
+- [自适应布局最佳实践](https://mp.weixin.qq.com/s/8GvZetosiFJmZ1n3ZLfxNA)
 - [关于移动端适配，你必须要知道的](https://mp.weixin.qq.com/s/j-Q3NMe2ZgCAaeomqbK49A)
 - [改善 CSS 的 10 个最佳实践](https://mp.weixin.qq.com/s/vG1Rm9oYHkAmp-3UwrFy3g)
 - [40 个 CSS 布局技巧](https://mp.weixin.qq.com/s/kL1c2Khpcr-D1E-2wZe0RA)
@@ -129,6 +132,7 @@ date: 2020-12-29 18:17:18
 - [正则表达式是如何让你的网页卡住的](https://segmentfault.com/a/1190000038320217)
 - [唤起 App 在转转的实践](https://mp.weixin.qq.com/s/TdaIZbHR0-7NBK1LFR4nRQ)
 - [如何实现前端导入和导出 Excel 文件](https://mp.weixin.qq.com/s/ulrxuaYiCF7dcDzX1mHOuw)
+- [封装 axios 取消重复请求](https://mp.weixin.qq.com/s/BjN8gr5QocX0-s68w2IACA)
 
 ## 架构/设计
 
@@ -158,6 +162,7 @@ date: 2020-12-29 18:17:18
 - [JavaScript 那些写出来会被同事揍的骚操作](https://mp.weixin.qq.com/s/rfsHwY6lNA1pn6BftgZH4Q)
 - [老码农冒死揭开行业黑幕：如何编写无法维护的代码](https://zhuanlan.zhihu.com/p/35157406)
 - [中国程序员开发的抢茅台脚本，在 Github 上霸榜了](https://mp.weixin.qq.com/s/Al4xNRdfBUy_wkp-SD0KgA)
+- [B 站，牛逼！](https://mp.weixin.qq.com/s/KDyp0uaiMZZC0AxxVKfCDA)
 
 ## 总结
 
