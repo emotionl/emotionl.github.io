@@ -215,7 +215,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/guitar.svg">
@@ -228,7 +228,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/" class="post-title-link" itemprop="url">小试 MongoDB</a>
+          <a href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" class="post-title-link" itemprop="url">迭代法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -246,7 +246,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-12 05:58:23" itemprop="dateModified" datetime="2021-01-12T05:58:23+00:00">2021-01-12</time>
+        <time title="修改时间：2021-01-17 16:11:32" itemprop="dateModified" datetime="2021-01-17T16:11:32+00:00">2021-01-17</time>
       </span>
 
   
@@ -259,245 +259,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cls</td>
-<td>清屏</td>
-</tr>
-<tr>
-<td>show dbs</td>
-<td>查看所有数据库</td>
-</tr>
-<tr>
-<td>show collections</td>
-<td>显示当前数据库中的所有集合</td>
-</tr>
-</tbody></table>
-<h2 id="NoSQL-Not-Only-SQL-vs-SQL"><a href="#NoSQL-Not-Only-SQL-vs-SQL" class="headerlink" title="NoSQL( Not Only SQL) vs SQL"></a>NoSQL( Not Only SQL) vs SQL</h2><p><code>MySQL</code> 中的许多概念在 <code>MongoDB</code> 中具有相近的类比。本表概述了每个系统中的一些常见概念。</p>
-<table>
-<thead>
-<tr>
-<th><code>MySQL</code></th>
-<th><code>MongoDB</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>表</td>
-<td>集合</td>
-</tr>
-<tr>
-<td>行</td>
-<td>文档</td>
-</tr>
-<tr>
-<td>列</td>
-<td>字段</td>
-</tr>
-<tr>
-<td><code>joins</code></td>
-<td>嵌入文档或者链接</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/beilin/p/5981870.html">关系型数据库与 NoSQL 的对比</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6d62ddf265da0f491bd200">NoSQL 还是 SQL ？这一篇讲清楚</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5b97e4446fb9a05d1b2e3b79">小白必须懂的 MongoDB 的十大总结</a></p>
-</blockquote>
-<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><ul>
-<li><p>开启<code>MongoDB</code>服务</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath D:\data\db</span><br></pre></td></tr></table></figure></li>
-<li><p>管理数据库</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo 127.0.0.1:27017</span><br></pre></td></tr></table></figure>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2></li>
-</ul>
-<ol>
-<li><p>使用并创建数据库</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use user</span><br></pre></td></tr></table></figure></li>
-<li><p>在数据库<code>user</code>中的集合<code>member</code>中插入一条数据（集合需要通过向其插入数据进行创建）</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库<code>user</code>中的集合<code>member</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库<code>user</code></p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use user <span class="comment">// 需要先使用数据库</span></span><br><span class="line">db.dropDatabase();</span><br></pre></td></tr></table></figure>
-<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2></li>
-</ol>
-<h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.表名.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ol>
-<li><p>查找所有记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find()</span><br></pre></td></tr></table></figure></li>
-<li><p>查询一个字段的所有值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.distinct(name)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age = 25 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: <span class="number">25</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &lt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 并且 age &lt;= 25</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span>, <span class="attr">$lte</span>: <span class="number">25</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中包含 im 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/im/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中以 J 开头的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/^J/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中以 m 结尾的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/m$/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询指定列 name 数据, age &gt; 20</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>按照年龄排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: <span class="number">1</span> &#125;) <span class="comment">// 升序</span></span><br><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: -<span class="number">1</span> &#125;) <span class="comment">// 降序</span></span><br></pre></td></tr></table></figure></li>
-<li><p>查询前 3 条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().limit(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 3 条以后的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().skip(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>查询在 3-5 之间的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.member</span><br><span class="line">    .find()</span><br><span class="line">    .limit(<span class="number">3</span>)</span><br><span class="line">    .skip(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>or 查询（年龄为 19 或 25 的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $or: [&#123; <span class="attr">age</span>: <span class="number">19</span> &#125;, &#123; <span class="attr">age</span>: <span class="number">25</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>and 查询（年龄大于 20 的性别为男的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $and: [&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">25</span> &#125; &#125;, &#123; <span class="attr">sex</span>: <span class="literal">true</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询第一条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.findOne()</span><br><span class="line">db.member.find().limit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询某个结果集的记录条数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;).count()</span><br></pre></td></tr></table></figure>
-<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3></li>
-<li><p>查找名字叫做 Jack 的，把年龄更改为 30 岁：</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.update(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;, &#123; <span class="attr">$set</span>: &#123; <span class="attr">age</span>: <span class="number">30</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3></li>
-<li><p>删除 age = 20 岁的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除 age &gt; 20 记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除 age = 20 的一条记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除集合</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
-<h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2></li>
-</ol>
-<h3 id="获取查询时间（单位-毫秒）"><a href="#获取查询时间（单位-毫秒）" class="headerlink" title="获取查询时间（单位:毫秒）"></a>获取查询时间（单位:毫秒）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.itemlist.find(&#123; <span class="attr">name</span>: <span class="string">&#x27;xxx&#x27;</span> &#125;).explain(<span class="string">&#x27;executionStats&#x27;</span>).executionStats.executionTimeMillis</span><br></pre></td></tr></table></figure>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
-<p>索引是对数据库表中一列或多列的值进行排序的一种结构</p>
-<p>索引通常能够极大的提高查询的效率，如果没有索引，MongoDB 在读取数据时必须扫描集合中的每个文件并选取那些符合查询条件的记录。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个50000条的数据</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">50000</span>; i++) &#123;</span><br><span class="line">    db.itemlist.insert(&#123;</span><br><span class="line">        name: <span class="string">&#x27;item&#x27;</span> + i</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ol>
-<li><p>创建索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>获取当前集合的索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.getIndexes()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.dropIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建复合索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">age</span>: -<span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>该索引被创建后，基于 <code>name</code> 和 <code>age</code> 的查询将会用到该索引，或者是基于 <code>name</code> 的查询也会用到该索引，但是只是基于 <code>age</code> 的查询将不会用到该复合索引。因此可以说，如果想用到复合索引，必须在查询条件中包含复合索引中的前 N 个索引列。</p>
-<p>然而如果查询条件中的键值顺序和复合索引中的创建顺序不一致的话，MongoDB 可以智能的帮助我们调<br>整该顺序，以便使复合索引可以为查询所用。</p>
-<p><code>db.member.find(&#123;age: 30, name: &quot;Jack&quot;&#125;)</code></p>
-</blockquote>
-</li>
-<li><p>在创建索引时为其指定索引名</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">&#x27;username&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建唯一索引</p>
-<p> 不允许具有索引值相同的行，从而禁止重复的索引或键值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">unique</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E4%BD%99%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/%E4%BD%99%E6%95%B0/" class="post-title-link" itemprop="url">余数</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-12 05:58:23" itemprop="dateModified" datetime="2021-01-12T05:58:23+00:00">2021-01-12</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>余数总是在一个固定的范围内。</p>
-<p>整数是没有边界的，它可能是正无穷，也可能是负无穷。但是余数却可以通过某一种关系，让整数处于一个确定的边界内。</p>
-<p>同余定理：简单来说，就是两个整数 a 和 b，如果它们除以正整数 m 得到的余数相等，我们就可以说 a 和 b 对于模 m 同余。</p>
-<p>还有，我们经常提到的奇数和偶数，其实也是同余定理的一个应用。当然，这个应用里，它的模就是 2 了，2 除以 2 余 0，所以它是偶数；3 除以 2 余 1，所以它是奇数。2 和 4 除以 2 的余数都是 0，所以它们都是一类，都是偶数。3 和 5 除以 2 的余数都是 1，所以它们都是一类，都是奇数。</p>
-<p>简单来说， <strong>同余定理其实就是用来分类的</strong> 。你知道，我们有无穷多个整数，那怎么能够全面、多维度地管理这些整数？同余定理就提供了一个思路。</p>
-<p>因为不管你的模是几，最终得到的余数肯定都在一个范围内。比如我们上面除以 7，就得到了星期几；我们除以 2，就得到了奇偶数。所以按照这种方式, 我们就可以<strong>把无穷多个整数分成有限多个类</strong>。</p>
-<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希有的时候也会被翻译为散列，简单来说，它就是 <strong>将任意长度的输入，通过哈希算法，压缩为某一固定长度的输出</strong> </p>
-<p><img src="./../../assets/image/08.png" alt="07"></p>
-<p>在这个公式中，x 表示等待被转换的数值，而 size 表示有限存储空间的大小，mod 表示取余操作。 <strong>通过余数，你就能将任何数值，转换为有限范围内的一个数值，然后根据这个新的数值，来确定将数据存放在何处</strong>。</p>
-<p>让我以加密算法为例，举个例子，比如说我们要加密一组三位数，那我们设定一个这样的加密规则：</p>
-<ol>
-<li>先对每个三位数的个、十和百位数，都加上一个较大的随机数</li>
-<li>然后将每位上的数都除以 7，用所得的余数代替原有的个、十、百位数</li>
-<li>最后将第一位和第三位交换。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加密</span></span><br><span class="line"><span class="keyword">const</span> hashEncrypt = <span class="function">(<span class="params">value, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> quotient = <span class="built_in">Math</span>.floor((item + salt) / <span class="number">7</span>)</span><br><span class="line">        <span class="keyword">let</span> rem = (item + salt) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            quotient,</span><br><span class="line">            rem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> encryptValue = +result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.rem).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> iv = result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.quotient)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        encryptValue,</span><br><span class="line">        iv</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解密</span></span><br><span class="line"><span class="keyword">const</span> hashDecrypt = <span class="function">(<span class="params">value, iv, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).reverse().map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> iv[index] * <span class="number">7</span> + item - salt</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> decryptValue = +result.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> decryptValue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> testValue = <span class="number">751</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="number">4523645</span></span><br><span class="line"><span class="keyword">let</span> &#123; encryptValue, iv &#125; = hashEncrypt(testValue, salt)</span><br><span class="line"><span class="keyword">let</span> decryptValue = hashDecrypt(encryptValue, iv, salt)</span><br></pre></td></tr></table></figure>
+          <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>在<code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</code>中查找<code>&#39;f&#39;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> searchWord = <span class="function">(<span class="params">dictionary, wordToFind</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> right = dictionary.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">let</span> middle = <span class="built_in">Math</span>.floor((left + right) / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (dictionary[middle] === wordToFind) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (dictionary[middle] &gt; wordToFind) &#123;</span><br><span class="line">                right = middle - <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = middle + <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> dictionary = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;h&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> wordToFind = <span class="string">&#x27;f&#x27;</span></span><br><span class="line">searchWord(dictionary, wordToFind)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -554,7 +317,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-12 05:58:23" itemprop="dateModified" datetime="2021-01-12T05:58:23+00:00">2021-01-12</time>
+        <time title="修改时间：2021-01-17 16:11:32" itemprop="dateModified" datetime="2021-01-17T16:11:32+00:00">2021-01-17</time>
       </span>
 
   
@@ -684,6 +447,91 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E4%BD%99%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/%E4%BD%99%E6%95%B0/" class="post-title-link" itemprop="url">余数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-17 16:11:32" itemprop="dateModified" datetime="2021-01-17T16:11:32+00:00">2021-01-17</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>余数总是在一个固定的范围内。</p>
+<p>整数是没有边界的，它可能是正无穷，也可能是负无穷。但是余数却可以通过某一种关系，让整数处于一个确定的边界内。</p>
+<p>同余定理：简单来说，就是两个整数 a 和 b，如果它们除以正整数 m 得到的余数相等，我们就可以说 a 和 b 对于模 m 同余。</p>
+<p>还有，我们经常提到的奇数和偶数，其实也是同余定理的一个应用。当然，这个应用里，它的模就是 2 了，2 除以 2 余 0，所以它是偶数；3 除以 2 余 1，所以它是奇数。2 和 4 除以 2 的余数都是 0，所以它们都是一类，都是偶数。3 和 5 除以 2 的余数都是 1，所以它们都是一类，都是奇数。</p>
+<p>简单来说， <strong>同余定理其实就是用来分类的</strong> 。你知道，我们有无穷多个整数，那怎么能够全面、多维度地管理这些整数？同余定理就提供了一个思路。</p>
+<p>因为不管你的模是几，最终得到的余数肯定都在一个范围内。比如我们上面除以 7，就得到了星期几；我们除以 2，就得到了奇偶数。所以按照这种方式, 我们就可以<strong>把无穷多个整数分成有限多个类</strong>。</p>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希有的时候也会被翻译为散列，简单来说，它就是 <strong>将任意长度的输入，通过哈希算法，压缩为某一固定长度的输出</strong> </p>
+<p><img src="./../../assets/image/08.png" alt="07"></p>
+<p>在这个公式中，x 表示等待被转换的数值，而 size 表示有限存储空间的大小，mod 表示取余操作。 <strong>通过余数，你就能将任何数值，转换为有限范围内的一个数值，然后根据这个新的数值，来确定将数据存放在何处</strong>。</p>
+<p>让我以加密算法为例，举个例子，比如说我们要加密一组三位数，那我们设定一个这样的加密规则：</p>
+<ol>
+<li>先对每个三位数的个、十和百位数，都加上一个较大的随机数</li>
+<li>然后将每位上的数都除以 7，用所得的余数代替原有的个、十、百位数</li>
+<li>最后将第一位和第三位交换。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加密</span></span><br><span class="line"><span class="keyword">const</span> hashEncrypt = <span class="function">(<span class="params">value, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> quotient = <span class="built_in">Math</span>.floor((item + salt) / <span class="number">7</span>)</span><br><span class="line">        <span class="keyword">let</span> rem = (item + salt) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            quotient,</span><br><span class="line">            rem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> encryptValue = +result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.rem).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> iv = result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.quotient)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        encryptValue,</span><br><span class="line">        iv</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解密</span></span><br><span class="line"><span class="keyword">const</span> hashDecrypt = <span class="function">(<span class="params">value, iv, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).reverse().map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> iv[index] * <span class="number">7</span> + item - salt</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> decryptValue = +result.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> decryptValue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> testValue = <span class="number">751</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="number">4523645</span></span><br><span class="line"><span class="keyword">let</span> &#123; encryptValue, iv &#125; = hashEncrypt(testValue, salt)</span><br><span class="line"><span class="keyword">let</span> decryptValue = hashDecrypt(encryptValue, iv, salt)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -715,7 +563,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-12 05:58:23" itemprop="dateModified" datetime="2021-01-12T05:58:23+00:00">2021-01-12</time>
+        <time title="修改时间：2021-01-17 16:11:32" itemprop="dateModified" datetime="2021-01-17T16:11:32+00:00">2021-01-17</time>
       </span>
 
   
