@@ -84,6 +84,7 @@ date: 2020-12-29 18:17:18
 - [动手写一个 JavaScript 解释器](https://mp.weixin.qq.com/s/-62WEoFxdHPpNbpI8nDSAA)
 - [npm 依赖管理中被忽略的那些细节](https://mp.weixin.qq.com/s/JHDVh9wGj_YaTLtSz4AH7g)
 - [CodeSandbox 浏览器端的 Webpack 是如何工作的？ 上篇](https://juejin.cn/post/6844903880652750862)
+- [前端 CLI 脚手架思路解析](https://mp.weixin.qq.com/s/Rfov1ZMwS2g_2p-aOMEHbQ)
 
 ## 错误处理
 
@@ -92,6 +93,7 @@ date: 2020-12-29 18:17:18
 
 ## 拓展
 
+- [前端 DSL 实践指南（上）—— 内部 DSL](https://mp.weixin.qq.com/s/3W5oHYyaQHhm15AJM9sBVA)
 - [开源富文本编辑器技术的演进](https://mp.weixin.qq.com/s/Ui0qaMup-KWXiz3RBM14Kw)
 - [实现一个简易版在线集成开发环境(IDE)](https://vince.xin/2019/11/02/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%89%88%E5%9C%A8%E7%BA%BF%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-IDE/)
 - [你不知道的 Webkit 内核](https://mp.weixin.qq.com/s/CyWuIcad9jb7OVhgdYT6Aw)
