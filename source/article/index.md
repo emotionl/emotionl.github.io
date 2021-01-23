@@ -21,6 +21,7 @@ date: 2020-12-29 18:17:18
 - [重构几次代码后，我总结了一些 JavaScript 代码整洁清晰的注意点](https://mp.weixin.qq.com/s/okFyaRkMSL4vGHsUJAJaKw)
 - [Lodash 严重安全漏洞背后 你不得不知道的 JavaScript 知识](https://zhuanlan.zhihu.com/p/73186974)
 - [编写高质量可维护的代码：异步优化](https://mp.weixin.qq.com/s/s6fVoY31MqUXrW8RPka3pA)
+- [让你的 JS 代码变得更加优雅且可维护](https://mp.weixin.qq.com/s/qTv_Mh5yHXXzCijD2wbkDg)
 - [4 个未听说过的强大 JavaScript 操作符](https://mp.weixin.qq.com/s/K23rEdntvw-9N1FkohfDpA)
 - [总结了工作中常用的 ES6 代码片段，整理后的 24 个值得拥有](https://juejin.cn/post/6906398702269628424)
 - [重磅！超详细的 JS 数组方法整理出来了](https://juejin.cn/post/6907109642917117965)
@@ -28,10 +29,12 @@ date: 2020-12-29 18:17:18
 - [动图学 JavaScript 之：原型继承](https://segmentfault.com/a/1190000021584179)
 - [动图学 JavaScript 之：事件循环（Event Loop）](https://segmentfault.com/a/1190000021445387)
 - [JavaScript 事件循环：从起源到浏览器再到 Node.js](https://mp.weixin.qq.com/s/OudqDff3QvmBqIiD74LrTw)
+- [为什么要用 setTimeout 模拟 setInterval ？](https://mp.weixin.qq.com/s/aqEPNredtLpByKmkfZfQgA)
 - [Promise 你可能真的还没用明白](https://mp.weixin.qq.com/s/VfP9_8kUx6hyrII7LVae6g)
 - [在 JavaScript 中交换值的 10 种方法](https://mp.weixin.qq.com/s/2gBURC-_inZgFDNi7HZZ3g)
 - [写好 JS 条件语句的 5 条守则](https://mp.weixin.qq.com/s/84R1C5_NngJBwrpyXBXX6w)
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
+- [从打字机效果的 N 种实现看 JS 定时器机制和前端动画](https://mp.weixin.qq.com/s/4zuFZ6mh0d2rHSgltF1sFw)
 - [TS 学习指南，从零学到熟练](https://mp.weixin.qq.com/s/Zxu6CQBwdBXGAd-D-UtVhQ)
 - [你不知道的 TypeScript 泛型](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
 - [TypeScript 高级类型与实用程序](https://mp.weixin.qq.com/s/Yk1ciWQJsVmHUEEouw7yTg)
@@ -56,6 +59,7 @@ date: 2020-12-29 18:17:18
 - [CSS 变量对 JS 交互组件开发带来的提升与变革](https://mp.weixin.qq.com/s/MjzeeFr7pglIRzcZ27xwgQ)
 - [你不知道的 Animation 动画技巧与细节](https://mp.weixin.qq.com/s/-bFPU7Yi-DlFlUqjv15lgQ)
 - [纯 CSS 制作赛博朋克 2077 “故障风”按钮](https://juejin.cn/post/6908565208596217863)
+- [CSS 奇思妙想边框动画](https://mp.weixin.qq.com/s/hgssJvfop33JViadb0Ls5Q)
 
 ## 框架
 
@@ -171,6 +175,9 @@ date: 2020-12-29 18:17:18
 - [老码农冒死揭开行业黑幕：如何编写无法维护的代码](https://zhuanlan.zhihu.com/p/35157406)
 - [中国程序员开发的抢茅台脚本，在 Github 上霸榜了](https://mp.weixin.qq.com/s/Al4xNRdfBUy_wkp-SD0KgA)
 - [B 站，牛逼！](https://mp.weixin.qq.com/s/KDyp0uaiMZZC0AxxVKfCDA)
+- [一针重复 2 万亿段代码，我「逆向工程」了辉瑞疫苗！](https://mp.weixin.qq.com/s/Mf1Gbh7pdvIa0WWX5ZLmgA)
+- [在 P 站做 web 前端，是种怎样的体验？](https://mp.weixin.qq.com/s/DuPXPMTe4P7AD0ljvSgOKQ)
+- [Github 上的这个程序员买房实用指南火了！](https://mp.weixin.qq.com/s/J3W4IR86kiJCpPL8JAguTg)
 
 ## 总结
 
