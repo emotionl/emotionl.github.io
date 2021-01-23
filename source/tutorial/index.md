@@ -40,6 +40,8 @@ date: 2020-12-29 13:53:08
 - [JavaScript 20 年](https://cn.history.js.org/)
 - [JavaScript 现代教程](http://zh.javascript.info/)
 - [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)
+- [JavaScript 轻量级函数式编程](https://github.com/Simingchen/Functional-Light-JS)
+- [JavaScript 代码整洁之道](https://github.com/alivebao/clean-code-js)
 - [木易杨前端进阶](https://muyiy.cn/)
 - [前端进阶之道](https://yuchengkai.cn/docs/frontend/)
 - [前端面试手册](https://yangshun.github.io/front-end-interview-handbook/)

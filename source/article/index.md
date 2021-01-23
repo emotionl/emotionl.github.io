@@ -109,6 +109,12 @@ date: 2020-12-29 18:17:18
 - [Github 上怎么修改别人的项目并且提交给原作者！图文并茂！](https://blog.csdn.net/qq_26787115/article/details/52133008)
 - [恕我直言，你可能连 GitHub 搜索都不会用 - 如何精准搜索的神仙技巧](https://mp.weixin.qq.com/s/deQd0VgxfWhfFl084KgYrA)
 
+## 可视化
+
+- [Three.js 零基础入门教程](http://www.webgl3d.cn/Three.js/)
+- [Three.js 现学现卖](https://aotu.io/notes/2017/08/28/getting-started-with-threejs/index.html)
+- [GAMES101-现代计算机图形学入门-闫令琪](https://www.bilibili.com/video/BV1X7411F744)
+
 ## 网络
 
 - [带你看看从输入 URL 到页面显示背后的故事](https://mp.weixin.qq.com/s/QV0ozPPSvcvINtaLmNCY9w)
