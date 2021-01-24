@@ -362,11 +362,11 @@ codeblock:
     light: default
     dark: tomorrow-night
   prism:
-    light: prism
-    dark: prism-dark
+    light: prism-duotone-forest
+    dark: prism-duotone-forest
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: flat
     # Available values: default | flat | mac
     style:
 
@@ -379,11 +379,11 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
-  color: "#37c6c0"
-  height: 3px
+  color: "#b3d6b3"
+  height: 2px
 
 # Bookmark Support
 bookmark:
