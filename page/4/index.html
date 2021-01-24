@@ -247,7 +247,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-24 15:38:22" itemprop="dateModified" datetime="2021-01-24T15:38:22+00:00">2021-01-24</time>
       </span>
 
   
@@ -306,205 +306,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于进制的思考</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="三个基本类型"><a href="#三个基本类型" class="headerlink" title="三个基本类型"></a>三个基本类型</h2><ul>
-<li><code>int</code></li>
-<li><code>float</code></li>
-<li><code>char</code></li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><p>bit 二进制位</p>
-<p>计算机用来存储数据最基本的单位是电子管 有两种状态开启和关闭 即 0 和 1 这两种可能</p>
-<p>对应到计算机中的存储单位就是 <code>bit</code></p>
-<p><code>n</code>个<code>bit</code>可以表示 <code>0 ~ 2^n - 1</code> 这个区间的数</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">二进制</th>
-<th align="center">十进制</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="center">100</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">101</td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td align="center">110</td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">111</td>
-<td align="center">7</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>Byte</p>
-<p>在计算机中 8 个二进制位为一个字节 (B)，最常用的单位。</p>
-<p>所以可以得出 1 个 <code>Byte</code> 可以表示一个<code>0 ~ 2^8 - 1</code>大小的数</p>
-</li>
-<li><p>进制</p>
-<p>进制只是数字的一种表现形式</p>
-<p>也就是说<code>10 进制 32</code>和<code>2 进制的 100000</code>其实是一样的 只是展现方式的有所不同 </p>
-</li>
-<li><p>int 与 char 的关系</p>
-<p>在 C 语言中 int 与 char 是可以无缝转换的</p>
-</li>
-<li><p>string 类型的的本质是个数组</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 此时 a 是一个整形数字 即 int 类型</span>
-<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">100</span>						
-<span class="token comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 "d"</span>
-<span class="token keyword">let</span> b <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>	
-<span class="token comment">// 然而把 a 从 int 转换成 string 得到 "100" 后其实得到的是一个装满 char 的一个数组</span>
-<span class="token comment">// 每一个 char 都可以找到它的 int 类型</span>
-<span class="token keyword">let</span> c <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>			<span class="token comment">// "100"</span>
-c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>					<span class="token comment">// 54</span>
-c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>					<span class="token comment">// 52</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>同一个数由于进制不同而导致的显示方式不同并不影响他们相等</p>
-<p>但是一个 int 类型的 100 和一个 string 类型的 “100”是完全不同的</p>
-<p>存储一个 int 的 100 用 1 Byte 又就可以了</p>
-<p>存储一个 string 类型的 “100” 需要用 3 Byte （1 个 char 需要 1 Byte 大小的空间去存储）</p>
-</li>
-</ul>
-<h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><h3 id="计算机存储单位的换算关系"><a href="#计算机存储单位的换算关系" class="headerlink" title="计算机存储单位的换算关系"></a>计算机存储单位的换算关系</h3><p>计算机存储单位一般用<code>bit、B、KB、MB、GB、TB、PB、EB、ZB、YB、BB、NB、DB……</code>来表示，它们之间的关系是：</p>
-<p>位 bit (比特)(Binary Digits)：存放一位二进制数，即 0 或 1，最小的存储单位。[英文缩写：b(固定小写)]</p>
-<p>字节byte：8个二进制位为一个字节(B)，最常用的单位。</p>
-<ul>
-<li><code>1 Byte (B) = 8 bit</code></li>
-<li><code>1 Kilo Byte (KB) = 1024 B</code></li>
-<li><code>1 Mega Byte (MB) = 1024 KB</code></li>
-<li><code>1 Giga Byte (GB) = 1024 MB</code></li>
-<li><code>1 Tera Byte (TB) = 1024 GB</code></li>
-<li><code>1 Peta Byte (PB) = 1024 TB</code></li>
-<li><code>1 Exa Byte (EB) = 1024 PB</code></li>
-<li><code>1 Zetta Byte (ZB) = 1024 EB</code></li>
-<li><code>1 Yotta Byte (YB) = 1024 ZB</code></li>
-<li><code>1 Bronto Byte (BB) = 1024 YB</code></li>
-<li><code>1 Nona Byte (NB) = 1024 BB</code></li>
-<li><code>1 Dogga Byte (DB) = 1024 NB</code></li>
-<li><code>1 Corydon Byte (CB) = 1024 DB</code></li>
-</ul>
-<h3 id="JS-中整形转换成字节数组"><a href="#JS-中整形转换成字节数组" class="headerlink" title="JS 中整形转换成字节数组"></a>JS 中整形转换成字节数组</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">intToBytes</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> len</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> int8Arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            int8Arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>value <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> int8Arr
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="JS中10进制转任意进制"><a href="#JS中10进制转任意进制" class="headerlink" title="JS中10进制转任意进制"></a>JS中10进制转任意进制</h3>  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">decNumber<span class="token punctuation">,</span> base</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
-        remArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
-        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// Math.floor() 方法返回小于等于x的最大整数。</span>
-<span class="token comment">// String.fromCharCode() 返回ASCII码对应的字符</span>
-<span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
-    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
-        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
-        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -536,7 +337,7 @@ c<span class="token punctuation">.</span><span class="token function">charCodeAt
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-24 15:38:22" itemprop="dateModified" datetime="2021-01-24T15:38:22+00:00">2021-01-24</time>
       </span>
 
   
@@ -743,6 +544,205 @@ db<span class="token punctuation">.</span>member<span class="token punctuation">
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于进制的思考</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-24 15:38:22" itemprop="dateModified" datetime="2021-01-24T15:38:22+00:00">2021-01-24</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="三个基本类型"><a href="#三个基本类型" class="headerlink" title="三个基本类型"></a>三个基本类型</h2><ul>
+<li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>char</code></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>bit 二进制位</p>
+<p>计算机用来存储数据最基本的单位是电子管 有两种状态开启和关闭 即 0 和 1 这两种可能</p>
+<p>对应到计算机中的存储单位就是 <code>bit</code></p>
+<p><code>n</code>个<code>bit</code>可以表示 <code>0 ~ 2^n - 1</code> 这个区间的数</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">二进制</th>
+<th align="center">十进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">101</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">110</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">111</td>
+<td align="center">7</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Byte</p>
+<p>在计算机中 8 个二进制位为一个字节 (B)，最常用的单位。</p>
+<p>所以可以得出 1 个 <code>Byte</code> 可以表示一个<code>0 ~ 2^8 - 1</code>大小的数</p>
+</li>
+<li><p>进制</p>
+<p>进制只是数字的一种表现形式</p>
+<p>也就是说<code>10 进制 32</code>和<code>2 进制的 100000</code>其实是一样的 只是展现方式的有所不同 </p>
+</li>
+<li><p>int 与 char 的关系</p>
+<p>在 C 语言中 int 与 char 是可以无缝转换的</p>
+</li>
+<li><p>string 类型的的本质是个数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 此时 a 是一个整形数字 即 int 类型</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">100</span>						
+<span class="token comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 "d"</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>	
+<span class="token comment">// 然而把 a 从 int 转换成 string 得到 "100" 后其实得到的是一个装满 char 的一个数组</span>
+<span class="token comment">// 每一个 char 都可以找到它的 int 类型</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>			<span class="token comment">// "100"</span>
+c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>					<span class="token comment">// 54</span>
+c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>					<span class="token comment">// 52</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>同一个数由于进制不同而导致的显示方式不同并不影响他们相等</p>
+<p>但是一个 int 类型的 100 和一个 string 类型的 “100”是完全不同的</p>
+<p>存储一个 int 的 100 用 1 Byte 又就可以了</p>
+<p>存储一个 string 类型的 “100” 需要用 3 Byte （1 个 char 需要 1 Byte 大小的空间去存储）</p>
+</li>
+</ul>
+<h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><h3 id="计算机存储单位的换算关系"><a href="#计算机存储单位的换算关系" class="headerlink" title="计算机存储单位的换算关系"></a>计算机存储单位的换算关系</h3><p>计算机存储单位一般用<code>bit、B、KB、MB、GB、TB、PB、EB、ZB、YB、BB、NB、DB……</code>来表示，它们之间的关系是：</p>
+<p>位 bit (比特)(Binary Digits)：存放一位二进制数，即 0 或 1，最小的存储单位。[英文缩写：b(固定小写)]</p>
+<p>字节byte：8个二进制位为一个字节(B)，最常用的单位。</p>
+<ul>
+<li><code>1 Byte (B) = 8 bit</code></li>
+<li><code>1 Kilo Byte (KB) = 1024 B</code></li>
+<li><code>1 Mega Byte (MB) = 1024 KB</code></li>
+<li><code>1 Giga Byte (GB) = 1024 MB</code></li>
+<li><code>1 Tera Byte (TB) = 1024 GB</code></li>
+<li><code>1 Peta Byte (PB) = 1024 TB</code></li>
+<li><code>1 Exa Byte (EB) = 1024 PB</code></li>
+<li><code>1 Zetta Byte (ZB) = 1024 EB</code></li>
+<li><code>1 Yotta Byte (YB) = 1024 ZB</code></li>
+<li><code>1 Bronto Byte (BB) = 1024 YB</code></li>
+<li><code>1 Nona Byte (NB) = 1024 BB</code></li>
+<li><code>1 Dogga Byte (DB) = 1024 NB</code></li>
+<li><code>1 Corydon Byte (CB) = 1024 DB</code></li>
+</ul>
+<h3 id="JS-中整形转换成字节数组"><a href="#JS-中整形转换成字节数组" class="headerlink" title="JS 中整形转换成字节数组"></a>JS 中整形转换成字节数组</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">intToBytes</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> len</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> int8Arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            int8Arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>value <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> int8Arr
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="JS中10进制转任意进制"><a href="#JS中10进制转任意进制" class="headerlink" title="JS中10进制转任意进制"></a>JS中10进制转任意进制</h3>  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">decNumber<span class="token punctuation">,</span> base</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
+        remArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
+        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// Math.floor() 方法返回小于等于x的最大整数。</span>
+<span class="token comment">// String.fromCharCode() 返回ASCII码对应的字符</span>
+<span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
+        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
+        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E4%BD%99%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,7 +774,7 @@ db<span class="token punctuation">.</span>member<span class="token punctuation">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-24 15:38:22" itemprop="dateModified" datetime="2021-01-24T15:38:22+00:00">2021-01-24</time>
       </span>
 
   
@@ -890,7 +890,7 @@ db<span class="token punctuation">.</span>member<span class="token punctuation">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-24 15:38:22" itemprop="dateModified" datetime="2021-01-24T15:38:22+00:00">2021-01-24</time>
       </span>
 
   
