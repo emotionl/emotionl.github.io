@@ -20,7 +20,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZV-Blogs">
@@ -171,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -199,6 +199,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -215,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/guitar.svg">
@@ -228,7 +229,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/" class="post-title-link" itemprop="url">小试 MongoDB</a>
+          <a href="/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/" class="post-title-link" itemprop="url">迭代法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -246,7 +247,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -259,160 +260,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cls</td>
-<td>清屏</td>
-</tr>
-<tr>
-<td>show dbs</td>
-<td>查看所有数据库</td>
-</tr>
-<tr>
-<td>show collections</td>
-<td>显示当前数据库中的所有集合</td>
-</tr>
-</tbody></table>
-<h2 id="NoSQL-Not-Only-SQL-vs-SQL"><a href="#NoSQL-Not-Only-SQL-vs-SQL" class="headerlink" title="NoSQL( Not Only SQL) vs SQL"></a>NoSQL( Not Only SQL) vs SQL</h2><p><code>MySQL</code> 中的许多概念在 <code>MongoDB</code> 中具有相近的类比。本表概述了每个系统中的一些常见概念。</p>
-<table>
-<thead>
-<tr>
-<th><code>MySQL</code></th>
-<th><code>MongoDB</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>表</td>
-<td>集合</td>
-</tr>
-<tr>
-<td>行</td>
-<td>文档</td>
-</tr>
-<tr>
-<td>列</td>
-<td>字段</td>
-</tr>
-<tr>
-<td><code>joins</code></td>
-<td>嵌入文档或者链接</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/beilin/p/5981870.html">关系型数据库与 NoSQL 的对比</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6d62ddf265da0f491bd200">NoSQL 还是 SQL ？这一篇讲清楚</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5b97e4446fb9a05d1b2e3b79">小白必须懂的 MongoDB 的十大总结</a></p>
-</blockquote>
-<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><ul>
-<li><p>开启<code>MongoDB</code>服务</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath D:\data\db</span><br></pre></td></tr></table></figure></li>
-<li><p>管理数据库</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo 127.0.0.1:27017</span><br></pre></td></tr></table></figure>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2></li>
-</ul>
-<ol>
-<li><p>使用并创建数据库</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use user</span><br></pre></td></tr></table></figure></li>
-<li><p>在数据库<code>user</code>中的集合<code>member</code>中插入一条数据（集合需要通过向其插入数据进行创建）</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库<code>user</code>中的集合<code>member</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库<code>user</code></p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use user <span class="comment">// 需要先使用数据库</span></span><br><span class="line">db.dropDatabase();</span><br></pre></td></tr></table></figure>
-<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2></li>
-</ol>
-<h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.表名.insert(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ol>
-<li><p>查找所有记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find()</span><br></pre></td></tr></table></figure></li>
-<li><p>查询一个字段的所有值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.distinct(name)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age = 25 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: <span class="number">25</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &lt; 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lt</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 age &gt;= 20 并且 age &lt;= 25</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">20</span>, <span class="attr">$lte</span>: <span class="number">25</span> &#125; &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中包含 im 的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/im/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中以 J 开头的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/^J/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 name 中以 m 结尾的记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">name</span>: <span class="regexp">/m$/</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询指定列 name 数据, age &gt; 20</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>按照年龄排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: <span class="number">1</span> &#125;) <span class="comment">// 升序</span></span><br><span class="line">db.member.find().sort(&#123; <span class="attr">age</span>: -<span class="number">1</span> &#125;) <span class="comment">// 降序</span></span><br></pre></td></tr></table></figure></li>
-<li><p>查询前 3 条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().limit(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>查询 3 条以后的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find().skip(<span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>查询在 3-5 之间的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.member</span><br><span class="line">    .find()</span><br><span class="line">    .limit(<span class="number">3</span>)</span><br><span class="line">    .skip(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>or 查询（年龄为 19 或 25 的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $or: [&#123; <span class="attr">age</span>: <span class="number">19</span> &#125;, &#123; <span class="attr">age</span>: <span class="number">25</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>and 查询（年龄大于 20 的性别为男的记录）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123;</span><br><span class="line">    $and: [&#123; <span class="attr">age</span>: &#123; <span class="attr">$gte</span>: <span class="number">25</span> &#125; &#125;, &#123; <span class="attr">sex</span>: <span class="literal">true</span> &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询第一条数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.member.findOne()</span><br><span class="line">db.member.find().limit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>查询某个结果集的记录条数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.find(&#123; <span class="attr">age</span>: &#123; <span class="attr">$lte</span>: <span class="number">20</span> &#125; &#125;).count()</span><br></pre></td></tr></table></figure>
-<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3></li>
-<li><p>查找名字叫做 Jack 的，把年龄更改为 30 岁：</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.update(&#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span> &#125;, &#123; <span class="attr">$set</span>: &#123; <span class="attr">age</span>: <span class="number">30</span> &#125; &#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3></li>
-<li><p>删除 age = 20 岁的记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除 age &gt; 20 记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: &#123; <span class="attr">$gt</span>: <span class="number">20</span> &#125; &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除 age = 20 的一条记录</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.remove(&#123; <span class="attr">age</span>: <span class="number">20</span> &#125;, &#123; <span class="attr">justOne</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>删除集合</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.drop()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除数据库</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
-<h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2></li>
-</ol>
-<h3 id="获取查询时间（单位-毫秒）"><a href="#获取查询时间（单位-毫秒）" class="headerlink" title="获取查询时间（单位:毫秒）"></a>获取查询时间（单位:毫秒）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.itemlist.find(&#123; <span class="attr">name</span>: <span class="string">&#x27;xxx&#x27;</span> &#125;).explain(<span class="string">&#x27;executionStats&#x27;</span>).executionStats.executionTimeMillis</span><br></pre></td></tr></table></figure>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
-<p>索引是对数据库表中一列或多列的值进行排序的一种结构</p>
-<p>索引通常能够极大的提高查询的效率，如果没有索引，MongoDB 在读取数据时必须扫描集合中的每个文件并选取那些符合查询条件的记录。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个50000条的数据</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">50000</span>; i++) &#123;</span><br><span class="line">    db.itemlist.insert(&#123;</span><br><span class="line">        name: <span class="string">&#x27;item&#x27;</span> + i</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ol>
-<li><p>创建索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>获取当前集合的索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.getIndexes()</span><br></pre></td></tr></table></figure></li>
-<li><p>删除索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.dropIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建复合索引</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">age</span>: -<span class="number">1</span> &#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>该索引被创建后，基于 <code>name</code> 和 <code>age</code> 的查询将会用到该索引，或者是基于 <code>name</code> 的查询也会用到该索引，但是只是基于 <code>age</code> 的查询将不会用到该复合索引。因此可以说，如果想用到复合索引，必须在查询条件中包含复合索引中的前 N 个索引列。</p>
-<p>然而如果查询条件中的键值顺序和复合索引中的创建顺序不一致的话，MongoDB 可以智能的帮助我们调<br>整该顺序，以便使复合索引可以为查询所用。</p>
-<p><code>db.member.find(&#123;age: 30, name: &quot;Jack&quot;&#125;)</code></p>
-</blockquote>
-</li>
-<li><p>在创建索引时为其指定索引名</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">&#x27;username&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建唯一索引</p>
-<p> 不允许具有索引值相同的行，从而禁止重复的索引或键值</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.member.createIndex(&#123; <span class="attr">name</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">unique</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure></li>
-</ol>
-
+          <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>在<code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</code>中查找<code>&#39;f&#39;</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">searchWord</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">dictionary<span class="token punctuation">,</span> wordToFind</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> right <span class="token operator">=</span> dictionary<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> middle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>dictionary<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">===</span> wordToFind<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>dictionary<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">></span> wordToFind<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                right <span class="token operator">=</span> middle <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                left <span class="token operator">=</span> middle <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> dictionary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token string">'h'</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> wordToFind <span class="token operator">=</span> <span class="token string">'f'</span>
+<span class="token function">searchWord</span><span class="token punctuation">(</span>dictionary<span class="token punctuation">,</span> wordToFind<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
@@ -469,7 +337,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -547,7 +415,15 @@
 <p>在 C 语言中 int 与 char 是可以无缝转换的</p>
 </li>
 <li><p>string 类型的的本质是个数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此时 a 是一个整形数字 即 int 类型</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>						</span><br><span class="line"><span class="comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 &quot;d&quot;</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">String</span>.fromCharCode(a)	</span><br><span class="line"><span class="comment">// 然而把 a 从 int 转换成 string 得到 &quot;100&quot; 后其实得到的是一个装满 char 的一个数组</span></span><br><span class="line"><span class="comment">// 每一个 char 都可以找到它的 int 类型</span></span><br><span class="line"><span class="keyword">let</span> c = a.toString()			<span class="comment">// &quot;100&quot;</span></span><br><span class="line">c.charCodeAt(<span class="number">0</span>)					<span class="comment">// 54</span></span><br><span class="line">c.charCodeAt(<span class="number">1</span>)					<span class="comment">// 52</span></span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 此时 a 是一个整形数字 即 int 类型</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">100</span>						
+<span class="token comment">// 由于 int 和 char 是相同的那么我们可以找到 ASCII 码为 100 的 char 即 "d"</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>	
+<span class="token comment">// 然而把 a 从 int 转换成 string 得到 "100" 后其实得到的是一个装满 char 的一个数组</span>
+<span class="token comment">// 每一个 char 都可以找到它的 int 类型</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>			<span class="token comment">// "100"</span>
+c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>					<span class="token comment">// 54</span>
+c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>					<span class="token comment">// 52</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>同一个数由于进制不同而导致的显示方式不同并不影响他们相等</p>
 <p>但是一个 int 类型的 100 和一个 string 类型的 “100”是完全不同的</p>
 <p>存储一个 int 的 100 用 1 Byte 又就可以了</p>
@@ -572,8 +448,276 @@
 <li><code>1 Dogga Byte (DB) = 1024 NB</code></li>
 <li><code>1 Corydon Byte (CB) = 1024 DB</code></li>
 </ul>
-<h3 id="JS-中整形转换成字节数组"><a href="#JS-中整形转换成字节数组" class="headerlink" title="JS 中整形转换成字节数组"></a>JS 中整形转换成字节数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> intToBytes = <span class="function">(<span class="params">value, len</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> int8Arr = <span class="keyword">new</span> <span class="built_in">Array</span>(len)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            int8Arr[i] = (<span class="built_in">Math</span>.floor(value / <span class="built_in">Math</span>.pow(<span class="number">256</span>, i))) &amp; <span class="number">0xff</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> int8Arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="JS中10进制转任意进制"><a href="#JS中10进制转任意进制" class="headerlink" title="JS中10进制转任意进制"></a>JS中10进制转任意进制</h3>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divideByDec = <span class="function">(<span class="params">decNumber, base</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> remArr = []</span><br><span class="line">    <span class="keyword">let</span> rem = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (decNumber &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        rem = <span class="built_in">Math</span>.floor(decNumber % base)</span><br><span class="line">        <span class="keyword">if</span> (rem &gt; <span class="number">10</span>) rem = <span class="built_in">String</span>.fromCharCode(rem + <span class="number">87</span>)</span><br><span class="line">        remArr.push(rem)</span><br><span class="line">        decNumber = <span class="built_in">Math</span>.floor(decNumber / base)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> remArr.reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Math.floor() 方法返回小于等于x的最大整数。</span></span><br><span class="line"><span class="comment">// String.fromCharCode() 返回ASCII码对应的字符</span></span><br><span class="line"><span class="built_in">Number</span>.prototype.divideByDec = <span class="function"><span class="keyword">function</span>(<span class="params">base</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> decNumber = <span class="built_in">this</span></span><br><span class="line">    <span class="keyword">let</span> remArr = []</span><br><span class="line">    <span class="keyword">let</span> rem = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (decNumber &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        rem = <span class="built_in">Math</span>.floor(decNumber % base)</span><br><span class="line">        <span class="keyword">if</span> (rem &gt; <span class="number">10</span>) rem = <span class="built_in">String</span>.fromCharCode(rem + <span class="number">87</span>)</span><br><span class="line">        remArr.unshift(rem)</span><br><span class="line">        decNumber = <span class="built_in">Math</span>.floor(decNumber / base)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> remArr.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JS-中整形转换成字节数组"><a href="#JS-中整形转换成字节数组" class="headerlink" title="JS 中整形转换成字节数组"></a>JS 中整形转换成字节数组</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">intToBytes</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> len</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> int8Arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            int8Arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>value <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> int8Arr
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="JS中10进制转任意进制"><a href="#JS中10进制转任意进制" class="headerlink" title="JS中10进制转任意进制"></a>JS中10进制转任意进制</h3>  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">decNumber<span class="token punctuation">,</span> base</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
+        remArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
+        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// Math.floor() 方法返回小于等于x的最大整数。</span>
+<span class="token comment">// String.fromCharCode() 返回ASCII码对应的字符</span>
+<span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">divideByDec</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span>
+        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
+        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/" class="post-title-link" itemprop="url">小试 MongoDB</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cls</td>
+<td>清屏</td>
+</tr>
+<tr>
+<td>show dbs</td>
+<td>查看所有数据库</td>
+</tr>
+<tr>
+<td>show collections</td>
+<td>显示当前数据库中的所有集合</td>
+</tr>
+</tbody></table>
+<h2 id="NoSQL-Not-Only-SQL-vs-SQL"><a href="#NoSQL-Not-Only-SQL-vs-SQL" class="headerlink" title="NoSQL( Not Only SQL) vs SQL"></a>NoSQL( Not Only SQL) vs SQL</h2><p><code>MySQL</code> 中的许多概念在 <code>MongoDB</code> 中具有相近的类比。本表概述了每个系统中的一些常见概念。</p>
+<table>
+<thead>
+<tr>
+<th><code>MySQL</code></th>
+<th><code>MongoDB</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>表</td>
+<td>集合</td>
+</tr>
+<tr>
+<td>行</td>
+<td>文档</td>
+</tr>
+<tr>
+<td>列</td>
+<td>字段</td>
+</tr>
+<tr>
+<td><code>joins</code></td>
+<td>嵌入文档或者链接</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/beilin/p/5981870.html">关系型数据库与 NoSQL 的对比</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6d62ddf265da0f491bd200">NoSQL 还是 SQL ？这一篇讲清楚</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5b97e4446fb9a05d1b2e3b79">小白必须懂的 MongoDB 的十大总结</a></p>
+</blockquote>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><ul>
+<li><p>开启<code>MongoDB</code>服务</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">mongod <span class="token operator">--</span>dbpath <span class="token constant">D</span><span class="token operator">:</span>\data\db<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>管理数据库</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mongo <span class="token number">127.0</span>.0.1:27017<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2></li>
+</ul>
+<ol>
+<li><p>使用并创建数据库</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">use user<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>在数据库<code>user</code>中的集合<code>member</code>中插入一条数据（集合需要通过向其插入数据进行创建）</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'Jack'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除数据库<code>user</code>中的集合<code>member</code></p>
+ <pre class="line-numbers language-none"><code class="language-none">db.member.drop()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除数据库<code>user</code></p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">use user <span class="token comment">// 需要先使用数据库</span>
+db<span class="token punctuation">.</span><span class="token function">dropDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2></li>
+</ol>
+<h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>表名<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'Jack'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ol>
+<li><p>查找所有记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询一个字段的所有值</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">distinct</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age = 25 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age &gt; 20 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gt<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age &lt; 20 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $lt<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age &gt;= 20 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age &gt;= 20 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $lte<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 age &gt;= 20 并且 age &lt;= 25</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> $lte<span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 name 中包含 im 的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">im</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 name 中以 J 开头的记录</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^J</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 name 中以 m 结尾的记录</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">m$</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询指定列 name 数据, age &gt; 20</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gt<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>按照年龄排序</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token comment">// 升序</span>
+db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token comment">// 降序</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>查询前 3 条数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询 3 条以后的数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>查询在 3-5 之间的数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member
+    <span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>or 查询（年龄为 19 或 25 的记录）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    $or<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">19</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>and 查询（年龄大于 20 的性别为男的记录）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    $and<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> sex<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>查询第一条数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>查询某个结果集的记录条数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $lte<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3></li>
+<li><p>查找名字叫做 Jack 的，把年龄更改为 30 岁：</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'Jack'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> $set<span class="token operator">:</span> <span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3></li>
+<li><p>删除 age = 20 岁的记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除 age &gt; 20 记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gt<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> justOne<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除 age = 20 的一条记录</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> age<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> justOne<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除集合</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">drop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除数据库</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span><span class="token function">dropDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2></li>
+</ol>
+<h3 id="获取查询时间（单位-毫秒）"><a href="#获取查询时间（单位-毫秒）" class="headerlink" title="获取查询时间（单位:毫秒）"></a>获取查询时间（单位:毫秒）</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>itemlist<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'xxx'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">explain</span><span class="token punctuation">(</span><span class="token string">'executionStats'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>executionStats<span class="token punctuation">.</span>executionTimeMillis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
+<p>索引是对数据库表中一列或多列的值进行排序的一种结构</p>
+<p>索引通常能够极大的提高查询的效率，如果没有索引，MongoDB 在读取数据时必须扫描集合中的每个文件并选取那些符合查询条件的记录。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 创建一个50000条的数据</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">50000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    db<span class="token punctuation">.</span>itemlist<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">'item'</span> <span class="token operator">+</span> i
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<ol>
+<li><p>创建索引</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>获取当前集合的索引</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">getIndexes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>删除索引</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">dropIndex</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建复合索引</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>该索引被创建后，基于 <code>name</code> 和 <code>age</code> 的查询将会用到该索引，或者是基于 <code>name</code> 的查询也会用到该索引，但是只是基于 <code>age</code> 的查询将不会用到该复合索引。因此可以说，如果想用到复合索引，必须在查询条件中包含复合索引中的前 N 个索引列。</p>
+<p>然而如果查询条件中的键值顺序和复合索引中的创建顺序不一致的话，MongoDB 可以智能的帮助我们调<br>整该顺序，以便使复合索引可以为查询所用。</p>
+<p><code>db.member.find(&#123;age: 30, name: &quot;Jack&quot;&#125;)</code></p>
+</blockquote>
+</li>
+<li><p>在创建索引时为其指定索引名</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'username'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建唯一索引</p>
+<p> 不允许具有索引值相同的行，从而禁止重复的索引或键值</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> unique<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+
       
     </div>
 
@@ -630,7 +774,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -658,7 +802,38 @@
 <li>然后将每位上的数都除以 7，用所得的余数代替原有的个、十、百位数</li>
 <li>最后将第一位和第三位交换。</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加密</span></span><br><span class="line"><span class="keyword">const</span> hashEncrypt = <span class="function">(<span class="params">value, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> quotient = <span class="built_in">Math</span>.floor((item + salt) / <span class="number">7</span>)</span><br><span class="line">        <span class="keyword">let</span> rem = (item + salt) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            quotient,</span><br><span class="line">            rem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> encryptValue = +result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.rem).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> iv = result.map(<span class="function"><span class="params">item</span> =&gt;</span> item.quotient)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        encryptValue,</span><br><span class="line">        iv</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解密</span></span><br><span class="line"><span class="keyword">const</span> hashDecrypt = <span class="function">(<span class="params">value, iv, salt</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> valueList = <span class="built_in">String</span>(value).split(<span class="string">&#x27;&#x27;</span>).reverse().map(<span class="function"><span class="params">item</span> =&gt;</span> +item)</span><br><span class="line">    <span class="keyword">let</span> result = valueList.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> iv[index] * <span class="number">7</span> + item - salt</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> decryptValue = +result.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> decryptValue</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> testValue = <span class="number">751</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="number">4523645</span></span><br><span class="line"><span class="keyword">let</span> &#123; encryptValue, iv &#125; = hashEncrypt(testValue, salt)</span><br><span class="line"><span class="keyword">let</span> decryptValue = hashDecrypt(encryptValue, iv, salt)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 加密</span>
+<span class="token keyword">const</span> <span class="token function-variable function">hashEncrypt</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> salt</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> valueList <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token operator">+</span>item<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> valueList<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> quotient <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item <span class="token operator">+</span> salt<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">7</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token punctuation">(</span>item <span class="token operator">+</span> salt<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">7</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+            quotient<span class="token punctuation">,</span>
+            rem
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> encryptValue <span class="token operator">=</span> <span class="token operator">+</span>result<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>rem<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> iv <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>quotient<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        encryptValue<span class="token punctuation">,</span>
+        iv
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 解密</span>
+<span class="token keyword">const</span> <span class="token function-variable function">hashDecrypt</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> iv<span class="token punctuation">,</span> salt</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> valueList <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token operator">+</span>item<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> valueList<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> iv<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">7</span> <span class="token operator">+</span> item <span class="token operator">-</span> salt
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> decryptValue <span class="token operator">=</span> <span class="token operator">+</span>result<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> decryptValue
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">let</span> testValue <span class="token operator">=</span> <span class="token number">751</span>
+<span class="token keyword">let</span> salt <span class="token operator">=</span> <span class="token number">4523645</span>
+<span class="token keyword">let</span> <span class="token punctuation">&#123;</span> encryptValue<span class="token punctuation">,</span> iv <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">hashEncrypt</span><span class="token punctuation">(</span>testValue<span class="token punctuation">,</span> salt<span class="token punctuation">)</span>
+<span class="token keyword">let</span> decryptValue <span class="token operator">=</span> <span class="token function">hashDecrypt</span><span class="token punctuation">(</span>encryptValue<span class="token punctuation">,</span> iv<span class="token punctuation">,</span> salt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
@@ -715,7 +890,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -808,23 +983,102 @@
 <blockquote>
 <p>管道操作符作为<strong>键</strong>，所对应的<strong>值</strong>叫做管道表达式<br>例如<code>&#123;$match:&#123;status:&quot;A&quot;&#125;&#125;</code>，<code>$match</code> 称为管道操作符，而 <code>status:&quot;A&quot;</code>称为管道表达式<br>每个管道表达式是一个文档结构，它是由字段名、字段值、和一些表达式操作符组成的</p>
 </blockquote>
-<h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">10</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;111&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">100</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">7</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;222&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">90</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line">db.order.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;uid&quot;</span>:<span class="number">9</span>,<span class="string">&quot;trade_no&quot;</span>:<span class="string">&quot;333&quot;</span>,<span class="string">&quot;all_price&quot;</span>:<span class="number">20</span>,<span class="string">&quot;all_num&quot;</span>:<span class="number">6</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品鼠标 1&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 2&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;商品键盘 3&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">0</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;牛奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">50</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;酸奶&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">40</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;矿泉水&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">2</span>,<span class="attr">num</span>:<span class="number">5</span>&#125;)</span><br><span class="line">db.order_item.insert(&#123;<span class="string">&quot;order_id&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;title&quot;</span>:<span class="string">&quot;毛巾&quot;</span>,<span class="string">&quot;price&quot;</span>:<span class="number">10</span>,<span class="attr">num</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"111"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"222"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"333"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品鼠标 1"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 2"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 3"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"牛奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"酸奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">40</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"矿泉水"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"毛巾"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>自定义文档的结构，可以用来重命名、增加或删除文档中的字段</p>
 <p>查找 order 只返回文档中 trade_no 和 all_price 字段</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            trade_no: <span class="number">1</span>,</span><br><span class="line">            all_price: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            all_price<span class="token operator">:</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>过滤。用法类似于 <code>find()</code> 方法中的参数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123; <span class="attr">all_price</span>: &#123; <span class="attr">$gte</span>: <span class="number">90</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>分组，可用于统计结果</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.order_item.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123; <span class="attr">_id</span>: <span class="string">&#x27;$order_id&#x27;</span>, <span class="attr">total</span>: &#123; <span class="attr">$sum</span>: <span class="string">&#x27;$num&#x27;</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $group<span class="token operator">:</span> <span class="token punctuation">&#123;</span> _id<span class="token operator">:</span> <span class="token string">'$order_id'</span><span class="token punctuation">,</span> total<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $sum<span class="token operator">:</span> <span class="token string">'$num'</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><p>排序</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $sort: &#123; <span class="attr">all_price</span>: -<span class="number">1</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $sort<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="limit"><a href="#limit" class="headerlink" title="$limit"></a>$limit</h2><p>限制数量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $limit: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $limit<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="skip"><a href="#skip" class="headerlink" title="$skip"></a>$skip</h2><p>跳过</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123; <span class="attr">trade_no</span>: <span class="number">1</span>, <span class="attr">all_price</span>: <span class="number">1</span> &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $skip: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $skip<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>表关联</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">db.order.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup: &#123;</span><br><span class="line">            <span class="keyword">from</span>: <span class="string">&#x27;order_item&#x27;</span>,</span><br><span class="line">            localField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            foreignField: <span class="string">&#x27;order_id&#x27;</span>,</span><br><span class="line">            <span class="keyword">as</span>: <span class="string">&#x27;items&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123;</span><br><span class="line">            all_price: &#123;</span><br><span class="line">                $gt: <span class="number">90</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            items: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
+            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
+            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                $gt<span class="token operator">:</span> <span class="token number">90</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            items<span class="token operator">:</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
     </div>

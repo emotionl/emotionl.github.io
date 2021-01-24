@@ -20,17 +20,17 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="需求提取字符串中数据处理成数组嵌套对象的格式 处理前 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091">
+<meta name="description" content="需求提取字符串中数据处理成数组嵌套对象的格式 处理前 let str &#x3D; &#96;1.辅导 如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。 Need a unique potential? Mastering coaching skill can catalyze people’s potential.   2.培养员工 员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则案例1">
 <meta property="og:url" content="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B1/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
-<meta property="og:description" content="需求提取字符串中数据处理成数组嵌套对象的格式 处理前 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091">
+<meta property="og:description" content="需求提取字符串中数据处理成数组嵌套对象的格式 处理前 let str &#x3D; &#96;1.辅导 如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。 Need a unique potential? Mastering coaching skill can catalyze people’s potential.   2.培养员工 员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-23T18:47:06.929Z">
+<meta property="article:modified_time" content="2021-01-24T15:31:18.620Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="正则">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,6 +204,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -252,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -267,10 +268,227 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>提取字符串中数据处理成数组嵌套对象的格式</p>
 <p>处理前</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`1.辅导</span></span><br><span class="line"><span class="string">如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。</span></span><br><span class="line"><span class="string">Need a unique potential? Mastering coaching skill can catalyze people’s potential.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2.培养员工</span></span><br><span class="line"><span class="string">员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。</span></span><br><span class="line"><span class="string">Develop your employees to make your team and organization successful.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3.沟通难题</span></span><br><span class="line"><span class="string">冲突是了解对方、了解自己的途径。通过无伤害式回应保护自己的同时保护对手。</span></span><br><span class="line"><span class="string">Conflict is to understand. Communication is to protect.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">4.多元化</span></span><br><span class="line"><span class="string">多元化是一段追寻价值与尊重的旅程，管理者需换位思考去建立多元化联系。</span></span><br><span class="line"><span class="string">Alter your mindset and build diversified connection to show your value and respect.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">5.反馈要领</span></span><br><span class="line"><span class="string">最有效的反馈是提出新挑战，鼓励员工学习和成长，如导师般持续沟通与激励。</span></span><br><span class="line"><span class="string">Effective feedback is the key to greater results and higher engagement.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">6.全球合作 APP里面叫全球协作</span></span><br><span class="line"><span class="string">你目前或许不需要全球化协作，但不能不具备全球化视野去思考与解决问题。</span></span><br><span class="line"><span class="string">Global collaboration might not be on your plate now, but the vision is a must.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">7.招聘</span></span><br><span class="line"><span class="string">你做的任何事都取决于你招聘的员工。学习如何招聘会让你的职业生涯会更成功。</span></span><br><span class="line"><span class="string">You are who you hire. Recruiting the right talent is vital to thriving in your field.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">8.   领导员工</span></span><br><span class="line"><span class="string">领导员工可以表达自己的价值观，构建组织，让员工充实生活，并实现组织目标。</span></span><br><span class="line"><span class="string">Lead it right, you’ll create a culture in which peoples’ work make their hearts sing.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">9.   利用您的人际网络</span></span><br><span class="line"><span class="string">人际网络的价值不单是解决问题，更有你与其他人之间的无形却强大的人际关系。</span></span><br><span class="line"><span class="string">Networking not only solves problems, it also opens up your vision and opportunities.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">10. 管理您的上司</span></span><br><span class="line"><span class="string">你与上司的关系对你的成败至关重要，对上司越了解，越有利于把事情做到最好。</span></span><br><span class="line"><span class="string">You and your boss are on the same boat. To succeed, you as well be on the same page.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">11. 会议管理</span></span><br><span class="line"><span class="string">会议越高效，结果就越好。这是你作为领导者脱颖而出的好机会。</span></span><br><span class="line"><span class="string">Short and efficient meetings help you go a longer way and achieve greater success.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">12. 绩效评估</span></span><br><span class="line"><span class="string">绩效评估让员工了解公司的期望和对他们工作表现的反馈，并鼓励员工积极改进。</span></span><br><span class="line"><span class="string">Performance review should be a motivation that elicits the staffs’ improvements. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">13. 说服他人</span></span><br><span class="line"><span class="string">你的每个梦想都与他人相关，需通过他人实现。说服他人的能力是你成功的标志。</span></span><br><span class="line"><span class="string">You always need a hand. How you persuade others determines how likely you’ll succeed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">14. 留住关键员工</span></span><br><span class="line"><span class="string">以你希望的领导者对待你的方式对待你的员工，这才能把你的最佳员工留在身边。</span></span><br><span class="line"><span class="string">Treating your employees the way you want to be treated keeps the best talent around. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">15. 团队组建</span></span><br><span class="line"><span class="string">寻找性格适合的人确实重要，但你更应寻找的是愿意和渴望学习并分享知识的人。</span></span><br><span class="line"><span class="string">Look not only for good spirit, but also for those who are eager to learn and share.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">16. 团队管理</span></span><br><span class="line"><span class="string">培养信任与团队认同感，简化政策，鼓励开放交流，促进协作，公允的绩效奖励。</span></span><br><span class="line"><span class="string">Foster trust and set down clear regulations to create strong bonds between members.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">17. 预算编制</span></span><br><span class="line"><span class="string">预算编制会给你挑战，但也给你一个实现目标的机会。通过编制预算来掌控未来。</span></span><br><span class="line"><span class="string">Budgeting is how you measure the resources you have in hand to control the future.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">18. 撰写立项报告</span></span><br><span class="line"><span class="string">立项报告涉及确定战略机会，以及确定各方可享有的好处与财务收益的挂钩。</span></span><br><span class="line"><span class="string">A strong business case sets a clear view of your strategic opportunities and returns. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">19. 编写商业计划书</span></span><br><span class="line"><span class="string">商业计划书是制定满足未满足的需求的战略，并证明团队的制胜能力与策应能力。</span></span><br><span class="line"><span class="string">Use your business plan to pinpoint unmet customer needs and how you’ll fulfill them.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">20. 变革管理</span></span><br><span class="line"><span class="string">周围的变化是永恒且不可避免的，但可通过变革以使自己保持竞争力并正确前进。</span></span><br><span class="line"><span class="string">Change is eternal. Knowing how to manage it keeps you on the top of your game.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">21. 危机管理</span></span><br><span class="line"><span class="string">危机管理是一个不断学习的过程，如遇危机请冷静并开放的发掘新机遇与新能力。</span></span><br><span class="line"><span class="string">In the light of crisis, never stop learning and keep a clear mind for new breaks. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">22. 以客户为中心</span></span><br><span class="line"><span class="string">你若认真倾听客户，他们便会反过来帮助你，二者是相互依存，协作双赢。</span></span><br><span class="line"><span class="string">Pondering upon the true needs of your customers builds you a win-win relationship.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">23. 决策</span></span><br><span class="line"><span class="string">决策不是容易的事情，但若你了解决策的陷阱和复杂性，就可以提高成功的机会。</span></span><br><span class="line"><span class="string">See through the complexity of decision making, you will make better decisions.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">24. 授权</span></span><br><span class="line"><span class="string">授权意味着放手，信任并赋予责任，提供支持与辅导，监督进度，但让员工主导。</span></span><br><span class="line"><span class="string">Granting others trust and responsibilities are the key instruments of delegating.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">25. 财务概要</span></span><br><span class="line"><span class="string">我们不想生活在靠预感做决策的世界，在财务领域的一切都是可知的，可获得的。</span></span><br><span class="line"><span class="string">Nowadays, finance is how we elaborate on what we can deliver and what we want.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">26. 设定目标</span></span><br><span class="line"><span class="string">确定目标与价值观，坚定愿景并用语言表达，确定短期与长期的行动目标与路径。</span></span><br><span class="line"><span class="string">Think it through then put your goals down into words and transform them into actions.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">27. 创新和创造力</span></span><br><span class="line"><span class="string">你无法控制创新的灵光何时闪现。但创意的过程可以由你管理、培养和提升。</span></span><br><span class="line"><span class="string">You can’t control when the bulb lights up, but the action afterwards is up to you. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">28. 实施创新</span></span><br><span class="line"><span class="string">要不断尝试并持续收集反馈，在过程中不断改进计划，尝试并探索做事的新方法。</span></span><br><span class="line"><span class="string">Stay hungry, stay innovative. There&#x27;s no a bed of roses in business. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">29. 营销精要</span></span><br><span class="line"><span class="string">向营销专家那样思考，你可以更好了解利益相关者要什么，以及你怎样帮助他们。</span></span><br><span class="line"><span class="string">Think like an expert, what do the stakeholders want and how you can carry them out.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">30. 谈判</span></span><br><span class="line"><span class="string">我需要理解他们，他们也需要理解我，我们需要弄清楚我们之间能达成什么交易。</span></span><br><span class="line"><span class="string">Keep in mind what our ultimate goals are, and how we can reach a deal on it. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">31. 绩效衡量</span></span><br><span class="line"><span class="string">绩效衡量的核心目标是制定真正有用的标准，而不是展示你已衡量过这些绩效。</span></span><br><span class="line"><span class="string">Performance measurement supports accountability and helps demonstrate success.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">32. 流程优化</span></span><br><span class="line"><span class="string">处理公司流程改进的最重要的方法是下定改进流程的决心。决心是第一步。</span></span><br><span class="line"><span class="string">Set forth your commitment to improve your process and deliver greater value. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">33. 项目管理</span></span><br><span class="line"><span class="string">运营良好的项目是企业发展和创新的动力，是学习复制推广经验的机会。</span></span><br><span class="line"><span class="string">All project is an innovative journey and the impact may last longer than you think.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">34. 战略思维</span></span><br><span class="line"><span class="string">定义你的经营方式并能让你脱颖而出的理念是什么？这才是战略思维的核心问题。</span></span><br><span class="line"><span class="string">What makes you stand out? Strategic thinking is your unique take on the future.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">35. 战略规划与执行</span></span><br><span class="line"><span class="string">执行就是让每个人按照既定的战略采取行动。战略在持续演变，组织要及时行动。</span></span><br><span class="line"><span class="string">As a manager you have to lead your unit to connect their actions to the strategy. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">36. 职业生涯管理</span></span><br><span class="line"><span class="string">成功，最大障碍是害怕失败和被拒绝，需靠信仰和勇气下的激情、行动与坚持。</span></span><br><span class="line"><span class="string">Pursuing your dream is challenging. Thus, you should uphold your courage and grid.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">37. 职业道德</span></span><br><span class="line"><span class="string">忠诚代表一种价值观，有一些方法可以帮你系统、高效且公平地应对伦理挑战。</span></span><br><span class="line"><span class="string">Ethical challenges can be handled fairly and efficiently via various ways.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">38. 演讲技巧</span></span><br><span class="line"><span class="string">演讲技能让人在任何场合或做的每件事中，都有感染性的自信和内驱力。</span></span><br><span class="line"><span class="string">Building up presentation skill also strengthens your self-confidence wherever you go.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">39. 压力管理</span></span><br><span class="line"><span class="string">参与你热爱的活动，并不只是让你拥有好心情，这还是让你取得高绩效的好策略。</span></span><br><span class="line"><span class="string">What builds great resiliency is the ability to engage in activities that bring us joy.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">40. 时间管理</span></span><br><span class="line"><span class="string">时间管理就是严于律己并保持专注和分清轻重缓急，能让你充实且快乐做好事情。</span></span><br><span class="line"><span class="string">Discipline, focus and prioritizing are the three pillars of wise time management. </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">41. 写作技巧</span></span><br><span class="line"><span class="string">了解你的受众以创造吸引力。在明确目的下思考、组织、起草、修改及润饰文稿。</span></span><br><span class="line"><span class="string">Understand your audience and craft your words carefully to fully convey your thought.`</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">1.辅导
+如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。
+Need a unique potential? Mastering coaching skill can catalyze people’s potential.
+
+
+2.培养员工
+员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。
+Develop your employees to make your team and organization successful.
+
+
+
+3.沟通难题
+冲突是了解对方、了解自己的途径。通过无伤害式回应保护自己的同时保护对手。
+Conflict is to understand. Communication is to protect.
+
+
+4.多元化
+多元化是一段追寻价值与尊重的旅程，管理者需换位思考去建立多元化联系。
+Alter your mindset and build diversified connection to show your value and respect.
+
+
+
+5.反馈要领
+最有效的反馈是提出新挑战，鼓励员工学习和成长，如导师般持续沟通与激励。
+Effective feedback is the key to greater results and higher engagement.
+
+
+6.全球合作 APP里面叫全球协作
+你目前或许不需要全球化协作，但不能不具备全球化视野去思考与解决问题。
+Global collaboration might not be on your plate now, but the vision is a must.
+
+7.招聘
+你做的任何事都取决于你招聘的员工。学习如何招聘会让你的职业生涯会更成功。
+You are who you hire. Recruiting the right talent is vital to thriving in your field.
+
+
+8.   领导员工
+领导员工可以表达自己的价值观，构建组织，让员工充实生活，并实现组织目标。
+Lead it right, you’ll create a culture in which peoples’ work make their hearts sing.
+
+ 
+9.   利用您的人际网络
+人际网络的价值不单是解决问题，更有你与其他人之间的无形却强大的人际关系。
+Networking not only solves problems, it also opens up your vision and opportunities.
+
+ 
+10. 管理您的上司
+你与上司的关系对你的成败至关重要，对上司越了解，越有利于把事情做到最好。
+You and your boss are on the same boat. To succeed, you as well be on the same page.
+
+ 
+11. 会议管理
+会议越高效，结果就越好。这是你作为领导者脱颖而出的好机会。
+Short and efficient meetings help you go a longer way and achieve greater success.
+
+ 
+12. 绩效评估
+绩效评估让员工了解公司的期望和对他们工作表现的反馈，并鼓励员工积极改进。
+Performance review should be a motivation that elicits the staffs’ improvements. 
+
+ 
+13. 说服他人
+你的每个梦想都与他人相关，需通过他人实现。说服他人的能力是你成功的标志。
+You always need a hand. How you persuade others determines how likely you’ll succeed.
+
+ 
+14. 留住关键员工
+以你希望的领导者对待你的方式对待你的员工，这才能把你的最佳员工留在身边。
+Treating your employees the way you want to be treated keeps the best talent around. 
+
+ 
+15. 团队组建
+寻找性格适合的人确实重要，但你更应寻找的是愿意和渴望学习并分享知识的人。
+Look not only for good spirit, but also for those who are eager to learn and share.
+
+ 
+16. 团队管理
+培养信任与团队认同感，简化政策，鼓励开放交流，促进协作，公允的绩效奖励。
+Foster trust and set down clear regulations to create strong bonds between members.
+
+
+17. 预算编制
+预算编制会给你挑战，但也给你一个实现目标的机会。通过编制预算来掌控未来。
+Budgeting is how you measure the resources you have in hand to control the future.
+
+ 
+18. 撰写立项报告
+立项报告涉及确定战略机会，以及确定各方可享有的好处与财务收益的挂钩。
+A strong business case sets a clear view of your strategic opportunities and returns. 
+
+ 
+19. 编写商业计划书
+商业计划书是制定满足未满足的需求的战略，并证明团队的制胜能力与策应能力。
+Use your business plan to pinpoint unmet customer needs and how you’ll fulfill them.
+
+ 
+20. 变革管理
+周围的变化是永恒且不可避免的，但可通过变革以使自己保持竞争力并正确前进。
+Change is eternal. Knowing how to manage it keeps you on the top of your game.
+
+21. 危机管理
+危机管理是一个不断学习的过程，如遇危机请冷静并开放的发掘新机遇与新能力。
+In the light of crisis, never stop learning and keep a clear mind for new breaks. 
+
+ 
+22. 以客户为中心
+你若认真倾听客户，他们便会反过来帮助你，二者是相互依存，协作双赢。
+Pondering upon the true needs of your customers builds you a win-win relationship.
+
+ 
+23. 决策
+决策不是容易的事情，但若你了解决策的陷阱和复杂性，就可以提高成功的机会。
+See through the complexity of decision making, you will make better decisions.
+
+ 
+24. 授权
+授权意味着放手，信任并赋予责任，提供支持与辅导，监督进度，但让员工主导。
+Granting others trust and responsibilities are the key instruments of delegating.
+
+ 
+25. 财务概要
+我们不想生活在靠预感做决策的世界，在财务领域的一切都是可知的，可获得的。
+Nowadays, finance is how we elaborate on what we can deliver and what we want.
+
+ 
+26. 设定目标
+确定目标与价值观，坚定愿景并用语言表达，确定短期与长期的行动目标与路径。
+Think it through then put your goals down into words and transform them into actions.
+
+ 
+27. 创新和创造力
+你无法控制创新的灵光何时闪现。但创意的过程可以由你管理、培养和提升。
+You can’t control when the bulb lights up, but the action afterwards is up to you. 
+
+
+28. 实施创新
+要不断尝试并持续收集反馈，在过程中不断改进计划，尝试并探索做事的新方法。
+Stay hungry, stay innovative. There's no a bed of roses in business. 
+
+ 
+29. 营销精要
+向营销专家那样思考，你可以更好了解利益相关者要什么，以及你怎样帮助他们。
+Think like an expert, what do the stakeholders want and how you can carry them out.
+
+ 
+30. 谈判
+我需要理解他们，他们也需要理解我，我们需要弄清楚我们之间能达成什么交易。
+Keep in mind what our ultimate goals are, and how we can reach a deal on it. 
+
+
+31. 绩效衡量
+绩效衡量的核心目标是制定真正有用的标准，而不是展示你已衡量过这些绩效。
+Performance measurement supports accountability and helps demonstrate success.
+
+32. 流程优化
+处理公司流程改进的最重要的方法是下定改进流程的决心。决心是第一步。
+Set forth your commitment to improve your process and deliver greater value. 
+
+
+33. 项目管理
+运营良好的项目是企业发展和创新的动力，是学习复制推广经验的机会。
+All project is an innovative journey and the impact may last longer than you think.
+
+
+34. 战略思维
+定义你的经营方式并能让你脱颖而出的理念是什么？这才是战略思维的核心问题。
+What makes you stand out? Strategic thinking is your unique take on the future.
+
+
+35. 战略规划与执行
+执行就是让每个人按照既定的战略采取行动。战略在持续演变，组织要及时行动。
+As a manager you have to lead your unit to connect their actions to the strategy. 
+
+
+36. 职业生涯管理
+成功，最大障碍是害怕失败和被拒绝，需靠信仰和勇气下的激情、行动与坚持。
+Pursuing your dream is challenging. Thus, you should uphold your courage and grid.
+
+
+37. 职业道德
+忠诚代表一种价值观，有一些方法可以帮你系统、高效且公平地应对伦理挑战。
+Ethical challenges can be handled fairly and efficiently via various ways.
+
+
+38. 演讲技巧
+演讲技能让人在任何场合或做的每件事中，都有感染性的自信和内驱力。
+Building up presentation skill also strengthens your self-confidence wherever you go.
+
+
+39. 压力管理
+参与你热爱的活动，并不只是让你拥有好心情，这还是让你取得高绩效的好策略。
+What builds great resiliency is the ability to engage in activities that bring us joy.
+
+
+40. 时间管理
+时间管理就是严于律己并保持专注和分清轻重缓急，能让你充实且快乐做好事情。
+Discipline, focus and prioritizing are the three pillars of wise time management. 
+
+
+41. 写作技巧
+了解你的受众以创造吸引力。在明确目的下思考、组织、起草、修改及润饰文稿。
+Understand your audience and craft your words carefully to fully convey your thought.</span><span class="token template-punctuation string">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>处理后</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&quot;id&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;name&quot;</span>:<span class="string">&quot;辅导&quot;</span>,<span class="string">&quot;docZh&quot;</span>:<span class="string">&quot;如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。&quot;</span>,<span class="string">&quot;docEn&quot;</span>:<span class="string">&quot;Need a unique potential? Mastering coaching skill can catalyze people’s potential.&quot;</span>&#125;,&#123;<span class="string">&quot;id&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;name&quot;</span>:<span class="string">&quot;培养员工&quot;</span>,<span class="string">&quot;docZh&quot;</span>:<span class="string">&quot;员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。&quot;</span>,<span class="string">&quot;docEn&quot;</span>:<span class="string">&quot;Develop your employees to make your team and organization successful.&quot;</span>&#125;]</span><br></pre></td></tr></table></figure>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 确定正则</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/(\d&#123;1,2&#125;)\.\s*(.+)\n(.+)\n(.+)/g</span></span><br><span class="line"><span class="comment">// 创建空数组</span></span><br><span class="line"><span class="keyword">let</span> arr = []</span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line">str.replace(regex, <span class="function">(<span class="params">match, p1, p2, p3, p4</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> item = &#123;</span><br><span class="line">        id: p1,</span><br><span class="line">        name: p2,</span><br><span class="line">        docZh: p3,</span><br><span class="line">        docEn: p4</span><br><span class="line">    &#125;</span><br><span class="line">    arr.push(item)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(arr))</span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">&#123;</span><span class="token string">"id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"辅导"</span><span class="token punctuation">,</span><span class="token string">"docZh"</span><span class="token operator">:</span><span class="token string">"如何发挥每位员工都有独特的潜力？辅导是催化剂，学会辅导便能催化潜力。"</span><span class="token punctuation">,</span><span class="token string">"docEn"</span><span class="token operator">:</span><span class="token string">"Need a unique potential? Mastering coaching skill can catalyze people’s potential."</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token string">"id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"培养员工"</span><span class="token punctuation">,</span><span class="token string">"docZh"</span><span class="token operator">:</span><span class="token string">"员工是组织的最大资产，培养员工，就可以成就团队，繁荣组织。"</span><span class="token punctuation">,</span><span class="token string">"docEn"</span><span class="token operator">:</span><span class="token string">"Develop your employees to make your team and organization successful."</span><span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定正则</span>
+<span class="token keyword">let</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(\d&#123;1,2&#125;)\.\s*(.+)\n(.+)\n(.+)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span>
+<span class="token comment">// 创建空数组</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment">// 处理</span>
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">,</span> p4</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> item <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        id<span class="token operator">:</span> p1<span class="token punctuation">,</span>
+        name<span class="token operator">:</span> p2<span class="token punctuation">,</span>
+        docZh<span class="token operator">:</span> p3<span class="token punctuation">,</span>
+        docEn<span class="token operator">:</span> p4
+    <span class="token punctuation">&#125;</span>
+    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印结果</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 

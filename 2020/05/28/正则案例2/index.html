@@ -20,17 +20,17 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="需求提取网址中的指定片段 处理前 12let url1 &#x3D; &amp;#x27;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring&amp;#x27;let url2 &#x3D; &amp;#x27;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring?id&#x3D;1&amp;#x27; 处理后 12&amp;#x27;monitoring&amp;#x27;&amp;#x27;monitoring&amp;#x27; 解决12345678">
+<meta name="description" content="需求提取网址中的指定片段 处理前 let url1 &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring&#39; let url2 &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring?id&#x3D;1&#39; 处理后 &#39;monitoring&#39; &#39;monitoring&#39; 解决&#x2F;&#x2F; 确定正则 let regex &#x3D; &#x2F;\w+\W+(\d+\.?)&amp;#123;4&amp;#125;\W">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则案例2">
 <meta property="og:url" content="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B2/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
-<meta property="og:description" content="需求提取网址中的指定片段 处理前 12let url1 &#x3D; &amp;#x27;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring&amp;#x27;let url2 &#x3D; &amp;#x27;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring?id&#x3D;1&amp;#x27; 处理后 12&amp;#x27;monitoring&amp;#x27;&amp;#x27;monitoring&amp;#x27; 解决12345678">
+<meta property="og:description" content="需求提取网址中的指定片段 处理前 let url1 &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring&#39; let url2 &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8123&#x2F;#&#x2F;monitoring?id&#x3D;1&#39; 处理后 &#39;monitoring&#39; &#39;monitoring&#39; 解决&#x2F;&#x2F; 确定正则 let regex &#x3D; &#x2F;\w+\W+(\d+\.?)&amp;#123;4&amp;#125;\W">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-28T00:00:01.000Z">
-<meta property="article:modified_time" content="2021-01-23T18:47:06.929Z">
+<meta property="article:modified_time" content="2021-01-24T15:31:18.620Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="正则">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,6 +204,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -252,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-23 18:47:06" itemprop="dateModified" datetime="2021-01-23T18:47:06+00:00">2021-01-23</time>
+        <time title="修改时间：2021-01-24 15:31:18" itemprop="dateModified" datetime="2021-01-24T15:31:18+00:00">2021-01-24</time>
       </span>
 
   
@@ -267,10 +268,26 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>提取网址中的指定片段</p>
 <p>处理前</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url1 = <span class="string">&#x27;http://127.0.0.1:8123/#/monitoring&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url2 = <span class="string">&#x27;http://127.0.0.1:8123/#/monitoring?id=1&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> url1 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring'</span>
+<span class="token keyword">let</span> url2 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring?id=1'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>处理后</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;monitoring&#x27;</span></span><br><span class="line"><span class="string">&#x27;monitoring&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 确定正则</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/\w+\W+(\d+\.?)&#123;4&#125;\W\d+\W+(\w+)(\?.+)?/g</span></span><br><span class="line"><span class="comment">// 准备数据</span></span><br><span class="line"><span class="keyword">let</span> url1 = <span class="string">&#x27;http://127.0.0.1:8123/#/monitoring&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url2 = <span class="string">&#x27;http://127.0.0.1:8123/#/monitoring?id=1&#x27;</span></span><br><span class="line"><span class="comment">// 处理</span></span><br><span class="line"><span class="keyword">let</span> result1 = url1.replace(regex, <span class="function">(<span class="params">match, p1, p2</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> p2</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> result2 = url2.replace(regex, <span class="function">(<span class="params">match, p1, p2</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> p2</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line"><span class="built_in">console</span>.log(result1)</span><br><span class="line"><span class="built_in">console</span>.log(result2)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">'monitoring'</span>
+<span class="token string">'monitoring'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定正则</span>
+<span class="token keyword">let</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w+\W+(\d+\.?)&#123;4&#125;\W\d+\W+(\w+)(\?.+)?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span>
+<span class="token comment">// 准备数据</span>
+<span class="token keyword">let</span> url1 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring'</span>
+<span class="token keyword">let</span> url2 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring?id=1'</span>
+<span class="token comment">// 处理</span>
+<span class="token keyword">let</span> result1 <span class="token operator">=</span> url1<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> p2
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> result2 <span class="token operator">=</span> url2<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> p2
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印结果</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result1<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
