@@ -171,13 +171,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -207,6 +207,319 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/17/R%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%9D%82%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/17/R%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%9D%82%E8%AE%B0/" class="post-title-link" itemprop="url">R 语言知识点杂记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-17 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-17T00:00:00+00:00">2020-03-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><strong>Vectors</strong> (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.</li>
+<li><strong>Matrices</strong> (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.</li>
+<li><strong>Data frames</strong> (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.</li>
+<li><strong>Lists</strong>: ‘As opposed to vectors, lists can hold components of different types, just as your to-do lists can contain different categories of tasks. This chapter will teach you how to create, name, and subset these lists.’</li>
+</ul>
+<h2 id="R-语言的标准差"><a href="#R-语言的标准差" class="headerlink" title="R 语言的标准差"></a>R 语言的标准差</h2><p>当我们按照课本里的公式去实现一个求标准差的函数时大概是这样的</p>
+<pre class="line-numbers language-rgit" data-language="rgit"><code class="language-rgit">get_sd &lt;- function(vec) &#123;
+  square_sum &lt;- 0
+  vec_length &lt;- length(vec)
+  vec_mean &lt;- mean(vec)
+  for (item in vec) &#123;
+    square_sum &lt;- square_sum + (item - vec_mean) ^ 2
+  &#125;
+  vec_sd &lt;- sqrt(square_sum &#x2F; vec_length)
+  return(vec_sd)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是当我们使用 <code>R</code> 语言中自带的 <code>sd</code>函数计算标准差的时候答案却不太一样</p>
+<p>测试数据 <code>num_vec &lt;- c(1, 2, 3, 4)</code></p>
+<p>测试结果</p>
+<pre class="line-numbers language-rgit" data-language="rgit"><code class="language-rgit">get_sd(num_vec)
+# [1] 1.118034
+sd(num_vec)
+# [1] 1.290994<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>那么问题到底出现在哪一个环节呢</p>
+<p>一通 <code>Google</code> 后在 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6457755/standard-deviation-in-r-seems-to-be-returning-the-wrong-answer-am-i-doing-some">Standard Deviation in R Seems to be Returning the Wrong Answer - Am I Doing Something Wrong?</a>找到了答案</p>
+<p>意思大致是说 <code>R</code>语言中内建的 <code>sd</code>函数计算的是<strong>样本标准差</strong>而我们书本里教的则是<strong>整体标准差</strong></p>
+<p><strong>样本标准差</strong>的时候分母是<code>n-1</code> 而<strong>整体标准差</strong>的分母则是<code>n</code></p>
+<p>分母的差别造成了两次实验结果的差异</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20099757/answer/658048814">为什么样本方差（sample variance）的分母是 n-1？ - 张英锋的回答 - 知乎</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.shuxuele.com/data/standard-deviation.html">标准差和方差</a></p>
+</blockquote>
+<h2 id="R-语言的返回值"><a href="#R-语言的返回值" class="headerlink" title="R 语言的返回值"></a>R 语言的返回值</h2><ul>
+<li>R 语言中 return 本身就是一个函数，所以必须使用 <code>return(...)</code> 的方式，括号不能省略；这意味着显式返回变成一种函数调用，可能降低程序运行效率。</li>
+<li>不使用 return 也可以提供返回值，所以 R 语言的普遍习惯用法是<strong>避免显式调用</strong> <code>return()</code>。</li>
+<li>如果显式调用 <code>return()</code> 可以使得函数的结构更加清楚，那就尽管调用吧，没有问题。</li>
+</ul>
+<blockquote>
+<p>参考资料：<a href="https://link.zhihu.com/?target=http://stackoverflow.com/questions/11738823/explicitly-calling-return-in-a-function-or-not">StackOverflow - Explicitly calling return in a function or not</a></p>
+</blockquote>
+<h2 id="NA-与-NULL-的区别"><a href="#NA-与-NULL-的区别" class="headerlink" title="NA 与 NULL 的区别"></a>NA 与 NULL 的区别</h2><p>在 R 语言中，缺失值用 <strong>NA</strong>表示，空值用<strong>NULL</strong>表示。初学者在学习 R 语言时，一般都会被这两者弄糊涂，常常错误地把这两者视为等价的。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/100thMountain/archive/2012/12/12/2815212.html">R 语言中”NA”与”NULL”的区别</a></p>
+</blockquote>
+<h2 id="library-与-require-的区别"><a href="#library-与-require-的区别" class="headerlink" title="library() 与 require() 的区别"></a>library() 与 require() 的区别</h2><p><code>library()</code>和<code>require()</code>都可以载入包，但二者存在区别。</p>
+<p>在一个函数中，如果一个包不存在，执行到 library 将会停止执行，require 则会继续执行。</p>
+<p>require 将会根据包的存在与否返回<code>TRUE</code>或者<code>FALSE</code></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a></p>
+</blockquote>
+<h2 id="apply-函数族"><a href="#apply-函数族" class="headerlink" title="apply 函数族"></a>apply 函数族</h2><p><img src="/images/20.png" alt="20"></p>
+<ul>
+<li><p>lapply</p>
+<ul>
+<li>apply function over list or vector</li>
+<li>output = list</li>
+</ul>
+</li>
+<li><p>sapply</p>
+<ul>
+<li>apply function over list or vector</li>
+<li><strong>try to</strong> simplify list to array</li>
+</ul>
+</li>
+<li><p>vapply</p>
+<ul>
+<li>apply function over list or vector</li>
+<li><strong>explicitly specify</strong> output format</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/">A brief introduction to “apply” in R</a></p>
+<p><a target="_blank" rel="noopener" href="http://blog.fens.me/r-apply/">掌握 R 语言中的 apply 函数族</a></p>
+</blockquote>
+<h2 id="碰到的函数"><a href="#碰到的函数" class="headerlink" title="碰到的函数"></a>碰到的函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rnorm</code></td>
+<td>生成一系列的随机数</td>
+</tr>
+<tr>
+<td><code>strsplit</code></td>
+<td>分割字符串</td>
+</tr>
+<tr>
+<td><code>sd</code></td>
+<td>计算样本标准差</td>
+</tr>
+<tr>
+<td><code>args</code></td>
+<td>获得函数参数</td>
+</tr>
+<tr>
+<td><code>sample</code></td>
+<td>对数据进行抽样</td>
+</tr>
+<tr>
+<td><code>gsub</code></td>
+<td>用于对的删减、增补、替换和切割</td>
+</tr>
+<tr>
+<td><code>identical</code></td>
+<td>判断两个对象是否相等</td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>连接并输出</td>
+</tr>
+<tr>
+<td><code>runif</code></td>
+<td>生成均匀分布随机数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="数字相关函数"><a href="#数字相关函数" class="headerlink" title="数字相关函数"></a>数字相关函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>abs</code></td>
+<td>取绝对值</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>求和</td>
+</tr>
+<tr>
+<td><code>mean</code></td>
+<td>求平均住</td>
+</tr>
+<tr>
+<td><code>round</code></td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td><code>floor</code></td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td><code>ceiling</code></td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td><code>trunc</code></td>
+<td>向零的方向截取</td>
+</tr>
+<tr>
+<td><code>signif</code></td>
+<td>保留有效数字</td>
+</tr>
+</tbody></table>
+<h2 id="数据相关函数"><a href="#数据相关函数" class="headerlink" title="数据相关函数"></a>数据相关函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>seq</code></td>
+<td>Generate sequences, by specifying the <code>from</code>, <code>to</code>, and <code>by</code> arguments.</td>
+</tr>
+<tr>
+<td><code>rep</code></td>
+<td>Replicate elements of vectors and lists.</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort a vector in ascending order. Works on numerics, but also on character strings and logicals.</td>
+</tr>
+<tr>
+<td><code>rev</code></td>
+<td>Reverse the elements in a data structures for which reversal is defined.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Display the structure of any R object.</td>
+</tr>
+<tr>
+<td><code>append</code></td>
+<td>Merge vectors or lists.</td>
+</tr>
+<tr>
+<td><code>is.*()</code></td>
+<td>Check for the class of an R object.</td>
+</tr>
+<tr>
+<td><code>as.*()</code></td>
+<td>Convert an R object from one class to another.</td>
+</tr>
+<tr>
+<td><code>unlist</code></td>
+<td>Flatten (possibly embedded) lists to produce a vector.</td>
+</tr>
+</tbody></table>
+<h2 id="正则表达式相关函数"><a href="#正则表达式相关函数" class="headerlink" title="正则表达式相关函数"></a>正则表达式相关函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>grepl</code></td>
+<td>which returns <code>TRUE</code> when a pattern is found in the corresponding character string</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>which returns a vector of indices of the character strings that contains the pattern</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td>replace first match</td>
+</tr>
+<tr>
+<td><code>gsub</code></td>
+<td>replace all matches</td>
+</tr>
+</tbody></table>
+<h2 id="如何安装-XLConnect"><a href="#如何安装-XLConnect" class="headerlink" title="如何安装 XLConnect"></a>如何安装 XLConnect</h2><ol>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/java/jdk/">JDK</a></p>
+</li>
+<li><p>配置 <code>JAVA_HOME</code></p>
+<pre class="line-numbers language-r" data-language="r"><code class="language-r">Sys.setenv<span class="token punctuation">(</span>JAVA_HOME<span class="token operator">=</span><span class="token string">'D:\\Program Files\\Java\\jre1.8.0_202'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>安装 <code>XLConnect</code></p>
+<pre class="line-numbers language-r" data-language="r"><code class="language-r">install.packages<span class="token punctuation">(</span><span class="token string">"XLConnect"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -247,7 +560,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -464,7 +777,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -647,7 +960,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -764,7 +1077,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -857,7 +1170,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -960,7 +1273,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -1044,7 +1357,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -1124,7 +1437,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -1301,7 +1614,7 @@ E --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
+        <time title="修改时间：2021-01-25 03:09:12" itemprop="dateModified" datetime="2021-01-25T03:09:12+00:00">2021-01-25</time>
       </span>
 
   
@@ -1355,102 +1668,6 @@ goaccess /home/nginx/logs/access.log -o /home/nginx/html/report/index.html --log
 </li>
 </ol>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="post-title-link" itemprop="url">二进制</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-24 15:41:04" itemprop="dateModified" datetime="2021-01-24T15:41:04+00:00">2021-01-24</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="什么是二进制计数法？"><a href="#什么是二进制计数法？" class="headerlink" title="什么是二进制计数法？"></a>什么是二进制计数法？</h2><p>53 的十进制表达</p>
-<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 5*10^1 + 3*10^0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>53 的二进制表达</p>
-<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 1*2^5 + 1*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 1*2^0   <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><code>JavaScript</code> 中 <code>Number.prototype.toString</code> 的模拟实现</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toStringFake</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
-    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span> <span class="token comment">// 余数超过9以[a-f]显示</span>
-        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
-        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>JavaScript</code> 中 <code>parseInt</code> 的模拟实现</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">parseIntFake</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">numText<span class="token punctuation">,</span> dec <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> numText
-        <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> next<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-            next <span class="token operator">=</span> <span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token operator">+</span>next<span class="token punctuation">)</span> <span class="token operator">?</span> next<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">87</span> <span class="token operator">:</span> <span class="token operator">+</span>next
-            <span class="token keyword">return</span> prev <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>dec<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">*</span> next
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 

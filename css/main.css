@@ -1869,7 +1869,7 @@ pre code {
 }
 .reading-progress-bar {
   background: #b3d6b3;
-  height: 2px;
+  height: 4px;
   left: 0;
   position: fixed;
   width: 0;
