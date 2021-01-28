@@ -10,9 +10,13 @@ date: 2020-12-29 18:17:18
 - [最强代码规范之-理解 ESLint、Prettier、EditorConfig](https://mp.weixin.qq.com/s/A1nx4T1KcS6pjjgnWXwKig)
 - [阿里前端开发规范](https://w3ctim.com/post/1d821dd8)
 - [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
+- [编写高质量可维护的代码：优雅命名](https://mp.weixin.qq.com/s/0PaNfSml357FDVfCPH8DEQ)
 
 ## JavaScript/TypeScript/Node.js
 
+### JavaScript
+
+- [2020 年 JavaScript 明星项目](https://risingstars.js.org/2020/zh)
 - [有哪些必看的 JavaScript 库](https://www.zhihu.com/question/429436558/answer/1575251772)
 - [前端网红框架的插件机制全梳理（Axios、Koa、Redux、Vuex）](https://mp.weixin.qq.com/s/8vxF3dqspsxS4-KPYfqNtg)
 - [怎样设计一个 JavaScript 插件系统](https://mp.weixin.qq.com/s/QMN6fNisBEIGTgH0Xl46mQ)
@@ -35,10 +39,23 @@ date: 2020-12-29 18:17:18
 - [写好 JS 条件语句的 5 条守则](https://mp.weixin.qq.com/s/84R1C5_NngJBwrpyXBXX6w)
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
 - [从打字机效果的 N 种实现看 JS 定时器机制和前端动画](https://mp.weixin.qq.com/s/4zuFZ6mh0d2rHSgltF1sFw)
+- [这些一行 JS 实现功能的代码，让你看起来像一个前端专家](https://mp.weixin.qq.com/s/xRCtBlD5eIQRa8n9mNG7Ug)
+
+### TypeScript
+
 - [TS 学习指南，从零学到熟练](https://mp.weixin.qq.com/s/Zxu6CQBwdBXGAd-D-UtVhQ)
 - [你不知道的 TypeScript 泛型](https://mp.weixin.qq.com/s/bNn3D-O2ZJbYZCCfqHGKxw)
 - [TypeScript 高级类型与实用程序](https://mp.weixin.qq.com/s/Yk1ciWQJsVmHUEEouw7yTg)
 - [编写高质量可维护的代码：Awesome TypeScript](https://mp.weixin.qq.com/s/gAwvcmSNYMwQKk6RY-GaEw)
+- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://juejin.cn/post/6910863689260204039)
+- [TypeScript 期中考试开始了！](https://juejin.cn/post/6844904183003349005)
+- [深入 TypeScript 中的子类型、逆变、协变。](https://juejin.cn/post/6855517117778198542)
+- [TypeScript 参数简化实战，进阶知识点实践](https://juejin.cn/post/6844904057010651143)
+- [Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现](https://juejin.cn/post/6844904126283776014)
+- [TS 4.1 新特性实现 Vuex 无限层级 dispatch 类型推断。](https://juejin.cn/post/6872967325637836808)
+
+### Node.js
+
 - [Node.js 实现抢票小工具&短信通知提醒](https://mp.weixin.qq.com/s/BWPaFI1Pakm-ucZ8OeUL4A)
 - [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s/aMU_WpTeKTXdyP84WSh4ew)
 
@@ -47,7 +64,6 @@ date: 2020-12-29 18:17:18
 - [我的 input 不可能这么可爱](https://juejin.cn/post/6844903933287071751)
 - [仅靠 H5 标签就能实现收拉效果？我说的是真的！](https://juejin.cn/post/6912374170743472135)
 - [CSS 现状和如何学习](https://mp.weixin.qq.com/s/1Zg1sQyP186UNpr2GtDvqw)
-- [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
 - [响应式布局新方案](https://mp.weixin.qq.com/s/dMYAeHuczAuOsc3UCcnRyw)
 - [自适应布局最佳实践](https://mp.weixin.qq.com/s/8GvZetosiFJmZ1n3ZLfxNA)
 - [关于移动端适配，你必须要知道的](https://mp.weixin.qq.com/s/j-Q3NMe2ZgCAaeomqbK49A)
@@ -63,12 +79,17 @@ date: 2020-12-29 18:17:18
 
 ## 框架
 
+### React
+
 - [React 组件到底什么时候 render 啊](https://mp.weixin.qq.com/s/pd4Gf8h4_4zKn8SoEDgz2A)
 - [我在 BAT 写 React 是如何进行性能优化的](https://mp.weixin.qq.com/s/LG4ZVfvbiB7cxLah3L09Kw)
 - [React 的 7 种代码异味](https://juejin.cn/post/6895214607170797582)
 - [从 Loading 的 9 种写法谈 React 业务开发](https://mp.weixin.qq.com/s/wot_4KmwrK8uNsK4YsBQ5g)
 - [你不知道的 React Hooks](https://mp.weixin.qq.com/s/ix_odYG5S1l99bpjk_0rlw)
 - [这就是你日思夜想的 React 原生动态加载](https://mp.weixin.qq.com/s/l_kv6rzUXSF3R9bfIko5BQ)
+
+### Vue
+
 - [新搭建一个 Vue 项目后，我有了这 15 点思考](https://juejin.cn/post/6901466994478940168)
 - [Vue 源码中值得学习的方法](https://segmentfault.com/a/1190000025157159)
 - [Vue.js 中那些空间换时间的操作](https://mp.weixin.qq.com/s/iLn-cGMVxbLBye1HCJaIjA)
@@ -78,6 +99,8 @@ date: 2020-12-29 18:17:18
 - [使用 Vue3 和 TypeScript 重构 740+ Star WebSocket 插件](https://mp.weixin.qq.com/s/w_RPZ05XPlZsmG_I6SOhoA)
 - [深入解析 Vue 3 组件库 Element-Plus 架构源码](https://mp.weixin.qq.com/s/yC2Xc1V5H-m7YSKo_YMq1w)
 - [从 0 到 1 封装表单组件(TypeScript + Vue3)](https://mp.weixin.qq.com/s/f8u_1cXo3n_Ugh76vpBRcg)
+- [揭秘 Vue.js 九个性能优化技巧](https://mp.weixin.qq.com/s/7u3hHp4zT7aTQTvQ6JjM-w)
+- [在 Vue 里用 Throttle 居然这么黑盒？](https://mp.weixin.qq.com/s/if6bearX6LJPgfbJVXamKA)
 
 ## 模块/打包
 
@@ -106,6 +129,7 @@ date: 2020-12-29 18:17:18
 - [图解你身边的 SOLID 原则 - JS 实例版](https://segmentfault.com/a/1190000022436472)
 - [移动 Web 最佳实践](https://juejin.cn/post/6844903938051964941)
 - [Node.js 最佳实践](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md)
+- [异或运算 XOR 教程](http://www.ruanyifeng.com/blog/2021/01/_xor.html)
 
 ## GIT/Github
 
@@ -145,6 +169,7 @@ date: 2020-12-29 18:17:18
 - [唤起 App 在转转的实践](https://mp.weixin.qq.com/s/TdaIZbHR0-7NBK1LFR4nRQ)
 - [如何实现前端导入和导出 Excel 文件](https://mp.weixin.qq.com/s/ulrxuaYiCF7dcDzX1mHOuw)
 - [封装 axios 取消重复请求](https://mp.weixin.qq.com/s/BjN8gr5QocX0-s68w2IACA)
+- [剪贴板操作 Clipboard API 教程](http://www.ruanyifeng.com/blog/2021/01/clipboard-api.html)
 
 ## 架构/设计
 
@@ -185,3 +210,5 @@ date: 2020-12-29 18:17:18
 - [CSS 知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Css/Css.md)
 - [面试再被问到，别说小鹿没给你整理](https://mp.weixin.qq.com/s/p2vLrtfdoxrMEYDNuViIEA)
 - [来 45 道 Promise 题一次爽到底](https://mp.weixin.qq.com/s/NuZyCgDwEqrZ0GNrkQNsuA)
+- [网易三年总结出了这 40 条中高级前端必须注意的 H5 坑位指南](https://mp.weixin.qq.com/s/ze9fW6oTHfFvPDmeMRjBLw)
+- [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
