@@ -30,7 +30,7 @@
 <meta property="og:description" content="最近 Superset 发布了 1.0 版本，在介绍中发现官方发布了 @superset-ui&#x2F;plugin-chart-echarts，所以就参考它的源码扩展一些自己的 ECharts 图表 准备工作 安装依赖 cd superset-frontend npm i @types&#x2F;mathjs @types&#x2F;echarts mathjs echarts 创建文件夹 cd superset-fron">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-28T14:54:54.000Z">
-<meta property="article:modified_time" content="2021-01-28T09:02:32.832Z">
+<meta property="article:modified_time" content="2021-02-01T03:02:21.597Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="可视化">
 <meta property="article:tag" content="BI">
@@ -162,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B-Coding"><span class="nav-number">2.</span> <span class="nav-text">开始 Coding</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B-Coding"><span class="nav-number">2.</span> <span class="nav-text">开始 Coding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BABasicLine-index-ts"><span class="nav-number">2.1.</span> <span class="nav-text">创建BasicLine&#x2F;index.ts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%A2%84%E8%A7%88%E5%9B%BE"><span class="nav-number">2.2.</span> <span class="nav-text">添加预览图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-EchartsBasicLine"><span class="nav-number">2.3.</span> <span class="nav-text">创建 EchartsBasicLine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAbuildQuery"><span class="nav-number">2.4.</span> <span class="nav-text">创建buildQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-controlPanel"><span class="nav-number">2.5.</span> <span class="nav-text">创建 controlPanel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAtransformProps"><span class="nav-number">2.6.</span> <span class="nav-text">创建transformProps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA-EchartsBasicLineChartPlugin"><span class="nav-number">2.7.</span> <span class="nav-text">导出 EchartsBasicLineChartPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-EchartsBasicLineChartPlugin"><span class="nav-number">2.8.</span> <span class="nav-text">注册 EchartsBasicLineChartPlugin</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,10 +246,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-01-28 14:54:54 / 修改时间：09:02:32" itemprop="dateCreated datePublished" datetime="2021-01-28T14:54:54+00:00">2021-01-28</time>
+      <time title="创建时间：2021-01-28 14:54:54" itemprop="dateCreated datePublished" datetime="2021-01-28T14:54:54+00:00">2021-01-28</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-01 03:02:21" itemprop="dateModified" datetime="2021-02-01T03:02:21+00:00">2021-02-01</time>
+      </span>
 
   
 </div>
@@ -287,13 +293,11 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
 </li>
 </ol>
 <h2 id="开始-Coding"><a href="#开始-Coding" class="headerlink" title="开始 Coding"></a>开始 Coding</h2><p>本教程以<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=line-simple">基础折线图</a>为例</p>
-<ol>
-<li><p>创建<code>BasicLine/index.ts</code></p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t<span class="token punctuation">,</span> ChartMetadata<span class="token punctuation">,</span> ChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
-<span class="token keyword">import</span> buildQuery <span class="token keyword">from</span> <span class="token string">'./buildQuery'</span>
-<span class="token keyword">import</span> controlPanel <span class="token keyword">from</span> <span class="token string">'./controlPanel'</span>
-<span class="token keyword">import</span> transformProps <span class="token keyword">from</span> <span class="token string">'./transformProps'</span>
-<span class="token keyword">import</span> thumbnail <span class="token keyword">from</span> <span class="token string">'./images/thumbnail.png'</span>
+<h3 id="创建BasicLine-index-ts"><a href="#创建BasicLine-index-ts" class="headerlink" title="创建BasicLine/index.ts"></a>创建<code>BasicLine/index.ts</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t<span class="token punctuation">,</span> ChartMetadata<span class="token punctuation">,</span> ChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> buildQuery <span class="token keyword">from</span> <span class="token string">'./buildQuery'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> controlPanel <span class="token keyword">from</span> <span class="token string">'./controlPanel'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> transformProps <span class="token keyword">from</span> <span class="token string">'./transformProps'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> thumbnail <span class="token keyword">from</span> <span class="token string">'./images/thumbnail.png'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">EchartsBasicLineChartPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">ChartPlugin</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -305,81 +309,108 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
         credits<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'https://echarts.apache.org'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
         description<span class="token operator">:</span> <span class="token string">'Basic Line (Apache ECharts)'</span><span class="token punctuation">,</span>
         name<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Basic Line'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        thumbnail
+        thumbnail<span class="token punctuation">,</span>
+        useLegacyApi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      transformProps
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      transformProps<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里会有报错提示，不过没关系，我们一项一项完善</p>
-</li>
-<li><p>添加预览图</p>
-<pre class="line-numbers language-none"><code class="language-none">├── BasicLine
+<h3 id="添加预览图"><a href="#添加预览图" class="headerlink" title="添加预览图"></a>添加预览图</h3><pre class="line-numbers language-none"><code class="language-none">├── BasicLine
 |  └── images
-|     └── thumbnail.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>创建 <code>EchartsBasicLine</code></p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+|     └── thumbnail.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建-EchartsBasicLine"><a href="#创建-EchartsBasicLine" class="headerlink" title="创建 EchartsBasicLine"></a>创建 <code>EchartsBasicLine</code></h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span>
 <span class="token keyword">import</span> Echart <span class="token keyword">from</span> <span class="token string">'../components/Echart'</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">EchartsBasicLine</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> echartOptions <span class="token punctuation">&#125;</span><span class="token operator">:</span> EchartsProps</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Echart</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>height<span class="token punctuation">&#125;</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>width<span class="token punctuation">&#125;</span></span> <span class="token attr-name">echartOptions</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>echartOptions<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>创建<code>buildQuery</code></p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> buildQueryContext<span class="token punctuation">,</span> QueryFormData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建buildQuery"><a href="#创建buildQuery" class="headerlink" title="创建buildQuery"></a>创建<code>buildQuery</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> buildQueryContext<span class="token punctuation">,</span> QueryFormData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">buildQuery</span><span class="token punctuation">(</span>formData<span class="token operator">:</span> QueryFormData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token function">buildQueryContext</span><span class="token punctuation">(</span>formData<span class="token punctuation">,</span> <span class="token punctuation">(</span>baseQueryObject<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span>
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> metrics <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> groupby <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> row_limit <span class="token punctuation">&#125;</span> <span class="token operator">=</span> formData<span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token function">buildQueryContext</span><span class="token punctuation">(</span>formData<span class="token punctuation">,</span> baseQueryObject <span class="token operator">=></span> <span class="token punctuation">[</span>
     <span class="token punctuation">&#123;</span>
       <span class="token operator">...</span>baseQueryObject<span class="token punctuation">,</span>
-      formData
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>创建 <code>controlPanel</code></p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ControlPanelConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/chart-controls'</span>
+      metrics<span class="token punctuation">,</span>
+      groupby<span class="token punctuation">,</span>
+      row_limit<span class="token operator">:</span> row_limit <span class="token keyword">as</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建-controlPanel"><a href="#创建-controlPanel" class="headerlink" title="创建 controlPanel"></a>创建 <code>controlPanel</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ControlPanelConfig<span class="token punctuation">,</span> sections <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/chart-controls'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> config<span class="token operator">:</span> ControlPanelConfig <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   controlPanelSections<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// Time</span>
+    sections<span class="token punctuation">.</span>legacyRegularTime<span class="token punctuation">,</span>
+    <span class="token comment">// Query</span>
     <span class="token punctuation">&#123;</span>
       label<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Query'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
       expanded<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      controlSetRows<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'metrics'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'adhoc_filters'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'groupby'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'columns'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'limit'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span>
+      controlSetRows<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'metrics'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'groupby'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'row_limit'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   controlOverrides<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    groupby<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      label<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Series'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      description<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Categories to group by on the x-axis.'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 设置 row_limit 默认值</span>
+    row_limit<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    columns<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      label<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Distribute across'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      multi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      description<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Columns to calculate distribution across. Defaults to temporal column if left empty.'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    <span class="token comment">// 设置 groupby 为单选</span>
+    groupby<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      multi<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>创建<code>transformProps</code></p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ChartProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建transformProps"><a href="#创建transformProps" class="headerlink" title="创建transformProps"></a>创建<code>transformProps</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ChartProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span><span class="token punctuation">;</span>
 
+<span class="token comment">// TODO 修复 TS 类型错误</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">transformProps</span><span class="token punctuation">(</span>chartProps<span class="token operator">:</span> ChartProps<span class="token punctuation">)</span><span class="token operator">:</span> EchartsProps <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> width<span class="token punctuation">,</span> height <span class="token punctuation">&#125;</span> <span class="token operator">=</span> chartProps
-  <span class="token comment">// 先模拟一个 echartOptions</span>
-  <span class="token keyword">const</span> echartOptions<span class="token operator">:</span> echarts<span class="token punctuation">.</span>EChartOption<span class="token operator">&lt;</span>echarts<span class="token punctuation">.</span>EChartOption<span class="token punctuation">.</span>SeriesLine<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> width<span class="token punctuation">,</span> height<span class="token punctuation">,</span> formData<span class="token punctuation">,</span> queriesData <span class="token punctuation">&#125;</span> <span class="token operator">=</span> chartProps<span class="token punctuation">;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chartProps<span class="token punctuation">)</span>
+  <span class="token comment">// @ts-ignore</span>
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> data <span class="token punctuation">&#125;</span> <span class="token operator">=</span> queriesData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> metrics<span class="token punctuation">,</span> groupby <span class="token punctuation">&#125;</span> <span class="token operator">=</span> formData
+  <span class="token comment">// @ts-ignore</span>
+  <span class="token keyword">const</span> xAxisData <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=></span> item<span class="token punctuation">[</span>groupby<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token comment">// @ts-ignore</span>
+  <span class="token keyword">const</span> yAxisData <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=></span> item<span class="token punctuation">[</span>metrics<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> echartOptions<span class="token operator">:</span> echarts<span class="token punctuation">.</span>EChartOption<span class="token operator">&lt;</span>echarts<span class="token punctuation">.</span>EChartOption<span class="token punctuation">.</span>SeriesLine<span class="token operator">></span> <span class="token operator">=</span>  <span class="token punctuation">&#123;</span>
     xAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
       <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
-      data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Mon'</span><span class="token punctuation">,</span> <span class="token string">'Tue'</span><span class="token punctuation">,</span> <span class="token string">'Wed'</span><span class="token punctuation">,</span> <span class="token string">'Thu'</span><span class="token punctuation">,</span> <span class="token string">'Fri'</span><span class="token punctuation">,</span> <span class="token string">'Sat'</span><span class="token punctuation">,</span> <span class="token string">'Sun'</span><span class="token punctuation">]</span>
+      data<span class="token operator">:</span> xAxisData
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     yAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
       <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'value'</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     series<span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">&#123;</span>
-        data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">230</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">218</span><span class="token punctuation">,</span> <span class="token number">135</span><span class="token punctuation">,</span> <span class="token number">147</span><span class="token punctuation">,</span> <span class="token number">260</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> yAxisData<span class="token punctuation">,</span>
         <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'line'</span>
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">]</span>
@@ -387,14 +418,12 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
   <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
     width<span class="token punctuation">,</span>
     height<span class="token punctuation">,</span>
-    echartOptions
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>导出 <code>EchartsBasicLineChartPlugin</code></p>
-<p>在 <code>superset-frontend\src\extend\ECharts\index.ts</code> 中统一导出</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">&#123;</span> <span class="token keyword">default</span> <span class="token keyword">as</span> EchartsBasicLineChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./BasicLine'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>注册 <code>EchartsBasicLineChartPlugin</code></p>
-<p>在<code>superset-frontend\src\visualizations\presets\MainPreset.js</code>中注册</p>
+    echartOptions<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="导出-EchartsBasicLineChartPlugin"><a href="#导出-EchartsBasicLineChartPlugin" class="headerlink" title="导出 EchartsBasicLineChartPlugin"></a>导出 <code>EchartsBasicLineChartPlugin</code></h3><p>在 <code>superset-frontend\src\extend\ECharts\index.ts</code> 中统一导出</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">&#123;</span> <span class="token keyword">default</span> <span class="token keyword">as</span> EchartsBasicLineChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./BasicLine'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="注册-EchartsBasicLineChartPlugin"><a href="#注册-EchartsBasicLineChartPlugin" class="headerlink" title="注册 EchartsBasicLineChartPlugin"></a>注册 <code>EchartsBasicLineChartPlugin</code></h3><p>在<code>superset-frontend\src\visualizations\presets\MainPreset.js</code>中注册</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Preset <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> BigNumberChartPlugin<span class="token punctuation">,</span> BigNumberTotalChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-preset-chart-big-number'</span>
 <span class="token keyword">import</span> CalendarChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-calendar'</span>
@@ -691,9 +720,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
 VizTypeControl<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> propTypes
 VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> defaultProps
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> VizTypeControl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-
+<span class="token keyword">export</span> <span class="token keyword">default</span> VizTypeControl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     </div>
 
     
