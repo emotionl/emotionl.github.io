@@ -171,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -216,6 +216,169 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/07/21/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E4%B8%8EReact/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/21/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E4%B8%8EReact/" class="post-title-link" itemprop="url">百度地图与React</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-21T00:00:00+00:00">2020-07-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="WEB-端文档"><a href="#WEB-端文档" class="headerlink" title="WEB 端文档"></a>WEB 端文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/index.php?title=jspopularGL">JavaScript API</a></li>
+<li><a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/index.php?title=wxjsapi">微信小程序 JavaScript API</a></li>
+<li><a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/index.php?title=subway">地铁图 JavaScript API</a></li>
+<li><a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/solutions/mapvdata">位置数据可视化 MapV GL</a></li>
+</ul>
+<h2 id="与-React-结合"><a href="#与-React-结合" class="headerlink" title="与 React 结合"></a>与 React 结合</h2><p>以 <code>JavaScript API GL v1.0</code> 版本的 <code>SDK</code>为例</p>
+<ol>
+<li><p>首先在<code>public\index.html</code>添加引入 <code>BMapGL</code></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ltr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shortcut icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>%PUBLIC_URL%/favicon.ico<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theme-color<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#000000<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manifest<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>%PUBLIC_URL%/manifest.json<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token comment">&lt;!-- 引入 BMapGL --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://api.map.baidu.com/api?type=webgl&amp;v=1.0&amp;ak=4gaWxQf2AUtC51IhrHLVVUW5f10K1GTN<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>修改<code>config-overrides.js</code>添加<code>externals</code>配置</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+  override<span class="token punctuation">,</span>
+  addWebpackPlugin<span class="token punctuation">,</span>
+  addPostcssPlugins<span class="token punctuation">,</span>
+  addWebpackExternals
+<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'customize-cra'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> WebpackBuildNotifierPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-build-notifier'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> WebpackBar <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpackbar'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  webpack<span class="token operator">:</span> <span class="token function">override</span><span class="token punctuation">(</span>
+    <span class="token function">addWebpackPlugin</span><span class="token punctuation">(</span>
+      <span class="token keyword">new</span> <span class="token class-name">WebpackBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">new</span> <span class="token class-name">WebpackBuildNotifierPlugin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        title<span class="token operator">:</span> <span class="token string">'MISSION SUCCESS!'</span><span class="token punctuation">,</span>
+        logo<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/logo.svg'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        suppressSuccess<span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">addPostcssPlugins</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'postcss-rtl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// 添加 externals 配置</span>
+    <span class="token function">addWebpackExternals</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      BMapGL<span class="token operator">:</span> <span class="token string">'BMapGL'</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>最后导入并使用<code>BMapGL</code></p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> useRef<span class="token punctuation">,</span> useEffect <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> BMapGL <span class="token keyword">from</span> <span class="token string">'BMapGL'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Card <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'reactstrap'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">BMapDemo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> bMapContainerRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 创建 BMapGL 实例</span>
+    <span class="token keyword">const</span> bMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMapGL<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span>bMapContainerRef<span class="token punctuation">.</span>current<span class="token punctuation">)</span>
+    <span class="token comment">// 初始化中心点坐标</span>
+    <span class="token keyword">const</span> point <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMapGL<span class="token punctuation">.</span>Point</span><span class="token punctuation">(</span><span class="token number">116.404</span><span class="token punctuation">,</span> <span class="token number">39.915</span><span class="token punctuation">)</span>
+    <span class="token comment">// 初始化地图，设置中心点坐标和地图级别</span>
+    bMap<span class="token punctuation">.</span><span class="token function">centerAndZoom</span><span class="token punctuation">(</span>point<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span>
+    bMap<span class="token punctuation">.</span><span class="token function">enableScrollWheelZoom</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Card</span></span>
+      <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>
+        width<span class="token operator">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token string">'300px'</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>bMapContainerRef<span class="token punctuation">&#125;</span></span>
+        <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>
+          width<span class="token operator">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+          height<span class="token operator">:</span> <span class="token string">'100%'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></span>
+      <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Card</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/05/%E5%88%86%E6%9E%90%E4%B8%80%E9%81%93%E3%80%8C%E5%BE%AE%E4%BF%A1%E3%80%8D%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -247,7 +410,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -387,7 +550,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -540,7 +703,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -604,7 +767,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/mqyqingfeng/Blog/issues/13">JavaScript深入之new的模拟实现</a></p>
-<p><a href="/doc/article/017-%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAJS%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B.md">深入浅出JS对象原型</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/aa2f885ba871">深入浅出JS对象原型</a></p>
 </blockquote>
 
       
@@ -663,7 +826,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -907,7 +1070,7 @@ bst<span class="token punctuation">.</span><span class="token function">inOrder<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -1066,7 +1229,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -1174,7 +1337,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -1270,7 +1433,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -1563,7 +1726,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
+        <time title="修改时间：2021-02-06 07:57:19" itemprop="dateModified" datetime="2021-02-06T07:57:19+00:00">2021-02-06</time>
       </span>
 
   
@@ -1653,99 +1816,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/31/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/03/31/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/" class="post-title-link" itemprop="url">数学归纳法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-03-31 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-31T00:00:00+00:00">2020-03-31</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-04 06:24:03" itemprop="dateModified" datetime="2021-02-04T06:24:03+00:00">2021-02-04</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>对于类似这种无穷数列的问题，我们通常可以采用<strong>数学归纳法（Mathematical Induction）</strong>来证明。</p>
-<p>在数论中，数学归纳法用来证明任意一个给定的情形都是正确的，也就是说，第一个、第二个、第三个，一直到所有情形，概不例外。</p>
-<p>数学归纳法的一般步骤是这样的：</p>
-<ul>
-<li>证明基本情况（通常是 <code>n = 1</code> 的时候）是否成立；</li>
-<li>假设 <code>n = k − 1</code> 成立，再证明 <code>n = k</code> 也是成立的（k 为任意大于 11 的自然数）</li>
-</ul>
-<h2 id="迭代-VS-数学归纳法"><a href="#迭代-VS-数学归纳法" class="headerlink" title="迭代 VS 数学归纳法"></a>迭代 VS 数学归纳法</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token constant">TOTAL_GRID</span> <span class="token operator">=</span> <span class="token number">64</span>
-
-<span class="token comment">// 迭代法</span>
-<span class="token keyword">const</span> <span class="token function-variable function">iterativeFunc</span> <span class="token operator">=</span> <span class="token parameter">totalGrid</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> currentGrid <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>currentGrid <span class="token operator">&lt;</span> totalGrid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    sum <span class="token operator">+=</span> <span class="token number">1</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> currentGrid<span class="token punctuation">)</span>
-    currentGrid <span class="token operator">+=</span> <span class="token number">1</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> sum
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 数学归纳法</span>
-<span class="token keyword">const</span> <span class="token function-variable function">inductionFunc</span> <span class="token operator">=</span> <span class="token parameter">totalGrid</span> <span class="token operator">=></span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> totalGrid<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-
-<span class="token keyword">const</span> res1 <span class="token operator">=</span> <span class="token function">iterativeFunc</span><span class="token punctuation">(</span><span class="token constant">TOTAL_GRID</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> res2 <span class="token operator">=</span> <span class="token function">inductionFunc</span><span class="token punctuation">(</span><span class="token constant">TOTAL_GRID</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
