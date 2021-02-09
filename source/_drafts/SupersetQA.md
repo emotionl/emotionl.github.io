@@ -1,6 +1,5 @@
 ---
-title: Superset Q&A
-date: 2021-02-04 15:31:32
+title: SupersetQA
 tags:
   - 可视化
   - BI
@@ -14,6 +13,3 @@ A：可以参考 Superset 官方开发的图表扩展库，比如
 - [@superset-ui/plugin-chart-echarts](https://www.npmjs.com/package/@superset-ui/plugin-chart-echarts)
 
 ------
-
-
-
