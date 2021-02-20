@@ -41,6 +41,9 @@ date: 2020-12-29 18:17:18
 - [20 个数组 Array.prototype.reduce 高级用法](https://mp.weixin.qq.com/s/5Tjbe9v9B-fo-xej72B02Q)
 - [从打字机效果的 N 种实现看 JS 定时器机制和前端动画](https://mp.weixin.qq.com/s/4zuFZ6mh0d2rHSgltF1sFw)
 - [这些一行 JS 实现功能的代码，让你看起来像一个前端专家](https://mp.weixin.qq.com/s/xRCtBlD5eIQRa8n9mNG7Ug)
+- [来看看 Proxy 的那些花活儿](https://mp.weixin.qq.com/s/SH_8GpCvgBOI2Nd-UpoC7w)
+- [这一次彻底搞懂 Promise](https://mp.weixin.qq.com/s/yI4e-08Z_Sedcr3lbItEBA)
+- [用英雄联盟的方式讲解 JavaScript 设计模式](https://mp.weixin.qq.com/s/Cr6FOhXJFbtkhwd-ADm-BA)
 
 ### TypeScript
 
@@ -54,6 +57,7 @@ date: 2020-12-29 18:17:18
 - [TypeScript 参数简化实战，进阶知识点实践](https://juejin.cn/post/6844904057010651143)
 - [Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现](https://juejin.cn/post/6844904126283776014)
 - [TS 4.1 新特性实现 Vuex 无限层级 dispatch 类型推断。](https://juejin.cn/post/6872967325637836808)
+- [10 个写 TypeScript 代码的坏习惯](https://mp.weixin.qq.com/s/zUj2M5X0z5ADnrmy6UA13Q)
 
 ### Node.js
 
@@ -90,6 +94,7 @@ date: 2020-12-29 18:17:18
 - [你不知道的 React Hooks](https://mp.weixin.qq.com/s/ix_odYG5S1l99bpjk_0rlw)
 - [这就是你日思夜想的 React 原生动态加载](https://mp.weixin.qq.com/s/l_kv6rzUXSF3R9bfIko5BQ)
 - [对于 Redux 的一些深入思考](https://mp.weixin.qq.com/s/qqjYTQhhZ2x2QxBg_a0oHQ)
+- [不用 try catch，如何机智的捕获错误](https://mp.weixin.qq.com/s/yfmIhb3OvwMf1-8dsHC9yA)
 
 ### Vue
 
@@ -134,6 +139,7 @@ date: 2020-12-29 18:17:18
 - [移动 Web 最佳实践](https://juejin.cn/post/6844903938051964941)
 - [Node.js 最佳实践](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md)
 - [异或运算 XOR 教程](http://www.ruanyifeng.com/blog/2021/01/_xor.html)
+- [你管这破玩意叫计算机？](https://www.toutiao.com/i6925303306843587079/?tt_from=weixin_moments&utm_campaign=client_share&wxshare_count=3&timestamp=1612763690&app=news_article&utm_source=weixin_moments&utm_medium=toutiao_android&use_new_style=1&req_id=202102081354500101502171495C01FC69&share_token=6ef2a88f-e5ed-4650-a251-48f63ff37b73&group_id=6925303306843587079)
 
 ## GIT/Github
 
@@ -177,7 +183,8 @@ date: 2020-12-29 18:17:18
 - [封装 axios 取消重复请求](https://mp.weixin.qq.com/s/BjN8gr5QocX0-s68w2IACA)
 - [剪贴板操作 Clipboard API 教程](http://www.ruanyifeng.com/blog/2021/01/clipboard-api.html)
 - [现代 CLI 和 GUI 方案指南](https://mp.weixin.qq.com/s/JauIPh9i8a-H2VwVMwnhGw)
--
+- [前端图片主题色提取](https://mp.weixin.qq.com/s/0VAZdxIy7xlBwmnvs1TeCg)
+- [如何实现一个前端监控回放系统？](https://mp.weixin.qq.com/s/qP-CJLOtABVABsgtqQ7w-g)
 
 ## 架构/设计
 
@@ -211,6 +218,7 @@ date: 2020-12-29 18:17:18
 - [一针重复 2 万亿段代码，我「逆向工程」了辉瑞疫苗！](https://mp.weixin.qq.com/s/Mf1Gbh7pdvIa0WWX5ZLmgA)
 - [在 P 站做 web 前端，是种怎样的体验？](https://mp.weixin.qq.com/s/DuPXPMTe4P7AD0ljvSgOKQ)
 - [Github 上的这个程序员买房实用指南火了！](https://mp.weixin.qq.com/s/J3W4IR86kiJCpPL8JAguTg)
+- [如何写出让同事无法维护的代码？](https://mp.weixin.qq.com/s/xtYqSp0CzbypQHW--Z2JAQ)
 
 ## 总结
 
@@ -220,3 +228,5 @@ date: 2020-12-29 18:17:18
 - [来 45 道 Promise 题一次爽到底](https://mp.weixin.qq.com/s/NuZyCgDwEqrZ0GNrkQNsuA)
 - [网易三年总结出了这 40 条中高级前端必须注意的 H5 坑位指南](https://mp.weixin.qq.com/s/ze9fW6oTHfFvPDmeMRjBLw)
 - [Web 移动端实现自适应缩放界面的方法汇总](https://mp.weixin.qq.com/s/hFb4C5Ol3sCyMf9CEdBjLA)
+- [都 2021 了，这些优质的国外技术站点你都还不知道?](https://mp.weixin.qq.com/s/xJJ0hj2UNqRTbL-dr12HWQ)
+- [听说专业的前端工程师都对这些 npm 包爱不释手？](https://mp.weixin.qq.com/s/Y1YxBuUK24gUbQjZo3I9Rg)
