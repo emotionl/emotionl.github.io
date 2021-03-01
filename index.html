@@ -171,13 +171,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -207,6 +207,128 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">单例模式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-02 00:47:39" itemprop="dateCreated datePublished" datetime="2021-03-02T00:47:39+00:00">2021-03-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">getPersonInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">, i\`m </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> years old.</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> PersonSingleton <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 使用 IIFE 制造闭包缓存实例 instance</span>
+  <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> instance
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonSingleton</span><span class="token punctuation">(</span><span class="token string">'Jack'</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonSingleton</span><span class="token punctuation">(</span><span class="token string">'David'</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span>
+p1 <span class="token operator">===</span> p2 <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果把上述过程再进行抽象，我们可以得到一个通用的生成单例的函数。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createSingleton</span><span class="token punctuation">(</span><span class="token parameter">Con</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">Con</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Con</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> instance
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Con<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试一下</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">param</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>param <span class="token operator">=</span> param
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> ASingleton <span class="token operator">=</span> <span class="token function">createSingleton</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ASingleton</span><span class="token punctuation">(</span><span class="token string">'a1'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> a2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ASingleton</span><span class="token punctuation">(</span><span class="token string">'a2'</span><span class="token punctuation">)</span>
+a1 <span class="token operator">===</span> a2 <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ol>
+<li>单例模式在创建后在内存中只存在一个实例，节约了内存开支和实例化时的性能开支，特别是需要重复使用一个创建开销比较大的类时，比起实例不断地销毁和重新实例化，单例能节约更多资源，比如数据库连接；</li>
+<li>单例模式可以解决对资源的多重占用，比如写文件操作时，因为只有一个实例，可以避免对一个文件进行同时操作；</li>
+<li>只使用一个实例，也可以减小垃圾回收机制 GC（Garbage Collecation） 的压力，表现在浏览器中就是系统卡顿减少，操作更流畅，CPU 资源占用更少；</li>
+</ol>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
+<li>当一个类的<strong>实例化过程消耗的资源过多</strong>，可以使用单例模式来避免性能浪费；</li>
+<li>当项目中需要一个公共的状态，那么需要使用单例模式来<strong>保证访问一致性</strong>；</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -247,7 +369,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -391,7 +513,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -914,7 +1036,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -991,7 +1113,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -1799,7 +1921,7 @@ export const reload &#x3D; [
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -2050,7 +2172,7 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -2749,7 +2871,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -2832,7 +2954,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -3046,7 +3168,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
+        <time title="修改时间：2021-03-01 17:30:07" itemprop="dateModified" datetime="2021-03-01T17:30:07+00:00">2021-03-01</time>
       </span>
 
   
@@ -3128,223 +3250,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/13/Nestjs%20%E5%BC%80%E5%8F%91%E6%B5%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/08/13/Nestjs%20%E5%BC%80%E5%8F%91%E6%B5%81/" class="post-title-link" itemprop="url">Nestjs 开发流</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-13T00:00:00+00:00">2020-08-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-20 10:03:47" itemprop="dateModified" datetime="2021-02-20T10:03:47+00:00">2021-02-20</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="mermaid">
-graph LR
-A[Entity]
-B[Repository]
-C[Service]
-D[Controller]
-A --&gt; B
-B --&gt; C
-C --&gt; D
-</div>
-
-<h2 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h2><p>定义数据</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> BaseEntity<span class="token punctuation">,</span> Entity<span class="token punctuation">,</span> PrimaryGeneratedColumn<span class="token punctuation">,</span> Column <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'typeorm'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TaskStatus <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task-status.enum'</span>
-
-@<span class="token function">Entity</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Task</span> <span class="token keyword">extends</span> <span class="token class-name">BaseEntity</span> <span class="token punctuation">&#123;</span>
-  @<span class="token function">PrimaryGeneratedColumn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 定义主键</span>
-  id<span class="token operator">:</span> <span class="token builtin">number</span>
-
-  @<span class="token function">Column</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  title<span class="token operator">:</span> <span class="token builtin">string</span>
-
-  @<span class="token function">Column</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  description<span class="token operator">:</span> <span class="token builtin">string</span>
-
-  @<span class="token function">Column</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  status<span class="token operator">:</span> TaskStatus
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>操作数据</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Task <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task.entity'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EntityRepository<span class="token punctuation">,</span> Repository <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'typeorm'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> CreateTaskDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/create-task.dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TaskStatus <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task-status.enum'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GetTasksFilterDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/get-tasks-filter-dto'</span>
-
-@<span class="token function">EntityRepository</span><span class="token punctuation">(</span>Task<span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TaskRepository</span> <span class="token keyword">extends</span> <span class="token class-name">Repository<span class="token operator">&lt;</span>Task<span class="token operator">></span></span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 继承 Repository 享用 findOne delete 等操作</span>
-  <span class="token keyword">async</span> <span class="token function">getTasks</span><span class="token punctuation">(</span>filterDto<span class="token operator">:</span> GetTasksFilterDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> status<span class="token punctuation">,</span> search <span class="token punctuation">&#125;</span> <span class="token operator">=</span> filterDto
-    <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createQueryBuilder</span><span class="token punctuation">(</span><span class="token string">'task'</span><span class="token punctuation">)</span> <span class="token comment">// 使用 QueryBuilder 生成 SQL</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      query<span class="token punctuation">.</span><span class="token function">andWhere</span><span class="token punctuation">(</span><span class="token string">'task.status = :status'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> status <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token comment">// 添加条件</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>search<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      query<span class="token punctuation">.</span><span class="token function">andWhere</span><span class="token punctuation">(</span><span class="token string">'task.title LIKE :search OR task.description LIKE :search'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> search<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">%</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>search<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">%</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">const</span> tasks <span class="token operator">=</span> <span class="token keyword">await</span> query<span class="token punctuation">.</span><span class="token function">getMany</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 执行 SQL 获取数据</span>
-    <span class="token keyword">return</span> tasks
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">createTask</span><span class="token punctuation">(</span>createTaskDto<span class="token operator">:</span> CreateTaskDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> title<span class="token punctuation">,</span> description <span class="token punctuation">&#125;</span> <span class="token operator">=</span> createTaskDto
-    <span class="token keyword">const</span> task <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Task</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    task<span class="token punctuation">.</span>title <span class="token operator">=</span> title
-    task<span class="token punctuation">.</span>description <span class="token operator">=</span> description
-    task<span class="token punctuation">.</span>status <span class="token operator">=</span> TaskStatus<span class="token punctuation">.</span><span class="token constant">OPEN</span>
-    <span class="token keyword">await</span> task<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> task
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>提供服务</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Injectable<span class="token punctuation">,</span> NotFoundException <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@nestjs/common'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> CreateTaskDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/create-task.dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GetTasksFilterDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/get-tasks-filter-dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> UpdateTaskStatusDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/update-task-status.dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TaskRepository <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task.repository'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> InjectRepository <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@nestjs/typeorm'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Task <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task.entity'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TaskStatus <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task-status.enum'</span>
-
-@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TasksService</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">constructor</span><span class="token punctuation">(</span>
-    @<span class="token function">InjectRepository</span><span class="token punctuation">(</span>TaskRepository<span class="token punctuation">)</span>
-    <span class="token keyword">private</span> taskRepository<span class="token operator">:</span> TaskRepository
-  <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">getTasks</span><span class="token punctuation">(</span>filterDto<span class="token operator">:</span> GetTasksFilterDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskRepository<span class="token punctuation">.</span><span class="token function">getTasks</span><span class="token punctuation">(</span>filterDto<span class="token punctuation">)</span> <span class="token comment">// 调用 TaskRepository 中封装好的数据操作</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">getTaskById</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 当数据操作比较简单时 可以直接调用 Repository 的方法</span>
-    <span class="token keyword">const</span> foundTask <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskRepository<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>foundTask<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NotFoundException</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Task with ID </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>id<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> not found</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> foundTask
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">createTask</span><span class="token punctuation">(</span>createTaskDto<span class="token operator">:</span> CreateTaskDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskRepository<span class="token punctuation">.</span><span class="token function">createTask</span><span class="token punctuation">(</span>createTaskDto<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">deleteTask</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskRepository<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>affected <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NotFoundException</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Task with ID </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>id<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> not found</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">async</span> <span class="token function">updateTaskStatus</span><span class="token punctuation">(</span>updateTaskStatusDto<span class="token operator">:</span> UpdateTaskStatusDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> id<span class="token punctuation">,</span> status <span class="token punctuation">&#125;</span> <span class="token operator">=</span> updateTaskStatusDto
-    <span class="token keyword">const</span> foundTask <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getTaskById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-    foundTask<span class="token punctuation">.</span>status <span class="token operator">=</span> TaskStatus<span class="token punctuation">[</span>status<span class="token punctuation">]</span>
-    <span class="token keyword">await</span> foundTask<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> foundTask
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>处理请求</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Controller<span class="token punctuation">,</span> Get<span class="token punctuation">,</span> Post<span class="token punctuation">,</span> Body<span class="token punctuation">,</span> Param<span class="token punctuation">,</span> Query<span class="token punctuation">,</span> UsePipes<span class="token punctuation">,</span> ValidationPipe<span class="token punctuation">,</span> ParseIntPipe <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@nestjs/common'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TasksService <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./tasks.service'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> CreateTaskDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/create-task.dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GetTasksFilterDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/get-tasks-filter-dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> UpdateTaskStatusDto <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./dto/update-task-status.dto'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Task <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./task.entity'</span>
-
-@<span class="token function">Controller</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TasksController</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> taskService<span class="token operator">:</span> TasksService<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-
-  @<span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  @<span class="token function">UsePipes</span><span class="token punctuation">(</span>ValidationPipe<span class="token punctuation">)</span> <span class="token comment">// 使用 ValidationPipe 和 DTO 进行字段的校验</span>
-  <span class="token function">getTasks</span><span class="token punctuation">(</span>@<span class="token function">Query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> filterDto<span class="token operator">:</span> GetTasksFilterDto<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskService<span class="token punctuation">.</span><span class="token function">getTasks</span><span class="token punctuation">(</span>filterDto<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  @<span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">'/:id'</span><span class="token punctuation">)</span>
-  <span class="token function">getTaskById</span><span class="token punctuation">(</span>@<span class="token function">Param</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> ParseIntPipe<span class="token punctuation">)</span> id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// ParseIntPipe string=>number (如果转换失败将抛出异常)</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskService<span class="token punctuation">.</span><span class="token function">getTaskById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  @<span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">'/create'</span><span class="token punctuation">)</span>
-  @<span class="token function">UsePipes</span><span class="token punctuation">(</span>ValidationPipe<span class="token punctuation">)</span>
-  <span class="token function">createTask</span><span class="token punctuation">(</span>@<span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> createTaskDto<span class="token operator">:</span> CreateTaskDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskService<span class="token punctuation">.</span><span class="token function">createTask</span><span class="token punctuation">(</span>createTaskDto<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  @<span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">'/delete'</span><span class="token punctuation">)</span>
-  <span class="token function">deleteTask</span><span class="token punctuation">(</span>@<span class="token function">Body</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> ParseIntPipe<span class="token punctuation">)</span> id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskService<span class="token punctuation">.</span><span class="token function">deleteTask</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  @<span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">'/status/update'</span><span class="token punctuation">)</span>
-  @<span class="token function">UsePipes</span><span class="token punctuation">(</span>ValidationPipe<span class="token punctuation">)</span>
-  <span class="token keyword">async</span> <span class="token function">updateTaskStatus</span><span class="token punctuation">(</span>@<span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> updateTaskStatusDto<span class="token operator">:</span> UpdateTaskStatusDto<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Task<span class="token operator">></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>taskService<span class="token punctuation">.</span><span class="token function">updateTaskStatus</span><span class="token punctuation">(</span>updateTaskStatusDto<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
