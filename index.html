@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +16,11 @@
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZV-Blogs">
@@ -215,7 +215,7 @@
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -247,7 +247,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -260,50 +260,71 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+          <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>以数据库连接为例简单实现一个单例</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Database</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options
   <span class="token punctuation">&#125;</span>
-  <span class="token function">getPersonInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">, i\`m </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> years old.</span><span class="token template-punctuation string">`</span></span>
+  <span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'You are now connected to the database.'</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token keyword">const</span> PersonSingleton <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 使用 IIFE 制造闭包缓存实例 instance</span>
+<span class="token keyword">const</span> DatabaseSingleton <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token keyword">null</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Database</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> instance
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonSingleton</span><span class="token punctuation">(</span><span class="token string">'Jack'</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonSingleton</span><span class="token punctuation">(</span><span class="token string">'David'</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span>
-p1 <span class="token operator">===</span> p2 <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果把上述过程再进行抽象，我们可以得到一个通用的生成单例的函数。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createSingleton</span><span class="token punctuation">(</span><span class="token parameter">Con</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">Con</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token keyword">null</span>
-    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Con</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
-      <span class="token keyword">return</span> instance
+<span class="token keyword">const</span> db1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatabaseSingleton</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> host<span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token number">1111</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> db2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatabaseSingleton</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> host<span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token number">2222</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>db1 <span class="token operator">===</span> db2<span class="token punctuation">)</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h2><p>通用的单例模式一般由以下几个部分构成</p>
+<ul>
+<li><strong>Singleton</strong> ：特定类，这是我们需要访问的类，访问者要拿到的是它的实例；</li>
+<li><strong>instance</strong> ：单例，是特定类的实例，特定类一般会提供 <code>getInstance</code> 方法来获取该单例；</li>
+<li><strong>getInstance</strong> ：获取单例的方法，或者直接由 <code>new</code> 操作符获取；</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">static</span> instance <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">static</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
     <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Con<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>测试一下</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">param</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>param <span class="token operator">=</span> param
+    <span class="token keyword">return</span> Singleton<span class="token punctuation">.</span>instance
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span>instance <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options
+      Singleton<span class="token punctuation">.</span>instance <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> Singleton<span class="token punctuation">.</span>instance
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token keyword">const</span> ASingleton <span class="token operator">=</span> <span class="token function">createSingleton</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ASingleton</span><span class="token punctuation">(</span><span class="token string">'a1'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> a2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ASingleton</span><span class="token punctuation">(</span><span class="token string">'a2'</span><span class="token punctuation">)</span>
-a1 <span class="token operator">===</span> a2 <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="优缺点-Todo"><a href="#优缺点-Todo" class="headerlink" title="优缺点 Todo"></a>优缺点 Todo</h2><h2 id="使用场景-Todo"><a href="#使用场景-Todo" class="headerlink" title="使用场景 Todo"></a>使用场景 Todo</h2>
+<span class="token keyword">const</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token string">'s1'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> s2 <span class="token operator">=</span> Singleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">'s2'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1 <span class="token operator">===</span> s2<span class="token punctuation">)</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="懒汉式-vs-饿汉式-TODO"><a href="#懒汉式-vs-饿汉式-TODO" class="headerlink" title="懒汉式 vs 饿汉式 TODO"></a>懒汉式 vs 饿汉式 TODO</h2><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>单例模式在创建后在内存中只存在一个实例，节约了内存开支和实例化时的性能开支，特别是需要重复使用一个创建开销比较大的类时，比起实例不断地销毁和重新实例化，单例能节约更多资源，比如数据库连接；</li>
+<li>单例模式可以解决对资源的多重占用，比如写文件操作时，因为只有一个实例，可以避免对一个文件进行同时操作；</li>
+<li>只使用一个实例，也可以减小垃圾回收机制 GC（Garbage Collecation） 的压力，表现在浏览器中就是系统卡顿减少，操作更流畅，CPU 资源占用更少；</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>单例模式对扩展不友好，一般<strong>不容易扩展</strong>，因为单例模式一般自行实例化，没有接口；</li>
+<li><strong>与单一职责原则冲突</strong>，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化；</li>
+</ol>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
+<li>当一个类的<strong>实例化过程消耗的资源过多</strong>，可以使用单例模式来避免性能浪费；</li>
+<li>当项目中需要一个公共的状态，那么需要使用单例模式来<strong>保证访问一致性</strong>；</li>
+</ol>
+
       
     </div>
 
@@ -328,7 +349,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/09/100%E4%B8%AA%E5%8D%95%E8%AF%8D-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -360,7 +381,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -373,9 +394,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
     
     
     <div class="post-body" itemprop="articleBody">
-          <ul>
-<li><p>The internet is not a fully <strong>distributed</strong> network. In reality, the internet is <strong>decentralized</strong> with many centers or nodes, and direct or indirect connections between them.</p>
-<table>
+          <h2 id="01-10"><a href="#01-10" class="headerlink" title="01-10"></a>01-10</h2><table>
 <thead>
 <tr>
 <th>词</th>
@@ -390,17 +409,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
 <td>decentralized</td>
 <td>adj. 分散管理的 vt. 使分散；使分权（decentralize 的过去分词）</td>
 </tr>
-</tbody></table>
-</li>
-<li><p>The address lets the network <strong>deliver</strong> the message to the right destination node, almost always passing it on through <strong>intermediate</strong> nodes.</p>
-<table>
-<thead>
 <tr>
-<th>词</th>
-<th>译</th>
-</tr>
-</thead>
-<tbody><tr>
 <td>deliver</td>
 <td>vt. 交付；发表；递送；释放；给予（打击）</td>
 </tr>
@@ -408,17 +417,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
 <td>intermediate</td>
 <td>adj. 中间的，过渡的；中级的，中等的</td>
 </tr>
-</tbody></table>
-</li>
-<li><p>We use devices called routers to connect different networks. Routers are devices that <strong>direct</strong> IP packets, the pieces of data that make up <strong>internet traffic</strong>, from one network to the other.</p>
-<table>
-<thead>
 <tr>
-<th>词</th>
-<th>译</th>
-</tr>
-</thead>
-<tbody><tr>
 <td>internet traffic</td>
 <td>网络流量</td>
 </tr>
@@ -426,17 +425,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
 <td>direct</td>
 <td>vt. 管理；指挥；导演；指向</td>
 </tr>
-</tbody></table>
-</li>
-<li><p>Nodes that provide services over a network are called servers. A server is a node that accepts connections from other nodes on a network and usually <strong>transmits</strong> information, receives information, or processes information as a service or application. Online gaming servers, website hosts, and email delivery services are examples of server nodes.</p>
-<table>
-<thead>
 <tr>
-<th>词</th>
-<th>译</th>
-</tr>
-</thead>
-<tbody><tr>
 <td>transmits</td>
 <td>vt. 传输；传播；发射；传达；遗传</td>
 </tr>
@@ -444,9 +433,451 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
 <td>delivery</td>
 <td>n. [贸易] 交付；分娩；递送</td>
 </tr>
+<tr>
+<td>stumbled onto</td>
+<td>偶然找到；碰上</td>
+</tr>
+<tr>
+<td>diametrically</td>
+<td>adv. 完全地；作为直径地；直接地；正好相反地</td>
+</tr>
 </tbody></table>
-</li>
-</ul>
+<h2 id="11-20"><a href="#11-20" class="headerlink" title="11-20"></a>11-20</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>encapsulating</td>
+<td>n. 封装；[电] 包封 v. 封进内部（encapsulate 的 ing 形式）</td>
+</tr>
+<tr>
+<td>a slew of</td>
+<td>大量的</td>
+</tr>
+<tr>
+<td>get away from</td>
+<td>避免，摆脱；逃离</td>
+</tr>
+<tr>
+<td>mechanism</td>
+<td>n. 机制；原理，途径；进程；机械装置；技巧</td>
+</tr>
+<tr>
+<td>it dawned on me that</td>
+<td>突然醒悟；忽然觉悟；忽然醒悟</td>
+</tr>
+<tr>
+<td>composable</td>
+<td>adj. 组成的</td>
+</tr>
+<tr>
+<td>frustrating</td>
+<td>adj. 令人沮丧的 v. 使沮丧（frustrate 的 ing 形式）</td>
+</tr>
+<tr>
+<td>propel</td>
+<td>vt. 推进；驱使；激励；驱策</td>
+</tr>
+<tr>
+<td>the sheer number of</td>
+<td>……的数目</td>
+</tr>
+<tr>
+<td>dig into</td>
+<td>深入钻研；钻研；挖掘</td>
+</tr>
+</tbody></table>
+<h2 id="21-30"><a href="#21-30" class="headerlink" title="21-30"></a>21-30</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>proposal</td>
+<td>n. 提议，建议；求婚</td>
+</tr>
+<tr>
+<td>manuscript</td>
+<td>n. [图情] 手稿；原稿 adj. 手写的</td>
+</tr>
+<tr>
+<td>perspective</td>
+<td>n. 观点；远景；透视图 adj. 透视的</td>
+</tr>
+<tr>
+<td>First and foremost</td>
+<td>首先；首要的是</td>
+</tr>
+<tr>
+<td>fatigue</td>
+<td>n. 疲劳，疲乏；杂役 vt. 使疲劳；使心智衰弱 vi. 疲劳 adj. 疲劳的</td>
+</tr>
+<tr>
+<td>synthesize</td>
+<td>vt. 合成；综合</td>
+</tr>
+<tr>
+<td>spotlight on</td>
+<td>关注</td>
+</tr>
+<tr>
+<td>capabilities</td>
+<td>n. 能力（capability的复数）；功能；性能</td>
+</tr>
+<tr>
+<td>permeates</td>
+<td>v. 弥漫（permeate的第三人称单数）</td>
+</tr>
+<tr>
+<td>metaprogramming</td>
+<td>元编程</td>
+</tr>
+</tbody></table>
+<h2 id="31-40"><a href="#31-40" class="headerlink" title="31-40"></a>31-40</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>breadth</td>
+<td>n. 宽度，幅度；宽宏</td>
+</tr>
+<tr>
+<td>passionate</td>
+<td>adj. 热情的；热烈的，激昂的；易怒的</td>
+</tr>
+<tr>
+<td>catch up</td>
+<td>赶上；把…缠住</td>
+</tr>
+<tr>
+<td>in order</td>
+<td>整齐，秩序井然；按顺序；状况良好</td>
+</tr>
+<tr>
+<td>sheds light on</td>
+<td>阐明；使…清楚地显出</td>
+</tr>
+<tr>
+<td>syntactical</td>
+<td>adj. 句法的；依照句法的（等于syntactic）</td>
+</tr>
+<tr>
+<td>inheritance</td>
+<td>n. 继承；遗传；遗产</td>
+</tr>
+<tr>
+<td>domain</td>
+<td>n. 领域；域名；产业；地产 n. (Domain)人名；(英、法)多曼</td>
+</tr>
+<tr>
+<td>take advantage of</td>
+<td>利用；占便宜；欺负；趁</td>
+</tr>
+<tr>
+<td>proper</td>
+<td>adj. 适当的；本身的；特有的；正派的</td>
+</tr>
+<tr>
+<td>cohesive</td>
+<td>adj. 凝聚的；有结合力的；紧密结合的；有粘着力的</td>
+</tr>
+</tbody></table>
+<h2 id="41-50"><a href="#41-50" class="headerlink" title="41-50"></a>41-50</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>despite</td>
+<td>prep. 即使，尽管 n. （诗/文）侮辱，伤害；轻视，鄙视；憎恨 vt. &lt;废语&gt;故意使烦恼，故意伤害；&lt;古&gt;蔑视，轻蔑</td>
+</tr>
+<tr>
+<td>far from</td>
+<td>adv. 远离；远非；完全不</td>
+</tr>
+<tr>
+<td>underlying</td>
+<td>adj. 潜在的；根本的；在下面的；优先的 v. 放在…的下面；为…的基础；优先于（underlie的ing形式）</td>
+</tr>
+<tr>
+<td>malleable</td>
+<td>adj. 可锻的；可塑的；有延展性的；易适应的</td>
+</tr>
+<tr>
+<td>versatile</td>
+<td>adj. 多才多艺的；通用的，万能的；多面手的</td>
+</tr>
+<tr>
+<td>expose</td>
+<td>vt. 揭露，揭发；使曝光；显示</td>
+</tr>
+<tr>
+<td>instantiate</td>
+<td>v. 例示，举例说明；（哲）有例为证</td>
+</tr>
+<tr>
+<td>pros and  cons</td>
+<td>正反两方面；赞成者和反对者</td>
+</tr>
+<tr>
+<td>Believe it or not</td>
+<td>信不信由你</td>
+</tr>
+<tr>
+<td>modular</td>
+<td>adj. 模块化的；模数的；有标准组件的</td>
+</tr>
+</tbody></table>
+<h2 id="51-60"><a href="#51-60" class="headerlink" title="51-60"></a>51-60</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>algebraic data types (ADT)</td>
+<td>代数数据类型</td>
+</tr>
+<tr>
+<td>idiom</td>
+<td>n. 成语，习语；土话</td>
+</tr>
+<tr>
+<td>aka</td>
+<td>abbr. 又名，亦称 (also known as)</td>
+</tr>
+<tr>
+<td>evaluating</td>
+<td>v. 评估（evaluate的ing形式</td>
+</tr>
+<tr>
+<td>separation</td>
+<td>n. 分离，分开；间隔，距离；[法] 分居；缺口</td>
+</tr>
+<tr>
+<td>toasters</td>
+<td>n. 烤箱；烤面包器</td>
+</tr>
+<tr>
+<td>refrigerators</td>
+<td>n. [制冷] 冰箱，[制冷] 冷藏室；[制冷] 冷冻库（refrigerator的复数）</td>
+</tr>
+<tr>
+<td>thermostats</td>
+<td>n. 恒温控制器，温度调节装置（thermostat 的复数）</td>
+</tr>
+<tr>
+<td>spacesuits</td>
+<td>n. 航天服；太空服</td>
+</tr>
+<tr>
+<td>all tiers of</td>
+<td>…… 的所有层</td>
+</tr>
+</tbody></table>
+<h2 id="61-70"><a href="#61-70" class="headerlink" title="61-70"></a>61-70</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="71-80"><a href="#71-80" class="headerlink" title="71-80"></a>71-80</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="81-90"><a href="#81-90" class="headerlink" title="81-90"></a>81-90</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="91-100"><a href="#91-100" class="headerlink" title="91-100"></a>91-100</h2><table>
+<thead>
+<tr>
+<th>词</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -472,7 +903,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/28/Superset1.0%E5%9B%BE%E8%A1%A8%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,7 +935,7 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -521,10 +952,12 @@ a1 <span class="token operator">===</span> a2 <span class="token comment">// tru
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
 <li><p>安装依赖</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> superset-frontend
-<span class="token function">npm</span> i @types/mathjs @types/echarts mathjs echarts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<span class="token function">npm</span> i @types/mathjs @types/echarts mathjs echarts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li><p>创建文件夹</p>
 <pre class="line-numbers language-none"><code class="language-none">cd superset-frontend
-mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li><p>拷贝<code>@superset-ui/plugin-chart-echarts</code>中所需的文件</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">└── ECharts
    ├── components
@@ -539,6 +972,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
       ├── controls.ts
       ├── prophet.ts
       └── series.ts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 </li>
 </ol>
@@ -566,10 +1000,12 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>这里会有报错提示，不过没关系，我们一项一项完善</p>
 <h3 id="添加预览图"><a href="#添加预览图" class="headerlink" title="添加预览图"></a>添加预览图</h3><pre class="line-numbers language-none"><code class="language-none">├── BasicLine
 |  └── images
 |     └── thumbnail.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="创建-EchartsBasicLine"><a href="#创建-EchartsBasicLine" class="headerlink" title="创建 EchartsBasicLine"></a>创建 <code>EchartsBasicLine</code></h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span>
 <span class="token keyword">import</span> Echart <span class="token keyword">from</span> <span class="token string">'../components/Echart'</span>
@@ -577,6 +1013,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">EchartsBasicLine</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> echartOptions <span class="token punctuation">&#125;</span><span class="token operator">:</span> EchartsProps</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Echart</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>height<span class="token punctuation">&#125;</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>width<span class="token punctuation">&#125;</span></span> <span class="token attr-name">echartOptions</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>echartOptions<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="创建buildQuery"><a href="#创建buildQuery" class="headerlink" title="创建buildQuery"></a>创建<code>buildQuery</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> buildQueryContext<span class="token punctuation">,</span> QueryFormData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">buildQuery</span><span class="token punctuation">(</span>formData<span class="token operator">:</span> QueryFormData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -591,6 +1028,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="创建-controlPanel"><a href="#创建-controlPanel" class="headerlink" title="创建 controlPanel"></a>创建 <code>controlPanel</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ControlPanelConfig<span class="token punctuation">,</span> sections <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/chart-controls'</span><span class="token punctuation">;</span>
 
@@ -618,6 +1056,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="创建transformProps"><a href="#创建transformProps" class="headerlink" title="创建transformProps"></a>创建<code>transformProps</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">/**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -671,8 +1110,10 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
     echartOptions<span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="导出-EchartsBasicLineChartPlugin"><a href="#导出-EchartsBasicLineChartPlugin" class="headerlink" title="导出 EchartsBasicLineChartPlugin"></a>导出 <code>EchartsBasicLineChartPlugin</code></h3><p>在 <code>superset-frontend\src\extend\ECharts\index.ts</code> 中统一导出</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">&#123;</span> <span class="token keyword">default</span> <span class="token keyword">as</span> EchartsBasicLineChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./BasicLine'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="注册-EchartsBasicLineChartPlugin"><a href="#注册-EchartsBasicLineChartPlugin" class="headerlink" title="注册 EchartsBasicLineChartPlugin"></a>注册 <code>EchartsBasicLineChartPlugin</code></h3><p>在<code>superset-frontend\src\visualizations\presets\MainPreset.js</code>中注册</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Preset <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> BigNumberChartPlugin<span class="token punctuation">,</span> BigNumberTotalChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-preset-chart-big-number'</span>
@@ -761,6 +1202,7 @@ mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-nu
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在<code>superset-frontend\src\explore\components\controls\VizTypeControl.jsx</code> 调整显示的顺序</p>
 <pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> useEffect<span class="token punctuation">,</span> useRef<span class="token punctuation">,</span> useState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
 <span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
@@ -995,7 +1437,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/26/%E7%94%B3%E8%AF%B7LetsEncrypt%E9%80%9A%E9%85%8D%E7%AC%A6SSL%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1027,7 +1469,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -1045,7 +1487,9 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 
 <span class="token comment"># 设为可执行权限</span>
 <span class="token function">chmod</span> a+x certbot-auto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="申请通配符证书"><a href="#申请通配符证书" class="headerlink" title="申请通配符证书"></a>申请通配符证书</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./certbot-auto certonly  -d <span class="token string">"*.emotionl.fun"</span> --manual --preferred-challenges dns-01  --server https://acme-v02.api.letsencrypt.org/directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>完这一步之后，请根据命令行的提示输入相应内容</p>
 
       
@@ -1072,7 +1516,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1104,7 +1548,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -1155,6 +1599,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/company-logo.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Company<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-2-2-缩进"><a href="#1-2-2-缩进" class="headerlink" title="1.2.2 缩进"></a>1.2.2 缩进</h4><p>缩进使用 2 个空格（一个 tab）</p>
 <p>嵌套的节点应该缩进。</p>
 <h4 id="1-2-3-分块注释"><a href="#1-2-3-分块注释" class="headerlink" title="1.2.3 分块注释"></a>1.2.3 分块注释</h4><p>在每一个块状元素，列表元素和表格元素后，加上一对 HTML 注释。注释格式</p>
@@ -1171,14 +1616,17 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
   <span class="token comment">&lt;!-- header 头部 end --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="1-2-4-语义化标签"><a href="#1-2-4-语义化标签" class="headerlink" title="1.2.4 语义化标签"></a>1.2.4 语义化标签</h3><p>HTML5 中新增很多语义化标签，所以优先使用语义化标签，避免一个页面都是 div 或者 p 标签</p>
 <p>正例</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-2-5-引号"><a href="#1-2-5-引号" class="headerlink" title="1.2.5 引号"></a>1.2.5 引号</h4><p>使用双引号(“ “) 而不是单引号(‘ ‘) 。</p>
 <h3 id="三-CSS-规范"><a href="#三-CSS-规范" class="headerlink" title="(三) CSS 规范"></a>(三) CSS 规范</h3><h4 id="1-3-1-命名"><a href="#1-3-1-命名" class="headerlink" title="1.3.1 命名"></a>1.3.1 命名</h4><ul>
 <li>类名使用小写字母，以中划线分隔</li>
@@ -1194,6 +1642,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 <span class="token selector">.red</span> <span class="token punctuation">&#123;</span>
   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐:</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.heavy</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-weight</span><span class="token punctuation">:</span> 800<span class="token punctuation">;</span>
@@ -1202,6 +1651,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 <span class="token selector">.important</span> <span class="token punctuation">&#123;</span>
   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-2-选择器"><a href="#1-3-2-选择器" class="headerlink" title="1.3.2 选择器"></a>1.3.2 选择器</h4><ol>
 <li><p>CSS 选择器中避免使用标签名<br>从结构、表现、行为分离的原则来看，应该尽量避免 CSS 中出现 HTML 标签，并且在 CSS 选择器中出现标签名会存在潜在的问题。</p>
 </li>
@@ -1212,10 +1662,12 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.content .title</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐:</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.content > .title</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-3-尽量使用缩写属性"><a href="#1-3-3-尽量使用缩写属性" class="headerlink" title="1.3.3 尽量使用缩写属性"></a>1.3.3 尽量使用缩写属性</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">border-top-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token property">font-family</span><span class="token punctuation">:</span> palatino<span class="token punctuation">,</span> georgia<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
@@ -1225,10 +1677,12 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 <span class="token property">padding-left</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
 <span class="token property">padding-right</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
 <span class="token property">padding-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">border-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token property">font</span><span class="token punctuation">:</span> 100%/1.6 palatino<span class="token punctuation">,</span> georgia<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
 <span class="token property">padding</span><span class="token punctuation">:</span> 0 1em 2em<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-4-每个选择器及属性独占一行"><a href="#1-3-4-每个选择器及属性独占一行" class="headerlink" title="1.3.4 每个选择器及属性独占一行"></a>1.3.4 每个选择器及属性独占一行</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">button</span> <span class="token punctuation">&#123;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
@@ -1236,6 +1690,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> #00a0e9<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">button</span> <span class="token punctuation">&#123;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
@@ -1243,26 +1698,31 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> #00a0e9<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-5-省略-0-后面的单位"><a href="#1-3-5-省略-0-后面的单位" class="headerlink" title="1.3.5 省略 0 后面的单位"></a>1.3.5 省略 0 后面的单位</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0em<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-6-避免使用-ID-选择器及全局标签选择器防止污染全局样式"><a href="#1-3-6-避免使用-ID-选择器及全局标签选择器防止污染全局样式" class="headerlink" title="1.3.6 避免使用 ID 选择器及全局标签选择器防止污染全局样式"></a>1.3.6 避免使用 ID 选择器及全局标签选择器防止污染全局样式</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.header</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="四-SCSS-规范"><a href="#四-SCSS-规范" class="headerlink" title="(四) SCSS 规范"></a>(四) SCSS 规范</h3><h4 id="1-4-1-代码组织"><a href="#1-4-1-代码组织" class="headerlink" title="1.4.1 代码组织"></a>1.4.1 代码组织</h4><h5 id="1-将公共-scss-文件放置在-src-assets-styles-文件夹"><a href="#1-将公共-scss-文件放置在-src-assets-styles-文件夹" class="headerlink" title="1) 将公共 scss 文件放置在 src/assets/styles 文件夹"></a>1) 将公共 scss 文件放置在 src/assets/styles 文件夹</h5><p>例：<code>variables.scss / mixin.scss</code></p>
 <h5 id="2-按以下顺序组织"><a href="#2-按以下顺序组织" class="headerlink" title="2) 按以下顺序组织"></a>2) 按以下顺序组织</h5><ol>
 <li>@import</li>
@@ -1277,6 +1737,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
   <span class="token property">width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-4-2-避免嵌套层级过多"><a href="#1-4-2-避免嵌套层级过多" class="headerlink" title="1.4.2 避免嵌套层级过多"></a>1.4.2 避免嵌套层级过多</h4><p>将嵌套深度限制在 3 级。对于超过 4 级的嵌套，给予重新评估。这可以避免出现过于详实的 CSS 选择器。<br>避免大量的嵌套规则。当可读性受到影响时，将之打断。推荐避免出现多于 20 行的嵌套规则出现</p>
 <p>不推荐：</p>
 <pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.main </span><span class="token punctuation">&#123;</span>
@@ -1286,12 +1747,14 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.main-title </span><span class="token punctuation">&#123;</span>
   <span class="token selector">.name </span><span class="token punctuation">&#123;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="五-Javascript-规范"><a href="#五-Javascript-规范" class="headerlink" title="(五) Javascript 规范"></a>(五) Javascript 规范</h3><h4 id="1-5-1-命名"><a href="#1-5-1-命名" class="headerlink" title="1.5.1 命名"></a>1.5.1 命名</h4><h5 id="1-采用小写驼峰命名-lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束"><a href="#1-采用小写驼峰命名-lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束" class="headerlink" title="1) 采用小写驼峰命名 lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束"></a>1) 采用小写驼峰命名 lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束</h5><p>反例： <code>_name / name_ / name$</code></p>
 <h5 id="2-方法名、参数名、成员变量、局部变量都统一使用-lowerCamelCase-风格，必须遵从驼峰形式。"><a href="#2-方法名、参数名、成员变量、局部变量都统一使用-lowerCamelCase-风格，必须遵从驼峰形式。" class="headerlink" title="2) 方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。"></a>2) 方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</h5><p>正例： <code>localValue / getHttpMessage() / inputUserId</code></p>
 <p><strong>其中 method 方法命名必须是 动词 或者 动词+名词 形式</strong></p>
@@ -1299,6 +1762,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
 <p>反例：<code>save / open / show / go</code></p>
 <p><strong>特此说明，增删查改，详情统一使用如下 5 个单词，不得使用其他（目的是为了统一各个端）</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">add &#x2F; update &#x2F; delete &#x2F; detail &#x2F; get<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>附： 函数方法常用的动词:</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">get 获取&#x2F;set 设置,
 add 增加&#x2F;remove 删除
@@ -1354,6 +1818,7 @@ enter 进入&#x2F;exit 退出,
 abort 放弃&#x2F;quit 离开
 obsolete 废弃&#x2F;depreciate 废旧,
 collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。"><a href="#3-常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。" class="headerlink" title="3) 常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。"></a>3) 常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。</h5><p>正例： <code>MAX_STOCK_COUNT</code></p>
 <p>反例： <code>MAX_COUNT</code></p>
 <h4 id="1-5-2-代码格式"><a href="#1-5-2-代码格式" class="headerlink" title="1.5.2 代码格式"></a>1.5.2 代码格式</h4><h5 id="1-使用-2-个空格进行缩进"><a href="#1-使用-2-个空格进行缩进" class="headerlink" title="1) 使用 2 个空格进行缩进"></a>1) 使用 2 个空格进行缩进</h5><p>正例：</p>
@@ -1362,23 +1827,28 @@ collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers
 <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
   x <span class="token operator">+=</span> <span class="token number">1</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。"><a href="#2-不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。" class="headerlink" title="2) 不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。"></a>2) 不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。</h5><blockquote>
 <p>说明：任何情形，没有必要插入多个空行进行隔开。</p>
 </blockquote>
 <h4 id="1-5-3-字符串"><a href="#1-5-3-字符串" class="headerlink" title="1.5.3 字符串"></a>1.5.3 字符串</h4><h5 id="1-统一使用单引号-‘-，不使用双引号-“-。这在创建-HTML-字符串非常有好处："><a href="#1-统一使用单引号-‘-，不使用双引号-“-。这在创建-HTML-字符串非常有好处：" class="headerlink" title="1) 统一使用单引号(‘)，不使用双引号(“)。这在创建 HTML 字符串非常有好处："></a>1) 统一使用单引号(‘)，不使用双引号(“)。这在创建 HTML 字符串非常有好处：</h5><p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'foo'</span>
 <span class="token keyword">let</span> testDiv <span class="token operator">=</span> <span class="token string">'&lt;div id="test">&lt;/div>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'foo'</span>
 <span class="token keyword">let</span> testDiv <span class="token operator">=</span> <span class="token string">"&lt;div id='test'>&lt;/div>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h5 id="2-字符串拼接统一使用-ES6-模板字符串处理"><a href="#2-字符串拼接统一使用-ES6-模板字符串处理" class="headerlink" title="2) 字符串拼接统一使用 ES6 模板字符串处理"></a>2) 字符串拼接统一使用 ES6 模板字符串处理</h5><p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> firstName <span class="token operator">=</span> <span class="token string">'Tom'</span>
 <span class="token keyword">const</span> lastName <span class="token operator">=</span> <span class="token string">'Hanks'</span>
 <span class="token keyword">const</span> fullName <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> firstName <span class="token operator">=</span> <span class="token string">'Tom'</span>
 <span class="token keyword">const</span> lastName <span class="token operator">=</span> <span class="token string">'Hanks'</span>
 <span class="token keyword">const</span> fullName <span class="token operator">=</span> firstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> lastName<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-4-对象声明"><a href="#1-5-4-对象声明" class="headerlink" title="1.5.4 对象声明"></a>1.5.4 对象声明</h4><h5 id="1-使用字面值创建对象"><a href="#1-使用字面值创建对象" class="headerlink" title="1) 使用字面值创建对象"></a>1) 使用字面值创建对象</h5><p>正例： <code>let user = &#123;&#125;;</code></p>
 <p>反例： <code>let user = new Object();</code></p>
 <h5 id="2-使用字面量来代替对象构造器"><a href="#2-使用字面量来代替对象构造器" class="headerlink" title="2) 使用字面量来代替对象构造器"></a>2) 使用字面量来代替对象构造器</h5><p>正例：</p>
@@ -1387,11 +1857,13 @@ collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers
   name<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
   city<span class="token operator">:</span> <span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 user<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">0</span>
 user<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">0</span>
 user<span class="token punctuation">.</span>city <span class="token operator">=</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-5-使用-ES6-ES7"><a href="#1-5-5-使用-ES6-ES7" class="headerlink" title="1.5.5 使用 ES6,ES7"></a>1.5.5 使用 ES6,ES7</h4><p>必须优先使用 ES6,ES7 中新增的语法糖和函数。这将简化你的程序，并让你的代码更加灵活和可复用。</p>
 <blockquote>
 <p>必须强制使用 ES6, ES7 的新语法，比如箭头函数、await/async，解构，let，for…of 等等</p>
@@ -1401,17 +1873,21 @@ user<span class="token punctuation">.</span>city <span class="token operator">=<
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="1-5-7-undefined-判断"><a href="#1-5-7-undefined-判断" class="headerlink" title="1.5.7 undefined 判断"></a>1.5.7 undefined 判断</h4><p>永远不要直接使用 <code>undefined</code> 进行变量判断；使用 <code>typeof</code> 和字符串 <code>&#39;undefined&#39;</code> 对变量进行判断。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> person <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：1</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// person 为 null 也是 true</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>person <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：2 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined">MDN 也有说明</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>person <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
@@ -1431,6 +1907,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">undefined</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-8-条件判断和循环最多三层"><a href="#1-5-8-条件判断和循环最多三层" class="headerlink" title="1.5.8 条件判断和循环最多三层"></a>1.5.8 条件判断和循环最多三层</h4><p>条件判断能使用三目运算符和逻辑运算符解决的，就不要使用条件判断，但是谨记不要写太长的三目运算符。如果超过 3 层请抽成函数，并写清楚注释。</p>
 <h4 id="1-5-9-this-的转换命名"><a href="#1-5-9-this-的转换命名" class="headerlink" title="1.5.9 this 的转换命名"></a>1.5.9 this 的转换命名</h4><p>对上下文 <code>this</code> 的引用只能使用 <code>self</code> 来命名</p>
 <h4 id="1-5-10-慎用-console-log"><a href="#1-5-10-慎用-console-log" class="headerlink" title="1.5.10 慎用 console.log"></a>1.5.10 慎用 <code>console.log</code></h4><p>因 <code>console.log</code> 大量使用会有性能问题，所以在非 <code>webpack</code> 项目中谨慎使用 log 功能</p>
@@ -1444,6 +1921,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token operator">:</span> <span class="token string">'TodoItem'</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   name<span class="token operator">:</span> <span class="token string">'todo'</span>
@@ -1453,41 +1931,50 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token operator">:</span> <span class="token string">'todo-item'</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-组件文件名为-CamelCase-格式"><a href="#2-组件文件名为-CamelCase-格式" class="headerlink" title="2) 组件文件名为 CamelCase 格式"></a>2) 组件文件名为 CamelCase 格式</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- MyComponent.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- myComponent.vue
 |- my-component.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-基础组件文件名为-base-开头，使用完整单词而不是缩写。"><a href="#3-基础组件文件名为-base-开头，使用完整单词而不是缩写。" class="headerlink" title="3) 基础组件文件名为 base 开头，使用完整单词而不是缩写。"></a>3) 基础组件文件名为 base 开头，使用完整单词而不是缩写。</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- BaseButton.vue
 |- BaseTable.vue
 |- BaseIcon.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- MyButton.vue
 |- VueTable.vue
 |- Icon.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-和父组件紧密耦合的子组件应该以父组件名作为前缀命名"><a href="#4-和父组件紧密耦合的子组件应该以父组件名作为前缀命名" class="headerlink" title="4) 和父组件紧密耦合的子组件应该以父组件名作为前缀命名"></a>4) 和父组件紧密耦合的子组件应该以父组件名作为前缀命名</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- TodoList.vue
 |- TodoListItem.vue
 |- TodoListItemNutton.vue
 |- UserProfileOptions.vue （完整单词）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- TodoList.vue
 |- TodoItem.vue
 |- TodoButton.vue
 |- UProfOpts.vue （使用了缩写）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="5-在-Template-模版中使用组件，应使用-PascalCase-模式，并且使用自闭合组件。"><a href="#5-在-Template-模版中使用组件，应使用-PascalCase-模式，并且使用自闭合组件。" class="headerlink" title="5) 在 Template 模版中使用组件，应使用 PascalCase 模式，并且使用自闭合组件。"></a>5) 在 Template 模版中使用组件，应使用 PascalCase 模式，并且使用自闭合组件。</h5><p>正例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 在单文件组件、字符串模板和 JSX 中 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-component</span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>row</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">:column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>row</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MyComponent</span> <span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Row</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">:column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Row</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h5 id="6-组件的-data-必须是一个函数"><a href="#6-组件的-data-必须是一个函数" class="headerlink" title="6) 组件的 data 必须是一个函数"></a>6) 组件的 data 必须是一个函数</h5><p>当在组件中使用 data 属性的时候 (除了 new Vue 外的任何地方)，它的值必须是返回一个对象的函数。 因为如果直接是一个对象的话，子组件之间的属性值会互相影响。</p>
 <p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
@@ -1497,12 +1984,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     name<span class="token operator">:</span> <span class="token string">'jack'</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="7-Prop-定义应该尽量详细"><a href="#7-Prop-定义应该尽量详细" class="headerlink" title="7) Prop 定义应该尽量详细"></a>7) Prop 定义应该尽量详细</h5><ul>
 <li>必须使用 camelCase 驼峰命名</li>
 <li>必须指定类型</li>
@@ -1530,6 +2019,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       required<span class="token operator">:</span> <span class="token boolean">true</span>
    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="8-为组件样式设置作用域"><a href="#8-为组件样式设置作用域" class="headerlink" title="8) 为组件样式设置作用域"></a>8) 为组件样式设置作用域</h5><p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;button class&#x3D;&quot;btn btn-close&quot;&gt;X&lt;&#x2F;button&gt;
@@ -1541,6 +2031,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   background-color: red;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;button class&#x3D;&quot;btn btn-close&quot;&gt;X&lt;&#x2F;button&gt;
@@ -1551,10 +2042,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
   background-color: red;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="9-如果特性元素较多，应该主动换行。"><a href="#9-如果特性元素较多，应该主动换行。" class="headerlink" title="9) 如果特性元素较多，应该主动换行。"></a>9) 如果特性元素较多，应该主动换行。</h5><p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;ym-table :isLoading&#x3D;&quot;isTableLoading&quot; :tableData&#x3D;&quot;tableData&quot; :pageTotal&#x3D;&quot;pageTotal&quot; :pageNum&#x3D;&quot;pageNum&quot; :pageSize&#x3D;&quot;pageSize&quot; @page-num-change&#x3D;&quot;handlePageNumChange&quot; @page-size-change&#x3D;&quot;handlePageSizeChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;ym-table :isLoading&#x3D;&quot;isTableLoading&quot; :tableData&#x3D;&quot;tableData&quot; :pageTotal&#x3D;&quot;pageTotal&quot; :pageNum&#x3D;&quot;pageNum&quot; :pageSize&#x3D;&quot;pageSize&quot; @page-num-change&#x3D;&quot;handlePageNumChange&quot; @page-size-change&#x3D;&quot;handlePageSizeChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="2-1-2-模板中使用简单的表达式"><a href="#2-1-2-模板中使用简单的表达式" class="headerlink" title="2.1.2. 模板中使用简单的表达式"></a>2.1.2. 模板中使用简单的表达式</h4><p>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的是什么，而非如何计算那个值。而且计算属性和方法使得代码可以重用。</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
@@ -1571,6 +2065,7 @@ computed: &#123;
   &#125;
 &#125;
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;p&gt;
@@ -1584,11 +2079,14 @@ computed: &#123;
     &#125;&#125;
   &lt;&#x2F;p&gt;
 &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-1-3-指令都使用缩写形式"><a href="#2-1-3-指令都使用缩写形式" class="headerlink" title="2.1.3 指令都使用缩写形式"></a>2.1.3 指令都使用缩写形式</h4><p>指令推荐都使用缩写形式，(用 : 表示 v-bind: 、用 @ 表示 v-on: 和用 # 表示 v-slot:)</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;input :text&#x3D;&quot;text&quot; @change&#x3D;&quot;onChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;input v-bind:text&#x3D;&quot;text&quot; v-on:change&#x3D;&quot;onChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="2-1-4-标签顺序保持一致"><a href="#2-1-4-标签顺序保持一致" class="headerlink" title="2.1.4 标签顺序保持一致"></a>2.1.4 标签顺序保持一致</h4><p>单文件组件应该总是让标签顺序保持为 `</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;...&lt;&#x2F;template&gt;
@@ -1598,6 +2096,7 @@ computed: &#123;
 &lt;style&gt;
 ...;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;...&lt;&#x2F;template&gt;
 &lt;style&gt;
@@ -1606,12 +2105,14 @@ computed: &#123;
 &lt;script&gt;
 ...
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-1-5-必须为-v-for-设置键值-key"><a href="#2-1-5-必须为-v-for-设置键值-key" class="headerlink" title="2.1.5 必须为 v-for 设置键值 key"></a>2.1.5 必须为 v-for 设置键值 key</h4><h4 id="2-1-6-v-show-与-v-if-选择"><a href="#2-1-6-v-show-与-v-if-选择" class="headerlink" title="2.1.6 v-show 与 v-if 选择"></a>2.1.6 v-show 与 v-if 选择</h4><p>如果运行时，需要非常频繁地切换，使用 v-show ；如果在运行时，条件很少改变，使用 v-if。</p>
 <h4 id="2-1-7-script-标签内部结构顺序"><a href="#2-1-7-script-标签内部结构顺序" class="headerlink" title="2.1.7 script 标签内部结构顺序"></a>2.1.7 script 标签内部结构顺序</h4><p>components &gt; props &gt; data &gt; computed &gt; watch &gt; filter &gt; 钩子函数（钩子函数按其执行顺序） &gt; methods</p>
 <h4 id="2-1-8-Vue-Router-规范"><a href="#2-1-8-Vue-Router-规范" class="headerlink" title="2.1.8 Vue Router 规范"></a>2.1.8 Vue Router 规范</h4><h5 id="1-页面跳转数据传递使用路由参数"><a href="#1-页面跳转数据传递使用路由参数" class="headerlink" title="1) 页面跳转数据传递使用路由参数"></a>1) 页面跳转数据传递使用路由参数</h5><p>页面跳转，例如 A 页面跳转到 B 页面，需要将 A 页面的数据传递到 B 页面，推荐使用 路由参数进行传参，而不是将需要传递的数据保存 vuex，然后在 B 页面取出 vuex 的数据，因为如果在 B 页面刷新会导致 vuex 数据丢失，导致 B 页面无法正常显示数据。</p>
 <p>正例：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">let id &#x3D; &#39; 123&#39;;
 this.$router.push(&#123; name: &#39;userCenter&#39;, query: &#123; id: id &#125; &#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h5 id="2-使用路由懒加载（延迟加载）机制"><a href="#2-使用路由懒加载（延迟加载）机制" class="headerlink" title="2) 使用路由懒加载（延迟加载）机制"></a>2) 使用路由懒加载（延迟加载）机制</h5><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#123;
     path: &#39;&#x2F;uploadAttachment&#39;,
     name: &#39;uploadAttachment&#39;,
@@ -1620,6 +2121,7 @@ this.$router.push(&#123; name: &#39;userCenter&#39;, query: &#123; id: id &#125;
     &#125;,
     component: () &#x3D;&gt; import(&#39;@&#x2F;view&#x2F;components&#x2F;uploadAttachment&#x2F;index.vue&#39;)
   &#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-router-中的命名规范"><a href="#3-router-中的命名规范" class="headerlink" title="3) router 中的命名规范"></a>3) router 中的命名规范</h5><p>path、childrenPoints 命名规范采用 <code>kebab-case</code> 命名规范（尽量 Vue 文件的目录结构保持一致，因为目录、文件名都是 <code>kebab-case</code>，这样很方便找到对应的文件）</p>
 <p>name 命名规范采用 <code>KebabCase</code> 命名规范且和 component 组件名保持一致！（因为要保持 keep-alive 特性，keep-alive 按照 component 的 name 进行缓存，所以两者必须高度保持一致）</p>
 <p>JavaScript</p>
@@ -1661,6 +2163,7 @@ export const reload &#x3D; [
     ]
   &#125;
 ];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-router-中的-path-命名规范"><a href="#4-router-中的-path-命名规范" class="headerlink" title="4) router 中的 path 命名规范"></a>4) router 中的 path 命名规范</h5><p>path 除了采用 <code>kebab-case</code> 命名规范以外，必须以 / 开头，即使是 children 里的 path 也要以 / 开头。如下示例</p>
 <p>目的：</p>
 <p>经常有这样的场景：某个页面有问题，要立刻找到这个 vue 文件，如果不用以/开头，path 为 parent 和 children 组成的，可能经常需要在 router 文件里搜索多次才能找到，而如果以 / 开头，则能立刻搜索到对应的组件</p>
@@ -1691,6 +2194,7 @@ export const reload &#x3D; [
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="二-Vue-项目目录规范"><a href="#二-Vue-项目目录规范" class="headerlink" title="(二) Vue 项目目录规范"></a>(二) Vue 项目目录规范</h3><h4 id="2-2-1-基础"><a href="#2-2-1-基础" class="headerlink" title="2.2.1 基础"></a>2.2.1 基础</h4><p>vue 项目中的所有命名一定要与后端命名统一。</p>
 <p>比如权限：后端 privilege, 前端无论 router , store, api 等都必须使用 privielege 单词！</p>
 <h4 id="2-2-2-使用-Vue-cli-脚手架"><a href="#2-2-2-使用-Vue-cli-脚手架" class="headerlink" title="2.2.2 使用 Vue-cli 脚手架"></a>2.2.2 使用 Vue-cli 脚手架</h4><p>使用 vue-cli3 来初始化项目，项目名按照上面的命名规范。</p>
@@ -1726,6 +2230,7 @@ export const reload &#x3D; [
 ├── babel.config.js            &#x2F;&#x2F; babel.config.js
 ├── package.json               &#x2F;&#x2F; package.json
 └── vue.config.js              &#x2F;&#x2F; Vue 项目配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="1-api-目录"><a href="#1-api-目录" class="headerlink" title="1) api 目录"></a>1) api 目录</h5><ul>
 <li>文件、变量命名尽量与后端保持一致。</li>
 <li>此目录对应后端 API 接口，按照后端一个 controller 一个 api js 文件。若项目较大时，可以按照业务划分子目录，并与后端保持一致。</li>
@@ -1738,6 +2243,7 @@ export const reload &#x3D; [
 <pre class="line-numbers language-none"><code class="language-none">&#x2F;employee&#x2F;add
 &#x2F;employee&#x2F;delete&#x2F;&#123;id&#125;
 &#x2F;employee&#x2F;update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>前端： employee.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 添加员工</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">addEmployee</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -1770,6 +2276,7 @@ export const reload &#x3D; [
     method<span class="token operator">:</span> <span class="token string">'post'</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-assets-目录"><a href="#2-assets-目录" class="headerlink" title="2) assets 目录"></a>2) assets 目录</h5><p>assets 为静态资源，里面存放 images, styles, icons 等静态资源，静态资源命名格式为 kebab-case</p>
 <pre class="line-numbers language-none"><code class="language-none">|assets
 |-- icons
@@ -1777,6 +2284,7 @@ export const reload &#x3D; [
 |   |-- background-color.png
 |   |-- upload-header.png
 |-- styles<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-components-目录"><a href="#3-components-目录" class="headerlink" title="3) components 目录"></a>3) components 目录</h5><p>此目录应按照组件进行目录划分，目录命名为 CamelCase，组件命名规则也为 CamelCase</p>
 <pre class="line-numbers language-none"><code class="language-none">|components
 |-- ErrorLog
@@ -1785,12 +2293,14 @@ export const reload &#x3D; [
 |-- MarkdownEditor
 |   |-- index.vue
 |   |-- index.scss<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-constants-目录"><a href="#4-constants-目录" class="headerlink" title="4) constants 目录"></a>4) constants 目录</h5><p>此目录存放项目所有常量，如果常量在 vue 中使用，请使用 vue-enum 插件(<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/vue-enum">https://www.npmjs.com/package/vue-enum</a>)</p>
 <p>目录结构：</p>
 <pre class="line-numbers language-none"><code class="language-none">|constants
 |-- index.js
 |-- role.js
 |-- employee.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>例子： employee.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">EMPLOYEE_STATUS</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token constant">NORMAL</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -1830,6 +2340,7 @@ export const reload &#x3D; [
   <span class="token constant">EMPLOYEE_STATUS</span><span class="token punctuation">,</span>
   <span class="token constant">EMPLOYEE_ACCOUNT_TYPE</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="5-router-与-store-目录"><a href="#5-router-与-store-目录" class="headerlink" title="5) router 与 store 目录"></a>5) router 与 store 目录</h5><p>这两个目录一定要将业务进行拆分，不能放到一个 js 文件里。</p>
 <p>router 尽量按照 views 中的结构保持一致</p>
 <p>store 按照业务进行拆分不同的 js 文件</p>
@@ -1847,6 +2358,7 @@ export const reload &#x3D; [
 |   |-- Employee                         employee模块
 |   |-- BehaviorLog                      行为日志log模块
 |   |-- CodeGenerator                    代码生成器模块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-2-4-注释说明"><a href="#2-2-4-注释说明" class="headerlink" title="2.2.4 注释说明"></a>2.2.4 注释说明</h4><ul>
 <li>在变量名和函数名不足以表达其含义时才需要注释</li>
 <li>公共组件需要注释</li>
@@ -1880,7 +2392,7 @@ export const reload &#x3D; [
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/24/%E4%B8%80%E7%BD%91%E6%89%93%E5%B0%BDthis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1912,7 +2424,7 @@ export const reload &#x3D; [
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -1934,6 +2446,7 @@ export const reload &#x3D; [
 <span class="token punctuation">&#125;</span>
 <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// window</span>
 <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   bar<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
   <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1943,6 +2456,7 @@ export const reload &#x3D; [
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">var</span> fn1 <span class="token operator">=</span> foo<span class="token punctuation">.</span>fn <span class="token comment">// 相当于 window.fn1 = foo.fn</span>
 <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// window undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   bar<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
   <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1951,6 +2465,7 @@ export const reload &#x3D; [
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 foo<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// foo 10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p>结论：在执行函数时，如果函数中的 this 是被上一级的对象所调用，那么 this 指向的就是上一级的对象；否则指向全局环境。</p>
 </blockquote>
@@ -1965,6 +2480,7 @@ foo<span class="token punctuation">.</span><span class="token function">fn</span
 <span class="token punctuation">&#125;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>brother<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 'Mike'</span>
 <span class="token comment">// 在这种嵌套的关系中，this 指向最后调用它的对象，因此输出将会是：Mike。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> o1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   text<span class="token operator">:</span> <span class="token string">'o1'</span><span class="token punctuation">,</span>
   <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1999,6 +2515,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   第三个，在进行 var fn = o1.fn 赋值之后，是「裸奔」调用，因此这里的 this 指向 window，答案当然是 undefined。
   第四个，this 指向最后调用它的对象，在 fn 执行时，挂到 o4 对象上即可，我们提前进行了赋值操作
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="例题组合-3：bind-call-apply-改变-this-指向"><a href="#例题组合-3：bind-call-apply-改变-this-指向" class="headerlink" title="例题组合 3：bind/call/apply 改变 this 指向"></a>例题组合 3：bind/call/apply 改变 this 指向</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 三者使用区别</span>
 <span class="token keyword">const</span> <span class="token function-variable function">printName</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">firstName<span class="token punctuation">,</span> lastName</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// bind</span>
@@ -2007,6 +2524,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">printName</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'Number'</span><span class="token punctuation">,</span> <span class="token string">'Two'</span><span class="token punctuation">)</span>
 <span class="token comment">// apply</span>
 <span class="token function">printName</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'Number'</span><span class="token punctuation">,</span> <span class="token string">'Three'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   name<span class="token operator">:</span> <span class="token string">'lucas'</span><span class="token punctuation">,</span>
   <span class="token function-variable function">logName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -2020,6 +2538,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span><span class="token function">logName</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// mike</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span><span class="token function">logName</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// mike</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span><span class="token function">logName</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// mike</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="例题组合-4：构造函数和-this"><a href="#例题组合-4：构造函数和-this" class="headerlink" title="例题组合 4：构造函数和 this"></a>例题组合 4：构造函数和 this</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> <span class="token string">'Lucas'</span>
 <span class="token punctuation">&#125;</span>
@@ -2037,6 +2556,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   obj.__proto__ = Foo.prototype
   Foo.call(obj)
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>user <span class="token operator">=</span> <span class="token string">'Lucas'</span>
   <span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
@@ -2052,6 +2572,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   结论：如果构造函数中显式返回一个值，且返回的是一个对象，那么 this 就指向这个返回的对象；
   如果返回的不是一个对象，那么 this 仍然指向实例。
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="例题组合-5：箭头函数中的-this-指向"><a href="#例题组合-5：箭头函数中的-this-指向" class="headerlink" title="例题组合 5：箭头函数中的 this 指向"></a>例题组合 5：箭头函数中的 this 指向</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -2073,6 +2594,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   this 出现在 setTimeout() 中的匿名函数里，因此 this 指向 window 对象。
   如果需要 this 指向 foo这个 object 对象，可以巧用箭头函数解决： 
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="最后一道"><a href="#最后一道" class="headerlink" title="最后一道"></a>最后一道</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> bar <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token function-variable function">f1</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
@@ -2107,6 +2629,7 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
 <span class="token function">f3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// window</span>
 <span class="token keyword">const</span> f4 <span class="token operator">=</span> bar<span class="token punctuation">.</span>f4
 <span class="token function">f4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// window</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       
     </div>
 
@@ -2131,7 +2654,7 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/Learning-The-Shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2163,7 +2686,7 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -2386,7 +2909,9 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
 <p>这里有一个实用的提示：每当你使用带有通配符的<code>rm</code>命令之前（除了仔细检查你的输入！），先用<code>ls</code>测试通配符。 这会让你看到即将被删除的文件。 然后按向上箭头调用该命令并用<code>rm</code>替换<code>ls</code>。</p>
 </blockquote>
 <h3 id="ln-Create-Links"><a href="#ln-Create-Links" class="headerlink" title="ln - Create Links"></a>ln - Create Links</h3><h4 id="Hard-Links"><a href="#Hard-Links" class="headerlink" title="Hard Links"></a>Hard Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token function">file</span> <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="Symbolic-Links"><a href="#Symbolic-Links" class="headerlink" title="Symbolic Links"></a>Symbolic Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s item <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><div class="mermaid">
 graph LR
 A[hard link]
@@ -2516,6 +3041,7 @@ yum is /usr/bin/yum
 <span class="token builtin class-name">type</span> is a shell <span class="token builtin class-name">builtin</span>
 <span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># type ll</span>
 ll is aliased to `ls -l --color<span class="token operator">=</span>auto'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="which-显示可执行文件的位置"><a href="#which-显示可执行文件的位置" class="headerlink" title="which - 显示可执行文件的位置"></a>which - 显示可执行文件的位置</h4><p>有时，系统上安装了多个版本的可执行程序。 虽然这在桌面系统上并不常见，但在较大的服务器上并不罕见。 要确定给定可执行文件的确切位置，请使用which命令。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which yum</span>
 /usr/bin/yum
@@ -2524,6 +3050,7 @@ ll is aliased to `ls -l --color<span class="token operator">=</span>auto'<span a
 <span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which ll</span>
 <span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -l --color=auto'</span>
 	/usr/bin/ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="获取命令文档"><a href="#获取命令文档" class="headerlink" title="获取命令文档"></a>获取命令文档</h3><h4 id="help-显示内置-shell-的帮助信息"><a href="#help-显示内置-shell-的帮助信息" class="headerlink" title="help - 显示内置 shell 的帮助信息"></a>help - 显示内置 shell 的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># help cd</span>
 cd: <span class="token builtin class-name">cd</span> <span class="token punctuation">[</span>-L<span class="token operator">|</span><span class="token punctuation">[</span>-P <span class="token punctuation">[</span>-e<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
     Change the shell working directory.
@@ -2552,6 +3079,7 @@ cd: <span class="token builtin class-name">cd</span> <span class="token punctuat
     Exit Status:
     Returns <span class="token number">0</span> <span class="token keyword">if</span> the directory is changed, and <span class="token keyword">if</span> <span class="token environment constant">$PWD</span> is <span class="token builtin class-name">set</span> successfully when
     -P is used<span class="token punctuation">;</span> non-zero otherwise.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="–help-显示可执行程序的帮助信息"><a href="#–help-显示可执行程序的帮助信息" class="headerlink" title="–help  - 显示可执行程序的帮助信息"></a>–help  - 显示可执行程序的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># mkdir --help</span>
 Usage: <span class="token function">mkdir</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. DIRECTORY<span class="token punctuation">..</span>.
 Create the DIRECTORY<span class="token punctuation">(</span>ies<span class="token punctuation">)</span>, <span class="token keyword">if</span> they <span class="token keyword">do</span> not already exist.
@@ -2570,6 +3098,7 @@ Mandatory arguments to long options are mandatory <span class="token keyword">fo
 GNU coreutils online help: <span class="token operator">&lt;</span>http://www.gnu.org/software/coreutils/<span class="token operator">></span>
 For complete documentation, run: info coreutils <span class="token string">'mkdir invocation'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="man-在线参考手册界面"><a href="#man-在线参考手册界面" class="headerlink" title="man - 在线参考手册界面"></a>man - 在线参考手册界面</h4><h4 id="apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）"><a href="#apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）" class="headerlink" title="apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）"></a>apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># apropos partition</span>
 addpart <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>          - simple wrapper around the <span class="token string">"add partition"</span> ioctl
 <span class="token function">cfdisk</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - display or manipulate disk partition table
@@ -2585,12 +3114,14 @@ resizepart <span class="token punctuation">(</span><span class="token number">8<
 sfdisk <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - partition table manipulator <span class="token keyword">for</span> Linux
 systemd-efi-boot-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically mounting the EFI System Partition used by the current boot to /boot
 systemd-gpt-auto-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically discovering and mounting root, /home and /srv partitions, as well as discover<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="whatis-一行描述手册页"><a href="#whatis-一行描述手册页" class="headerlink" title="whatis - 一行描述手册页"></a>whatis - 一行描述手册页</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis ls</span>
 <span class="token function">ls</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>               - list directory contents
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis yum</span>
 yum <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>              - Yellowdog Updater Modified
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis type</span>
 <span class="token builtin class-name">type</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>             - <span class="token function">bash</span> built-in commands, see bash<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="使用-alias-创建自己的命令"><a href="#使用-alias-创建自己的命令" class="headerlink" title="使用 alias 创建自己的命令"></a>使用 <code>alias</code> 创建自己的命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># alias la='ls -la'</span>
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># la</span>
 total <span class="token number">104</span>
@@ -2612,6 +3143,7 @@ drwx------   <span class="token number">2</span> root root <span class="token nu
 drwxr-xr-x   <span class="token number">6</span> root root <span class="token number">4096</span> Aug <span class="token number">26</span> <span class="token number">15</span>:15 .vim
 -rw-------   <span class="token number">1</span> root root <span class="token number">5324</span> Aug <span class="token number">29</span> <span class="token number">17</span>:38 .viminfo
 -rw-------   <span class="token number">1</span> root root <span class="token number">5121</span> Aug <span class="token number">26</span> <span class="token number">23</span>:19 .viminfo.tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="06-Redirection-重定向"><a href="#06-Redirection-重定向" class="headerlink" title="06 - Redirection 重定向"></a>06 - Redirection 重定向</h2><table>
 <thead>
 <tr>
@@ -2669,9 +3201,11 @@ drwxr-xr-x   <span class="token number">6</span> root root <span class="token nu
 <p>如果我们使用<code>ls</code>这样的命令，我们可以在屏幕上看到它显示的结果和错误消息。<br>保持<code>Unix</code>主题“一切都是文件”，像<code>ls</code>这样的程序实际上是将结果发送到一个名为标准输出（通常表示为<code>stdout</code>）的特殊文件，并将其状态消息发送到另一个名为标准错误（<code>stderr</code>）的文件。 默认情况下，标准输出和标准错误都会链接到屏幕上，而不是保存到磁盘文件中。<br>此外，许多程序从名为标准输入（stdin）的工具获取输入，默认情况下，该工具连接到键盘。<br>I / O重定向允许我们改变输出的位置和输入的来源。 通常，输出从屏幕上显示而输入则来自于键盘，但是通过I / O重定向，我们可以改变它。</p>
 <h3 id="Redirecting-Standard-Output-重定向标准输出"><a href="#Redirecting-Standard-Output-重定向标准输出" class="headerlink" title="Redirecting Standard Output 重定向标准输出"></a>Redirecting Standard Output 重定向标准输出</h3><p>把<code>ls -l /usr/bin</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件</p>
 <pre class="line-numbers language-none"><code class="language-none">ls -l &#x2F;usr&#x2F;bin &gt; ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>当你想把<code>ls -l /bin/usr</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件时，你会发现并不可行，因为<code>ls</code>这个命令不会把它的错误信息通过标准输出的方式进行输出</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ls -l /bin/usr > ls-output.txt</span>
 ls: cannot access /bin/usr: No such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <table>
 <thead>
 <tr>
@@ -2720,32 +3254,40 @@ ls: cannot access /bin/usr: No such <span class="token function">file</span> or 
 </tbody></table>
 <p>重定向标准错误到文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> ls-error.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>重定向标准输出和标准错误到同一个文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator">></span> ls-output.txt <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token comment"># 或者</span>
 <span class="token function">ls</span> -l /bin/usr <span class="token operator">&amp;></span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>处理不需要的输出</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> /dev/null<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki//dev/null">关于/dev/null的趣闻</a></p>
 </blockquote>
 <h3 id="Redirecting-Standard-Input-重定向标准输入"><a href="#Redirecting-Standard-Input-重定向标准输入" class="headerlink" title="Redirecting Standard Input 重定向标准输入"></a>Redirecting Standard Input 重定向标准输入</h3><h4 id="cat-合并输出文件"><a href="#cat-合并输出文件" class="headerlink" title="cat - 合并输出文件"></a>cat - 合并输出文件</h4><p>显示内容不多的文本文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>合并文件，比如我们有 <code>movie.mpeg.001 movie.mpeg.002 ... movie.mpeg.099</code> 这些文件，使用如下命令就可以合并成一个文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> movie.mpeg.0* <span class="token operator">></span> movie.mpeg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>只输入<code>cat</code>就变成了输入什么输出什么的交互命令行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># cat</span>
 hello world
 hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>利用这个特性可以用<code>cat</code>创建内容不多的文本文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat > little.txt</span>
 this is a little.txt <span class="token comment"># 输入文件内容</span>
 <span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat little.txt </span>
 this is a little.txt <span class="token comment"># 打印文件内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用<code>&lt;</code> 重定向操作符，我们将标准输入源从键盘更改为<code>little.txt</code> 文件。</p>
 <p>我们可以看到结果与<code>cat little.txt</code>这种传递单个文件名参数的结果相同</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat &lt; little.txt </span>
 this is the little.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="Pipelines-管道操作符"><a href="#Pipelines-管道操作符" class="headerlink" title="Pipelines 管道操作符"></a>Pipelines 管道操作符</h3><p>管道运算符<code>|</code> 可以把一个命令的标准输出传递到另一命令的标准输入</p>
 <div class="mermaid">
 graph TD
@@ -2763,13 +3305,16 @@ A --管道运算符--&gt; B
 
 <p>举个栗子 通过管道运算符 我们可以把 <code>/</code>的目录信息通过<code>less</code>命令打印出来</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ll / | less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>管道通常用于对数据执行复杂的操作。 可以将几个命令放到管道中。 通常，以这种方式使用的命令称为过滤器。 过滤器接受输入，以某种方式对其进行更改，然后输出。 我们将尝试的第一个是<code>sort</code>。 想象我们想在<code>/bin</code>和<code>/usr/bin</code>中列出所有可执行程序的组合列表，将它们按排序顺序放置，然后查看结果列表。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /bin /usr/bin/ <span class="token operator">|</span> <span class="token function">sort</span> <span class="token operator">|</span> <span class="token function">less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <blockquote>
 <p><code>&gt;</code>与 <code>|</code>的区别</p>
 <p>简单来讲，重定向操作符<code>&gt;</code>将命令与文件连接，而管道操作符<code>|</code>将一个命令的输出与第二个命令的输入连接。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">command1 <span class="token operator">></span> file1
 command1 <span class="token operator">|</span> command2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -2804,7 +3349,6 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
 <td>从Stdin读取并输出到Stdout和文件</td>
 </tr>
 </tbody></table>
-</blockquote>
 <h2 id="07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题"><a href="#07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题" class="headerlink" title="07 - Seeing the World as the Shell Sees it 用脚本解决问题"></a>07 - Seeing the World as the Shell Sees it 用脚本解决问题</h2><h2 id="08-Advanced-Keyboard-Tricks-高级键盘技巧"><a href="#08-Advanced-Keyboard-Tricks-高级键盘技巧" class="headerlink" title="08 - Advanced Keyboard Tricks 高级键盘技巧"></a>08 - Advanced Keyboard Tricks 高级键盘技巧</h2><h2 id="09-Permissions-权限"><a href="#09-Permissions-权限" class="headerlink" title="09 - Permissions 权限"></a>09 - Permissions 权限</h2><h2 id="10-Processes-进程"><a href="#10-Processes-进程" class="headerlink" title="10 -  Processes 进程"></a>10 -  Processes 进程</h2><h2 id="11-The-Environment-环境"><a href="#11-The-Environment-环境" class="headerlink" title="11 - The Environment 环境"></a>11 - The Environment 环境</h2><h2 id="12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍"><a href="#12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍" class="headerlink" title="12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍"></a>12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍</h2><h2 id="13-Customizing-the-Prompt-自定义提示"><a href="#13-Customizing-the-Prompt-自定义提示" class="headerlink" title="13 - Customizing the Prompt 自定义提示"></a>13 - Customizing the Prompt 自定义提示</h2>
       
     </div>
@@ -2830,7 +3374,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/07/%E4%BD%BF%E7%94%A8nvm%E7%AE%A1%E7%90%86Node-js%E7%89%88%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2862,7 +3406,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -2882,12 +3426,16 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
 path: D:\Program Files\nodejs
 node_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;
 npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装想要使用的 Node.js 版本</p>
 <pre class="line-numbers language-none"><code class="language-none">nvm install &lt;version&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>查看已安装的 Node.js 版本</p>
 <pre class="line-numbers language-none"><code class="language-none">nvm list [available]  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>使用已经安装的 Node.js 版本</p>
 <pre class="line-numbers language-none"><code class="language-none">nvm use [version]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
       
     </div>
@@ -2913,7 +3461,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/26/%E8%AF%95%E8%AF%95%20Proxy%20%E5%92%8C%20Reflect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2945,7 +3493,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -2987,6 +3535,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
     b<span class="token operator">:</span> <span class="token number">2</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用<code>Proxy</code>封装一个可设置类型的数组<code>TypeArray</code>，并且对数组中不存在的值返回默认值</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> TypeArray <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">'N/A'</span><span class="token punctuation">,</span> initArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>initArray<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
@@ -3007,6 +3556,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
 <span class="token keyword">const</span> numArr <span class="token operator">=</span> <span class="token function">TypeArray</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">)</span>
 numArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment">// Proxy 代理数组 数组本身的方法属性不会被破坏</span>
 numArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span> <span class="token comment">// Uncaught TypeError: 'set' on proxy: trap returned falsish for property '2' at Proxy.push (&lt;anonymous>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用 <code>has</code>方法捕获<code>in</code>操作符</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> checkRange <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>
   <span class="token punctuation">&#123;</span>
@@ -3022,6 +3572,7 @@ numArr<span class="token punctuation">.</span><span class="token function">push<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">50</span> <span class="token keyword">in</span> checkRange<span class="token punctuation">)</span>	<span class="token comment">// false</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">150</span> <span class="token keyword">in</span> checkRange<span class="token punctuation">)</span>	<span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用<code>ownKeys</code>拦截 <code>Reflect.ownKeys()</code>也可以拦截 <code>Object.keys() ; for in Loop ; Object.getOwnPropertySymbols()</code> 中的部分的 key </p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   attr<span class="token operator">:</span> <span class="token string">'attr'</span><span class="token punctuation">,</span>
@@ -3055,6 +3606,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token comment">// attr</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>来个综合案例</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> userInfo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   name<span class="token operator">:</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span>
@@ -3090,6 +3642,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>key<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用 <code>apply</code>拦截函数的调用（包装函数）</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> b
@@ -3102,6 +3655,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 <span class="token function">sumText</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
       
     </div>
@@ -3127,7 +3681,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/25/%E5%A4%8D%E4%B9%A0%E4%B8%80%E4%B8%8BGenerator%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3159,7 +3713,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -3189,6 +3743,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   3> g.next() 返回的 value 是 x + y + z => 1 + NaN + NaN => NaN
 */</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>如何让以上代码执行的更符合一般的逻辑<code>y = (1 + 5) * 2 ; z = y / 4</code>，最后返回 16</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">addGen</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">yield</span> x <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span>
@@ -3201,6 +3756,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> v2 <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>v1<span class="token punctuation">)</span><span class="token punctuation">.</span>value
 <span class="token keyword">let</span> v3 <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>v2<span class="token punctuation">)</span><span class="token punctuation">.</span>value
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>再来个实例，以 “敲七” 这个游戏为例，从零开始获取每一个符合 “敲七” 的数字</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">count7Gen</span><span class="token punctuation">(</span><span class="token parameter">count <span class="token operator">=</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -3218,6 +3774,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c7g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// &#123;value: 17, done: false&#125;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c7g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// &#123;value: 21, done: false&#125;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c7g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// &#123;value: 27, done: false&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p><code>count7Gen</code>这个函数本身是一个死循环，但是 <code>Generator</code>这种模式使其能在特定的节点停止或继续</p>
 </blockquote>
@@ -3238,6 +3795,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 
 
@@ -3306,7 +3864,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -3316,7 +3874,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,

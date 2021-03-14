@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +16,11 @@
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="01 - What Is the shell 什么是脚本   命令 EN ZH    date Displays the current time and date. 显示当前日期   cal Displays a calendar of thecurrent month. 显示日历   df Disk free 剩余磁盘   free Display the amount of free mem">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="01 - What Is the shell 什么是脚本   命令 EN ZH    date Displays the current time and date. 显示当前日期   cal Displays a calendar of thecurrent month. 显示日历   df Disk free 剩余磁盘   free Display the amount of free mem">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-11T23:48:21.000Z">
-<meta property="article:modified_time" content="2021-03-01T17:36:28.289Z">
+<meta property="article:modified_time" content="2021-03-14T16:47:04.424Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -253,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -476,7 +476,9 @@
 <p>这里有一个实用的提示：每当你使用带有通配符的<code>rm</code>命令之前（除了仔细检查你的输入！），先用<code>ls</code>测试通配符。 这会让你看到即将被删除的文件。 然后按向上箭头调用该命令并用<code>rm</code>替换<code>ls</code>。</p>
 </blockquote>
 <h3 id="ln-Create-Links"><a href="#ln-Create-Links" class="headerlink" title="ln - Create Links"></a>ln - Create Links</h3><h4 id="Hard-Links"><a href="#Hard-Links" class="headerlink" title="Hard Links"></a>Hard Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token function">file</span> <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="Symbolic-Links"><a href="#Symbolic-Links" class="headerlink" title="Symbolic Links"></a>Symbolic Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s item <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><div class="mermaid">
 graph LR
 A[hard link]
@@ -606,6 +608,7 @@ yum is /usr/bin/yum
 <span class="token builtin class-name">type</span> is a shell <span class="token builtin class-name">builtin</span>
 <span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># type ll</span>
 ll is aliased to `ls -l --color<span class="token operator">=</span>auto'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="which-显示可执行文件的位置"><a href="#which-显示可执行文件的位置" class="headerlink" title="which - 显示可执行文件的位置"></a>which - 显示可执行文件的位置</h4><p>有时，系统上安装了多个版本的可执行程序。 虽然这在桌面系统上并不常见，但在较大的服务器上并不罕见。 要确定给定可执行文件的确切位置，请使用which命令。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which yum</span>
 /usr/bin/yum
@@ -614,6 +617,7 @@ ll is aliased to `ls -l --color<span class="token operator">=</span>auto'<span a
 <span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which ll</span>
 <span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -l --color=auto'</span>
 	/usr/bin/ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="获取命令文档"><a href="#获取命令文档" class="headerlink" title="获取命令文档"></a>获取命令文档</h3><h4 id="help-显示内置-shell-的帮助信息"><a href="#help-显示内置-shell-的帮助信息" class="headerlink" title="help - 显示内置 shell 的帮助信息"></a>help - 显示内置 shell 的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># help cd</span>
 cd: <span class="token builtin class-name">cd</span> <span class="token punctuation">[</span>-L<span class="token operator">|</span><span class="token punctuation">[</span>-P <span class="token punctuation">[</span>-e<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
     Change the shell working directory.
@@ -642,6 +646,7 @@ cd: <span class="token builtin class-name">cd</span> <span class="token punctuat
     Exit Status:
     Returns <span class="token number">0</span> <span class="token keyword">if</span> the directory is changed, and <span class="token keyword">if</span> <span class="token environment constant">$PWD</span> is <span class="token builtin class-name">set</span> successfully when
     -P is used<span class="token punctuation">;</span> non-zero otherwise.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="–help-显示可执行程序的帮助信息"><a href="#–help-显示可执行程序的帮助信息" class="headerlink" title="–help  - 显示可执行程序的帮助信息"></a>–help  - 显示可执行程序的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># mkdir --help</span>
 Usage: <span class="token function">mkdir</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. DIRECTORY<span class="token punctuation">..</span>.
 Create the DIRECTORY<span class="token punctuation">(</span>ies<span class="token punctuation">)</span>, <span class="token keyword">if</span> they <span class="token keyword">do</span> not already exist.
@@ -660,6 +665,7 @@ Mandatory arguments to long options are mandatory <span class="token keyword">fo
 GNU coreutils online help: <span class="token operator">&lt;</span>http://www.gnu.org/software/coreutils/<span class="token operator">></span>
 For complete documentation, run: info coreutils <span class="token string">'mkdir invocation'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="man-在线参考手册界面"><a href="#man-在线参考手册界面" class="headerlink" title="man - 在线参考手册界面"></a>man - 在线参考手册界面</h4><h4 id="apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）"><a href="#apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）" class="headerlink" title="apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）"></a>apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># apropos partition</span>
 addpart <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>          - simple wrapper around the <span class="token string">"add partition"</span> ioctl
 <span class="token function">cfdisk</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - display or manipulate disk partition table
@@ -675,12 +681,14 @@ resizepart <span class="token punctuation">(</span><span class="token number">8<
 sfdisk <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - partition table manipulator <span class="token keyword">for</span> Linux
 systemd-efi-boot-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically mounting the EFI System Partition used by the current boot to /boot
 systemd-gpt-auto-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically discovering and mounting root, /home and /srv partitions, as well as discover<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="whatis-一行描述手册页"><a href="#whatis-一行描述手册页" class="headerlink" title="whatis - 一行描述手册页"></a>whatis - 一行描述手册页</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis ls</span>
 <span class="token function">ls</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>               - list directory contents
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis yum</span>
 yum <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>              - Yellowdog Updater Modified
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis type</span>
 <span class="token builtin class-name">type</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>             - <span class="token function">bash</span> built-in commands, see bash<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="使用-alias-创建自己的命令"><a href="#使用-alias-创建自己的命令" class="headerlink" title="使用 alias 创建自己的命令"></a>使用 <code>alias</code> 创建自己的命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># alias la='ls -la'</span>
 <span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># la</span>
 total <span class="token number">104</span>
@@ -702,6 +710,7 @@ drwx------   <span class="token number">2</span> root root <span class="token nu
 drwxr-xr-x   <span class="token number">6</span> root root <span class="token number">4096</span> Aug <span class="token number">26</span> <span class="token number">15</span>:15 .vim
 -rw-------   <span class="token number">1</span> root root <span class="token number">5324</span> Aug <span class="token number">29</span> <span class="token number">17</span>:38 .viminfo
 -rw-------   <span class="token number">1</span> root root <span class="token number">5121</span> Aug <span class="token number">26</span> <span class="token number">23</span>:19 .viminfo.tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="06-Redirection-重定向"><a href="#06-Redirection-重定向" class="headerlink" title="06 - Redirection 重定向"></a>06 - Redirection 重定向</h2><table>
 <thead>
 <tr>
@@ -759,9 +768,11 @@ drwxr-xr-x   <span class="token number">6</span> root root <span class="token nu
 <p>如果我们使用<code>ls</code>这样的命令，我们可以在屏幕上看到它显示的结果和错误消息。<br>保持<code>Unix</code>主题“一切都是文件”，像<code>ls</code>这样的程序实际上是将结果发送到一个名为标准输出（通常表示为<code>stdout</code>）的特殊文件，并将其状态消息发送到另一个名为标准错误（<code>stderr</code>）的文件。 默认情况下，标准输出和标准错误都会链接到屏幕上，而不是保存到磁盘文件中。<br>此外，许多程序从名为标准输入（stdin）的工具获取输入，默认情况下，该工具连接到键盘。<br>I / O重定向允许我们改变输出的位置和输入的来源。 通常，输出从屏幕上显示而输入则来自于键盘，但是通过I / O重定向，我们可以改变它。</p>
 <h3 id="Redirecting-Standard-Output-重定向标准输出"><a href="#Redirecting-Standard-Output-重定向标准输出" class="headerlink" title="Redirecting Standard Output 重定向标准输出"></a>Redirecting Standard Output 重定向标准输出</h3><p>把<code>ls -l /usr/bin</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件</p>
 <pre class="line-numbers language-none"><code class="language-none">ls -l &#x2F;usr&#x2F;bin &gt; ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>当你想把<code>ls -l /bin/usr</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件时，你会发现并不可行，因为<code>ls</code>这个命令不会把它的错误信息通过标准输出的方式进行输出</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ls -l /bin/usr > ls-output.txt</span>
 ls: cannot access /bin/usr: No such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <table>
 <thead>
 <tr>
@@ -810,32 +821,40 @@ ls: cannot access /bin/usr: No such <span class="token function">file</span> or 
 </tbody></table>
 <p>重定向标准错误到文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> ls-error.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>重定向标准输出和标准错误到同一个文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator">></span> ls-output.txt <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token comment"># 或者</span>
 <span class="token function">ls</span> -l /bin/usr <span class="token operator">&amp;></span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>处理不需要的输出</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> /dev/null<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki//dev/null">关于/dev/null的趣闻</a></p>
 </blockquote>
 <h3 id="Redirecting-Standard-Input-重定向标准输入"><a href="#Redirecting-Standard-Input-重定向标准输入" class="headerlink" title="Redirecting Standard Input 重定向标准输入"></a>Redirecting Standard Input 重定向标准输入</h3><h4 id="cat-合并输出文件"><a href="#cat-合并输出文件" class="headerlink" title="cat - 合并输出文件"></a>cat - 合并输出文件</h4><p>显示内容不多的文本文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>合并文件，比如我们有 <code>movie.mpeg.001 movie.mpeg.002 ... movie.mpeg.099</code> 这些文件，使用如下命令就可以合并成一个文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> movie.mpeg.0* <span class="token operator">></span> movie.mpeg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>只输入<code>cat</code>就变成了输入什么输出什么的交互命令行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># cat</span>
 hello world
 hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>利用这个特性可以用<code>cat</code>创建内容不多的文本文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat > little.txt</span>
 this is a little.txt <span class="token comment"># 输入文件内容</span>
 <span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat little.txt </span>
 this is a little.txt <span class="token comment"># 打印文件内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>使用<code>&lt;</code> 重定向操作符，我们将标准输入源从键盘更改为<code>little.txt</code> 文件。</p>
 <p>我们可以看到结果与<code>cat little.txt</code>这种传递单个文件名参数的结果相同</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat &lt; little.txt </span>
 this is the little.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="Pipelines-管道操作符"><a href="#Pipelines-管道操作符" class="headerlink" title="Pipelines 管道操作符"></a>Pipelines 管道操作符</h3><p>管道运算符<code>|</code> 可以把一个命令的标准输出传递到另一命令的标准输入</p>
 <div class="mermaid">
 graph TD
@@ -853,13 +872,16 @@ A --管道运算符--&gt; B
 
 <p>举个栗子 通过管道运算符 我们可以把 <code>/</code>的目录信息通过<code>less</code>命令打印出来</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ll / | less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>管道通常用于对数据执行复杂的操作。 可以将几个命令放到管道中。 通常，以这种方式使用的命令称为过滤器。 过滤器接受输入，以某种方式对其进行更改，然后输出。 我们将尝试的第一个是<code>sort</code>。 想象我们想在<code>/bin</code>和<code>/usr/bin</code>中列出所有可执行程序的组合列表，将它们按排序顺序放置，然后查看结果列表。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /bin /usr/bin/ <span class="token operator">|</span> <span class="token function">sort</span> <span class="token operator">|</span> <span class="token function">less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <blockquote>
 <p><code>&gt;</code>与 <code>|</code>的区别</p>
 <p>简单来讲，重定向操作符<code>&gt;</code>将命令与文件连接，而管道操作符<code>|</code>将一个命令的输出与第二个命令的输入连接。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">command1 <span class="token operator">></span> file1
 command1 <span class="token operator">|</span> command2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -894,7 +916,6 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
 <td>从Stdin读取并输出到Stdout和文件</td>
 </tr>
 </tbody></table>
-</blockquote>
 <h2 id="07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题"><a href="#07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题" class="headerlink" title="07 - Seeing the World as the Shell Sees it 用脚本解决问题"></a>07 - Seeing the World as the Shell Sees it 用脚本解决问题</h2><h2 id="08-Advanced-Keyboard-Tricks-高级键盘技巧"><a href="#08-Advanced-Keyboard-Tricks-高级键盘技巧" class="headerlink" title="08 - Advanced Keyboard Tricks 高级键盘技巧"></a>08 - Advanced Keyboard Tricks 高级键盘技巧</h2><h2 id="09-Permissions-权限"><a href="#09-Permissions-权限" class="headerlink" title="09 - Permissions 权限"></a>09 - Permissions 权限</h2><h2 id="10-Processes-进程"><a href="#10-Processes-进程" class="headerlink" title="10 -  Processes 进程"></a>10 -  Processes 进程</h2><h2 id="11-The-Environment-环境"><a href="#11-The-Environment-环境" class="headerlink" title="11 - The Environment 环境"></a>11 - The Environment 环境</h2><h2 id="12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍"><a href="#12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍" class="headerlink" title="12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍"></a>12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍</h2><h2 id="13-Customizing-the-Prompt-自定义提示"><a href="#13-Customizing-the-Prompt-自定义提示" class="headerlink" title="13 - Customizing the Prompt 自定义提示"></a>13 - Customizing the Prompt 自定义提示</h2>
     </div>
 
@@ -974,7 +995,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -984,7 +1005,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
 
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,

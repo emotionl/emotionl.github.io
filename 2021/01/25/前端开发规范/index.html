@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +16,11 @@
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 <meta name="description" content="此规范基于 阿里前端开发规范 | Tim 并结合实际项目进行部分修改  一、编程规约(一) 命名规范1.1.1 项目命名全部采用小写方式， 以中划线分隔。 正例：mall-management-system 反例：mall_management-system &#x2F; mallManagementSystem 1.1.2 目录命名全部采用小写方式， 以中划线分隔，有复数结构时，要采用复数命名法， 缩写">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="此规范基于 阿里前端开发规范 | Tim 并结合实际项目进行部分修改  一、编程规约(一) 命名规范1.1.1 项目命名全部采用小写方式， 以中划线分隔。 正例：mall-management-system 反例：mall_management-system &#x2F; mallManagementSystem 1.1.2 目录命名全部采用小写方式， 以中划线分隔，有复数结构时，要采用复数命名法， 缩写">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-25T10:31:16.000Z">
-<meta property="article:modified_time" content="2021-03-01T17:36:28.289Z">
+<meta property="article:modified_time" content="2021-03-14T16:47:04.424Z">
 <meta property="article:author" content="ZV">
 <meta property="article:tag" content="规范">
 <meta name="twitter:card" content="summary">
@@ -253,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-01 17:36:28" itemprop="dateModified" datetime="2021-03-01T17:36:28+00:00">2021-03-01</time>
+        <time title="修改时间：2021-03-14 16:47:04" itemprop="dateModified" datetime="2021-03-14T16:47:04+00:00">2021-03-14</time>
       </span>
 
   
@@ -304,6 +304,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/company-logo.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Company<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-2-2-缩进"><a href="#1-2-2-缩进" class="headerlink" title="1.2.2 缩进"></a>1.2.2 缩进</h4><p>缩进使用 2 个空格（一个 tab）</p>
 <p>嵌套的节点应该缩进。</p>
 <h4 id="1-2-3-分块注释"><a href="#1-2-3-分块注释" class="headerlink" title="1.2.3 分块注释"></a>1.2.3 分块注释</h4><p>在每一个块状元素，列表元素和表格元素后，加上一对 HTML 注释。注释格式</p>
@@ -320,14 +321,17 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
   <span class="token comment">&lt;!-- header 头部 end --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="1-2-4-语义化标签"><a href="#1-2-4-语义化标签" class="headerlink" title="1.2.4 语义化标签"></a>1.2.4 语义化标签</h3><p>HTML5 中新增很多语义化标签，所以优先使用语义化标签，避免一个页面都是 div 或者 p 标签</p>
 <p>正例</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-2-5-引号"><a href="#1-2-5-引号" class="headerlink" title="1.2.5 引号"></a>1.2.5 引号</h4><p>使用双引号(“ “) 而不是单引号(‘ ‘) 。</p>
 <h3 id="三-CSS-规范"><a href="#三-CSS-规范" class="headerlink" title="(三) CSS 规范"></a>(三) CSS 规范</h3><h4 id="1-3-1-命名"><a href="#1-3-1-命名" class="headerlink" title="1.3.1 命名"></a>1.3.1 命名</h4><ul>
 <li>类名使用小写字母，以中划线分隔</li>
@@ -343,6 +347,7 @@
 <span class="token selector">.red</span> <span class="token punctuation">&#123;</span>
   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐:</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.heavy</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-weight</span><span class="token punctuation">:</span> 800<span class="token punctuation">;</span>
@@ -351,6 +356,7 @@
 <span class="token selector">.important</span> <span class="token punctuation">&#123;</span>
   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-2-选择器"><a href="#1-3-2-选择器" class="headerlink" title="1.3.2 选择器"></a>1.3.2 选择器</h4><ol>
 <li><p>CSS 选择器中避免使用标签名<br>从结构、表现、行为分离的原则来看，应该尽量避免 CSS 中出现 HTML 标签，并且在 CSS 选择器中出现标签名会存在潜在的问题。</p>
 </li>
@@ -361,10 +367,12 @@
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.content .title</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐:</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.content > .title</span> <span class="token punctuation">&#123;</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-3-尽量使用缩写属性"><a href="#1-3-3-尽量使用缩写属性" class="headerlink" title="1.3.3 尽量使用缩写属性"></a>1.3.3 尽量使用缩写属性</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">border-top-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token property">font-family</span><span class="token punctuation">:</span> palatino<span class="token punctuation">,</span> georgia<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
@@ -374,10 +382,12 @@
 <span class="token property">padding-left</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
 <span class="token property">padding-right</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
 <span class="token property">padding-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">border-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token property">font</span><span class="token punctuation">:</span> 100%/1.6 palatino<span class="token punctuation">,</span> georgia<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
 <span class="token property">padding</span><span class="token punctuation">:</span> 0 1em 2em<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-4-每个选择器及属性独占一行"><a href="#1-3-4-每个选择器及属性独占一行" class="headerlink" title="1.3.4 每个选择器及属性独占一行"></a>1.3.4 每个选择器及属性独占一行</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">button</span> <span class="token punctuation">&#123;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
@@ -385,6 +395,7 @@
   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> #00a0e9<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">button</span> <span class="token punctuation">&#123;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
@@ -392,26 +403,31 @@
   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> #00a0e9<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-5-省略-0-后面的单位"><a href="#1-3-5-省略-0-后面的单位" class="headerlink" title="1.3.5 省略 0 后面的单位"></a>1.3.5 省略 0 后面的单位</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0em<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-3-6-避免使用-ID-选择器及全局标签选择器防止污染全局样式"><a href="#1-3-6-避免使用-ID-选择器及全局标签选择器防止污染全局样式" class="headerlink" title="1.3.6 避免使用 ID 选择器及全局标签选择器防止污染全局样式"></a>1.3.6 避免使用 ID 选择器及全局标签选择器防止污染全局样式</h4><p>不推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.header</span> <span class="token punctuation">&#123;</span>
   <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="四-SCSS-规范"><a href="#四-SCSS-规范" class="headerlink" title="(四) SCSS 规范"></a>(四) SCSS 规范</h3><h4 id="1-4-1-代码组织"><a href="#1-4-1-代码组织" class="headerlink" title="1.4.1 代码组织"></a>1.4.1 代码组织</h4><h5 id="1-将公共-scss-文件放置在-src-assets-styles-文件夹"><a href="#1-将公共-scss-文件放置在-src-assets-styles-文件夹" class="headerlink" title="1) 将公共 scss 文件放置在 src/assets/styles 文件夹"></a>1) 将公共 scss 文件放置在 src/assets/styles 文件夹</h5><p>例：<code>variables.scss / mixin.scss</code></p>
 <h5 id="2-按以下顺序组织"><a href="#2-按以下顺序组织" class="headerlink" title="2) 按以下顺序组织"></a>2) 按以下顺序组织</h5><ol>
 <li>@import</li>
@@ -426,6 +442,7 @@
   <span class="token property">width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-4-2-避免嵌套层级过多"><a href="#1-4-2-避免嵌套层级过多" class="headerlink" title="1.4.2 避免嵌套层级过多"></a>1.4.2 避免嵌套层级过多</h4><p>将嵌套深度限制在 3 级。对于超过 4 级的嵌套，给予重新评估。这可以避免出现过于详实的 CSS 选择器。<br>避免大量的嵌套规则。当可读性受到影响时，将之打断。推荐避免出现多于 20 行的嵌套规则出现</p>
 <p>不推荐：</p>
 <pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.main </span><span class="token punctuation">&#123;</span>
@@ -435,12 +452,14 @@
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>推荐：</p>
 <pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.main-title </span><span class="token punctuation">&#123;</span>
   <span class="token selector">.name </span><span class="token punctuation">&#123;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="五-Javascript-规范"><a href="#五-Javascript-规范" class="headerlink" title="(五) Javascript 规范"></a>(五) Javascript 规范</h3><h4 id="1-5-1-命名"><a href="#1-5-1-命名" class="headerlink" title="1.5.1 命名"></a>1.5.1 命名</h4><h5 id="1-采用小写驼峰命名-lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束"><a href="#1-采用小写驼峰命名-lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束" class="headerlink" title="1) 采用小写驼峰命名 lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束"></a>1) 采用小写驼峰命名 lowerCamelCase，代码中的命名均不能以下划线，也不能以下划线或美元符号结束</h5><p>反例： <code>_name / name_ / name$</code></p>
 <h5 id="2-方法名、参数名、成员变量、局部变量都统一使用-lowerCamelCase-风格，必须遵从驼峰形式。"><a href="#2-方法名、参数名、成员变量、局部变量都统一使用-lowerCamelCase-风格，必须遵从驼峰形式。" class="headerlink" title="2) 方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。"></a>2) 方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</h5><p>正例： <code>localValue / getHttpMessage() / inputUserId</code></p>
 <p><strong>其中 method 方法命名必须是 动词 或者 动词+名词 形式</strong></p>
@@ -448,6 +467,7 @@
 <p>反例：<code>save / open / show / go</code></p>
 <p><strong>特此说明，增删查改，详情统一使用如下 5 个单词，不得使用其他（目的是为了统一各个端）</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">add &#x2F; update &#x2F; delete &#x2F; detail &#x2F; get<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>附： 函数方法常用的动词:</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">get 获取&#x2F;set 设置,
 add 增加&#x2F;remove 删除
@@ -503,6 +523,7 @@ enter 进入&#x2F;exit 退出,
 abort 放弃&#x2F;quit 离开
 obsolete 废弃&#x2F;depreciate 废旧,
 collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。"><a href="#3-常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。" class="headerlink" title="3) 常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。"></a>3) 常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。</h5><p>正例： <code>MAX_STOCK_COUNT</code></p>
 <p>反例： <code>MAX_COUNT</code></p>
 <h4 id="1-5-2-代码格式"><a href="#1-5-2-代码格式" class="headerlink" title="1.5.2 代码格式"></a>1.5.2 代码格式</h4><h5 id="1-使用-2-个空格进行缩进"><a href="#1-使用-2-个空格进行缩进" class="headerlink" title="1) 使用 2 个空格进行缩进"></a>1) 使用 2 个空格进行缩进</h5><p>正例：</p>
@@ -511,23 +532,28 @@ collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers
 <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
   x <span class="token operator">+=</span> <span class="token number">1</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。"><a href="#2-不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。" class="headerlink" title="2) 不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。"></a>2) 不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性。</h5><blockquote>
 <p>说明：任何情形，没有必要插入多个空行进行隔开。</p>
 </blockquote>
 <h4 id="1-5-3-字符串"><a href="#1-5-3-字符串" class="headerlink" title="1.5.3 字符串"></a>1.5.3 字符串</h4><h5 id="1-统一使用单引号-‘-，不使用双引号-“-。这在创建-HTML-字符串非常有好处："><a href="#1-统一使用单引号-‘-，不使用双引号-“-。这在创建-HTML-字符串非常有好处：" class="headerlink" title="1) 统一使用单引号(‘)，不使用双引号(“)。这在创建 HTML 字符串非常有好处："></a>1) 统一使用单引号(‘)，不使用双引号(“)。这在创建 HTML 字符串非常有好处：</h5><p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'foo'</span>
 <span class="token keyword">let</span> testDiv <span class="token operator">=</span> <span class="token string">'&lt;div id="test">&lt;/div>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'foo'</span>
 <span class="token keyword">let</span> testDiv <span class="token operator">=</span> <span class="token string">"&lt;div id='test'>&lt;/div>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h5 id="2-字符串拼接统一使用-ES6-模板字符串处理"><a href="#2-字符串拼接统一使用-ES6-模板字符串处理" class="headerlink" title="2) 字符串拼接统一使用 ES6 模板字符串处理"></a>2) 字符串拼接统一使用 ES6 模板字符串处理</h5><p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> firstName <span class="token operator">=</span> <span class="token string">'Tom'</span>
 <span class="token keyword">const</span> lastName <span class="token operator">=</span> <span class="token string">'Hanks'</span>
 <span class="token keyword">const</span> fullName <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> firstName <span class="token operator">=</span> <span class="token string">'Tom'</span>
 <span class="token keyword">const</span> lastName <span class="token operator">=</span> <span class="token string">'Hanks'</span>
 <span class="token keyword">const</span> fullName <span class="token operator">=</span> firstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> lastName<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-4-对象声明"><a href="#1-5-4-对象声明" class="headerlink" title="1.5.4 对象声明"></a>1.5.4 对象声明</h4><h5 id="1-使用字面值创建对象"><a href="#1-使用字面值创建对象" class="headerlink" title="1) 使用字面值创建对象"></a>1) 使用字面值创建对象</h5><p>正例： <code>let user = &#123;&#125;;</code></p>
 <p>反例： <code>let user = new Object();</code></p>
 <h5 id="2-使用字面量来代替对象构造器"><a href="#2-使用字面量来代替对象构造器" class="headerlink" title="2) 使用字面量来代替对象构造器"></a>2) 使用字面量来代替对象构造器</h5><p>正例：</p>
@@ -536,11 +562,13 @@ collect 收集&#x2F;aggregate 聚集<span aria-hidden="true" class="line-numbers
   name<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
   city<span class="token operator">:</span> <span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 user<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">0</span>
 user<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">0</span>
 user<span class="token punctuation">.</span>city <span class="token operator">=</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-5-使用-ES6-ES7"><a href="#1-5-5-使用-ES6-ES7" class="headerlink" title="1.5.5 使用 ES6,ES7"></a>1.5.5 使用 ES6,ES7</h4><p>必须优先使用 ES6,ES7 中新增的语法糖和函数。这将简化你的程序，并让你的代码更加灵活和可复用。</p>
 <blockquote>
 <p>必须强制使用 ES6, ES7 的新语法，比如箭头函数、await/async，解构，let，for…of 等等</p>
@@ -550,17 +578,21 @@ user<span class="token punctuation">.</span>city <span class="token operator">=<
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="1-5-7-undefined-判断"><a href="#1-5-7-undefined-判断" class="headerlink" title="1.5.7 undefined 判断"></a>1.5.7 undefined 判断</h4><p>永远不要直接使用 <code>undefined</code> 进行变量判断；使用 <code>typeof</code> 和字符串 <code>&#39;undefined&#39;</code> 对变量进行判断。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> person <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：1</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// person 为 null 也是 true</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>person <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：2 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined">MDN 也有说明</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>person <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">...</span>
@@ -580,6 +612,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">undefined</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="1-5-8-条件判断和循环最多三层"><a href="#1-5-8-条件判断和循环最多三层" class="headerlink" title="1.5.8 条件判断和循环最多三层"></a>1.5.8 条件判断和循环最多三层</h4><p>条件判断能使用三目运算符和逻辑运算符解决的，就不要使用条件判断，但是谨记不要写太长的三目运算符。如果超过 3 层请抽成函数，并写清楚注释。</p>
 <h4 id="1-5-9-this-的转换命名"><a href="#1-5-9-this-的转换命名" class="headerlink" title="1.5.9 this 的转换命名"></a>1.5.9 this 的转换命名</h4><p>对上下文 <code>this</code> 的引用只能使用 <code>self</code> 来命名</p>
 <h4 id="1-5-10-慎用-console-log"><a href="#1-5-10-慎用-console-log" class="headerlink" title="1.5.10 慎用 console.log"></a>1.5.10 慎用 <code>console.log</code></h4><p>因 <code>console.log</code> 大量使用会有性能问题，所以在非 <code>webpack</code> 项目中谨慎使用 log 功能</p>
@@ -593,6 +626,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token operator">:</span> <span class="token string">'TodoItem'</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   name<span class="token operator">:</span> <span class="token string">'todo'</span>
@@ -602,41 +636,50 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token operator">:</span> <span class="token string">'todo-item'</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-组件文件名为-CamelCase-格式"><a href="#2-组件文件名为-CamelCase-格式" class="headerlink" title="2) 组件文件名为 CamelCase 格式"></a>2) 组件文件名为 CamelCase 格式</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- MyComponent.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- myComponent.vue
 |- my-component.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-基础组件文件名为-base-开头，使用完整单词而不是缩写。"><a href="#3-基础组件文件名为-base-开头，使用完整单词而不是缩写。" class="headerlink" title="3) 基础组件文件名为 base 开头，使用完整单词而不是缩写。"></a>3) 基础组件文件名为 base 开头，使用完整单词而不是缩写。</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- BaseButton.vue
 |- BaseTable.vue
 |- BaseIcon.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- MyButton.vue
 |- VueTable.vue
 |- Icon.vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-和父组件紧密耦合的子组件应该以父组件名作为前缀命名"><a href="#4-和父组件紧密耦合的子组件应该以父组件名作为前缀命名" class="headerlink" title="4) 和父组件紧密耦合的子组件应该以父组件名作为前缀命名"></a>4) 和父组件紧密耦合的子组件应该以父组件名作为前缀命名</h5><p>正例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- TodoList.vue
 |- TodoListItem.vue
 |- TodoListItemNutton.vue
 |- UserProfileOptions.vue （完整单词）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-none"><code class="language-none">components&#x2F;
 |- TodoList.vue
 |- TodoItem.vue
 |- TodoButton.vue
 |- UProfOpts.vue （使用了缩写）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="5-在-Template-模版中使用组件，应使用-PascalCase-模式，并且使用自闭合组件。"><a href="#5-在-Template-模版中使用组件，应使用-PascalCase-模式，并且使用自闭合组件。" class="headerlink" title="5) 在 Template 模版中使用组件，应使用 PascalCase 模式，并且使用自闭合组件。"></a>5) 在 Template 模版中使用组件，应使用 PascalCase 模式，并且使用自闭合组件。</h5><p>正例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 在单文件组件、字符串模板和 JSX 中 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-component</span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>row</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">:column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>row</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MyComponent</span> <span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Row</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">:column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Row</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h5 id="6-组件的-data-必须是一个函数"><a href="#6-组件的-data-必须是一个函数" class="headerlink" title="6) 组件的 data 必须是一个函数"></a>6) 组件的 data 必须是一个函数</h5><p>当在组件中使用 data 属性的时候 (除了 new Vue 外的任何地方)，它的值必须是返回一个对象的函数。 因为如果直接是一个对象的话，子组件之间的属性值会互相影响。</p>
 <p>正例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
@@ -646,12 +689,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     name<span class="token operator">:</span> <span class="token string">'jack'</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="7-Prop-定义应该尽量详细"><a href="#7-Prop-定义应该尽量详细" class="headerlink" title="7) Prop 定义应该尽量详细"></a>7) Prop 定义应该尽量详细</h5><ul>
 <li>必须使用 camelCase 驼峰命名</li>
 <li>必须指定类型</li>
@@ -679,6 +724,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       required<span class="token operator">:</span> <span class="token boolean">true</span>
    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="8-为组件样式设置作用域"><a href="#8-为组件样式设置作用域" class="headerlink" title="8) 为组件样式设置作用域"></a>8) 为组件样式设置作用域</h5><p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;button class&#x3D;&quot;btn btn-close&quot;&gt;X&lt;&#x2F;button&gt;
@@ -690,6 +736,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   background-color: red;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;button class&#x3D;&quot;btn btn-close&quot;&gt;X&lt;&#x2F;button&gt;
@@ -700,10 +747,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
   background-color: red;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="9-如果特性元素较多，应该主动换行。"><a href="#9-如果特性元素较多，应该主动换行。" class="headerlink" title="9) 如果特性元素较多，应该主动换行。"></a>9) 如果特性元素较多，应该主动换行。</h5><p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;ym-table :isLoading&#x3D;&quot;isTableLoading&quot; :tableData&#x3D;&quot;tableData&quot; :pageTotal&#x3D;&quot;pageTotal&quot; :pageNum&#x3D;&quot;pageNum&quot; :pageSize&#x3D;&quot;pageSize&quot; @page-num-change&#x3D;&quot;handlePageNumChange&quot; @page-size-change&#x3D;&quot;handlePageSizeChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;ym-table :isLoading&#x3D;&quot;isTableLoading&quot; :tableData&#x3D;&quot;tableData&quot; :pageTotal&#x3D;&quot;pageTotal&quot; :pageNum&#x3D;&quot;pageNum&quot; :pageSize&#x3D;&quot;pageSize&quot; @page-num-change&#x3D;&quot;handlePageNumChange&quot; @page-size-change&#x3D;&quot;handlePageSizeChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="2-1-2-模板中使用简单的表达式"><a href="#2-1-2-模板中使用简单的表达式" class="headerlink" title="2.1.2. 模板中使用简单的表达式"></a>2.1.2. 模板中使用简单的表达式</h4><p>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的是什么，而非如何计算那个值。而且计算属性和方法使得代码可以重用。</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
@@ -720,6 +770,7 @@ computed: &#123;
   &#125;
 &#125;
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;p&gt;
@@ -733,11 +784,14 @@ computed: &#123;
     &#125;&#125;
   &lt;&#x2F;p&gt;
 &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-1-3-指令都使用缩写形式"><a href="#2-1-3-指令都使用缩写形式" class="headerlink" title="2.1.3 指令都使用缩写形式"></a>2.1.3 指令都使用缩写形式</h4><p>指令推荐都使用缩写形式，(用 : 表示 v-bind: 、用 @ 表示 v-on: 和用 # 表示 v-slot:)</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;input :text&#x3D;&quot;text&quot; @change&#x3D;&quot;onChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;input v-bind:text&#x3D;&quot;text&quot; v-on:change&#x3D;&quot;onChange&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="2-1-4-标签顺序保持一致"><a href="#2-1-4-标签顺序保持一致" class="headerlink" title="2.1.4 标签顺序保持一致"></a>2.1.4 标签顺序保持一致</h4><p>单文件组件应该总是让标签顺序保持为 `</p>
 <p>正例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;...&lt;&#x2F;template&gt;
@@ -747,6 +801,7 @@ computed: &#123;
 &lt;style&gt;
 ...;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>反例：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;...&lt;&#x2F;template&gt;
 &lt;style&gt;
@@ -755,12 +810,14 @@ computed: &#123;
 &lt;script&gt;
 ...
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-1-5-必须为-v-for-设置键值-key"><a href="#2-1-5-必须为-v-for-设置键值-key" class="headerlink" title="2.1.5 必须为 v-for 设置键值 key"></a>2.1.5 必须为 v-for 设置键值 key</h4><h4 id="2-1-6-v-show-与-v-if-选择"><a href="#2-1-6-v-show-与-v-if-选择" class="headerlink" title="2.1.6 v-show 与 v-if 选择"></a>2.1.6 v-show 与 v-if 选择</h4><p>如果运行时，需要非常频繁地切换，使用 v-show ；如果在运行时，条件很少改变，使用 v-if。</p>
 <h4 id="2-1-7-script-标签内部结构顺序"><a href="#2-1-7-script-标签内部结构顺序" class="headerlink" title="2.1.7 script 标签内部结构顺序"></a>2.1.7 script 标签内部结构顺序</h4><p>components &gt; props &gt; data &gt; computed &gt; watch &gt; filter &gt; 钩子函数（钩子函数按其执行顺序） &gt; methods</p>
 <h4 id="2-1-8-Vue-Router-规范"><a href="#2-1-8-Vue-Router-规范" class="headerlink" title="2.1.8 Vue Router 规范"></a>2.1.8 Vue Router 规范</h4><h5 id="1-页面跳转数据传递使用路由参数"><a href="#1-页面跳转数据传递使用路由参数" class="headerlink" title="1) 页面跳转数据传递使用路由参数"></a>1) 页面跳转数据传递使用路由参数</h5><p>页面跳转，例如 A 页面跳转到 B 页面，需要将 A 页面的数据传递到 B 页面，推荐使用 路由参数进行传参，而不是将需要传递的数据保存 vuex，然后在 B 页面取出 vuex 的数据，因为如果在 B 页面刷新会导致 vuex 数据丢失，导致 B 页面无法正常显示数据。</p>
 <p>正例：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">let id &#x3D; &#39; 123&#39;;
 this.$router.push(&#123; name: &#39;userCenter&#39;, query: &#123; id: id &#125; &#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h5 id="2-使用路由懒加载（延迟加载）机制"><a href="#2-使用路由懒加载（延迟加载）机制" class="headerlink" title="2) 使用路由懒加载（延迟加载）机制"></a>2) 使用路由懒加载（延迟加载）机制</h5><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#123;
     path: &#39;&#x2F;uploadAttachment&#39;,
     name: &#39;uploadAttachment&#39;,
@@ -769,6 +826,7 @@ this.$router.push(&#123; name: &#39;userCenter&#39;, query: &#123; id: id &#125;
     &#125;,
     component: () &#x3D;&gt; import(&#39;@&#x2F;view&#x2F;components&#x2F;uploadAttachment&#x2F;index.vue&#39;)
   &#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-router-中的命名规范"><a href="#3-router-中的命名规范" class="headerlink" title="3) router 中的命名规范"></a>3) router 中的命名规范</h5><p>path、childrenPoints 命名规范采用 <code>kebab-case</code> 命名规范（尽量 Vue 文件的目录结构保持一致，因为目录、文件名都是 <code>kebab-case</code>，这样很方便找到对应的文件）</p>
 <p>name 命名规范采用 <code>KebabCase</code> 命名规范且和 component 组件名保持一致！（因为要保持 keep-alive 特性，keep-alive 按照 component 的 name 进行缓存，所以两者必须高度保持一致）</p>
 <p>JavaScript</p>
@@ -810,6 +868,7 @@ export const reload &#x3D; [
     ]
   &#125;
 ];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-router-中的-path-命名规范"><a href="#4-router-中的-path-命名规范" class="headerlink" title="4) router 中的 path 命名规范"></a>4) router 中的 path 命名规范</h5><p>path 除了采用 <code>kebab-case</code> 命名规范以外，必须以 / 开头，即使是 children 里的 path 也要以 / 开头。如下示例</p>
 <p>目的：</p>
 <p>经常有这样的场景：某个页面有问题，要立刻找到这个 vue 文件，如果不用以/开头，path 为 parent 和 children 组成的，可能经常需要在 router 文件里搜索多次才能找到，而如果以 / 开头，则能立刻搜索到对应的组件</p>
@@ -840,6 +899,7 @@ export const reload &#x3D; [
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="二-Vue-项目目录规范"><a href="#二-Vue-项目目录规范" class="headerlink" title="(二) Vue 项目目录规范"></a>(二) Vue 项目目录规范</h3><h4 id="2-2-1-基础"><a href="#2-2-1-基础" class="headerlink" title="2.2.1 基础"></a>2.2.1 基础</h4><p>vue 项目中的所有命名一定要与后端命名统一。</p>
 <p>比如权限：后端 privilege, 前端无论 router , store, api 等都必须使用 privielege 单词！</p>
 <h4 id="2-2-2-使用-Vue-cli-脚手架"><a href="#2-2-2-使用-Vue-cli-脚手架" class="headerlink" title="2.2.2 使用 Vue-cli 脚手架"></a>2.2.2 使用 Vue-cli 脚手架</h4><p>使用 vue-cli3 来初始化项目，项目名按照上面的命名规范。</p>
@@ -875,6 +935,7 @@ export const reload &#x3D; [
 ├── babel.config.js            &#x2F;&#x2F; babel.config.js
 ├── package.json               &#x2F;&#x2F; package.json
 └── vue.config.js              &#x2F;&#x2F; Vue 项目配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="1-api-目录"><a href="#1-api-目录" class="headerlink" title="1) api 目录"></a>1) api 目录</h5><ul>
 <li>文件、变量命名尽量与后端保持一致。</li>
 <li>此目录对应后端 API 接口，按照后端一个 controller 一个 api js 文件。若项目较大时，可以按照业务划分子目录，并与后端保持一致。</li>
@@ -887,6 +948,7 @@ export const reload &#x3D; [
 <pre class="line-numbers language-none"><code class="language-none">&#x2F;employee&#x2F;add
 &#x2F;employee&#x2F;delete&#x2F;&#123;id&#125;
 &#x2F;employee&#x2F;update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>前端： employee.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 添加员工</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">addEmployee</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -919,6 +981,7 @@ export const reload &#x3D; [
     method<span class="token operator">:</span> <span class="token string">'post'</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="2-assets-目录"><a href="#2-assets-目录" class="headerlink" title="2) assets 目录"></a>2) assets 目录</h5><p>assets 为静态资源，里面存放 images, styles, icons 等静态资源，静态资源命名格式为 kebab-case</p>
 <pre class="line-numbers language-none"><code class="language-none">|assets
 |-- icons
@@ -926,6 +989,7 @@ export const reload &#x3D; [
 |   |-- background-color.png
 |   |-- upload-header.png
 |-- styles<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="3-components-目录"><a href="#3-components-目录" class="headerlink" title="3) components 目录"></a>3) components 目录</h5><p>此目录应按照组件进行目录划分，目录命名为 CamelCase，组件命名规则也为 CamelCase</p>
 <pre class="line-numbers language-none"><code class="language-none">|components
 |-- ErrorLog
@@ -934,12 +998,14 @@ export const reload &#x3D; [
 |-- MarkdownEditor
 |   |-- index.vue
 |   |-- index.scss<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="4-constants-目录"><a href="#4-constants-目录" class="headerlink" title="4) constants 目录"></a>4) constants 目录</h5><p>此目录存放项目所有常量，如果常量在 vue 中使用，请使用 vue-enum 插件(<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/vue-enum">https://www.npmjs.com/package/vue-enum</a>)</p>
 <p>目录结构：</p>
 <pre class="line-numbers language-none"><code class="language-none">|constants
 |-- index.js
 |-- role.js
 |-- employee.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>例子： employee.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">EMPLOYEE_STATUS</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token constant">NORMAL</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -979,6 +1045,7 @@ export const reload &#x3D; [
   <span class="token constant">EMPLOYEE_STATUS</span><span class="token punctuation">,</span>
   <span class="token constant">EMPLOYEE_ACCOUNT_TYPE</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="5-router-与-store-目录"><a href="#5-router-与-store-目录" class="headerlink" title="5) router 与 store 目录"></a>5) router 与 store 目录</h5><p>这两个目录一定要将业务进行拆分，不能放到一个 js 文件里。</p>
 <p>router 尽量按照 views 中的结构保持一致</p>
 <p>store 按照业务进行拆分不同的 js 文件</p>
@@ -996,6 +1063,7 @@ export const reload &#x3D; [
 |   |-- Employee                         employee模块
 |   |-- BehaviorLog                      行为日志log模块
 |   |-- CodeGenerator                    代码生成器模块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="2-2-4-注释说明"><a href="#2-2-4-注释说明" class="headerlink" title="2.2.4 注释说明"></a>2.2.4 注释说明</h4><ul>
 <li>在变量名和函数名不足以表达其含义时才需要注释</li>
 <li>公共组件需要注释</li>
@@ -1083,7 +1151,7 @@ export const reload &#x3D; [
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -1093,7 +1161,7 @@ export const reload &#x3D; [
 
 <script>
 if (document.querySelectorAll('.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
     mermaid.init({
       theme    : 'forest',
       logLevel : 3,
