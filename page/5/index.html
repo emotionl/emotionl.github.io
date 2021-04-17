@@ -22,34 +22,29 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
-<meta name="description" content="MongoDB 聚合管道使用聚合管道可以对集合中的文档进行变换和组合实际运用：表关联查询、数据的统计MongoDB 中使用 db.COLLECTION_NAME.aggregate([&amp;#123;&amp;#125;,...]) 方法来构建和使用聚合管道 Aggregation Pipeline Stages &amp; OperatorsStages 操作   操作符 S 描述    $project">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB 高级查询">
-<meta property="og:url" content="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZV-Blogs">
+<meta property="og:url" content="http://example.com/page/5/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
-<meta property="og:description" content="MongoDB 聚合管道使用聚合管道可以对集合中的文档进行变换和组合实际运用：表关联查询、数据的统计MongoDB 中使用 db.COLLECTION_NAME.aggregate([&amp;#123;&amp;#125;,...]) 方法来构建和使用聚合管道 Aggregation Pipeline Stages &amp; OperatorsStages 操作   操作符 S 描述    $project">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-08-26T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-17T06:57:23.445Z">
 <meta property="article:author" content="ZV">
-<meta property="article:tag" content="数据库">
-<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="👨‍💻🎸🍺">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
+<link rel="canonical" href="http://example.com/page/5/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
-    isPost : true,
+    isHome : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
-<title>MongoDB 高级查询 | ZV-Blogs</title>
+<title>ZV-Blogs</title>
   
 
 
@@ -176,7 +171,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -189,7 +184,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB-%E8%81%9A%E5%90%88%E7%AE%A1%E9%81%93"><span class="nav-number">1.</span> <span class="nav-text">MongoDB 聚合管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregation-Pipeline-Stages-amp-Operators"><span class="nav-number">2.</span> <span class="nav-text">Aggregation Pipeline Stages &amp; Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stages-%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">Stages 操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operators-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">Operators 运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%8B%9F"><span class="nav-number">3.</span> <span class="nav-text">数据模拟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#project"><span class="nav-number">4.</span> <span class="nav-text">$project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">5.</span> <span class="nav-text">$match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group"><span class="nav-number">6.</span> <span class="nav-text">$group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">7.</span> <span class="nav-text">$sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limit"><span class="nav-number">8.</span> <span class="nav-text">$limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#skip"><span class="nav-number">9.</span> <span class="nav-text">$skip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lookup"><span class="nav-number">10.</span> <span class="nav-text">$lookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8"><span class="nav-number">11.</span> <span class="nav-text">综合运用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -239,17 +233,16 @@
 </noscript>
 
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -262,9 +255,9 @@
       <meta itemprop="name" content="ZV-Blogs">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          MongoDB 高级查询
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/" class="post-title-link" itemprop="url">MongoDB 高级查询</a>
+        </h2>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -294,7 +287,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="MongoDB-聚合管道"><a href="#MongoDB-聚合管道" class="headerlink" title="MongoDB 聚合管道"></a>MongoDB 聚合管道</h2><p>使用聚合管道可以对集合中的文档进行变换和组合<br>实际运用：表关联查询、数据的统计<br><code>MongoDB</code> 中使用 <code>db.COLLECTION_NAME.aggregate([&#123;&#125;,...])</code> 方法来构建和使用聚合管道</p>
+          <h2 id="MongoDB-聚合管道"><a href="#MongoDB-聚合管道" class="headerlink" title="MongoDB 聚合管道"></a>MongoDB 聚合管道</h2><p>使用聚合管道可以对集合中的文档进行变换和组合<br>实际运用：表关联查询、数据的统计<br><code>MongoDB</code> 中使用 <code>db.COLLECTION_NAME.aggregate([&#123;&#125;,...])</code> 方法来构建和使用聚合管道</p>
 <h2 id="Aggregation-Pipeline-Stages-amp-Operators"><a href="#Aggregation-Pipeline-Stages-amp-Operators" class="headerlink" title="Aggregation Pipeline Stages &amp; Operators"></a>Aggregation Pipeline Stages &amp; Operators</h2><h3 id="Stages-操作"><a href="#Stages-操作" class="headerlink" title="Stages 操作"></a>Stages 操作</h3><table>
 <thead>
 <tr>
@@ -480,6 +473,7 @@ db<span class="token punctuation">.</span>order_item<span class="token punctuati
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+      
     </div>
 
     
@@ -487,22 +481,8 @@ db<span class="token punctuation">.</span>order_item<span class="token punctuati
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
-              <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-            </div>
-            <div class="post-nav-item">
-                <a href="/2019/08/26/%E4%BD%99%E6%95%B0/" rel="next" title="余数">
-                  余数 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -510,7 +490,9 @@ db<span class="token punctuation">.</span>order_item<span class="token punctuati
 
 
 
-
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
 
 
 <script>

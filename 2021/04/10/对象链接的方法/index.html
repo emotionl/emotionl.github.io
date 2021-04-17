@@ -22,21 +22,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
-<meta name="description" content="二分查找在[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]中查找&#39;f&#39; const searchWord &#x3D; (dictionary, wordToFind) &#x3D;&gt; &amp;#123;     let left &#x3D; 0     let right &#x3D; di">
+<meta name="description" content="对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。 举个🌰，我们创建一个工具对象 BasicFormatter，然后通过不同的方式创建可以访问 BasicFormatter 的工具对象 const BasicFormatter &#x3D; &amp;#123;   format: f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迭代法">
-<meta property="og:url" content="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/index.html">
+<meta property="og:title" content="对象链接的方法">
+<meta property="og:url" content="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
-<meta property="og:description" content="二分查找在[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]中查找&#39;f&#39; const searchWord &#x3D; (dictionary, wordToFind) &#x3D;&gt; &amp;#123;     let left &#x3D; 0     let right &#x3D; di">
+<meta property="og:description" content="对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。 举个🌰，我们创建一个工具对象 BasicFormatter，然后通过不同的方式创建可以访问 BasicFormatter 的工具对象 const BasicFormatter &#x3D; &amp;#123;   format: f">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-08-26T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-17T06:57:23.445Z">
+<meta property="article:published_time" content="2021-04-10T11:26:01.000Z">
+<meta property="article:modified_time" content="2021-04-17T06:57:23.449Z">
 <meta property="article:author" content="ZV">
-<meta property="article:tag" content="数学">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/">
+<link rel="canonical" href="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>迭代法 | ZV-Blogs</title>
+<title>对象链接的方法 | ZV-Blogs</title>
   
 
 
@@ -188,7 +188,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">隐式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">显式</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -249,7 +249,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/%E8%BF%AD%E4%BB%A3%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/guitar.svg">
@@ -262,7 +262,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          迭代法
+          对象链接的方法
         </h1>
 
         <div class="post-meta-container">
@@ -273,7 +273,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+      <time title="创建时间：2021-04-10 11:26:01" itemprop="dateCreated datePublished" datetime="2021-04-10T11:26:01+00:00">2021-04-10</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -293,27 +293,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>在<code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</code>中查找<code>&#39;f&#39;</code></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">searchWord</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">dictionary<span class="token punctuation">,</span> wordToFind</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">let</span> right <span class="token operator">=</span> dictionary<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">let</span> middle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>dictionary<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">===</span> wordToFind<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token boolean">true</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dictionary<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">></span> wordToFind<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                right <span class="token operator">=</span> middle <span class="token operator">-</span> <span class="token number">1</span>
-            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                left <span class="token operator">=</span> middle <span class="token operator">+</span> <span class="token number">1</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <p>对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。</p>
+<p>举个🌰，我们创建一个工具对象 <code>BasicFormatter</code>，然后通过不同的方式创建可以访问 <code>BasicFormatter</code> 的工具对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> BasicFormatter <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">format</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> msg<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="隐式"><a href="#隐式" class="headerlink" title="隐式"></a>隐式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* 
+  Implicit 隐式
+  通过 Object.create 方法创建一个以 BasicFormatter 为原型的对象
+  这样就能通过 __proto__ 调用原型链上的 format 函数 
+*/</span>
+<span class="token keyword">const</span> Foo <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>BasicFormatter<span class="token punctuation">)</span>
+Foo<span class="token punctuation">.</span><span class="token function-variable function">saySomething</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> dictionary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token string">'h'</span><span class="token punctuation">]</span>
-<span class="token keyword">let</span> wordToFind <span class="token operator">=</span> <span class="token string">'f'</span>
-<span class="token function">searchWord</span><span class="token punctuation">(</span>dictionary<span class="token punctuation">,</span> wordToFind<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+Foo<span class="token punctuation">.</span><span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">'this is foo!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="显式"><a href="#显式" class="headerlink" title="显式"></a>显式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* 
+  Explicit 显式
+  直接把需要链接的对象定义在自身上
+*/</span>
+<span class="token keyword">const</span> Bar <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  formatter<span class="token operator">:</span> BasicFormatter<span class="token punctuation">,</span>
+  <span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>formatter<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+Bar<span class="token punctuation">.</span><span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">'this is bar!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
     </div>
 
@@ -323,20 +335,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/08/26/%E5%B0%8F%E8%AF%95MongoDB/" rel="prev" title="小试 MongoDB">
-                  <i class="fa fa-chevron-left"></i> 小试 MongoDB
+                <a href="/2021/03/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="prev" title="单例模式">
+                  <i class="fa fa-chevron-left"></i> 单例模式
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="next" title="二进制">
-                  二进制 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/04/17/JS%E7%9A%84%E4%B8%89%E7%A7%8D%E7%BB%A7%E6%89%BF/" rel="next" title="JS的三种继承">
+                  JS的三种继承 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

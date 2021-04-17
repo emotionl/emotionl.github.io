@@ -198,7 +198,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -243,6 +243,110 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/21/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/11/21/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">前端项目中的路径解析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-21T00:00:00+00:00">2019-11-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这里说的路径解析分两种</p>
+<ol>
+<li><code>Webpack</code>打包配置项中的 <code>alias</code></li>
+<li><code>jsconfig.json</code>中的 <code>compilerOptions</code></li>
+</ol>
+<h2 id="Webpack-打包配置项中的-alias"><a href="#Webpack-打包配置项中的-alias" class="headerlink" title="Webpack 打包配置项中的 alias"></a>Webpack 打包配置项中的 alias</h2><p>相信很多人都很喜欢这个配置，因为在引用其他目录下的文件时，通过 <code>./../utils/tools.js</code>这种写法显得特别的笨重。</p>
+<p>可是如果在配置了 <code>alias</code>这个属性就会好很多。</p>
+<p>这块不多说，文档讲的很详细了</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/configuration/resolve/#resolve-alias">解析(resolve)</a></p>
+</blockquote>
+<h2 id="jsconfig-json中的-compilerOptions"><a href="#jsconfig-json中的-compilerOptions" class="headerlink" title="jsconfig.json中的 compilerOptions"></a>jsconfig.json中的 compilerOptions</h2><p>由于 <code>Webpack</code>的 <code>alias</code>配置你可能会在编写代码的时候遇到一些问题。</p>
+<p>因为通过 <code>alias</code>的方式编写的路径，你并不能通过转到定义访问到源文件。</p>
+<p>所以这个时候就需要 <code>jsconfig.json</code>来帮帮你了</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"."</span><span class="token punctuation">,</span>
+    <span class="token property">"paths"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"@/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"comps/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/comps/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"config/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/config/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"pages/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/pages/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"resource/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/resource/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"styles/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/styles/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"utils/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/utils/*"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通过这个<code>jsconfig.json</code>你就可以解决因为使用 <code>alias</code>配置而导致的无法访问源文件问题了</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018013282">VSCode中的 jsconfig.json</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5dedd6c8f265da33d15884bf">Create React App无eject配置</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/16/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -274,7 +378,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -360,7 +464,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -440,7 +544,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -619,7 +723,7 @@ E --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -735,7 +839,7 @@ goaccess /home/nginx/logs/access.log -o /home/nginx/html/report/index.html --log
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -835,7 +939,7 @@ goaccess /home/nginx/logs/access.log -o /home/nginx/html/report/index.html --log
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -926,7 +1030,7 @@ goaccess /home/nginx/logs/access.log -o /home/nginx/html/report/index.html --log
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -1208,7 +1312,7 @@ db<span class="token punctuation">.</span>member<span class="token punctuation">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -1408,7 +1512,7 @@ c<span class="token punctuation">.</span><span class="token function">charCodeAt
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
       </span>
 
   
@@ -1486,263 +1590,8 @@ c<span class="token punctuation">.</span><span class="token function">charCodeAt
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/" class="post-title-link" itemprop="url">MongoDB 高级查询</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 05:54:04" itemprop="dateModified" datetime="2021-04-17T05:54:04+00:00">2021-04-17</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="MongoDB-聚合管道"><a href="#MongoDB-聚合管道" class="headerlink" title="MongoDB 聚合管道"></a>MongoDB 聚合管道</h2><p>使用聚合管道可以对集合中的文档进行变换和组合<br>实际运用：表关联查询、数据的统计<br><code>MongoDB</code> 中使用 <code>db.COLLECTION_NAME.aggregate([&#123;&#125;,...])</code> 方法来构建和使用聚合管道</p>
-<h2 id="Aggregation-Pipeline-Stages-amp-Operators"><a href="#Aggregation-Pipeline-Stages-amp-Operators" class="headerlink" title="Aggregation Pipeline Stages &amp; Operators"></a>Aggregation Pipeline Stages &amp; Operators</h2><h3 id="Stages-操作"><a href="#Stages-操作" class="headerlink" title="Stages 操作"></a>Stages 操作</h3><table>
-<thead>
-<tr>
-<th>操作符 S</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>$project</code></td>
-<td>修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档</td>
-</tr>
-<tr>
-<td><code>$match</code></td>
-<td>用于过滤数据，只输出符合条件的文档。<code>$match</code> 使用 MongoDB 的标准查询操作</td>
-</tr>
-<tr>
-<td><code>$limit</code></td>
-<td>用来限制 MongoDB 聚合管道返回的文档数</td>
-</tr>
-<tr>
-<td><code>$skip</code></td>
-<td>在聚合管道中跳过指定数量的文档，并返回余下的文档</td>
-</tr>
-<tr>
-<td><code>$group</code></td>
-<td>将集合中的文档分组，可用于统计结果</td>
-</tr>
-<tr>
-<td><code>$sort</code></td>
-<td>将输入文档排序后输出</td>
-</tr>
-<tr>
-<td><code>$lookup</code></td>
-<td>用以引入其它集合的数据 （表关联查询）</td>
-</tr>
-</tbody></table>
-<h3 id="Operators-运算符"><a href="#Operators-运算符" class="headerlink" title="Operators 运算符"></a>Operators 运算符</h3><table>
-<thead>
-<tr>
-<th align="left">Operators</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>$sum</code></td>
-<td align="left">计算总和</td>
-</tr>
-<tr>
-<td align="left"><code>$avg</code></td>
-<td align="left">计算平均值</td>
-</tr>
-<tr>
-<td align="left"><code>$min</code></td>
-<td align="left">获取集合中所有文档对应值得最小值</td>
-</tr>
-<tr>
-<td align="left"><code>$max</code></td>
-<td align="left">获取集合中所有文档对应值得最大值</td>
-</tr>
-<tr>
-<td align="left"><code>$push</code></td>
-<td align="left">在结果文档中插入值到一个数组中</td>
-</tr>
-<tr>
-<td align="left"><code>$addToSet</code></td>
-<td align="left">在结果文档中插入值到一个数组中，但不创建副本</td>
-</tr>
-<tr>
-<td align="left"><code>$first</code></td>
-<td align="left">根据资源文档的排序获取第一个文档数据</td>
-</tr>
-<tr>
-<td align="left"><code>$last</code></td>
-<td align="left">根据资源文档的排序获取最后一个文档数据</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>管道操作符作为<strong>键</strong>，所对应的<strong>值</strong>叫做管道表达式<br>例如<code>&#123;$match:&#123;status:&quot;A&quot;&#125;&#125;</code>，<code>$match</code> 称为管道操作符，而 <code>status:&quot;A&quot;</code>称为管道表达式<br>每个管道表达式是一个文档结构，它是由字段名、字段值、和一些表达式操作符组成的</p>
-</blockquote>
-<h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"111"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"222"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"333"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品鼠标 1"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 2"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 3"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"牛奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"酸奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">40</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"矿泉水"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"毛巾"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>自定义文档的结构，可以用来重命名、增加或删除文档中的字段</p>
-<p>查找 order 只返回文档中 trade_no 和 all_price 字段</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-            all_price<span class="token operator">:</span> <span class="token number">1</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>过滤。用法类似于 <code>find()</code> 方法中的参数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>分组，可用于统计结果</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $group<span class="token operator">:</span> <span class="token punctuation">&#123;</span> _id<span class="token operator">:</span> <span class="token string">'$order_id'</span><span class="token punctuation">,</span> total<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $sum<span class="token operator">:</span> <span class="token string">'$num'</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><p>排序</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $sort<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="limit"><a href="#limit" class="headerlink" title="$limit"></a>$limit</h2><p>限制数量</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $limit<span class="token operator">:</span> <span class="token number">1</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="skip"><a href="#skip" class="headerlink" title="$skip"></a>$skip</h2><p>跳过</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $skip<span class="token operator">:</span> <span class="token number">1</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>表关联</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
-            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
-            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
-            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
-            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
-            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
-            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                $gt<span class="token operator">:</span> <span class="token number">90</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span>
-        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            items<span class="token operator">:</span> <span class="token number">1</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
