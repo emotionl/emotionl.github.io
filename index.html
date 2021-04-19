@@ -198,13 +198,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -266,10 +266,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-04-17 11:04:48 / 修改时间：06:57:23" itemprop="dateCreated datePublished" datetime="2021-04-17T11:04:48+00:00">2021-04-17</time>
+      <time title="创建时间：2021-04-17 11:04:48" itemprop="dateCreated datePublished" datetime="2021-04-17T11:04:48+00:00">2021-04-17</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+      </span>
 
   
 </div>
@@ -425,7 +431,7 @@ Student<span class="token punctuation">.</span><span class="token function-varia
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -528,7 +534,7 @@ Bar<span class="token punctuation">.</span><span class="token function">saySomet
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -706,7 +712,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -1229,540 +1235,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/28/Superset1.0%E5%9B%BE%E8%A1%A8%E6%89%A9%E5%B1%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/28/Superset1.0%E5%9B%BE%E8%A1%A8%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">Superset 1.0 图表扩展</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-28 14:54:54" itemprop="dateCreated datePublished" datetime="2021-01-28T14:54:54+00:00">2021-01-28</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近 Superset 发布了 1.0 版本，在介绍中发现官方发布了 <a target="_blank" rel="noopener" href="https://github.com/apache-superset/superset-ui/tree/master/plugins/plugin-chart-echarts">@superset-ui/plugin-chart-echarts</a>，所以就参考它的源码扩展一些自己的 <code>ECharts</code> 图表</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li><p>安装依赖</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> superset-frontend
-<span class="token function">npm</span> i @types/mathjs @types/echarts mathjs echarts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>创建文件夹</p>
-<pre class="line-numbers language-none"><code class="language-none">cd superset-frontend
-mkdir .&#x2F;src&#x2F;extend&#x2F;ECharts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>拷贝<code>@superset-ui/plugin-chart-echarts</code>中所需的文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">└── ECharts
-   ├── components
-   <span class="token operator">|</span>  └── Echart.tsx
-   ├── constants.ts
-   ├── controls.ts
-   ├── defaults.ts
-   ├── index.ts
-   ├── types.ts
-   └── utils
-      ├── annotation.ts
-      ├── controls.ts
-      ├── prophet.ts
-      └── series.ts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-</li>
-</ol>
-<h2 id="开始-Coding"><a href="#开始-Coding" class="headerlink" title="开始 Coding"></a>开始 Coding</h2><p>本教程以<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=line-simple">基础折线图</a>为例</p>
-<h3 id="创建BasicLine-index-ts"><a href="#创建BasicLine-index-ts" class="headerlink" title="创建BasicLine/index.ts"></a>创建<code>BasicLine/index.ts</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t<span class="token punctuation">,</span> ChartMetadata<span class="token punctuation">,</span> ChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> buildQuery <span class="token keyword">from</span> <span class="token string">'./buildQuery'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> controlPanel <span class="token keyword">from</span> <span class="token string">'./controlPanel'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> transformProps <span class="token keyword">from</span> <span class="token string">'./transformProps'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> thumbnail <span class="token keyword">from</span> <span class="token string">'./images/thumbnail.png'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">EchartsBasicLineChartPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">ChartPlugin</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      buildQuery<span class="token punctuation">,</span>
-      controlPanel<span class="token punctuation">,</span>
-      <span class="token function-variable function">loadChart</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./EchartsBasicLine'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      metadata<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">ChartMetadata</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-        credits<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'https://echarts.apache.org'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        description<span class="token operator">:</span> <span class="token string">'Basic Line (Apache ECharts)'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Basic Line'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        thumbnail<span class="token punctuation">,</span>
-        useLegacyApi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      transformProps<span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里会有报错提示，不过没关系，我们一项一项完善</p>
-<h3 id="添加预览图"><a href="#添加预览图" class="headerlink" title="添加预览图"></a>添加预览图</h3><pre class="line-numbers language-none"><code class="language-none">├── BasicLine
-|  └── images
-|     └── thumbnail.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="创建-EchartsBasicLine"><a href="#创建-EchartsBasicLine" class="headerlink" title="创建 EchartsBasicLine"></a>创建 <code>EchartsBasicLine</code></h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span>
-<span class="token keyword">import</span> Echart <span class="token keyword">from</span> <span class="token string">'../components/Echart'</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">EchartsBasicLine</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> echartOptions <span class="token punctuation">&#125;</span><span class="token operator">:</span> EchartsProps</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Echart</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>height<span class="token punctuation">&#125;</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>width<span class="token punctuation">&#125;</span></span> <span class="token attr-name">echartOptions</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>echartOptions<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="创建buildQuery"><a href="#创建buildQuery" class="headerlink" title="创建buildQuery"></a>创建<code>buildQuery</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> buildQueryContext<span class="token punctuation">,</span> QueryFormData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">buildQuery</span><span class="token punctuation">(</span>formData<span class="token operator">:</span> QueryFormData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> metrics <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> groupby <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> row_limit <span class="token punctuation">&#125;</span> <span class="token operator">=</span> formData<span class="token punctuation">;</span>
-
-  <span class="token keyword">return</span> <span class="token function">buildQueryContext</span><span class="token punctuation">(</span>formData<span class="token punctuation">,</span> baseQueryObject <span class="token operator">=></span> <span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-      <span class="token operator">...</span>baseQueryObject<span class="token punctuation">,</span>
-      metrics<span class="token punctuation">,</span>
-      groupby<span class="token punctuation">,</span>
-      row_limit<span class="token operator">:</span> row_limit <span class="token keyword">as</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="创建-controlPanel"><a href="#创建-controlPanel" class="headerlink" title="创建 controlPanel"></a>创建 <code>controlPanel</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ControlPanelConfig<span class="token punctuation">,</span> sections <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/chart-controls'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> config<span class="token operator">:</span> ControlPanelConfig <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  controlPanelSections<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token comment">// Time</span>
-    sections<span class="token punctuation">.</span>legacyRegularTime<span class="token punctuation">,</span>
-    <span class="token comment">// Query</span>
-    <span class="token punctuation">&#123;</span>
-      label<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Query'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      expanded<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      controlSetRows<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'metrics'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'groupby'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'row_limit'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  controlOverrides<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 设置 row_limit 默认值</span>
-    row_limit<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token comment">// 设置 groupby 为单选</span>
-    groupby<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      multi<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="创建transformProps"><a href="#创建transformProps" class="headerlink" title="创建transformProps"></a>创建<code>transformProps</code></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">/**
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ChartProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsProps <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../types'</span><span class="token punctuation">;</span>
-
-<span class="token comment">// TODO 修复 TS 类型错误</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">transformProps</span><span class="token punctuation">(</span>chartProps<span class="token operator">:</span> ChartProps<span class="token punctuation">)</span><span class="token operator">:</span> EchartsProps <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> width<span class="token punctuation">,</span> height<span class="token punctuation">,</span> formData<span class="token punctuation">,</span> queriesData <span class="token punctuation">&#125;</span> <span class="token operator">=</span> chartProps<span class="token punctuation">;</span>
-  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chartProps<span class="token punctuation">)</span>
-  <span class="token comment">// @ts-ignore</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> data <span class="token punctuation">&#125;</span> <span class="token operator">=</span> queriesData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> metrics<span class="token punctuation">,</span> groupby <span class="token punctuation">&#125;</span> <span class="token operator">=</span> formData
-  <span class="token comment">// @ts-ignore</span>
-  <span class="token keyword">const</span> xAxisData <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=></span> item<span class="token punctuation">[</span>groupby<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token comment">// @ts-ignore</span>
-  <span class="token keyword">const</span> yAxisData <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=></span> item<span class="token punctuation">[</span>metrics<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>label<span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> echartOptions<span class="token operator">:</span> echarts<span class="token punctuation">.</span>EChartOption<span class="token operator">&lt;</span>echarts<span class="token punctuation">.</span>EChartOption<span class="token punctuation">.</span>SeriesLine<span class="token operator">></span> <span class="token operator">=</span>  <span class="token punctuation">&#123;</span>
-    xAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
-      data<span class="token operator">:</span> xAxisData
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    yAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'value'</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    series<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">&#123;</span>
-        data<span class="token operator">:</span> yAxisData<span class="token punctuation">,</span>
-        <span class="token keyword">type</span><span class="token operator">:</span> <span class="token string">'line'</span>
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-    width<span class="token punctuation">,</span>
-    height<span class="token punctuation">,</span>
-    echartOptions<span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="导出-EchartsBasicLineChartPlugin"><a href="#导出-EchartsBasicLineChartPlugin" class="headerlink" title="导出 EchartsBasicLineChartPlugin"></a>导出 <code>EchartsBasicLineChartPlugin</code></h3><p>在 <code>superset-frontend\src\extend\ECharts\index.ts</code> 中统一导出</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token punctuation">&#123;</span> <span class="token keyword">default</span> <span class="token keyword">as</span> EchartsBasicLineChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./BasicLine'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="注册-EchartsBasicLineChartPlugin"><a href="#注册-EchartsBasicLineChartPlugin" class="headerlink" title="注册 EchartsBasicLineChartPlugin"></a>注册 <code>EchartsBasicLineChartPlugin</code></h3><p>在<code>superset-frontend\src\visualizations\presets\MainPreset.js</code>中注册</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Preset <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> BigNumberChartPlugin<span class="token punctuation">,</span> BigNumberTotalChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-preset-chart-big-number'</span>
-<span class="token keyword">import</span> CalendarChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-calendar'</span>
-<span class="token keyword">import</span> ChordChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-chord'</span>
-<span class="token keyword">import</span> CountryMapChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-country-map'</span>
-<span class="token keyword">import</span> EventFlowChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-event-flow'</span>
-<span class="token keyword">import</span> ForceDirectedChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-force-directed'</span>
-<span class="token keyword">import</span> HeatmapChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-heatmap'</span>
-<span class="token keyword">import</span> HistogramChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-histogram'</span>
-<span class="token keyword">import</span> HorizonChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-horizon'</span>
-<span class="token keyword">import</span> MapBoxChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-map-box'</span>
-<span class="token keyword">import</span> PairedTTestChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-paired-t-test'</span>
-<span class="token keyword">import</span> ParallelCoordinatesChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-parallel-coordinates'</span>
-<span class="token keyword">import</span> PartitionChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-partition'</span>
-<span class="token keyword">import</span> PivotTableChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-pivot-table'</span>
-<span class="token keyword">import</span> RoseChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-rose'</span>
-<span class="token keyword">import</span> SankeyChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-sankey'</span>
-<span class="token keyword">import</span> SunburstChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-sunburst'</span>
-<span class="token keyword">import</span> TableChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/plugin-chart-table'</span>
-<span class="token keyword">import</span> TreemapChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-treemap'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> WordCloudChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/plugin-chart-word-cloud'</span>
-<span class="token keyword">import</span> WorldMapChartPlugin <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-plugin-chart-world-map'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> AreaChartPlugin<span class="token punctuation">,</span> BarChartPlugin<span class="token punctuation">,</span> BubbleChartPlugin<span class="token punctuation">,</span> BulletChartPlugin<span class="token punctuation">,</span> CompareChartPlugin<span class="token punctuation">,</span> DistBarChartPlugin<span class="token punctuation">,</span> DualLineChartPlugin<span class="token punctuation">,</span> LineChartPlugin<span class="token punctuation">,</span> LineMultiChartPlugin<span class="token punctuation">,</span> TimePivotChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-preset-chart-nvd3'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> DeckGLChartPreset <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/legacy-preset-chart-deckgl'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsPieChartPlugin<span class="token punctuation">,</span> EchartsBoxPlotChartPlugin<span class="token punctuation">,</span> EchartsTimeseriesChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/plugin-chart-echarts'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> AntdSelectFilterPlugin<span class="token punctuation">,</span> AntdRangeFilterPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'src/filters/components/'</span>
-<span class="token keyword">import</span> FilterBoxChartPlugin <span class="token keyword">from</span> <span class="token string">'../FilterBox/FilterBoxChartPlugin'</span>
-<span class="token keyword">import</span> TimeTableChartPlugin <span class="token keyword">from</span> <span class="token string">'../TimeTable/TimeTableChartPlugin'</span>
-
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EchartsBasicLineChartPlugin <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'../../extend/ECharts'</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MainPreset</span> <span class="token keyword">extends</span> <span class="token class-name">Preset</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      name<span class="token operator">:</span> <span class="token string">'Legacy charts'</span><span class="token punctuation">,</span>
-      presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">DeckGLChartPreset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token keyword">new</span> <span class="token class-name">AreaChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'area'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">BarChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'bar'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">BigNumberChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'big_number'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">BigNumberTotalChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'big_number_total'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">BubbleChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'bubble'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">BulletChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'bullet'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">CalendarChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'cal_heatmap'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">ChordChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'chord'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">CompareChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'compare'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">CountryMapChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'country_map'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">DistBarChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'dist_bar'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">DualLineChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'dual_line'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">EventFlowChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'event_flow'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">FilterBoxChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'filter_box'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">ForceDirectedChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'directed_force'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">HeatmapChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'heatmap'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">HistogramChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'histogram'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">HorizonChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'horizon'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">LineChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'line'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">LineMultiChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'line_multi'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">MapBoxChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'mapbox'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">PairedTTestChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'paired_ttest'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">ParallelCoordinatesChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'para'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">PartitionChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'partition'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">PivotTableChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'pivot_table'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">RoseChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'rose'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">SankeyChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'sankey'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">SunburstChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'sunburst'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">TableChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'table'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">TimePivotChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'time_pivot'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">TimeTableChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'time_table'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">TreemapChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'treemap'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">WordCloudChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'word_cloud'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">WorldMapChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'world_map'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">AntdSelectFilterPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'filter_select'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">AntdRangeFilterPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'filter_range'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">EchartsPieChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'pie'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">EchartsBoxPlotChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> key<span class="token operator">:</span> <span class="token string">'box_plot'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token keyword">new</span> <span class="token class-name">EchartsTimeseriesChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          key<span class="token operator">:</span> <span class="token string">'echarts_timeseries'</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token comment">// -- EchartsBasicLineChartPlugin 注册 START --</span>
-        <span class="token keyword">new</span> <span class="token class-name">EchartsBasicLineChartPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          key<span class="token operator">:</span> <span class="token string">'extend_echarts_simple_line'</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-        <span class="token comment">// -- EchartsBasicLineChartPlugin 注册 END --</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在<code>superset-frontend\src\explore\components\controls\VizTypeControl.jsx</code> 调整显示的顺序</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> useEffect<span class="token punctuation">,</span> useRef<span class="token punctuation">,</span> useState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
-<span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Row<span class="token punctuation">,</span> Col<span class="token punctuation">,</span> FormControl <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react-bootstrap'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> chunk <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'lodash'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> t<span class="token punctuation">,</span> getChartMetadataRegistry <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@superset-ui/core'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useDynamicPluginContext <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'src/components/DynamicPlugins'</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Tooltip <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'src/common/components/Tooltip'</span>
-<span class="token keyword">import</span> Modal <span class="token keyword">from</span> <span class="token string">'src/common/components/Modal'</span>
-<span class="token keyword">import</span> Label <span class="token keyword">from</span> <span class="token string">'src/components/Label'</span>
-
-<span class="token keyword">import</span> ControlHeader <span class="token keyword">from</span> <span class="token string">'../ControlHeader'</span>
-<span class="token keyword">import</span> <span class="token string">'./VizTypeControl.less'</span>
-
-<span class="token keyword">const</span> propTypes <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  description<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token builtin">string</span><span class="token punctuation">,</span>
-  label<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token builtin">string</span><span class="token punctuation">,</span>
-  name<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token builtin">string</span><span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-  onChange<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">,</span>
-  value<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token builtin">string</span><span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-  labelBsStyle<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token builtin">string</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">const</span> defaultProps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token function-variable function">onChange</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  labelBsStyle<span class="token operator">:</span> <span class="token string">'default'</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">const</span> registry <span class="token operator">=</span> <span class="token function">getChartMetadataRegistry</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">const</span> <span class="token constant">IMAGE_PER_ROW</span> <span class="token operator">=</span> <span class="token number">6</span>
-
-<span class="token comment">// 调整图表默认显示的顺序</span>
-<span class="token keyword">const</span> <span class="token constant">DEFAULT_ORDER</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token string">'deck_arc'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_geojson'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_grid'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_hex'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_multi'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_path'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_polygon'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_scatter'</span><span class="token punctuation">,</span>
-  <span class="token string">'deck_screengrid'</span><span class="token punctuation">,</span>
-  <span class="token string">'area'</span><span class="token punctuation">,</span>
-  <span class="token string">'bar'</span><span class="token punctuation">,</span>
-  <span class="token string">'big_number'</span><span class="token punctuation">,</span>
-  <span class="token string">'big_number_total'</span><span class="token punctuation">,</span>
-  <span class="token string">'bubble'</span><span class="token punctuation">,</span>
-  <span class="token string">'bullet'</span><span class="token punctuation">,</span>
-  <span class="token string">'cal_heatmap'</span><span class="token punctuation">,</span>
-  <span class="token string">'chord'</span><span class="token punctuation">,</span>
-  <span class="token string">'compare'</span><span class="token punctuation">,</span>
-  <span class="token string">'country_map'</span><span class="token punctuation">,</span>
-  <span class="token string">'dist_bar'</span><span class="token punctuation">,</span>
-  <span class="token string">'dual_line'</span><span class="token punctuation">,</span>
-  <span class="token string">'event_flow'</span><span class="token punctuation">,</span>
-  <span class="token string">'filter_box'</span><span class="token punctuation">,</span>
-  <span class="token string">'directed_force'</span><span class="token punctuation">,</span>
-  <span class="token string">'heatmap'</span><span class="token punctuation">,</span>
-  <span class="token string">'histogram'</span><span class="token punctuation">,</span>
-  <span class="token string">'horizon'</span><span class="token punctuation">,</span>
-  <span class="token string">'line'</span><span class="token punctuation">,</span>
-  <span class="token string">'line_multi'</span><span class="token punctuation">,</span>
-  <span class="token string">'mapbox'</span><span class="token punctuation">,</span>
-  <span class="token string">'paired_ttest'</span><span class="token punctuation">,</span>
-  <span class="token string">'para'</span><span class="token punctuation">,</span>
-  <span class="token string">'partition'</span><span class="token punctuation">,</span>
-  <span class="token string">'pivot_table'</span><span class="token punctuation">,</span>
-  <span class="token string">'rose'</span><span class="token punctuation">,</span>
-  <span class="token string">'sankey'</span><span class="token punctuation">,</span>
-  <span class="token string">'sunburst'</span><span class="token punctuation">,</span>
-  <span class="token string">'table'</span><span class="token punctuation">,</span>
-  <span class="token string">'time_pivot'</span><span class="token punctuation">,</span>
-  <span class="token string">'time_table'</span><span class="token punctuation">,</span>
-  <span class="token string">'treemap'</span><span class="token punctuation">,</span>
-  <span class="token string">'word_cloud'</span><span class="token punctuation">,</span>
-  <span class="token string">'world_map'</span><span class="token punctuation">,</span>
-  <span class="token string">'filter_select'</span><span class="token punctuation">,</span>
-  <span class="token string">'filter_range'</span><span class="token punctuation">,</span>
-  <span class="token string">'pie'</span><span class="token punctuation">,</span>
-  <span class="token string">'box_plot'</span><span class="token punctuation">,</span>
-  <span class="token string">'echarts_timeseries'</span><span class="token punctuation">,</span>
-  <span class="token comment">// -- EchartsBasicLineChartPlugin 调整显示的顺序 START --</span>
-  <span class="token string">'extend_echarts_simple_line'</span>
-  <span class="token comment">// -- EchartsBasicLineChartPlugin 调整显示的顺序 END --</span>
-<span class="token punctuation">]</span>
-
-<span class="token keyword">const</span> typesWithDefaultOrder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token constant">DEFAULT_ORDER</span><span class="token punctuation">)</span>
-
-<span class="token keyword">function</span> <span class="token function">VizSupportValidation</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> vizType <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token function">useDynamicPluginContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>loading <span class="token operator">||</span> registry<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>vizType<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">null</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fa fa-exclamation-circle text-danger<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text"> </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'This visualization type is not supported.'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">VizTypeControl</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>showModal<span class="token punctuation">,</span> setShowModal<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>filter<span class="token punctuation">,</span> setFilter<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> searchRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
-
-  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>showModal<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      searchRef<span class="token operator">?.</span>current<span class="token operator">?.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>showModal<span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-  <span class="token keyword">const</span> <span class="token function-variable function">onChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">vizType</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    props<span class="token punctuation">.</span><span class="token function">onChange</span><span class="token punctuation">(</span>vizType<span class="token punctuation">)</span>
-    <span class="token function">setShowModal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">const</span> <span class="token function-variable function">toggleModal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token function">setShowModal</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prevState</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>prevState<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">const</span> <span class="token function-variable function">changeSearch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token function">setFilter</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">const</span> <span class="token function-variable function">focusSearch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>searchRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      searchRef<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">const</span> <span class="token function-variable function">renderItem</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> value <span class="token punctuation">&#125;</span> <span class="token operator">=</span> props
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> key<span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token keyword">type</span> <span class="token punctuation">&#125;</span> <span class="token operator">=</span> entry
-    <span class="token keyword">const</span> isSelected <span class="token operator">=</span> key <span class="token operator">===</span> value
-
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">tabIndex</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">viztype-selector-container </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>isSelected <span class="token operator">?</span> <span class="token string">'selected'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">onChange</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token keyword">type</span><span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">viztype-selector </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>isSelected <span class="token operator">?</span> <span class="token string">'selected'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token keyword">type</span><span class="token punctuation">.</span>thumbnail<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viztype-label<span class="token punctuation">"</span></span> <span class="token attr-name">data-test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viztype-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-          </span><span class="token punctuation">&#123;</span><span class="token keyword">type</span><span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> value<span class="token punctuation">,</span> labelBsStyle <span class="token punctuation">&#125;</span> <span class="token operator">=</span> props
-  <span class="token keyword">const</span> filterString <span class="token operator">=</span> filter<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-  <span class="token keyword">const</span> filteredTypes <span class="token operator">=</span> <span class="token constant">DEFAULT_ORDER</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token operator">=></span> registry<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>registry<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isNativeFilter<span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      key<span class="token operator">:</span> <span class="token keyword">type</span><span class="token punctuation">,</span>
-      value<span class="token operator">:</span> registry<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>
-      registry
-        <span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>entry<span class="token punctuation">.</span>value<span class="token punctuation">.</span>isNativeFilter<span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> key <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>typesWithDefaultOrder<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> entry<span class="token punctuation">.</span>value<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>filterString<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-  <span class="token keyword">const</span> rows <span class="token operator">=</span> <span class="token function">chunk</span><span class="token punctuation">(</span>filteredTypes<span class="token punctuation">,</span> <span class="token constant">IMAGE_PER_ROW</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Row</span></span> <span class="token attr-name">data-test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viz-row<span class="token punctuation">"</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">row-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>index<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-        </span><span class="token punctuation">&#123;</span>item<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-          <span class="token keyword">return</span> <span class="token punctuation">(</span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Col</span></span> <span class="token attr-name">md</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token number">12</span> <span class="token operator">/</span> <span class="token constant">IMAGE_PER_ROW</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">grid-col-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>entry<span class="token punctuation">.</span>key<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-              </span><span class="token punctuation">&#123;</span><span class="token function">renderItem</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token plain-text">
-            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Col</span></span><span class="token punctuation">></span></span>
-          <span class="token punctuation">)</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Row</span></span><span class="token punctuation">></span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ControlHeader</span></span> <span class="token spread"><span class="token punctuation">&#123;</span><span class="token punctuation">...</span><span class="token attr-value">props</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Tooltip</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error-tooltip<span class="token punctuation">"</span></span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>right<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Click to change visualization type'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Label</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>toggleModal<span class="token punctuation">&#125;</span></span> <span class="token attr-name">bsStyle</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>labelBsStyle<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-            </span><span class="token punctuation">&#123;</span>registry<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">?</span> registry<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">.</span>name <span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>value<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Label</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">VizSupportValidation</span></span> <span class="token attr-name">vizType</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>value<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Tooltip</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Modal</span></span> <span class="token attr-name">show</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>showModal<span class="token punctuation">&#125;</span></span> <span class="token attr-name">onHide</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>toggleModal<span class="token punctuation">&#125;</span></span> <span class="token attr-name">onEnter</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>focusSearch<span class="token punctuation">&#125;</span></span> <span class="token attr-name">title</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Select a visualization type'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">responsive</span> <span class="token attr-name">hideFooter</span> <span class="token attr-name">forceRender</span><span class="token punctuation">></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viztype-control-search-box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">FormControl</span></span>
-            <span class="token attr-name">inputRef</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">ref</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-              searchRef<span class="token punctuation">.</span>current <span class="token operator">=</span> ref
-            <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></span>
-            <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
-            <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>filter<span class="token punctuation">&#125;</span></span>
-            <span class="token attr-name">placeholder</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'Search'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
-            <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>changeSearch<span class="token punctuation">&#125;</span></span>
-          <span class="token punctuation">/></span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
-        </span><span class="token punctuation">&#123;</span>rows<span class="token punctuation">&#125;</span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Modal</span></span><span class="token punctuation">></span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-VizTypeControl<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> propTypes
-VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> defaultProps
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> VizTypeControl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/26/%E7%94%B3%E8%AF%B7LetsEncrypt%E9%80%9A%E9%85%8D%E7%AC%A6SSL%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1794,7 +1266,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -1873,7 +1345,7 @@ VizTypeControl<span class="token punctuation">.</span>defaultProps <span class="
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -2749,7 +2221,7 @@ export const reload &#x3D; [
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -3011,7 +2483,7 @@ bar<span class="token punctuation">.</span><span class="token function">f4</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -3731,7 +3203,7 @@ command1 <span class="token operator">|</span> command2<span aria-hidden="true" 
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-17 06:57:23" itemprop="dateModified" datetime="2021-04-17T06:57:23+00:00">2021-04-17</time>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
       </span>
 
   
@@ -3779,8 +3251,228 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/26/%E8%AF%95%E8%AF%95%20Proxy%20%E5%92%8C%20Reflect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/26/%E8%AF%95%E8%AF%95%20Proxy%20%E5%92%8C%20Reflect/" class="post-title-link" itemprop="url">试试 Proxy 和 Reflect</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-26T00:00:00+00:00">2020-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>使用 <code>Object.defineProperty()</code>模拟<code>Vue</code>的数据绑定</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">VData</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> data <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">bindData</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">bindData</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        newData<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> newData<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          <span class="token function">set</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            newData<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> val
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    b<span class="token operator">:</span> <span class="token number">2</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用<code>Proxy</code>封装一个可设置类型的数组<code>TypeArray</code>，并且对数组中不存在的值返回默认值</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> TypeArray <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">'N/A'</span><span class="token punctuation">,</span> initArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>initArray<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> prop<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">||</span> defaultValue
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> type <span class="token operator">||</span> prop <span class="token operator">===</span> <span class="token string">'length'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> value
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> numArr <span class="token operator">=</span> <span class="token function">TypeArray</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">)</span>
+numArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment">// Proxy 代理数组 数组本身的方法属性不会被破坏</span>
+numArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span> <span class="token comment">// Uncaught TypeError: 'set' on proxy: trap returned falsish for property '2' at Proxy.push (&lt;anonymous>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 <code>has</code>方法捕获<code>in</code>操作符</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> checkRange <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>
+  <span class="token punctuation">&#123;</span>
+    start<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    end<span class="token operator">:</span> <span class="token number">100</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token function">has</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> prop <span class="token operator">>=</span> target<span class="token punctuation">.</span>start <span class="token operator">&amp;&amp;</span> prop <span class="token operator">&lt;=</span> target<span class="token punctuation">.</span>end
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">50</span> <span class="token keyword">in</span> checkRange<span class="token punctuation">)</span>	<span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">150</span> <span class="token keyword">in</span> checkRange<span class="token punctuation">)</span>	<span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用<code>ownKeys</code>拦截 <code>Reflect.ownKeys()</code>也可以拦截 <code>Object.keys() ; for in Loop ; Object.getOwnPropertySymbols()</code> 中的部分的 key </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  attr<span class="token operator">:</span> <span class="token string">'attr'</span><span class="token punctuation">,</span>
+  _attr<span class="token operator">:</span> <span class="token string">'_attr'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'attr'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'Symbol(attr)'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'_attr'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'Symbol(_attr)'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 未使用 Proxy 的 ownKeys 拦截</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ["attr", "_attr"]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertySymbols</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// [Symbol(attr), Symbol(_attr)]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ["attr", "_attr", Symbol(attr), Symbol(_attr)]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token comment">// attr _attr</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 使用 Proxy 的 ownKeys 拦截</span>
+<span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">ownKeys</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> normalKeys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> normalFilterKeys <span class="token operator">=</span> normalKeys<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>key<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 拦截以下划线开头的 key</span>
+    <span class="token keyword">const</span> symbolKeys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertySymbols</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> symbolFilterKeys <span class="token operator">=</span> symbolKeys<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>key<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'Symbol(_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 拦截以下划线开头的 key</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">...</span>normalFilterKeys<span class="token punctuation">,</span> <span class="token operator">...</span>symbolFilterKeys<span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ["attr"]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertySymbols</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// [Symbol(attr)]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ["attr", Symbol(attr)]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token comment">// attr</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>来个综合案例</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> userInfo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  name<span class="token operator">:</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">17</span><span class="token punctuation">,</span>
+  _address<span class="token operator">:</span> <span class="token string">'London UK'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>userInfo<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> prop<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>prop<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> 不可访问</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">'N/A'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">不能设置 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>prop<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> value
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">deleteProperty</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">不能删除</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>prop<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">delete</span> target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">ownKeys</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>key<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 <code>apply</code>拦截函数的调用（包装函数）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> sumText <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">apply</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> thisArg<span class="token punctuation">,</span> argArray</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">total number is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token function">target</span><span class="token punctuation">(</span><span class="token operator">...</span>argArray<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token function">sumText</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
