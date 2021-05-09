@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
+  </script>
+<meta name="description" content="浏览器背后的故事 graph LR  A(PC) B(浏览器) C(DNS 服务器) D(WEB 服务器) %% 定义样式类 classDef pc fill:#83a8d5,stroke:#333,stroke-width:2px; classDef browser fill:#f3a2a8,stroke:#333,stroke-width:2px; classDef server fill:#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习HTTP">
+<meta property="og:url" content="http://example.com/2021/05/07/%E5%AD%A6%E4%B9%A0HTTP/index.html">
+<meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:description" content="浏览器背后的故事 graph LR  A(PC) B(浏览器) C(DNS 服务器) D(WEB 服务器) %% 定义样式类 classDef pc fill:#83a8d5,stroke:#333,stroke-width:2px; classDef browser fill:#f3a2a8,stroke:#333,stroke-width:2px; classDef server fill:#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/04.png">
+<meta property="og:image" content="http://example.com/images/05.jpg">
+<meta property="article:published_time" content="2021-05-07T01:35:24.000Z">
+<meta property="article:modified_time" content="2021-05-09T19:44:29.284Z">
+<meta property="article:author" content="ZV">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/04.png">
+
+
+<link rel="canonical" href="http://example.com/2021/05/07/%E5%AD%A6%E4%B9%A0HTTP/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>学习HTTP | ZV-Blogs</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZV-Blogs</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">致过去的时光</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器背后的故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-%E4%B8%8E-HTTP"><span class="nav-number">1.2.</span> <span class="nav-text">Web 与 HTTP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span class="nav-number">2.</span> <span class="nav-text">HTTP 协议的前世今生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%8F%E8%BF%87-TCP-IP-%E7%9C%8B-HTTP"><span class="nav-number">3.</span> <span class="nav-text">透过 TCP&#x2F;IP 看 HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">TCP&#x2F;IP 数据包的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="nav-number">3.3.</span> <span class="nav-text">TCP&#x2F;IP 数据传输示意图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-%E7%9A%84%E6%8F%A1%E6%89%8B%E5%92%8C%E6%8C%A5%E6%89%8B"><span class="nav-number">3.4.</span> <span class="nav-text">TCP 的握手和挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%883-%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%89"><span class="nav-number">3.4.1.</span> <span class="nav-text">建立连接的过程（3 次握手）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%884-%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89"><span class="nav-number">3.4.2.</span> <span class="nav-text">断开连接的过程（4 次挥手）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">DNS 域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF-HTTP-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">回溯 HTTP 事务处理过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E-HTTP-%E8%AF%B7%E6%B1%82%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6"><span class="nav-number">6.</span> <span class="nav-text">与 HTTP 请求的第一次亲密接触</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZV"
+      src="/images/guitar.svg">
+  <p class="site-author-name" itemprop="name">ZV</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/07/%E5%AD%A6%E4%B9%A0HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习HTTP
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-07 01:35:24" itemprop="dateCreated datePublished" datetime="2021-05-07T01:35:24+00:00">2021-05-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="浏览器背后的故事"><a href="#浏览器背后的故事" class="headerlink" title="浏览器背后的故事"></a>浏览器背后的故事</h2><div class="mermaid">
+graph LR
+
+A(PC)
+B(浏览器)
+C(DNS 服务器)
+D(WEB 服务器)
+%% 定义样式类
+classDef pc fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef browser fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef server fill:#fbd4b3,stroke:#333,stroke-width:2px;
+class A pc
+class B browser
+class C server
+class D server
+%% 应用样式类，markdown 里没效果
+A --&gt; |1. 输入 URL | B
+B --&gt; |2. 域名查询| C
+C --&gt; |3. 获取 IP| B
+B --&gt; |4. 发送请求| D
+D --&gt; |5. 回传页面内容| B
+B --&gt; |6. 渲染| A
+
+</div>
+
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><ul>
+<li>超文本传输协议（HTTP）是一种通信协议，它允许将超文本标记语言（HTML）文档从 Web 服务器传送到客户端的浏览器。</li>
+</ul>
+<h3 id="Web-与-HTTP"><a href="#Web-与-HTTP" class="headerlink" title="Web 与 HTTP"></a>Web 与 HTTP</h3><ul>
+<li>Web 是一种基于超文本和 HTTP 的全球性的、动态交互的跨平台的分布式图形信息系统。</li>
+<li>我们访问的网站是建立在 Internet 上的一种<strong>网络服务</strong>，为访问者在 Internet 上查找和浏览信息提供了图形化的、已于访问的直观界面，其中的文档及超级链接将 Internet 上的信息节点组织成一个互为关系的网状结构。</li>
+</ul>
+<h2 id="HTTP-协议的前世今生"><a href="#HTTP-协议的前世今生" class="headerlink" title="HTTP 协议的前世今生"></a>HTTP 协议的前世今生</h2><div class="mermaid">
+graph LR
+
+A(1990 年 10 月&lt;br&gt;Tim-Berbers-Lee 最早提出 HTTP 协议)
+B(1991 年 01 月&lt;br&gt;HTTP 0.9 诞生)
+C(1996 年 05 月&lt;br&gt;HTTP 1.0 发布)
+D(1997 年 01 月&lt;br&gt;HTTP 1.1 发布)
+E(2015 年 05 月&lt;br&gt;HTTP 2.0 提出)
+F(2021 年 05 月&lt;br&gt;HTTP 3.0 诞生)
+
+%% 定义样式类
+classDef t1 fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef t2 fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef t3 fill:#fbd4b3,stroke:#333,stroke-width:2px;
+class A t1
+class B t2
+class C t3
+class D t1
+class E t2
+class F t3
+%% 应用样式类，markdown 里没效果
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+E --&gt; F
+
+</div>
+
+<h2 id="透过-TCP-IP-看-HTTP"><a href="#透过-TCP-IP-看-HTTP" class="headerlink" title="透过 TCP/IP 看 HTTP"></a>透过 TCP/IP 看 HTTP</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><table>
+  <thead>
+    <td>OSI 7 层模型（理论）</td>
+    <td>TCP/IP 4层模型（实践）</td>
+    <td>协议</td>
+  </thead>
+  <tr>
+    <td>应用层</td>
+    <td rowspan=3>应用层</td>
+    <td rowspan=3>HTTP、FTP、DNS</td>
+  </tr>
+  <tr>
+    <td>表示层</td>
+  </tr>
+  <tr>
+    <td>会话层</td>
+  </tr>
+  <tr>
+    <td>传输层</td>
+    <td>传输层</td>
+    <td>TCP、UDP、RTP、SCTP</td>
+  </tr>
+  <tr>
+    <td>网络层</td>
+    <td>网络层</td>
+    <td>IP</td>
+  </tr>
+  <tr>
+    <td>链路层</td>
+    <td rowspan=2>链路层</td>
+    <td rowspan=2>以太网、Wi-Fi、MPLS</td>
+  </tr>
+  <tr>
+    <td>物理层</td>
+  </tr>
+</table>
+
+<h3 id="TCP-IP-数据包的封装"><a href="#TCP-IP-数据包的封装" class="headerlink" title="TCP/IP 数据包的封装"></a>TCP/IP 数据包的封装</h3><p><img src="/images/04.png" alt="TCP/IP 数据包的封装"></p>
+<h3 id="TCP-IP-数据传输示意图"><a href="#TCP-IP-数据传输示意图" class="headerlink" title="TCP/IP 数据传输示意图"></a>TCP/IP 数据传输示意图</h3><p><img src="/images/05.jpg" alt="TCP/IP 数据传输示意图"></p>
+<h3 id="TCP-的握手和挥手"><a href="#TCP-的握手和挥手" class="headerlink" title="TCP 的握手和挥手"></a>TCP 的握手和挥手</h3><p>TCP 协议有这样几个基本操作：</p>
+<ul>
+<li><p>如果一个 Host 主动向另一个 Host 发起连接，称为 SYN（Synchronization），请求同步；</p>
+</li>
+<li><p>如果一个 Host 主动断开请求，称为 FIN（Finish），请求完成；</p>
+</li>
+<li><p>如果一个 Host 给另一个 Host 发送数据，称为 PSH（Push），数据推送。</p>
+</li>
+</ul>
+<p>以上 3 种情况，接收方收到数据后，都需要给发送方一个 ACK（Acknowledgement）响应。请求/响应的模型是可靠性的要求，如果一个请求没有响应，发送方可能会认为自己需要重发这个请求。</p>
+<h4 id="建立连接的过程（3-次握手）"><a href="#建立连接的过程（3-次握手）" class="headerlink" title="建立连接的过程（3 次握手）"></a>建立连接的过程（3 次握手）</h4><div class="mermaid">
+sequenceDiagram
+participant 发送端
+participant 接收端
+
+发送端-&gt;&gt;接收端:1.SYN
+接收端-&gt;&gt;发送端:2.ACK+SYN
+发送端-&gt;&gt;接收端:3.ACK
+</div>
+
+<h4 id="断开连接的过程（4-次挥手）"><a href="#断开连接的过程（4-次挥手）" class="headerlink" title="断开连接的过程（4 次挥手）"></a>断开连接的过程（4 次挥手）</h4><div class="mermaid">
+sequenceDiagram
+participant 发送端
+participant 接收端
+
+发送端-&gt;&gt;接收端:1.FIN
+接收端-&gt;&gt;发送端:2.ACK
+接收端-&gt;&gt;发送端:3.FIN
+发送端-&gt;&gt;接收端:4.ACK
+</div>
+
+<blockquote>
+<p>问：TCP 为什么是 3 次握手，4 次挥手？</p>
+<p>答：TCP 是一个双工协议，为了让双方都保证，建立连接的时候，连接双方都需要向对方发送 SYC（同步请求）和 ACK（响应）。</p>
+<p>握手阶段双方都没有烦琐的工作，因此一方向另一方发起同步（SYN）之后，另一方可以将自己的 ACK 和 SYN 打包作为一条消息回复，因此是 3 次握手——需要 3 次数据传输。</p>
+<p>到了挥手阶段，双方都可能有未完成的工作。收到挥手请求的一方，必须马上响应（ACK），表示接收到了挥手请求。类比现实世界中，你收到一个 Offer，出于礼貌你先回复考虑一下，然后思考一段时间再回复 HR 最后的结果。最后等所有工作结束，再发送请求中断连接（FIN），因此是 4 次挥手。</p>
+</blockquote>
+<h2 id="DNS-域名解析"><a href="#DNS-域名解析" class="headerlink" title="DNS 域名解析"></a>DNS 域名解析</h2><h2 id="回溯-HTTP-事务处理过程"><a href="#回溯-HTTP-事务处理过程" class="headerlink" title="回溯 HTTP 事务处理过程"></a>回溯 HTTP 事务处理过程</h2><h2 id="与-HTTP-请求的第一次亲密接触"><a href="#与-HTTP-请求的第一次亲密接触" class="headerlink" title="与 HTTP 请求的第一次亲密接触"></a>与 HTTP 请求的第一次亲密接触</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/17/JS%E7%9A%84%E4%B8%89%E7%A7%8D%E7%BB%A7%E6%89%BF/" rel="prev" title="JS的三种继承">
+                  <i class="fa fa-chevron-left"></i> JS的三种继承
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZV</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+</body>
+</html>

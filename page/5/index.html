@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
+  </script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZV-Blogs">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="ZV-Blogs">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ZV">
+<meta property="article:tag" content="👨‍💻🎸🍺">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/page/5/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>ZV-Blogs</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZV-Blogs</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">致过去的时光</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-教程"><a href="/tutorial/" rel="section"><i class="fa fa-code fa-fw"></i>教程</a></li>
+        <li class="menu-item menu-item-站点"><a href="/websites/" rel="section"><i class="fa fa-star fa-fw"></i>站点</a></li>
+        <li class="menu-item menu-item-文章"><a href="/article/" rel="section"><i class="fa fa-newspaper fa-fw"></i>文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZV"
+      src="/images/guitar.svg">
+  <p class="site-author-name" itemprop="name">ZV</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/26/MongoDB%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/" class="post-title-link" itemprop="url">MongoDB 高级查询</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+00:00">2019-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="MongoDB-聚合管道"><a href="#MongoDB-聚合管道" class="headerlink" title="MongoDB 聚合管道"></a>MongoDB 聚合管道</h2><p>使用聚合管道可以对集合中的文档进行变换和组合<br>实际运用：表关联查询、数据的统计<br><code>MongoDB</code> 中使用 <code>db.COLLECTION_NAME.aggregate([&#123;&#125;,...])</code> 方法来构建和使用聚合管道</p>
+<h2 id="Aggregation-Pipeline-Stages-amp-Operators"><a href="#Aggregation-Pipeline-Stages-amp-Operators" class="headerlink" title="Aggregation Pipeline Stages &amp; Operators"></a>Aggregation Pipeline Stages &amp; Operators</h2><h3 id="Stages-操作"><a href="#Stages-操作" class="headerlink" title="Stages 操作"></a>Stages 操作</h3><table>
+<thead>
+<tr>
+<th>操作符 S</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$project</code></td>
+<td>修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档</td>
+</tr>
+<tr>
+<td><code>$match</code></td>
+<td>用于过滤数据，只输出符合条件的文档。<code>$match</code> 使用 MongoDB 的标准查询操作</td>
+</tr>
+<tr>
+<td><code>$limit</code></td>
+<td>用来限制 MongoDB 聚合管道返回的文档数</td>
+</tr>
+<tr>
+<td><code>$skip</code></td>
+<td>在聚合管道中跳过指定数量的文档，并返回余下的文档</td>
+</tr>
+<tr>
+<td><code>$group</code></td>
+<td>将集合中的文档分组，可用于统计结果</td>
+</tr>
+<tr>
+<td><code>$sort</code></td>
+<td>将输入文档排序后输出</td>
+</tr>
+<tr>
+<td><code>$lookup</code></td>
+<td>用以引入其它集合的数据 （表关联查询）</td>
+</tr>
+</tbody></table>
+<h3 id="Operators-运算符"><a href="#Operators-运算符" class="headerlink" title="Operators 运算符"></a>Operators 运算符</h3><table>
+<thead>
+<tr>
+<th align="left">Operators</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>$sum</code></td>
+<td align="left">计算总和</td>
+</tr>
+<tr>
+<td align="left"><code>$avg</code></td>
+<td align="left">计算平均值</td>
+</tr>
+<tr>
+<td align="left"><code>$min</code></td>
+<td align="left">获取集合中所有文档对应值得最小值</td>
+</tr>
+<tr>
+<td align="left"><code>$max</code></td>
+<td align="left">获取集合中所有文档对应值得最大值</td>
+</tr>
+<tr>
+<td align="left"><code>$push</code></td>
+<td align="left">在结果文档中插入值到一个数组中</td>
+</tr>
+<tr>
+<td align="left"><code>$addToSet</code></td>
+<td align="left">在结果文档中插入值到一个数组中，但不创建副本</td>
+</tr>
+<tr>
+<td align="left"><code>$first</code></td>
+<td align="left">根据资源文档的排序获取第一个文档数据</td>
+</tr>
+<tr>
+<td align="left"><code>$last</code></td>
+<td align="left">根据资源文档的排序获取最后一个文档数据</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>管道操作符作为<strong>键</strong>，所对应的<strong>值</strong>叫做管道表达式<br>例如<code>&#123;$match:&#123;status:&quot;A&quot;&#125;&#125;</code>，<code>$match</code> 称为管道操作符，而 <code>status:&quot;A&quot;</code>称为管道表达式<br>每个管道表达式是一个文档结构，它是由字段名、字段值、和一些表达式操作符组成的</p>
+</blockquote>
+<h2 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"111"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"222"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uid"</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">"trade_no"</span><span class="token operator">:</span><span class="token string">"333"</span><span class="token punctuation">,</span><span class="token string">"all_price"</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">"all_num"</span><span class="token operator">:</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品鼠标 1"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 2"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"商品键盘 3"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"牛奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"酸奶"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">40</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"矿泉水"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"order_id"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token operator">:</span><span class="token string">"毛巾"</span><span class="token punctuation">,</span><span class="token string">"price"</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>num<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>自定义文档的结构，可以用来重命名、增加或删除文档中的字段</p>
+<p>查找 order 只返回文档中 trade_no 和 all_price 字段</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            all_price<span class="token operator">:</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>过滤。用法类似于 <code>find()</code> 方法中的参数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $gte<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>分组，可用于统计结果</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order_item<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $group<span class="token operator">:</span> <span class="token punctuation">&#123;</span> _id<span class="token operator">:</span> <span class="token string">'$order_id'</span><span class="token punctuation">,</span> total<span class="token operator">:</span> <span class="token punctuation">&#123;</span> $sum<span class="token operator">:</span> <span class="token string">'$num'</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><p>排序</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $sort<span class="token operator">:</span> <span class="token punctuation">&#123;</span> all_price<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="limit"><a href="#limit" class="headerlink" title="$limit"></a>$limit</h2><p>限制数量</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $limit<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="skip"><a href="#skip" class="headerlink" title="$skip"></a>$skip</h2><p>跳过</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span> trade_no<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> all_price<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $skip<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>表关联</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
+            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">db<span class="token punctuation">.</span>order<span class="token punctuation">.</span><span class="token function">aggregate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        $lookup<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'order_item'</span><span class="token punctuation">,</span>
+            localField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            foreignField<span class="token operator">:</span> <span class="token string">'order_id'</span><span class="token punctuation">,</span>
+            <span class="token keyword">as</span><span class="token operator">:</span> <span class="token string">'items'</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $match<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            all_price<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                $gt<span class="token operator">:</span> <span class="token number">90</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+        $project<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            items<span class="token operator">:</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZV</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+</body>
+</html>

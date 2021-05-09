@@ -198,13 +198,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -234,6 +234,105 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B2/" class="post-title-link" itemprop="url">正则案例2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-28 00:00:01" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:01+00:00">2020-05-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>提取网址中的指定片段</p>
+<p>处理前</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> url1 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring'</span>
+<span class="token keyword">let</span> url2 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring?id=1'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>处理后</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">'monitoring'</span>
+<span class="token string">'monitoring'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定正则</span>
+<span class="token keyword">let</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w+\W+(\d+\.?)&#123;4&#125;\W\d+\W+(\w+)(\?.+)?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span>
+<span class="token comment">// 准备数据</span>
+<span class="token keyword">let</span> url1 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring'</span>
+<span class="token keyword">let</span> url2 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:8123/#/monitoring?id=1'</span>
+<span class="token comment">// 处理</span>
+<span class="token keyword">let</span> result1 <span class="token operator">=</span> url1<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> p2
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> result2 <span class="token operator">=</span> url2<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> p2
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印结果</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result1<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -274,7 +373,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -570,7 +669,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -717,7 +816,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -811,7 +910,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1001,7 +1100,7 @@ date2 <span class="token operator">&lt;-</span> as.Date<span class="token punctu
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1067,7 +1166,7 @@ sd(num_vec)
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a></p>
 </blockquote>
-<h2 id="apply-函数族"><a href="#apply-函数族" class="headerlink" title="apply 函数族"></a>apply 函数族</h2><p><img src="/images/20.png" alt="20"></p>
+<h2 id="apply-函数族"><a href="#apply-函数族" class="headerlink" title="apply 函数族"></a>apply 函数族</h2><p><img src="/images/03.png" alt="03"></p>
 <ul>
 <li><p>lapply</p>
 <ul>
@@ -1318,7 +1417,7 @@ sd(num_vec)
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1506,7 +1605,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1724,7 +1823,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1842,7 +1941,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
+        <time title="修改时间：2021-05-09 19:44:29" itemprop="dateModified" datetime="2021-05-09T19:44:29+00:00">2021-05-09</time>
       </span>
 
   
@@ -1898,112 +1997,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/21/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/11/21/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">前端项目中的路径解析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-21T00:00:00+00:00">2019-11-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-19 18:04:39" itemprop="dateModified" datetime="2021-04-19T18:04:39+00:00">2021-04-19</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这里说的路径解析分两种</p>
-<ol>
-<li><code>Webpack</code>打包配置项中的 <code>alias</code></li>
-<li><code>jsconfig.json</code>中的 <code>compilerOptions</code></li>
-</ol>
-<h2 id="Webpack-打包配置项中的-alias"><a href="#Webpack-打包配置项中的-alias" class="headerlink" title="Webpack 打包配置项中的 alias"></a>Webpack 打包配置项中的 alias</h2><p>相信很多人都很喜欢这个配置，因为在引用其他目录下的文件时，通过 <code>./../utils/tools.js</code>这种写法显得特别的笨重。</p>
-<p>可是如果在配置了 <code>alias</code>这个属性就会好很多。</p>
-<p>这块不多说，文档讲的很详细了</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/configuration/resolve/#resolve-alias">解析(resolve)</a></p>
-</blockquote>
-<h2 id="jsconfig-json中的-compilerOptions"><a href="#jsconfig-json中的-compilerOptions" class="headerlink" title="jsconfig.json中的 compilerOptions"></a>jsconfig.json中的 compilerOptions</h2><p>由于 <code>Webpack</code>的 <code>alias</code>配置你可能会在编写代码的时候遇到一些问题。</p>
-<p>因为通过 <code>alias</code>的方式编写的路径，你并不能通过转到定义访问到源文件。</p>
-<p>所以这个时候就需要 <code>jsconfig.json</code>来帮帮你了</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"."</span><span class="token punctuation">,</span>
-    <span class="token property">"paths"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">"@/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"comps/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/comps/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"config/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/config/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"pages/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/pages/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"resource/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/resource/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"styles/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/styles/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"utils/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/utils/*"</span><span class="token punctuation">]</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>通过这个<code>jsconfig.json</code>你就可以解决因为使用 <code>alias</code>配置而导致的无法访问源文件问题了</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018013282">VSCode中的 jsconfig.json</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5dedd6c8f265da33d15884bf">Create React App无eject配置</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
