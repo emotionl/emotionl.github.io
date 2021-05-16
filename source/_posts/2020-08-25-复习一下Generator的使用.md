@@ -2,7 +2,7 @@
 title: 复习一下Generator的使用
 date: 2020-08-25 00:00:00
 tags:
-- JavaScript
+  - JavaScript
 ---
 
 先来个例题 看一下结果
@@ -23,7 +23,6 @@ console.log(g.next()) // 3> {value: NaN, done: true}
   2> g.next() 返回的 value 是 y / 3，由于本次 g.next() 并未传值，所以 y = undefined * 2 => NaN，所以本次的 value 是 NaN / 3 => NaN
   3> g.next() 返回的 value 是 x + y + z => 1 + NaN + NaN => NaN
 */
-
 ```
 
 如何让以上代码执行的更符合一般的逻辑`y = (1 + 5) * 2 ; z = y / 4`，最后返回 16
@@ -72,8 +71,8 @@ const makeGenerator = (list) => {
   let index = 0
   return {
     next: () => {
-      const value = index >= list.length
-      const done = list[index++]
+      const value = list[index++]
+      const done = index >= list.length
       return { value, done }
     }
   }
@@ -85,6 +84,3 @@ console.log(g.next())
 console.log(g.next())
 console.log(g.next())
 ```
-
-
-
