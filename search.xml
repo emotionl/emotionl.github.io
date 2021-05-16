@@ -2922,8 +2922,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   1> g.next() 返回的 value 是 x + 5 => 6
   2> g.next() 返回的 value 是 y / 3，由于本次 g.next() 并未传值，所以 y = undefined * 2 => NaN，所以本次的 value 是 NaN / 3 => NaN
   3> g.next() 返回的 value 是 x + y + z => 1 + NaN + NaN => NaN
-*/</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如何让以上代码执行的更符合一般的逻辑<code>y = (1 + 5) * 2 ; z = y / 4</code>，最后返回 16</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">addGen</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -2964,8 +2963,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>
   <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
     <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> value <span class="token operator">=</span> index <span class="token operator">>=</span> list<span class="token punctuation">.</span>length
-      <span class="token keyword">const</span> done <span class="token operator">=</span> list<span class="token punctuation">[</span>index<span class="token operator">++</span><span class="token punctuation">]</span>
+      <span class="token keyword">const</span> value <span class="token operator">=</span> list<span class="token punctuation">[</span>index<span class="token operator">++</span><span class="token punctuation">]</span>
+      <span class="token keyword">const</span> done <span class="token operator">=</span> index <span class="token operator">>=</span> list<span class="token punctuation">.</span>length
       <span class="token keyword">return</span> <span class="token punctuation">&#123;</span> value<span class="token punctuation">,</span> done <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
@@ -2976,9 +2975,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 ]]></content>
       <tags>
         <tag>JavaScript</tag>
