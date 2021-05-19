@@ -11,6 +11,7 @@ date: 2020-12-29 18:17:18
 - [阿里前端开发规范](https://w3ctim.com/post/1d821dd8)
 - [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
 - [编写高质量可维护的代码：优雅命名](https://mp.weixin.qq.com/s/0PaNfSml357FDVfCPH8DEQ)
+- [Prettier 完全指南，以及和 Git、VSCode、ESLint 整合，让你的代码变美丽](https://mp.weixin.qq.com/s/Et2Y2H71O3d3q5Ui7v5WLA)
 
 ## JavaScript/TypeScript/Node.js
 
@@ -47,6 +48,8 @@ date: 2020-12-29 18:17:18
 - [JavaScrpit AST 实战](https://mp.weixin.qq.com/s/78h3eI8jwQiBhLUDyLg3GQ)
 - [由浅入深，走进中级工程师都未必知道的 JavaScript 时间处理冷知识](https://mp.weixin.qq.com/s/b5vho4nVtQ-5E1nXz2vanA)
 - [手写Promise最简20行版本，实现异步链式调用](https://mp.weixin.qq.com/s/KICb2Z7_1tqFTLszPZgm8Q)
+- [硬核：手写一个ECharts](https://mp.weixin.qq.com/s/wUlBtmR69NV5ORtGcnxr7Q)
+- [全网最全 ECMAScript 攻略](https://mp.weixin.qq.com/s/3XMshGFFBg4IGQTvkRjGaA)
 
 ### TypeScript
 
@@ -61,6 +64,7 @@ date: 2020-12-29 18:17:18
 - [Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现](https://juejin.cn/post/6844904126283776014)
 - [TS 4.1 新特性实现 Vuex 无限层级 dispatch 类型推断。](https://juejin.cn/post/6872967325637836808)
 - [10 个写 TypeScript 代码的坏习惯](https://mp.weixin.qq.com/s/zUj2M5X0z5ADnrmy6UA13Q)
+- [用 Enum 提高TypeScript代码的可读性](https://mp.weixin.qq.com/s/oa1Z9bbYEF2r-qX9rUfFwQ)
 
 ### Node.js
 
@@ -98,6 +102,10 @@ date: 2020-12-29 18:17:18
 - [你可能不知道的Animation动画技巧与细节](https://mp.weixin.qq.com/s/zQR6qHkGUhQheTxX03BGTQ)
 - [只听说过CSS in JS，怎么还有JS in CSS？](https://mp.weixin.qq.com/s/CIQdHYI2_z8JZk9XESpoqw)
 - [面试官：2021年了，还只会一种 CSS 实现三角形的方式？](https://mp.weixin.qq.com/s/bgQVulrW9y0L5DuwDJQYoA)
+- [小技巧！用 CSS 滤镜实现毛玻璃效果探讨](https://mp.weixin.qq.com/s/qM3Rt8u5yOC2RzMm0Nqpgg)
+- [深入解析 CSS 选择器](https://mp.weixin.qq.com/s/I6E_fdt23bMwVzUIZh2pyA)
+- [神奇的 CSS 映射鼠标位置，实现通过鼠标移动控制页面元素效果](https://mp.weixin.qq.com/s/2aeyglJHuTutE8jZ1XgRuA)
+- [WeGame暗色模式实践总结](https://mp.weixin.qq.com/s/TcuI8RSzbTkxTKnsa8BduA)
 
 ## 框架
 
@@ -119,6 +127,7 @@ date: 2020-12-29 18:17:18
 - [useCallback 的问题和隐患的解决方案](https://mp.weixin.qq.com/s/vAeqveGywVlpkdOGp3Ublg)
 - [React 性能优化 | 包括原理、技巧、Demo、工具使用](https://juejin.cn/post/6935584878071119885)
 - [React 全部 API 解读 + 基础实践大全](https://mp.weixin.qq.com/s/OKmwGeqpzA8FQdXS9Mnu8A)
+- [React + TypeScript 实践](https://mp.weixin.qq.com/s/fAXbpxCID1H1jf1uyxu6VA)
 
 ### Vue
 
@@ -138,6 +147,7 @@ date: 2020-12-29 18:17:18
 - [通过自定义 Vue 指令实现前端曝光埋点](https://mp.weixin.qq.com/s/I-ttIv13UDSeKMIKyXqGQA)
 - [Vue2.x高阶问题，你能答多少](https://mp.weixin.qq.com/s/UJQ0eUc8dAPYca1zP6Uohw)
 - [用 Vue 开发自己的 Chrome 扩展](https://mp.weixin.qq.com/s/rNW7GVoEc5xak8mNoq5d-w)
+- [学习 vue3 源码的利器](https://juejin.cn/post/6925668019884523534)
 
 ## 模块/打包
 
@@ -150,6 +160,7 @@ date: 2020-12-29 18:17:18
 - [CodeSandbox 浏览器端的 Webpack 是如何工作的？ 上篇](https://juejin.cn/post/6844903880652750862)
 - [前端 CLI 脚手架思路解析](https://mp.weixin.qq.com/s/Rfov1ZMwS2g_2p-aOMEHbQ)
 - [很多人上来就删除的package-lock.json，还有这么多你不知道的（深度内容）](https://mp.weixin.qq.com/s/HXiI1QIbknzwaPlquVVs4Q)
+- [3 种 Web 图标工程化方案一览](https://mp.weixin.qq.com/s/gOCiNqFpiWGOw-FkSTrbdg)
 
 ## 错误处理
 
@@ -172,12 +183,15 @@ date: 2020-12-29 18:17:18
 - [卧槽，不用英文和数字我居然写出了 console.log(1)？](https://mp.weixin.qq.com/s/1TZGNsgGciDvXkv5qEJpNQ)
 - [CORS 完全手册之CORS 详解](https://mp.weixin.qq.com/s/y8e1HLNzbLLYWSeMnT-xSA)
 - [快速上手Token登录认证](https://mp.weixin.qq.com/s/7rbYr8Q9bwqWwPs9uRIFiw)
+- [前端必知必会的计算机编码知识，Unicode、UTF-8、字节序都是啥？](https://mp.weixin.qq.com/s/xlpNpRUlBb2R4HeJAfoO5g)
+- [前端也要懂编译：AST 从入门到上手指南](https://mp.weixin.qq.com/s/beo-FA6YjzolcFW-Ijhs-g)
 
 ## GIT/Github
 
 - [动图学 Git](https://mp.weixin.qq.com/s/CwO2owC0t8sMnuSOoEyebw)
 - [Github 上怎么修改别人的项目并且提交给原作者！图文并茂！](https://blog.csdn.net/qq_26787115/article/details/52133008)
 - [恕我直言，你可能连 GitHub 搜索都不会用 - 如何精准搜索的神仙技巧](https://mp.weixin.qq.com/s/deQd0VgxfWhfFl084KgYrA)
+- [手把手教你用 Github Actions 部署前端项目](https://mp.weixin.qq.com/s/mVOBrF-IHY3VVf9eT0IXKA)
 
 ## 可视化
 
@@ -218,6 +232,10 @@ date: 2020-12-29 18:17:18
 - [前端图片主题色提取](https://mp.weixin.qq.com/s/0VAZdxIy7xlBwmnvs1TeCg)
 - [如何实现一个前端监控回放系统？](https://mp.weixin.qq.com/s/qP-CJLOtABVABsgtqQ7w-g)
 - [凹凸技术揭秘：如何服务 toG 项目——数字人民币项目前端总结](https://mp.weixin.qq.com/s/6SNXW-Y0Iv62SoPe1w8o1w)
+- [生成前端海报的 N 种方案和优劣](https://mp.weixin.qq.com/s/UB9cCPPf7k_vVvlrcbka-g)
+- [前端录制回放系统初体验](https://mp.weixin.qq.com/s/hmMnvwyLMzxkg0dqNNdI0Q)
+- [实现颜色转换 'rgb(255, 255, 255)' -> '#FFFFFF' 的多种思路](https://mp.weixin.qq.com/s/neYkJoVZlpMuqxAOUV_Qmg)
+- [为什么 0.1 + 0.2 = 0.300000004 ？](https://mp.weixin.qq.com/s/EiT6BBKU6DdBWtemvvRztQ)
 
 ## 架构/设计
 
