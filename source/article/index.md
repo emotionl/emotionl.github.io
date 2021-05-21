@@ -50,6 +50,8 @@ date: 2020-12-29 18:17:18
 - [手写Promise最简20行版本，实现异步链式调用](https://mp.weixin.qq.com/s/KICb2Z7_1tqFTLszPZgm8Q)
 - [硬核：手写一个ECharts](https://mp.weixin.qq.com/s/wUlBtmR69NV5ORtGcnxr7Q)
 - [全网最全 ECMAScript 攻略](https://mp.weixin.qq.com/s/3XMshGFFBg4IGQTvkRjGaA)
+- [绝了，没想到一个 source map 居然涉及到那么多知识盲区](https://mp.weixin.qq.com/s/_BT27OPtwcjGoaVazif-pA)
+- [Javascript 非同步& Event Loop！10 分钟轻松图解学习！](https://mp.weixin.qq.com/s/160Klc4OfzF1KOb6picocA)
 
 ### TypeScript
 
@@ -106,6 +108,8 @@ date: 2020-12-29 18:17:18
 - [深入解析 CSS 选择器](https://mp.weixin.qq.com/s/I6E_fdt23bMwVzUIZh2pyA)
 - [神奇的 CSS 映射鼠标位置，实现通过鼠标移动控制页面元素效果](https://mp.weixin.qq.com/s/2aeyglJHuTutE8jZ1XgRuA)
 - [WeGame暗色模式实践总结](https://mp.weixin.qq.com/s/TcuI8RSzbTkxTKnsa8BduA)
+- [《CSS揭秘》实用技巧总结](https://mp.weixin.qq.com/s/DO8WApPu2sYCvlyz_TS6Hw)
+- [target=_blank和target=blank的区别](https://mp.weixin.qq.com/s/160Klc4OfzF1KOb6picocA)
 
 ## 框架
 
@@ -185,6 +189,8 @@ date: 2020-12-29 18:17:18
 - [快速上手Token登录认证](https://mp.weixin.qq.com/s/7rbYr8Q9bwqWwPs9uRIFiw)
 - [前端必知必会的计算机编码知识，Unicode、UTF-8、字节序都是啥？](https://mp.weixin.qq.com/s/xlpNpRUlBb2R4HeJAfoO5g)
 - [前端也要懂编译：AST 从入门到上手指南](https://mp.weixin.qq.com/s/beo-FA6YjzolcFW-Ijhs-g)
+- [机器学习初探-线性回归](https://mp.weixin.qq.com/s/OS9Oe1ZYDmXFRKQBY94urA)
+- [前端原型链污染漏洞竟可以拿下服务器shell？](https://mp.weixin.qq.com/s/8UX3QORArIdedsyis1e15A)
 
 ## GIT/Github
 
