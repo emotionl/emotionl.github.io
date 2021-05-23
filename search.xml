@@ -195,6 +195,44 @@ db<span class="token punctuation">.</span>order_item<span class="token punctuati
       </tags>
   </entry>
   <entry>
+    <title>二进制</title>
+    <url>/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="什么是二进制计数法？"><a href="#什么是二进制计数法？" class="headerlink" title="什么是二进制计数法？"></a>什么是二进制计数法？</h2><p>53 的十进制表达</p>
+<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 5*10^1 + 3*10^0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>53 的二进制表达</p>
+<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 1*2^5 + 1*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 1*2^0   <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>JavaScript</code> 中 <code>Number.prototype.toString</code> 的模拟实现</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toStringFake</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span> <span class="token comment">// 余数超过9以[a-f]显示</span>
+        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
+        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>JavaScript</code> 中 <code>parseInt</code> 的模拟实现</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">parseIntFake</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">numText<span class="token punctuation">,</span> dec <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> numText
+        <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> next<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            next <span class="token operator">=</span> <span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token operator">+</span>next<span class="token punctuation">)</span> <span class="token operator">?</span> next<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">87</span> <span class="token operator">:</span> <span class="token operator">+</span>next
+            <span class="token keyword">return</span> prev <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>dec<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">*</span> next
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>余数</title>
     <url>/2019/08/26/%E4%BD%99%E6%95%B0/</url>
     <content><![CDATA[<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>余数总是在一个固定的范围内。</p>
@@ -244,44 +282,6 @@ db<span class="token punctuation">.</span>order_item<span class="token punctuati
 <span class="token keyword">let</span> salt <span class="token operator">=</span> <span class="token number">4523645</span>
 <span class="token keyword">let</span> <span class="token punctuation">&#123;</span> encryptValue<span class="token punctuation">,</span> iv <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">hashEncrypt</span><span class="token punctuation">(</span>testValue<span class="token punctuation">,</span> salt<span class="token punctuation">)</span>
 <span class="token keyword">let</span> decryptValue <span class="token operator">=</span> <span class="token function">hashDecrypt</span><span class="token punctuation">(</span>encryptValue<span class="token punctuation">,</span> iv<span class="token punctuation">,</span> salt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二进制</title>
-    <url>/2019/08/26/%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="什么是二进制计数法？"><a href="#什么是二进制计数法？" class="headerlink" title="什么是二进制计数法？"></a>什么是二进制计数法？</h2><p>53 的十进制表达</p>
-<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 5*10^1 + 3*10^0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>53 的二进制表达</p>
-<pre class="line-numbers language-none"><code class="language-none">53 &#x3D; 1*2^5 + 1*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 1*2^0   <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><code>JavaScript</code> 中 <code>Number.prototype.toString</code> 的模拟实现</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Number</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toStringFake</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> decNumber <span class="token operator">=</span> <span class="token keyword">this</span>
-    <span class="token keyword">let</span> remArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">let</span> rem <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>rem <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> rem <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>rem <span class="token operator">+</span> <span class="token number">87</span><span class="token punctuation">)</span> <span class="token comment">// 余数超过9以[a-f]显示</span>
-        remArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span>
-        decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> remArr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>JavaScript</code> 中 <code>parseInt</code> 的模拟实现</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">parseIntFake</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">numText<span class="token punctuation">,</span> dec <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> numText
-        <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> next<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-            next <span class="token operator">=</span> <span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token operator">+</span>next<span class="token punctuation">)</span> <span class="token operator">?</span> next<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">87</span> <span class="token operator">:</span> <span class="token operator">+</span>next
-            <span class="token keyword">return</span> prev <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>dec<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">*</span> next
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <tags>
         <tag>数学</tag>
