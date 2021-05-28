@@ -852,11 +852,11 @@ E --&gt; D
     <content><![CDATA[<ol>
 <li><p>在 <code>VSCode</code> 中下载 <code>ASCIIDecorator</code></p>
 </li>
-<li><p>使用 <code>ASCIIDecorator</code>创建字符画<br> <img src="/images/01.gif" alt="01"></p>
+<li><p>使用 <code>ASCIIDecorator</code>创建字符画<br> <img src="/images/post/01.gif" alt="01"></p>
 </li>
 <li><p>使用 <code>vim</code>或 <code>nano</code>打开 <code>/etc/motd</code>把上一步生成的字符画拷贝进来即可</p>
 </li>
-<li><p>最后<br> <img src="/images/02.png" alt="02"></p>
+<li><p>最后<br> <img src="/images/post/02.png" alt="02"></p>
 </li>
 </ol>
 ]]></content>
@@ -1360,7 +1360,7 @@ sd(num_vec)
 <blockquote>
 <p><a href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a></p>
 </blockquote>
-<h2 id="apply-函数族"><a href="#apply-函数族" class="headerlink" title="apply 函数族"></a>apply 函数族</h2><p><img src="/images/03.png" alt="03"></p>
+<h2 id="apply-函数族"><a href="#apply-函数族" class="headerlink" title="apply 函数族"></a>apply 函数族</h2><p><img src="/images/post/03.png" alt="03"></p>
 <ul>
 <li><p>lapply</p>
 <ul>
