@@ -83,9 +83,9 @@ menu:
   首页: / || fa fa-home  
   标签: /tags/ || fa fa-tags
   归档: /archives/ || fa fa-archive
-  教程: /tutorial/ || fa fa-code
   站点: /websites/ || fa fa-star
-  # 文章: /article/ || fa fa-newspaper
+  教程: https://www.notion.so/ec64daa4cc664e17a885633d414e3bee?v=04a8f92657f742c994273038733f972b || fa fa-code
+  文章: https://www.notion.so/98088d7657a746cea5304c609aa22c2a?v=451a2989664b4fdbbcf65f7d3d66b51e || fa fa-newspaper
   # about: /about/ || fa fa-user
   # categories: /categories/ || fa fa-th
   # schedule: /schedule/ || fa fa-calendar
