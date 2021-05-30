@@ -24,6 +24,7 @@ date: 2020-12-15 01:12:40
 - [github Trending](https://github.com/trending)
 - [JavaScript Weekly](https://javascriptweekly.com/issues/540)
 - [CSS Weekly](https://css-weekly.com/archives/)
+- [CSS Tricks](https://css-tricks.com/)
 - [Dan Abramov](https://overreacted.io/)
 - [Robin Wieruch](https://www.robinwieruch.de/)
 - [LucasHC](https://www.jianshu.com/u/452568260db5)
