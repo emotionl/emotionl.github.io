@@ -734,7 +734,7 @@ goaccess /home/nginx/logs/access.log -o /home/nginx/html/report/index.html --log
     <url>/2019/08/27/Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</url>
     <content><![CDATA[<h2 id="真实应用"><a href="#真实应用" class="headerlink" title="真实应用"></a>真实应用</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>一台阿里云 ECS，一个域名</p>
 <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p><code>emotionl.fun</code> 的二级域名分别指向服务器的两个服务</p>
-<div class="mermaid">
+<pre class="mermaid">
 graph LR
 A[一级域名 emotionl.fun]
 B[二级域名 site1.emotionl.fun]
@@ -750,7 +750,7 @@ C --&gt; G
 F --&gt; E
 G --&gt; E
 E --&gt; D
-</div>
+</pre>
 
 <h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>使用<code>nginx</code>的<code>upstream</code>控制上游服务器，用<code>proxy_pass</code>进行反向代理</p>
 <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ol>
@@ -2817,7 +2817,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <entry>
     <title>Nestjs 开发流</title>
     <url>/2020/08/13/Nestjs%20%E5%BC%80%E5%8F%91%E6%B5%81/</url>
-    <content><![CDATA[<div class="mermaid">
+    <content><![CDATA[<pre class="mermaid">
 graph LR
 A[Entity]
 B[Repository]
@@ -2826,7 +2826,7 @@ D[Controller]
 A --&gt; B
 B --&gt; C
 C --&gt; D
-</div>
+</pre>
 
 <h2 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h2><p>定义数据</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> BaseEntity<span class="token punctuation">,</span> Entity<span class="token punctuation">,</span> PrimaryGeneratedColumn<span class="token punctuation">,</span> Column <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'typeorm'</span>
@@ -4196,6 +4196,130 @@ Bar<span class="token punctuation">.</span><span class="token function">saySomet
       </tags>
   </entry>
   <entry>
+    <title>C指针</title>
+    <url>/2021/06/17/C%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<h2 id="什么是指针-amp-指针变量"><a href="#什么是指针-amp-指针变量" class="headerlink" title="什么是指针 &amp; 指针变量"></a>什么是指针 &amp; 指针变量</h2><blockquote>
+<p>指针就是变量的内存地址，而用来存储指针的变量则是指针变量。</p>
+</blockquote>
+<h2 id="指针变量的声明"><a href="#指针变量的声明" class="headerlink" title="指针变量的声明"></a>指针变量的声明</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* type *var-name; */</span>
+<span class="token keyword">int</span>    <span class="token operator">*</span>ip<span class="token punctuation">;</span>
+<span class="token keyword">double</span> <span class="token operator">*</span>dp<span class="token punctuation">;</span>
+<span class="token keyword">float</span>  <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+<span class="token keyword">char</span>   <span class="token operator">*</span>ch<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<ol>
+<li>在这里，<strong>type</strong> 是指针的基类型，它必须是一个有效的 C 数据类型，<strong>var-name</strong> 是指针变量的名称。</li>
+<li>所有实际数据类型，不管是整型、浮点型、字符型，还是其他的数据类型，对应指针的值的类型都是一样的，都是一个代表内存地址的长的十六进制数。</li>
+<li>不同数据类型的指针之间唯一的不同是，指针所指向的变量或常量的数据类型不同。</li>
+</ol>
+</blockquote>
+<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span>  v         <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">/* 声明实际变量*/</span>
+  <span class="token keyword">int</span><span class="token operator">*</span> v_pointer <span class="token operator">=</span> <span class="token operator">&amp;</span>v<span class="token punctuation">;</span> <span class="token comment">/* 声明指针变量*/</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"变量 : %i\n"</span><span class="token punctuation">,</span> v <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"指针 : %i\n"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>v <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"指针变量 : %i\n"</span><span class="token punctuation">,</span> v_pointer <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"使用指针变量访问变量: %i\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>v_pointer <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/* 
+  变量 : 1
+  指针 : 6422036
+  指针变量 : 6422036
+  使用指针变量访问变量: 1
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><code>*</code>运算符和<code>&amp;</code>运算符恰好相反。</p>
+<p><code>&amp;</code>运算符接收一个数据，然后告诉你这个数据保存在哪里；</p>
+<p><code>*</code>运算符接收一个地址，然后告诉你这个地址中保存的是什么数据。</p>
+</blockquote>
+<h2 id="为什么用指针呢"><a href="#为什么用指针呢" class="headerlink" title="为什么用指针呢"></a>为什么用指针呢</h2><p>首先看一个问题</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span> <span class="token keyword">int</span> v <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  v <span class="token operator">=</span> v <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加前 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">add</span><span class="token punctuation">(</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加后 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>这段代码的本意是想通过 add 函数，使变量 x 增加 1</p>
+<p>但是当调用 add 函数的时候，它只是将变量 x 赋值给了 v 并使用，这只是一个单纯的赋值过程</p>
+<p>所以后续的<code>v = v + 1</code>只会改变 v 的值，并不会对 x 产生任何效果。</p>
+<p>那怎么办呢？</p>
+<p>简单来讲，可以让 add 函数把结果返回出去，并重新赋值给 x</p>
+</blockquote>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span> <span class="token keyword">int</span> v <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  v <span class="token operator">=</span> v <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> v<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加前 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  x <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加后 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>这此好多了，结果也符合预期，但是还有没有其他方法呢？</p>
+<p>答案是有，那就是使用指针</p>
+</blockquote>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span> <span class="token keyword">int</span><span class="token operator">*</span> v <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 定义指针变量</span>
+  <span class="token operator">*</span>v <span class="token operator">=</span> <span class="token operator">*</span>v <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 通过指针变量操作指针指向的变量</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加前 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">add</span><span class="token punctuation">(</span> <span class="token operator">&amp;</span>x <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 传递指针</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"增加后 : %i\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="指向指针的指针"><a href="#指向指针的指针" class="headerlink" title="指向指针的指针"></a>指向指针的指针</h2><p>讲真这块有点老千层饼了，不过也不难</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span>   v<span class="token punctuation">;</span>
+  <span class="token keyword">int</span><span class="token operator">*</span>  p1<span class="token punctuation">;</span>
+  <span class="token keyword">int</span><span class="token operator">*</span><span class="token operator">*</span> p2<span class="token punctuation">;</span>
+  v  <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  p1 <span class="token operator">=</span> <span class="token operator">&amp;</span>v<span class="token punctuation">;</span>
+  p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"实际变量 v %i\n"</span><span class="token punctuation">,</span> v <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"指针变量 p1 %i\n"</span><span class="token punctuation">,</span> p1 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"指针变量 p2 %i\n"</span><span class="token punctuation">,</span> p2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"使用p2访问p1 %i\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"使用p1访问实际变量 %i\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p1 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"使用p2访问实际变量 %i\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token operator">*</span>p2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"p1 与  *p2 %i\n"</span><span class="token punctuation">,</span> p1 <span class="token operator">==</span> <span class="token operator">*</span>p2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"v  与  *p1 %i\n"</span><span class="token punctuation">,</span> v <span class="token operator">==</span> <span class="token operator">*</span>p1 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"v  与 **p2 %i\n"</span><span class="token punctuation">,</span> v <span class="token operator">==</span> <span class="token operator">*</span><span class="token operator">*</span>p2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Learning-The-Shell</title>
     <url>/2021/01/11/Learning-The-Shell/</url>
     <content><![CDATA[<h2 id="01-What-Is-the-shell-什么是脚本"><a href="#01-What-Is-the-shell-什么是脚本" class="headerlink" title="01 - What Is the shell 什么是脚本"></a>01 - What Is the shell 什么是脚本</h2><table>
@@ -4411,7 +4535,7 @@ Bar<span class="token punctuation">.</span><span class="token function">saySomet
 
 <h4 id="Symbolic-Links"><a href="#Symbolic-Links" class="headerlink" title="Symbolic Links"></a>Symbolic Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s item <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><div class="mermaid">
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><pre class="mermaid">
 graph LR
 A[hard link]
 B[file]
@@ -4438,7 +4562,7 @@ C --&gt; E
 D --&gt; F
 E --&gt; G
 G -.-&gt; B
-</div>
+</pre>
 
 <p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
 <ul>
@@ -4788,7 +4912,7 @@ this is a little.txt <span class="token comment"># 打印文件内容</span><spa
 this is the little.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="Pipelines-管道操作符"><a href="#Pipelines-管道操作符" class="headerlink" title="Pipelines 管道操作符"></a>Pipelines 管道操作符</h3><p>管道运算符<code>|</code> 可以把一个命令的标准输出传递到另一命令的标准输入</p>
-<div class="mermaid">
+<pre class="mermaid">
 graph TD
 A[前一个命令的标准输出]
 B[前一个命令的标准输出]
@@ -4800,7 +4924,7 @@ classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
 class A one
 class B two
 A --管道运算符--&gt; B
-</div>
+</pre>
 
 <p>举个栗子 通过管道运算符 我们可以把 <code>/</code>的目录信息通过<code>less</code>命令打印出来</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ll / | less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
