@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -203,6 +203,117 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B3/" class="post-title-link" itemprop="url">正则案例3</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-28 00:00:02" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:02+00:00">2020-05-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>提取字符串中的指定片段</p>
+<p>处理前</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">1234@Chesh我ire我 f我（qegqg3(2604)  @Cheshire fqegqg3(2604)@(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@张=阿萨德(0)1111@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)   @辉煌（……！&amp;（*……*（！……（&amp;）（E(111)</span><span class="token template-punctuation string">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>处理后</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span>
+  <span class="token string">'@Chesh我ire我 f我（qegqg3(2604)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@Cheshire fqegqg3(2604)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@(111)(111)(123)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@张=阿萨德-阿1(111)(111)(123)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@张=阿萨德(0)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@张=阿萨德-阿1(111)(111)(123)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@张=阿萨德-阿1(111)(111)(123)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@1asd(111)'</span><span class="token punctuation">,</span>
+  <span class="token string">'@辉煌（……！&amp;（*……*（！……（&amp;）（E(111)'</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定处理函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getFormatText</span> <span class="token operator">=</span> <span class="token parameter">text</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\@[^(]*(?=\()((\(\d*\)))+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gm</span></span>
+  <span class="token keyword">return</span> text<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 准备数据</span>
+<span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">1234@Chesh我ire我 f我（qegqg3(2604)  @Cheshire fqegqg3(2604)@(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@张=阿萨德(0)1111@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)@1asd(111)@张=阿萨德-阿1(111)(111)(123)Asdasdasdasdasd@1asd(111)@1asd(111)   @辉煌（……！&amp;（*……*（！……（&amp;）（E(111)</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token comment">// 处理</span>
+<span class="token keyword">const</span> formatText <span class="token operator">=</span> <span class="token function">getFormatText</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+
+<span class="token comment">// 打印结果</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formatText<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +345,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -333,7 +444,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -629,7 +740,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -776,7 +887,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -870,7 +981,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -1060,7 +1171,7 @@ date2 <span class="token operator">&lt;-</span> as.Date<span class="token punctu
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -1346,194 +1457,6 @@ sd(num_vec)
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/25/%E7%A7%BB%E5%8A%A8Web%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/25/%E7%A7%BB%E5%8A%A8Web%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">移动Web开发</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-25T00:00:00+00:00">2019-12-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>运行在手机端的 <code>Web</code>页面（<code>H5</code>页面）</li>
-<li>跨平台</li>
-<li>基于<code>Webview</code></li>
-<li>告别<code>IE</code>拥抱<code>Webkit</code></li>
-<li>更好的<strong>适配</strong>和<strong>性能</strong>要求</li>
-</ul>
-<h2 id="常见移动web适配方法"><a href="#常见移动web适配方法" class="headerlink" title="常见移动web适配方法"></a>常见移动web适配方法</h2><h3 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h3><ul>
-<li>960px / 1000px 居中</li>
-<li>盒子模型，定高，定宽</li>
-<li><code>display:inline-block</code></li>
-</ul>
-<h3 id="移动web"><a href="#移动web" class="headerlink" title="移动web"></a>移动web</h3><ul>
-<li>定高，宽度百分比</li>
-<li>Flex布局</li>
-<li>Media Query（媒体查询）</li>
-</ul>
-<h2 id="Media-Query（媒体查询）"><a href="#Media-Query（媒体查询）" class="headerlink" title="Media Query（媒体查询）"></a>Media Query（媒体查询）</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> 媒体类型 <span class="token keyword">and</span> <span class="token punctuation">(</span>媒体特性<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">/*css样式*/</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>举个例子</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-        <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-            <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-            <span class="token property">line-height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-            <span class="token property">font-size</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token selector">.box .inner:nth-child(2n)</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">background</span><span class="token punctuation">:</span> palegreen<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token selector">.box .inner:nth-child(2n+1)</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">background</span><span class="token punctuation">:</span> palevioletred<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
-            <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
-                <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-
-        <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 321px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
-            <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
-                <span class="token property">width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
-                <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="rem-布局"><a href="#rem-布局" class="headerlink" title="rem 布局"></a>rem 布局</h2><blockquote>
-<p>rem：font size of the root element</p>
-</blockquote>
-<ul>
-<li>字体单位：值根据<code>html</code>根元素大小而定，同样可以作为宽度高度等单位</li>
-<li>适配原理：将<code>px</code>替换成<code>rem</code>，动态修改<code>html</code>的<code>font-size</code>适配</li>
-<li>兼容性：<code>IOS 6</code>以上和<code>Android 2.1</code>以上，基本覆盖所有流行的手机系统</li>
-</ul>
-<h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><p>使用设备：<code>iPhone 6/7/8 </code></p>
-<p>切图：<code>750px x 1334px 两倍图</code></p>
-<ol>
-<li><p>使用<code>JS</code>动态修改 <code>html</code>的 <code>font-size</code></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//得到手机屏幕的宽度</span>
-    <span class="token keyword">let</span> htmlWidth <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth <span class="token operator">||</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
-    <span class="token comment">//得到html的Dom元素</span>
-    <span class="token keyword">let</span> htmlDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment">//设置根元素字体大小</span>
-    htmlDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> htmlWidth <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>使用<code>scss</code>编写<code>px</code>转换成<code>rem</code>的函数</p>
-<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token keyword">@function</span> <span class="token function">px2rem</span><span class="token punctuation">(</span><span class="token variable">$px</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token property"><span class="token variable">$rem</span></span><span class="token punctuation">:</span> 37.5px<span class="token punctuation">;</span>
-    <span class="token keyword">@return</span> <span class="token punctuation">(</span><span class="token variable">$px</span>/<span class="token variable">$rem</span><span class="token punctuation">)</span>+rem<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>愉快的编写样式代码喽</p>
-<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.box </span><span class="token punctuation">&#123;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>24px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-</li>
-</ol>
-<blockquote>
-<p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://www.imooc.com/learn/942">移动web开发适配秘籍Rem</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5cddf289f265da038f77696c">关于移动端适配，你必须要知道的</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/25/%E9%93%BE%E8%A1%A8%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1565,7 +1488,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -1752,6 +1675,194 @@ console<span class="token punctuation">.</span><span class="token function">log<
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/25/%E7%A7%BB%E5%8A%A8Web%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/12/25/%E7%A7%BB%E5%8A%A8Web%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">移动Web开发</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-25T00:00:00+00:00">2019-12-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>运行在手机端的 <code>Web</code>页面（<code>H5</code>页面）</li>
+<li>跨平台</li>
+<li>基于<code>Webview</code></li>
+<li>告别<code>IE</code>拥抱<code>Webkit</code></li>
+<li>更好的<strong>适配</strong>和<strong>性能</strong>要求</li>
+</ul>
+<h2 id="常见移动web适配方法"><a href="#常见移动web适配方法" class="headerlink" title="常见移动web适配方法"></a>常见移动web适配方法</h2><h3 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h3><ul>
+<li>960px / 1000px 居中</li>
+<li>盒子模型，定高，定宽</li>
+<li><code>display:inline-block</code></li>
+</ul>
+<h3 id="移动web"><a href="#移动web" class="headerlink" title="移动web"></a>移动web</h3><ul>
+<li>定高，宽度百分比</li>
+<li>Flex布局</li>
+<li>Media Query（媒体查询）</li>
+</ul>
+<h2 id="Media-Query（媒体查询）"><a href="#Media-Query（媒体查询）" class="headerlink" title="Media Query（媒体查询）"></a>Media Query（媒体查询）</h2><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> 媒体类型 <span class="token keyword">and</span> <span class="token punctuation">(</span>媒体特性<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/*css样式*/</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>举个例子</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+            <span class="token property">line-height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token selector">.box .inner:nth-child(2n)</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> palegreen<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token selector">.box .inner:nth-child(2n+1)</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> palevioletred<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+            <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 321px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+            <span class="token selector">.inner</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+                <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="rem-布局"><a href="#rem-布局" class="headerlink" title="rem 布局"></a>rem 布局</h2><blockquote>
+<p>rem：font size of the root element</p>
+</blockquote>
+<ul>
+<li>字体单位：值根据<code>html</code>根元素大小而定，同样可以作为宽度高度等单位</li>
+<li>适配原理：将<code>px</code>替换成<code>rem</code>，动态修改<code>html</code>的<code>font-size</code>适配</li>
+<li>兼容性：<code>IOS 6</code>以上和<code>Android 2.1</code>以上，基本覆盖所有流行的手机系统</li>
+</ul>
+<h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><p>使用设备：<code>iPhone 6/7/8 </code></p>
+<p>切图：<code>750px x 1334px 两倍图</code></p>
+<ol>
+<li><p>使用<code>JS</code>动态修改 <code>html</code>的 <code>font-size</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//得到手机屏幕的宽度</span>
+    <span class="token keyword">let</span> htmlWidth <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth <span class="token operator">||</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+    <span class="token comment">//得到html的Dom元素</span>
+    <span class="token keyword">let</span> htmlDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">//设置根元素字体大小</span>
+    htmlDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> htmlWidth <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>使用<code>scss</code>编写<code>px</code>转换成<code>rem</code>的函数</p>
+<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token keyword">@function</span> <span class="token function">px2rem</span><span class="token punctuation">(</span><span class="token variable">$px</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token property"><span class="token variable">$rem</span></span><span class="token punctuation">:</span> 37.5px<span class="token punctuation">;</span>
+    <span class="token keyword">@return</span> <span class="token punctuation">(</span><span class="token variable">$px</span>/<span class="token variable">$rem</span><span class="token punctuation">)</span>+rem<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>愉快的编写样式代码喽</p>
+<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token selector">.box </span><span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">px2rem</span><span class="token punctuation">(</span>24px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.imooc.com/learn/942">移动web开发适配秘籍Rem</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5cddf289f265da038f77696c">关于移动端适配，你必须要知道的</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/24/%E5%88%86%E6%9E%90%E4%B8%80%E4%B8%8B%E8%BF%99%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1783,7 +1894,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
+        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
       </span>
 
   
@@ -1844,101 +1955,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/19/%E6%88%91%E7%9A%84Prettier%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/19/%E6%88%91%E7%9A%84Prettier%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">我的 Prettier 设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-19 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-19T00:00:00+00:00">2019-12-19</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-16 23:32:28" itemprop="dateModified" datetime="2021-06-16T23:32:28+00:00">2021-06-16</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在项目根目录中添加<code>.prettierrc</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  <span class="token string">"arrowParens"</span><span class="token operator">:</span> <span class="token string">"avoid"</span><span class="token punctuation">,</span>
-  <span class="token string">"bracketSpacing"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"htmlWhitespaceSensitivity"</span><span class="token operator">:</span> <span class="token string">"css"</span><span class="token punctuation">,</span>
-  <span class="token string">"insertPragma"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">"jsxBracketSameLine"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"jsxSingleQuote"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">"printWidth"</span><span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span> 
-  <span class="token string">"proseWrap"</span><span class="token operator">:</span> <span class="token string">"preserve"</span><span class="token punctuation">,</span>
-  <span class="token string">"quoteProps"</span><span class="token operator">:</span> <span class="token string">"as-needed"</span><span class="token punctuation">,</span>
-  <span class="token string">"requirePragma"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"tabWidth"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token string">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-  <span class="token string">"useTabs"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">"vueIndentScriptAndStyle"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>如果想批量格式化文件，可以在<code>package.json</code>的<code>scripts</code>中添加</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">"format"</span><span class="token operator">:</span> <span class="token string">"npx prettier .prettierrc --write \"src/**/*.&#123;ts,tsx&#125;\""</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 
       
     </div>
