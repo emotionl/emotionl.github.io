@@ -158,13 +158,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -194,6 +194,726 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/Learning-The-Shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/guitar.svg">
+      <meta itemprop="name" content="ZV">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZV-Blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/11/Learning-The-Shell/" class="post-title-link" itemprop="url">Learning-The-Shell</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-11 23:48:21" itemprop="dateCreated datePublished" datetime="2021-01-11T23:48:21+00:00">2021-01-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="01-What-Is-the-shell-什么是脚本"><a href="#01-What-Is-the-shell-什么是脚本" class="headerlink" title="01 - What Is the shell 什么是脚本"></a>01 - What Is the shell 什么是脚本</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>date</code></td>
+<td>Displays the current time and date.</td>
+<td>显示当前日期</td>
+</tr>
+<tr>
+<td><code>cal</code></td>
+<td>Displays a calendar of thecurrent month.</td>
+<td>显示日历</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>Disk free</td>
+<td>剩余磁盘</td>
+</tr>
+<tr>
+<td><code>free</code></td>
+<td>Display the amount of free memor</td>
+<td>剩余内存</td>
+</tr>
+<tr>
+<td><code>exit</code></td>
+<td>Ending a Terminal Session.</td>
+<td>关闭一个命令行会话</td>
+</tr>
+</tbody></table>
+<h2 id="02-Navigation-导航"><a href="#02-Navigation-导航" class="headerlink" title="02 - Navigation 导航"></a>02 - Navigation 导航</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pwd</code></td>
+<td>Print name of current working directory.</td>
+<td>显示当前文件夹</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change directory.</td>
+<td>切换文件夹</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List directory contents.</td>
+<td>显示文件夹内容</td>
+</tr>
+</tbody></table>
+<h2 id="03-Exploring-the-System-探索系统"><a href="#03-Exploring-the-System-探索系统" class="headerlink" title="03 - Exploring the System 探索系统"></a>03 - Exploring the System 探索系统</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td>List directory contents.</td>
+<td>显示文件夹内容</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>Determining a File’s Type</td>
+<td>查看文件类型</td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>Viewing File Contents</td>
+<td>查看文件内容</td>
+</tr>
+</tbody></table>
+<h2 id="04-Manipulating-Files-and-Directories-操作文件和目录"><a href="#04-Manipulating-Files-and-Directories-操作文件和目录" class="headerlink" title="04 - Manipulating Files and Directories 操作文件和目录"></a>04 - Manipulating Files and Directories 操作文件和目录</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cp</code></td>
+<td>Copy files and directories</td>
+<td>拷贝文件和文件夹</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>Move/rename files and directories</td>
+<td>移动/重命名文件和文件夹</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Create directories</td>
+<td>创建文件夹</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Remove files and directories</td>
+<td>删除文件和文件夹</td>
+</tr>
+<tr>
+<td><code>ln</code></td>
+<td>Create hard and symbolic links</td>
+<td>创建硬链接和符号链接</td>
+</tr>
+</tbody></table>
+<h3 id="cp-Copy-Files-and-Directories"><a href="#cp-Copy-Files-and-Directories" class="headerlink" title="cp - Copy Files and Directories"></a>cp - Copy Files and Directories</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cp file1 file2</code></td>
+<td>把 file1 拷贝到 file2 . 如果 file2 存在， 那么 file2 的内容被 file1 的内容覆盖 . 如果 file2 不存在，那么 创建 file2 ，并把 file1 的内容拷贝到 file2。</td>
+</tr>
+<tr>
+<td><code>cp -i file1 file2</code></td>
+<td>与上一条命令相似，不同的是如果 file2 存在，那么 file2 被覆盖前会提示用户。</td>
+</tr>
+<tr>
+<td><code>cp file1 file2 dir1</code></td>
+<td>把 file1 和 file2 拷贝进 dir1，前提是 dir1 一定要存在。</td>
+</tr>
+<tr>
+<td><code>cp dir1/* dir2</code></td>
+<td>使用通配符，把 dir1 的内容都拷贝进 dir 中，前提是 dir2 一定要存在。</td>
+</tr>
+<tr>
+<td><code>cp -r dir1 dir2</code></td>
+<td>把 dir1 的内容拷贝进 dir2 ，如果 dir2 不存在，就新建 dir2，并把 dir1 的内容拷贝进 dir2 .如果 dir2 存在就把 dir1 这个文件夹整个拷贝进 dir2，成为 dir2 的子文件夹。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>-i</code> 代表 <code>interactive</code>交互的（会有提示问你要不要这样做）</p>
+<p><code>-r</code> 代表 <code>recursive</code>递归的（递归地复制目录及其内容）</p>
+</blockquote>
+<h3 id="mv-Move-and-Rename-Files"><a href="#mv-Move-and-Rename-Files" class="headerlink" title="mv - Move and Rename Files"></a>mv - Move and Rename Files</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mv file1 file2</code></td>
+<td>把 file1 移动到 file2 .。如果 file2 存在， 那么 file2 的内容被 file1 的内容覆盖 .。如果 file2 不存在，那么 创建 file2 ，并把 file1 的内容拷贝到 file2，file1 不再存在。</td>
+</tr>
+<tr>
+<td><code>mv -i file1 file2</code></td>
+<td>与上一条命令相似，不同的是如果 file2 存在，那么 file2 被覆盖前会提示用户。</td>
+</tr>
+<tr>
+<td><code>mv file1 file2 dir1</code></td>
+<td>把 file1 和 file2 移动到 dir1，前提是 dir1 一定要存在。</td>
+</tr>
+<tr>
+<td><code>mv dir1 dir2</code></td>
+<td>如果 dir2 不存在, 创建 dir2 并把 dir1 的内容移动到 dir2 并删除 dir1.。如果 dir2 存在，把 dir1 移动到 dir2，成为 dir2 的子文件夹。</td>
+</tr>
+</tbody></table>
+<h3 id="rm-Remove-Files-and-Directories"><a href="#rm-Remove-Files-and-Directories" class="headerlink" title="rm - Remove Files and Directories"></a>rm - Remove Files and Directories</h3><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rm file1</code></td>
+<td>静默删除 file1。</td>
+</tr>
+<tr>
+<td><code>rm -i file1</code></td>
+<td>与上一条命令类似，区别是在执行删除之前会提示用户确认。</td>
+</tr>
+<tr>
+<td><code>rm -r file1 dir1</code></td>
+<td>删除 file1 和 dir1 以及 dir1 中的内容</td>
+</tr>
+<tr>
+<td><code>rm -rf file1 dir1</code></td>
+<td>与上一条命令类似，但如果 file1 或 dir1 不存在，rm 将静默继续。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>类 Unix 的操作系统比如 Linux 是没有撤销删除命令的。</p>
+<p>一旦你使用 <code>rm</code> 命令删除一些文件，它就不存在了。Linux 假定你很聪明并且知道你在做什么。</p>
+<p>要特别小心使用通配符。 请考虑下面这个经典的例子。 比方说，你想在一个目录仅删除<code>HTML</code>文件。 为此，请键入以下内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> *.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这是正确的，但如果你不小心在 <code>*</code> 和 <code>.html</code> 之间放置了一个空格</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> * .html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>rm</code> 命令将删除目录中的所有文件，然后抱怨没有名为<code>.html</code>的文件。</p>
+<p>这里有一个实用的提示：每当你使用带有通配符的<code>rm</code>命令之前（除了仔细检查你的输入！），先用<code>ls</code>测试通配符。 这会让你看到即将被删除的文件。 然后按向上箭头调用该命令并用<code>rm</code>替换<code>ls</code>。</p>
+</blockquote>
+<h3 id="ln-Create-Links"><a href="#ln-Create-Links" class="headerlink" title="ln - Create Links"></a>ln - Create Links</h3><h4 id="Hard-Links"><a href="#Hard-Links" class="headerlink" title="Hard Links"></a>Hard Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token function">file</span> <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="Symbolic-Links"><a href="#Symbolic-Links" class="headerlink" title="Symbolic Links"></a>Symbolic Links</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s item <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><pre class="mermaid">
+graph LR
+A[hard link]
+B[file]
+C[soft link]
+D[inode]
+E[inode]
+F[data block]
+G[data block]
+%% 定义样式类
+classDef one fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef two fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
+%% 应用样式类，markdown里没效果
+class A one
+class B one
+class C one
+class D two
+class E two
+class F three
+class G three
+A --&gt; D
+B --&gt; D
+C --&gt; E
+D --&gt; F
+E --&gt; G
+G -.-&gt; B
+</pre>
+
+<p>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：</p>
+<ul>
+<li>  文件有相同的 inode 及 data block；</li>
+<li>  只能对已存在的文件进行创建；</li>
+<li>  不能交叉文件系统进行硬链接的创建；</li>
+<li>  不能对目录进行创建，只可对文件创建；</li>
+<li>  删除一个硬链接文件并不影响其他有相同 inode 号的文件。</li>
+</ul>
+<p>软链接与硬链接不同，若文件用户数据块中存放的内容是另一文件的路径名的指向，则该文件就是软连接。软链接就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块。因此软链接的创建与使用没有类似硬链接的诸多限制：</p>
+<ul>
+<li>  软链接有自己的文件属性及权限等；</li>
+<li>  可对不存在的文件或目录创建软链接；</li>
+<li>  软链接可交叉文件系统；</li>
+<li>  软链接可对文件或目录创建；</li>
+<li>  创建软链接时，链接计数 i_nlink 不会增加；</li>
+<li>  删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html">理解 Linux 的硬链接与软链接</a></p>
+</blockquote>
+<h2 id="05-Working-With-Commands-使用命令"><a href="#05-Working-With-Commands-使用命令" class="headerlink" title="05 - Working With Commands 使用命令"></a>05 - Working With Commands 使用命令</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td>Indicate how a command name is interpreted</td>
+<td>显示指定命令的类型</td>
+</tr>
+<tr>
+<td><code>which</code></td>
+<td>Display which executable program will be executed</td>
+<td>查找并显示给定命令的绝对路径</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Get help for shell builtins</td>
+<td>显示内置 shell 的帮助信息</td>
+</tr>
+<tr>
+<td><code>man</code></td>
+<td>Display a command’s manual page</td>
+<td>查看 Linux 中的指令帮助</td>
+</tr>
+<tr>
+<td><code>apropos</code></td>
+<td>Display a list of appropriate commands</td>
+<td>在 whatis 数据库中查找字符串</td>
+</tr>
+<tr>
+<td><code>info</code></td>
+<td>Display a command’s info entry</td>
+<td>Linux 下 info 格式的帮助指令</td>
+</tr>
+<tr>
+<td><code>whatis</code></td>
+<td>Display one-line manual page descriptions</td>
+<td>查询一个命令执行什么功能</td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>Create an alias for a command</td>
+<td>用来设置指令的别名</td>
+</tr>
+</tbody></table>
+<h3 id="什么是命令"><a href="#什么是命令" class="headerlink" title="什么是命令"></a>什么是命令</h3><p>命令可以是以下四种类型之一</p>
+<table>
+<thead>
+<tr>
+<th><strong>概念</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可执行程序</td>
+<td>就像我们在 <code>/usr/bin</code>这个文件夹中看到的文件一样。比如常用的 <code>yum</code>。</td>
+</tr>
+<tr>
+<td>内置 shell</td>
+<td>Bash 支持一些叫作内置 shell 的命令。举个例子 <code>cd</code>就是一个内置命令。</td>
+</tr>
+<tr>
+<td>shell 函数</td>
+<td>脚本。</td>
+</tr>
+<tr>
+<td>别名</td>
+<td>通过组合其他命令构成的一个自定义命令。</td>
+</tr>
+</tbody></table>
+<h3 id="认识命令"><a href="#认识命令" class="headerlink" title="认识命令"></a>认识命令</h3><h4 id="type-显示一个命令的类型"><a href="#type-显示一个命令的类型" class="headerlink" title="type - 显示一个命令的类型"></a>type - 显示一个命令的类型</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># type yum</span>
+yum is /usr/bin/yum
+<span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># type type</span>
+<span class="token builtin class-name">type</span> is a shell <span class="token builtin class-name">builtin</span>
+<span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># type ll</span>
+ll is aliased to `ls -l --color<span class="token operator">=</span>auto'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="which-显示可执行文件的位置"><a href="#which-显示可执行文件的位置" class="headerlink" title="which - 显示可执行文件的位置"></a>which - 显示可执行文件的位置</h4><p>有时，系统上安装了多个版本的可执行程序。 虽然这在桌面系统上并不常见，但在较大的服务器上并不罕见。 要确定给定可执行文件的确切位置，请使用which命令。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which yum</span>
+/usr/bin/yum
+<span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which type</span>
+/usr/bin/which: no <span class="token builtin class-name">type</span> <span class="token keyword">in</span> <span class="token punctuation">(</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># which ll</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -l --color=auto'</span>
+	/usr/bin/ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="获取命令文档"><a href="#获取命令文档" class="headerlink" title="获取命令文档"></a>获取命令文档</h3><h4 id="help-显示内置-shell-的帮助信息"><a href="#help-显示内置-shell-的帮助信息" class="headerlink" title="help - 显示内置 shell 的帮助信息"></a>help - 显示内置 shell 的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># help cd</span>
+cd: <span class="token builtin class-name">cd</span> <span class="token punctuation">[</span>-L<span class="token operator">|</span><span class="token punctuation">[</span>-P <span class="token punctuation">[</span>-e<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
+    Change the shell working directory.
+    
+    Change the current directory to DIR.  The default DIR is the value of the
+    <span class="token environment constant">HOME</span> shell variable.
+    
+    The variable CDPATH defines the search path <span class="token keyword">for</span> the directory containing
+    DIR.  Alternative directory names <span class="token keyword">in</span> CDPATH are separated by a colon <span class="token punctuation">(</span>:<span class="token punctuation">)</span>.
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash <span class="token punctuation">(</span>/<span class="token punctuation">)</span>, <span class="token keyword">then</span> CDPATH is not used.
+    
+    If the directory is not found, and the shell option <span class="token variable"><span class="token variable">`</span>cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used <span class="token keyword">for</span> DIR.
+    
+    Options:
+        -L	force symbolic links to be followed
+        -P	use the physical directory structure without following symbolic
+    	links
+        -e	<span class="token keyword">if</span> the -P option is supplied, and the current working directory
+    	cannot be determined successfully, <span class="token builtin class-name">exit</span> with a non-zero status
+    
+    The default is to follow symbolic links, as <span class="token keyword">if</span> <span class="token variable">`</span></span>-L' were specified.
+    
+    Exit Status:
+    Returns <span class="token number">0</span> <span class="token keyword">if</span> the directory is changed, and <span class="token keyword">if</span> <span class="token environment constant">$PWD</span> is <span class="token builtin class-name">set</span> successfully when
+    -P is used<span class="token punctuation">;</span> non-zero otherwise.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="–help-显示可执行程序的帮助信息"><a href="#–help-显示可执行程序的帮助信息" class="headerlink" title="–help  - 显示可执行程序的帮助信息"></a>–help  - 显示可执行程序的帮助信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux /<span class="token punctuation">]</span><span class="token comment"># mkdir --help</span>
+Usage: <span class="token function">mkdir</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. DIRECTORY<span class="token punctuation">..</span>.
+Create the DIRECTORY<span class="token punctuation">(</span>ies<span class="token punctuation">)</span>, <span class="token keyword">if</span> they <span class="token keyword">do</span> not already exist.
+
+Mandatory arguments to long options are mandatory <span class="token keyword">for</span> short options too.
+  -m, --mode<span class="token operator">=</span>MODE   <span class="token builtin class-name">set</span> <span class="token function">file</span> mode <span class="token punctuation">(</span>as <span class="token keyword">in</span> <span class="token function">chmod</span><span class="token punctuation">)</span>, not <span class="token assign-left variable">a</span><span class="token operator">=</span>rwx - <span class="token builtin class-name">umask</span>
+  -p, --parents     no error <span class="token keyword">if</span> existing, <span class="token function">make</span> parent directories as needed
+  -v, --verbose     print a message <span class="token keyword">for</span> each created directory
+  -Z                   <span class="token builtin class-name">set</span> SELinux security context of each created directory
+                         to the default <span class="token builtin class-name">type</span>
+      --context<span class="token punctuation">[</span><span class="token operator">=</span>CTX<span class="token punctuation">]</span>  like -Z, or <span class="token keyword">if</span> CTX is specified <span class="token keyword">then</span> <span class="token builtin class-name">set</span> the SELinux
+                         or SMACK security context to CTX
+      --help     display this <span class="token builtin class-name">help</span> and <span class="token builtin class-name">exit</span>
+      --version  output version information and <span class="token builtin class-name">exit</span>
+
+GNU coreutils online help: <span class="token operator">&lt;</span>http://www.gnu.org/software/coreutils/<span class="token operator">></span>
+For complete documentation, run: info coreutils <span class="token string">'mkdir invocation'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="man-在线参考手册界面"><a href="#man-在线参考手册界面" class="headerlink" title="man - 在线参考手册界面"></a>man - 在线参考手册界面</h4><h4 id="apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）"><a href="#apropos-手册页的搜索引擎（在-whatis-数据库中查找字符串）" class="headerlink" title="apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）"></a>apropos - 手册页的搜索引擎（在 whatis 数据库中查找字符串）</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># apropos partition</span>
+addpart <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>          - simple wrapper around the <span class="token string">"add partition"</span> ioctl
+<span class="token function">cfdisk</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - display or manipulate disk partition table
+delpart <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>          - simple wrapper around the <span class="token string">"del partition"</span> ioctl
+<span class="token function">fdisk</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>            - manipulate disk partition table
+iostat <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>           - Report Central Processing Unit <span class="token punctuation">(</span>CPU<span class="token punctuation">)</span> statistics and input/output statistics <span class="token keyword">for</span> devices and partitions.
+kpartx <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - Create device maps from partition tables
+os-prober <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>        - Discover bootable partitions on the <span class="token builtin class-name">local</span> system.
+<span class="token function">parted</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - a partition manipulation program
+partprobe <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>        - inform the OS of partition table changes
+partx <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>            - tell the Linux kernel about the presence and numbering of on-disk partitions
+resizepart <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>       - simple wrapper around the <span class="token string">"resize partition"</span> ioctl
+sfdisk <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>           - partition table manipulator <span class="token keyword">for</span> Linux
+systemd-efi-boot-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically mounting the EFI System Partition used by the current boot to /boot
+systemd-gpt-auto-generator <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> - Generator <span class="token keyword">for</span> automatically discovering and mounting root, /home and /srv partitions, as well as discover<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="whatis-一行描述手册页"><a href="#whatis-一行描述手册页" class="headerlink" title="whatis - 一行描述手册页"></a>whatis - 一行描述手册页</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis ls</span>
+<span class="token function">ls</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>               - list directory contents
+<span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis yum</span>
+yum <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>              - Yellowdog Updater Modified
+<span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># whatis type</span>
+<span class="token builtin class-name">type</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>             - <span class="token function">bash</span> built-in commands, see bash<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="使用-alias-创建自己的命令"><a href="#使用-alias-创建自己的命令" class="headerlink" title="使用 alias 创建自己的命令"></a>使用 <code>alias</code> 创建自己的命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># alias la='ls -la'</span>
+<span class="token punctuation">[</span>root@golinux ~<span class="token punctuation">]</span><span class="token comment"># la</span>
+total <span class="token number">104</span>
+dr-xr-x---.  <span class="token number">8</span> root root <span class="token number">4096</span> Aug <span class="token number">29</span> <span class="token number">17</span>:38 <span class="token builtin class-name">.</span>
+dr-xr-xr-x. <span class="token number">18</span> root root <span class="token number">4096</span> May <span class="token number">10</span> <span class="token number">15</span>:12 <span class="token punctuation">..</span>
+-rw-------   <span class="token number">1</span> root root <span class="token number">8694</span> Sep  <span class="token number">4</span> <span class="token number">16</span>:22 .bash_history
+-rw-r--r--.  <span class="token number">1</span> root root   <span class="token number">18</span> Dec <span class="token number">29</span>  <span class="token number">2013</span> .bash_logout
+-rw-r--r--.  <span class="token number">1</span> root root  <span class="token number">176</span> Dec <span class="token number">29</span>  <span class="token number">2013</span> .bash_profile
+-rw-r--r--.  <span class="token number">1</span> root root  <span class="token number">176</span> Sep  <span class="token number">4</span> <span class="token number">16</span>:21 .bashrc
+drwx------   <span class="token number">3</span> root root <span class="token number">4096</span> Oct <span class="token number">15</span>  <span class="token number">2017</span> .cache
+-rw-r--r--.  <span class="token number">1</span> root root  <span class="token number">100</span> Dec <span class="token number">29</span>  <span class="token number">2013</span> .cshrc
+drwxr-xr-x   <span class="token number">7</span> root root <span class="token number">4096</span> Dec <span class="token number">21</span>  <span class="token number">2018</span> .nvm
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Oct <span class="token number">15</span>  <span class="token number">2017</span> .pip
+drwxr-----   <span class="token number">3</span> root root <span class="token number">4096</span> Dec <span class="token number">21</span>  <span class="token number">2018</span> .pki
+-rw-r--r--   <span class="token number">1</span> root root   <span class="token number">64</span> Oct <span class="token number">15</span>  <span class="token number">2017</span> .pydistutils.cfg
+-rw-------   <span class="token number">1</span> root root   <span class="token number">37</span> Feb <span class="token number">16</span>  <span class="token number">2019</span> .python_history
+drwx------   <span class="token number">2</span> root root <span class="token number">4096</span> Dec <span class="token number">20</span>  <span class="token number">2018</span> .ssh
+-rw-r--r--.  <span class="token number">1</span> root root  <span class="token number">129</span> Dec <span class="token number">29</span>  <span class="token number">2013</span> .tcshrc
+drwxr-xr-x   <span class="token number">6</span> root root <span class="token number">4096</span> Aug <span class="token number">26</span> <span class="token number">15</span>:15 .vim
+-rw-------   <span class="token number">1</span> root root <span class="token number">5324</span> Aug <span class="token number">29</span> <span class="token number">17</span>:38 .viminfo
+-rw-------   <span class="token number">1</span> root root <span class="token number">5121</span> Aug <span class="token number">26</span> <span class="token number">23</span>:19 .viminfo.tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="06-Redirection-重定向"><a href="#06-Redirection-重定向" class="headerlink" title="06 - Redirection 重定向"></a>06 - Redirection 重定向</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>EN</strong></th>
+<th><strong>ZH</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cat</code></td>
+<td>Concatenate files</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort lines of text</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uniq</code></td>
+<td>Report or omit repeated lines</td>
+<td></td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>Print lines matching a pattern</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wc</code></td>
+<td>Print newline, word, and byte counts for each file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>Output the first part of a file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>Output the last part of a file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tee</code></td>
+<td>Read from standard input and write to standard output and files</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Standard-Input-Output-and-Error-标准输入，输出和错误"><a href="#Standard-Input-Output-and-Error-标准输入，输出和错误" class="headerlink" title="Standard Input, Output, and Error 标准输入，输出和错误"></a>Standard Input, Output, and Error 标准输入，输出和错误</h3><p>Many of the programs that we have used so far produce output of some kind. This output often consists of two types.</p>
+<ul>
+<li>The program’s results; that is, the data the program is designed to produce</li>
+<li>Status and error messages that tell us how the program is getting along </li>
+</ul>
+<p>如果我们使用<code>ls</code>这样的命令，我们可以在屏幕上看到它显示的结果和错误消息。<br>保持<code>Unix</code>主题“一切都是文件”，像<code>ls</code>这样的程序实际上是将结果发送到一个名为标准输出（通常表示为<code>stdout</code>）的特殊文件，并将其状态消息发送到另一个名为标准错误（<code>stderr</code>）的文件。 默认情况下，标准输出和标准错误都会链接到屏幕上，而不是保存到磁盘文件中。<br>此外，许多程序从名为标准输入（stdin）的工具获取输入，默认情况下，该工具连接到键盘。<br>I / O重定向允许我们改变输出的位置和输入的来源。 通常，输出从屏幕上显示而输入则来自于键盘，但是通过I / O重定向，我们可以改变它。</p>
+<h3 id="Redirecting-Standard-Output-重定向标准输出"><a href="#Redirecting-Standard-Output-重定向标准输出" class="headerlink" title="Redirecting Standard Output 重定向标准输出"></a>Redirecting Standard Output 重定向标准输出</h3><p>把<code>ls -l /usr/bin</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件</p>
+<pre class="line-numbers language-none"><code class="language-none">ls -l &#x2F;usr&#x2F;bin &gt; ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当你想把<code>ls -l /bin/usr</code>的结果通过<code>&gt;</code>重定向到<code>ls-output.txt</code>这个文件时，你会发现并不可行，因为<code>ls</code>这个命令不会把它的错误信息通过标准输出的方式进行输出</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ls -l /bin/usr > ls-output.txt</span>
+ls: cannot access /bin/usr: No such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&gt;</code></td>
+<td>重写内容</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>追加内容</td>
+</tr>
+</tbody></table>
+<h3 id="Redirecting-Standard-Error-重定向标准错误"><a href="#Redirecting-Standard-Error-重定向标准错误" class="headerlink" title="Redirecting Standard Error 重定向标准错误"></a>Redirecting Standard Error 重定向标准错误</h3><p>要重定向标准错误，我们必须引用其文件描述符。 程序可以在几个编号的文件流中的任何一个上产生输出。 虽然我们将前三个文件流称为标准输入，输出和错误，但shell在内部分别将它们作为文件描述符0,1和2引用。 shell提供了使用文件描述符编号重定向文件的表示法。 由于标准错误与文件描述符编号2相同，因此我们可以使用以下表示法重定向标准错误：</p>
+<p>文件描述符（File Descriptor）是计算机科学中的一个术语，是一个用于表述指向<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6">文件</a>的引用的抽象化概念。</p>
+<table>
+<thead>
+<tr>
+<th>整数值</th>
+<th>名称</th>
+<th>&lt;unistd.h&gt;符号常量</th>
+<th>&lt;stdio.h&gt;文件流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stdin">Standard input</a></td>
+<td>STDIN_FILENO</td>
+<td>stdin</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stdout">Standard output</a></td>
+<td>STDOUT_FILENO</td>
+<td>stdout</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Stderr">Standard error</a></td>
+<td>STDERR_FILENO</td>
+<td>stderr</td>
+</tr>
+</tbody></table>
+<p>重定向标准错误到文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> ls-error.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>重定向标准输出和标准错误到同一个文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator">></span> ls-output.txt <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token comment"># 或者</span>
+<span class="token function">ls</span> -l /bin/usr <span class="token operator">&amp;></span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>处理不需要的输出</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l /bin/usr <span class="token operator"><span class="token file-descriptor important">2</span>></span> /dev/null<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki//dev/null">关于/dev/null的趣闻</a></p>
+</blockquote>
+<h3 id="Redirecting-Standard-Input-重定向标准输入"><a href="#Redirecting-Standard-Input-重定向标准输入" class="headerlink" title="Redirecting Standard Input 重定向标准输入"></a>Redirecting Standard Input 重定向标准输入</h3><h4 id="cat-合并输出文件"><a href="#cat-合并输出文件" class="headerlink" title="cat - 合并输出文件"></a>cat - 合并输出文件</h4><p>显示内容不多的文本文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ls-output.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>合并文件，比如我们有 <code>movie.mpeg.001 movie.mpeg.002 ... movie.mpeg.099</code> 这些文件，使用如下命令就可以合并成一个文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> movie.mpeg.0* <span class="token operator">></span> movie.mpeg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>只输入<code>cat</code>就变成了输入什么输出什么的交互命令行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># cat</span>
+hello world
+hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>利用这个特性可以用<code>cat</code>创建内容不多的文本文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat > little.txt</span>
+this is a little.txt <span class="token comment"># 输入文件内容</span>
+<span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat little.txt </span>
+this is a little.txt <span class="token comment"># 打印文件内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用<code>&lt;</code> 重定向操作符，我们将标准输入源从键盘更改为<code>little.txt</code> 文件。</p>
+<p>我们可以看到结果与<code>cat little.txt</code>这种传递单个文件名参数的结果相同</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@izbp13gye2rcpn1at3vj69z playground<span class="token punctuation">]</span><span class="token comment"># cat &lt; little.txt </span>
+this is the little.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Pipelines-管道操作符"><a href="#Pipelines-管道操作符" class="headerlink" title="Pipelines 管道操作符"></a>Pipelines 管道操作符</h3><p>管道运算符<code>|</code> 可以把一个命令的标准输出传递到另一命令的标准输入</p>
+<pre class="mermaid">
+graph TD
+A[前一个命令的标准输出]
+B[前一个命令的标准输出]
+%% 定义样式类
+classDef one fill:#83a8d5,stroke:#333,stroke-width:2px;
+classDef two fill:#f3a2a8,stroke:#333,stroke-width:2px;
+classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
+%% 应用样式类，markdown里没效果
+class A one
+class B two
+A --管道运算符--&gt; B
+</pre>
+
+<p>举个栗子 通过管道运算符 我们可以把 <code>/</code>的目录信息通过<code>less</code>命令打印出来</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@golinux playground<span class="token punctuation">]</span><span class="token comment"># ll / | less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>管道通常用于对数据执行复杂的操作。 可以将几个命令放到管道中。 通常，以这种方式使用的命令称为过滤器。 过滤器接受输入，以某种方式对其进行更改，然后输出。 我们将尝试的第一个是<code>sort</code>。 想象我们想在<code>/bin</code>和<code>/usr/bin</code>中列出所有可执行程序的组合列表，将它们按排序顺序放置，然后查看结果列表。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> /bin /usr/bin/ <span class="token operator">|</span> <span class="token function">sort</span> <span class="token operator">|</span> <span class="token function">less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p><code>&gt;</code>与 <code>|</code>的区别</p>
+<p>简单来讲，重定向操作符<code>&gt;</code>将命令与文件连接，而管道操作符<code>|</code>将一个命令的输出与第二个命令的输入连接。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">command1 <span class="token operator">></span> file1
+command1 <span class="token operator">|</span> command2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>EN</th>
+<th>ZH</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uniq</td>
+<td>Report or Omit Repeated Lines</td>
+<td>忽略重复的行</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>Print Line, Word, and Byte Counts</td>
+<td>打印行数，字数和字节数</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>Print Lines Matching a Pattern</td>
+<td>匹配模式</td>
+</tr>
+<tr>
+<td>head/tail</td>
+<td>Print First/Last Part of Files</td>
+<td>打印文件的最前/最后一部分</td>
+</tr>
+<tr>
+<td>tee</td>
+<td>Read from Stdin and Output to Stdout and Files</td>
+<td>从Stdin读取并输出到Stdout和文件</td>
+</tr>
+</tbody></table>
+<h2 id="07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题"><a href="#07-Seeing-the-World-as-the-Shell-Sees-it-用脚本解决问题" class="headerlink" title="07 - Seeing the World as the Shell Sees it 用脚本解决问题"></a>07 - Seeing the World as the Shell Sees it 用脚本解决问题</h2><h2 id="08-Advanced-Keyboard-Tricks-高级键盘技巧"><a href="#08-Advanced-Keyboard-Tricks-高级键盘技巧" class="headerlink" title="08 - Advanced Keyboard Tricks 高级键盘技巧"></a>08 - Advanced Keyboard Tricks 高级键盘技巧</h2><h2 id="09-Permissions-权限"><a href="#09-Permissions-权限" class="headerlink" title="09 - Permissions 权限"></a>09 - Permissions 权限</h2><h2 id="10-Processes-进程"><a href="#10-Processes-进程" class="headerlink" title="10 -  Processes 进程"></a>10 -  Processes 进程</h2><h2 id="11-The-Environment-环境"><a href="#11-The-Environment-环境" class="headerlink" title="11 - The Environment 环境"></a>11 - The Environment 环境</h2><h2 id="12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍"><a href="#12-A-Gentle-Introduction-to-VIM-一个柔和的-VIM-介绍" class="headerlink" title="12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍"></a>12 - A Gentle Introduction to VIM 一个柔和的 VIM 介绍</h2><h2 id="13-Customizing-the-Prompt-自定义提示"><a href="#13-Customizing-the-Prompt-自定义提示" class="headerlink" title="13 - Customizing the Prompt 自定义提示"></a>13 - Customizing the Prompt 自定义提示</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -234,7 +954,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -321,7 +1041,7 @@ npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;<span ar
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -541,7 +1261,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -679,7 +1399,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -900,7 +1620,7 @@ C --&gt; D
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -1066,7 +1786,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -1277,7 +1997,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -1431,7 +2151,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -1553,7 +2273,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
+        <time title="修改时间：2021-06-20 20:11:01" itemprop="dateModified" datetime="2021-06-20T20:11:01+00:00">2021-06-20</time>
       </span>
 
   
@@ -1740,169 +2460,6 @@ bst<span class="token punctuation">.</span><span class="token function">remove</
 bst<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
 bst<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
 bst<span class="token punctuation">.</span><span class="token function">inOrder</span><span class="token punctuation">(</span>print<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/guitar.svg">
-      <meta itemprop="name" content="ZV">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZV-Blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/28/%E6%AD%A3%E5%88%99%E6%A1%88%E4%BE%8B4/" class="post-title-link" itemprop="url">正则案例4</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-28 00:00:03" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:03+00:00">2020-05-28</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-19 17:48:40" itemprop="dateModified" datetime="2021-06-19T17:48:40+00:00">2021-06-19</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>根据需求匹配数据并提取所需数据</p>
-<p>处理前</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> textList <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'@[]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-    <span class="token string">'@[123]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-    <span class="token string">'@asd[133]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-    <span class="token string">'@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-    <span class="token string">'@阿里巴巴(杭州)(西湖)[12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-    <span class="token string">'@阿里巴巴[444]'</span> <span class="token comment">// 匹配</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>处理后</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'asd'</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token string">'133'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'阿里巴巴(杭州)(西湖)'</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token string">'546789'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'阿里巴巴(杭州)(西湖)'</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token string">'12113'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'阿里巴巴'</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token string">'444'</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定处理函数</span>
-<span class="token keyword">const</span> <span class="token function-variable function">getFormatTextList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">textList</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\@([^\[]+)(?&lt;=\@.+)\[(\d+)\]</span><span class="token regex-delimiter">/</span></span>
-  <span class="token keyword">return</span> textList
-    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=></span> regex<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> <span class="token punctuation">[</span>_<span class="token punctuation">,</span> name<span class="token punctuation">,</span> id<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        name<span class="token punctuation">,</span>
-        id
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 准备数据</span>
-<span class="token keyword">const</span> textList <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token string">'@[]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-  <span class="token string">'@[123]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-  <span class="token string">'@asd[133]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴(杭州)(西湖)[12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴[444]'</span> <span class="token comment">// 匹配</span>
-<span class="token punctuation">]</span>
-
-<span class="token comment">// 处理</span>
-<span class="token keyword">const</span> formatTextList <span class="token operator">=</span> <span class="token function">getFormatTextList</span><span class="token punctuation">(</span>textList<span class="token punctuation">)</span>
-
-<span class="token comment">// 打印结果</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formatTextList<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>在解决问题之前先了解一下<strong>贪婪匹配模式</strong>和<strong>惰性匹配模式</strong>。</p>
-<blockquote>
-<p>正则表达式默认采用贪婪匹配模式，在该模式下意味着会匹配尽可能长的子串。我们可以使用 <code>?</code> 将贪婪匹配模式转化为惰性匹配模式。</p>
-<p>贪婪匹配模式</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">"/(.*at)/"</span> <span class="token operator">=></span> The fat cat sat on the mat<span class="token punctuation">.</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>贪婪匹配模式</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">"/(.*?at)/"</span> <span class="token operator">=></span> The fat cat sat on the mat<span class="token punctuation">.</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</blockquote>
-<p>基于<strong>惰性匹配模式</strong>，我们用代码来实现一下</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 确定处理函数</span>
-<span class="token keyword">const</span> <span class="token function-variable function">getFormatTextList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">textList</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\@(.+?)\[(\d+)\]</span><span class="token regex-delimiter">/</span></span>
-  <span class="token keyword">return</span> textList
-    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=></span> regex<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> <span class="token punctuation">[</span>_<span class="token punctuation">,</span> name<span class="token punctuation">,</span> id<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        name<span class="token punctuation">,</span>
-        id
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 准备数据</span>
-<span class="token keyword">const</span> textList <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token string">'@[]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-  <span class="token string">'@[123]'</span><span class="token punctuation">,</span> <span class="token comment">// 不匹配</span>
-  <span class="token string">'@asd[133]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴(杭州)(西湖)[546789][12113][12113][12113][12113][12113][12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴(杭州)(西湖)[12113]'</span><span class="token punctuation">,</span> <span class="token comment">// 匹配</span>
-  <span class="token string">'@阿里巴巴[444]'</span> <span class="token comment">// 匹配</span>
-<span class="token punctuation">]</span>
-
-<span class="token comment">// 处理</span>
-<span class="token keyword">const</span> formatTextList <span class="token operator">=</span> <span class="token function">getFormatTextList</span><span class="token punctuation">(</span>textList<span class="token punctuation">)</span>
-
-<span class="token comment">// 打印结果</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formatTextList<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
 
 
       

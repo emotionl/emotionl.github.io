@@ -19,28 +19,28 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.5.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:&quot;flat&quot;,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:false,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:true}}</script><script src="/js/config.js"></script>
-<meta name="description" content="对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。 举个🌰，我们创建一个工具对象 BasicFormatter，然后通过不同的方式创建可以访问 BasicFormatter 的工具对象 const BasicFormatter &#x3D; &amp;#123;   format: f">
+<meta name="description" content="在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置server.https &#x3D; true，浏览器会报您的连接不是私密连接这样的警告，那么该怎么做呢？ 仔细的查看了下文档，发现已经说的很清晰了server.https这个值也可以是一个传递给 https.createServer() 的 选项对象。下面是示例 &#x2F;&#x2F; curl -k htt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对象链接的方法">
-<meta property="og:url" content="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="Vite 在开发模式使用 HTTPS">
+<meta property="og:url" content="http://example.com/2021/06/21/Vite-HTTPS/index.html">
 <meta property="og:site_name" content="ZV-Blogs">
-<meta property="og:description" content="对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。 举个🌰，我们创建一个工具对象 BasicFormatter，然后通过不同的方式创建可以访问 BasicFormatter 的工具对象 const BasicFormatter &#x3D; &amp;#123;   format: f">
+<meta property="og:description" content="在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置server.https &#x3D; true，浏览器会报您的连接不是私密连接这样的警告，那么该怎么做呢？ 仔细的查看了下文档，发现已经说的很清晰了server.https这个值也可以是一个传递给 https.createServer() 的 选项对象。下面是示例 &#x2F;&#x2F; curl -k htt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-10T11:26:01.000Z">
+<meta property="article:published_time" content="2021-06-21T03:06:53.000Z">
 <meta property="article:modified_time" content="2021-06-20T20:11:01.721Z">
 <meta property="article:author" content="ZV">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Vite">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/">
+<link rel="canonical" href="http://example.com/2021/06/21/Vite-HTTPS/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;04&#x2F;10&#x2F;%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;10&#x2F;对象链接的方法&#x2F;&quot;,&quot;title&quot;:&quot;对象链接的方法&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;06&#x2F;21&#x2F;Vite-HTTPS&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;06&#x2F;21&#x2F;Vite-HTTPS&#x2F;&quot;,&quot;title&quot;:&quot;Vite 在开发模式使用 HTTPS&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>对象链接的方法 | ZV-Blogs</title>
+<title>Vite 在开发模式使用 HTTPS | ZV-Blogs</title>
   
 
 
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">隐式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">显式</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">操作步骤</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/%E5%AF%B9%E8%B1%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%96%B9%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/Vite-HTTPS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/guitar.svg">
@@ -222,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          对象链接的方法
+          Vite 在开发模式使用 HTTPS
         </h1>
 
         <div class="post-meta-container">
@@ -233,7 +233,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-04-10 11:26:01" itemprop="dateCreated datePublished" datetime="2021-04-10T11:26:01+00:00">2021-04-10</time>
+      <time title="创建时间：2021-06-21 03:06:53" itemprop="dateCreated datePublished" datetime="2021-06-21T03:06:53+00:00">2021-06-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -253,39 +253,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>对象链接也叫 OLOO ( Objects Linked to Other Objects )， 说的直白一点就是对象 A 链接对象 B，对象 A 可以访问对象 B 的属性和方法。</p>
-<p>举个🌰，我们创建一个工具对象 <code>BasicFormatter</code>，然后通过不同的方式创建可以访问 <code>BasicFormatter</code> 的工具对象</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> BasicFormatter <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token function-variable function">format</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> msg<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <p>在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置<code>server.https = true</code>，浏览器会报<strong>您的连接不是私密连接</strong>这样的警告，那么该怎么做呢？</p>
+<p>仔细的查看了下文档，发现已经说的很清晰了<code>server.https</code>这个值也可以是一个传递给 <code>https.createServer()</code> 的 <a target="_blank" rel="noopener" href="https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener">选项对象</a>。下面是示例</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// curl -k https://localhost:8000/</span>
+<span class="token keyword">const</span> https <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'https'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  key<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">'test/fixtures/keys/agent2-key.pem'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  cert<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">'test/fixtures/keys/agent2-cert.pem'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+https<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello world\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们要做的就是把 <code>options</code> 赋值给 <code>server.https</code>。当然还需要借助工具去生成 key 和 cert。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://github.com/FiloSottile/mkcert">mkcert</a></p>
+<p>我使用的是 Win10，就使用 choco 来安装了</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">choco install mkcert<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>生成 key 和 cert</p>
+<p>为了便于管理我在项目的根目录下创建了 ssl 文件夹</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">mkdir ssl
+cd ssl
+mkcert localhost<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>操作完成后你会发现 ssl 目录下多了两个文件，也就是我们需要的 key 和 cert</p>
+<pre class="line-numbers language-none"><code class="language-none">ssl
+├── localhost-key.pem
+└── localhost.pem<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置 vite.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  server<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    https<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      key<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./ssl/localhost-key.pem'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      cert<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./ssl/localhost.pem'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="隐式"><a href="#隐式" class="headerlink" title="隐式"></a>隐式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* 
-  Implicit 隐式
-  通过 Object.create 方法创建一个以 BasicFormatter 为原型的对象
-  这样就能通过 __proto__ 调用原型链上的 format 函数 
-*/</span>
-<span class="token keyword">const</span> Foo <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>BasicFormatter<span class="token punctuation">)</span>
-Foo<span class="token punctuation">.</span><span class="token function-variable function">saySomething</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-Foo<span class="token punctuation">.</span><span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">'this is foo!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="显式"><a href="#显式" class="headerlink" title="显式"></a>显式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* 
-  Explicit 显式
-  直接把需要链接的对象定义在自身上
-*/</span>
-<span class="token keyword">const</span> Bar <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  formatter<span class="token operator">:</span> BasicFormatter<span class="token punctuation">,</span>
-  <span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>formatter<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-Bar<span class="token punctuation">.</span><span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">'this is bar!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p>下次在启动就能看到地址栏上的小锁头了 🔒</p>
+</li>
+</ol>
 
     </div>
 
@@ -295,21 +312,18 @@ Bar<span class="token punctuation">.</span><span class="token function">saySomet
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/Vite/" rel="tag"># Vite</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/03/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="prev" title="单例模式">
-                  <i class="fa fa-chevron-left"></i> 单例模式
+                <a href="/2021/06/18/C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="prev" title="C数据类型">
+                  <i class="fa fa-chevron-left"></i> C数据类型
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/04/17/JS%E7%9A%84%E4%B8%89%E7%A7%8D%E7%BB%A7%E6%89%BF/" rel="next" title="JS的三种继承">
-                  JS的三种继承 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

@@ -4528,6 +4528,64 @@ Bar<span class="token punctuation">.</span><span class="token function">saySomet
       </tags>
   </entry>
   <entry>
+    <title>Vite 在开发模式使用 HTTPS</title>
+    <url>/2021/06/21/Vite-HTTPS/</url>
+    <content><![CDATA[<p>在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置<code>server.https = true</code>，浏览器会报<strong>您的连接不是私密连接</strong>这样的警告，那么该怎么做呢？</p>
+<p>仔细的查看了下文档，发现已经说的很清晰了<code>server.https</code>这个值也可以是一个传递给 <code>https.createServer()</code> 的 <a href="https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener">选项对象</a>。下面是示例</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// curl -k https://localhost:8000/</span>
+<span class="token keyword">const</span> https <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'https'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  key<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">'test/fixtures/keys/agent2-key.pem'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  cert<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">'test/fixtures/keys/agent2-cert.pem'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+https<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello world\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们要做的就是把 <code>options</code> 赋值给 <code>server.https</code>。当然还需要借助工具去生成 key 和 cert。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<li><p>安装 <a href="https://github.com/FiloSottile/mkcert">mkcert</a></p>
+<p>我使用的是 Win10，就使用 choco 来安装了</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">choco install mkcert<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>生成 key 和 cert</p>
+<p>为了便于管理我在项目的根目录下创建了 ssl 文件夹</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">mkdir ssl
+cd ssl
+mkcert localhost<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>操作完成后你会发现 ssl 目录下多了两个文件，也就是我们需要的 key 和 cert</p>
+<pre class="line-numbers language-none"><code class="language-none">ssl
+├── localhost-key.pem
+└── localhost.pem<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置 vite.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  server<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    https<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      key<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./ssl/localhost-key.pem'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      cert<span class="token operator">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./ssl/localhost.pem'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>下次在启动就能看到地址栏上的小锁头了 🔒</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Learning-The-Shell</title>
     <url>/2021/01/11/Learning-The-Shell/</url>
     <content><![CDATA[<h2 id="01-What-Is-the-shell-什么是脚本"><a href="#01-What-Is-the-shell-什么是脚本" class="headerlink" title="01 - What Is the shell 什么是脚本"></a>01 - What Is the shell 什么是脚本</h2><table>
