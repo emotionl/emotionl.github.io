@@ -2,7 +2,7 @@
 title: Vite 在开发模式使用 HTTPS
 date: 2021-06-21 03:06:53
 tags:
-- Vite
+  - Vite
 ---
 
 在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置`server.https = true`，浏览器会报**您的连接不是私密连接**这样的警告，那么该怎么做呢？
@@ -11,18 +11,20 @@ tags:
 
 ```javascript
 // curl -k https://localhost:8000/
-const https = require('https');
-const fs = require('fs');
+const https = require('https')
+const fs = require('fs')
 
 const options = {
   key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
   cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
-};
+}
 
-https.createServer(options, (req, res) => {
-  res.writeHead(200);
-  res.end('hello world\n');
-}).listen(8000);
+https
+  .createServer(options, (req, res) => {
+    res.writeHead(200)
+    res.end('hello world\n')
+  })
+  .listen(8000)
 ```
 
 我们要做的就是把 `options` 赋值给 `server.https`。当然还需要借助工具去生成 key 和 cert。
@@ -61,7 +63,7 @@ https.createServer(options, (req, res) => {
    import { defineConfig } from 'vite'
    import path from 'path'
    import fs from 'fs'
-   
+
    export default defineConfig({
      server: {
        https: {
@@ -74,8 +76,4 @@ https.createServer(options, (req, res) => {
 
    下次在启动就能看到地址栏上的小锁头了 🔒
 
-
-
-
-
- 
+> [[vite 要怎麼讓 localhost 也可以有 https 憑證？](https://penueling.com/技術筆記/要怎麼讓 localhost 也可以有 https 憑證？/)](https://penueling.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E8%A6%81%E6%80%8E%E9%BA%BC%E8%AE%93localhost%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%9C%89https%E6%86%91%E8%AD%89%EF%BC%9F/)
