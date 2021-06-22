@@ -127,8 +127,8 @@ site_meta:
 
 # For local development only!
 gitalk:
-  enable: true
-  autoExpand: true
+  enable: false
+  autoExpand: false
   clientID: ''
   clientSecret: ''
   repo: 'dev-blog-comments'
@@ -136,8 +136,8 @@ gitalk:
   admin: ['TriDiamond']
   id: uid
   language: en
-  distractionFreeMode: true
-  recentComment: true
+  distractionFreeMode: false
+  recentComment: false
   proxy: ''
 
 # Valine comment plugin (recommended!)
