@@ -11,7 +11,8 @@ tags:
 
 词法分析是分词断句 + 判断词性的过程
 
-{% mermaid graph TB %}
+```mermaid
+graph TB
 A(var a = 1 + 2)
 B[var]
 C[a]
@@ -31,11 +32,12 @@ A --> D --> J
 A --> E --> K
 A --> F --> L
 A --> G --> M
-{% endmermaid %}
+```
 
 ### 语法分析
 
-{% mermaid graph TB %}
+```mermaid
+graph TB
 A(var a = 1 + 2)
 B[declare a]
 C[+]
@@ -44,7 +46,7 @@ E(2)
 A --> B --> C
 C --> D
 C --> E
-{% endmermaid %}
+```
 
 > - 语法分析是根据词法分析结果形成抽象语法树 ( Abstract Syntax Tree ) 的过程
 > - 语法分析器常常被成为 Parser
@@ -155,7 +157,8 @@ v1 ➡️ v2 ➡️ v3 ➡️ v4
 
 - 状态机描述：
 
-{% mermaid graph LR %}
+```mermaid
+graph LR
 A((0))
 B((1))
 C((token))
@@ -170,4 +173,4 @@ D -->|_a-zA-Z0-0| D
 D -->|other| E
 E -->|在字典中| F
 E -->|不在字典中| G
-{% endmermaid %}
+```

@@ -110,7 +110,8 @@ ln -s item link
 
 #### 区别
 
-{% mermaid graph LR %}
+```mermaid
+graph LR
 A[hard link]
 B[file]
 C[soft link]
@@ -135,8 +136,8 @@ B --> D
 C --> E
 D --> F
 E --> G
-G -.-> B
-{% endmermaid %}
+G --> B
+```
 
 由于硬链接是有着相同 inode 号仅文件名不同的文件，因此硬链接存在以下几点特性：
 
@@ -449,7 +450,8 @@ this is the little.txt
 
 管道运算符`|` 可以把一个命令的标准输出传递到另一命令的标准输入
 
-{% mermaid graph TD %}
+```mermaid
+graph TD
 A[前一个命令的标准输出]
 B[前一个命令的标准输出]
 %% 定义样式类
@@ -460,7 +462,7 @@ classDef three fill:#fbd4b3,stroke:#333,stroke-width:2px;
 class A one
 class B two
 A --管道运算符--> B
-{% endmermaid %}
+```
 
 举个栗子 通过管道运算符 我们可以把 `/`的目录信息通过`less`命令打印出来
 
