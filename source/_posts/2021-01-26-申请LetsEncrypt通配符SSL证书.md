@@ -1,6 +1,8 @@
 ---
 title: 申请LetsEncrypt通配符SSL证书
 date: 2021-01-26 03:49:01
+categories: 
+- 运维
 tags:
 - Linux
 - Nginx

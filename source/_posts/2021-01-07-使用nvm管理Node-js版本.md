@@ -1,6 +1,8 @@
 ---
 title: 使用nvm管理Node.js版本
 date: 2021-01-07 17:12:09
+categories: 
+- 前端
 tags: 
 - Node.js
 ---

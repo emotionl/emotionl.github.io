@@ -1,8 +1,10 @@
 ---
 title: Vite 在开发模式使用 HTTPS
 date: 2021-06-21 03:06:53
+categories: 
+- 前端
 tags:
-  - Vite
+- Vite
 ---
 
 在使用 Vite 进行前端开发的过程中，有时需要模拟一下 HTTPS 的环境（比如开启 PWA），但是如果直接设置`server.https = true`，浏览器会报**您的连接不是私密连接**这样的警告，那么该怎么做呢？

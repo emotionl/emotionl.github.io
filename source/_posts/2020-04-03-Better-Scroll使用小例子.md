@@ -1,6 +1,8 @@
 ---
 title: Better-Scroll使用小例子
 date: 2020-04-03 00:00:00
+categories: 
+- 前端
 tags:
 - JavaScript
 ---

@@ -1,6 +1,8 @@
 ---
 title: Learning-The-Shell
 date: 2021-01-11 23:48:21
+categories: 
+- 运维
 tags:
 - Linux
 ---

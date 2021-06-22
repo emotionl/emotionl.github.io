@@ -1,8 +1,10 @@
 ---
 title: 复习一下Generator的使用
 date: 2020-08-25 00:00:00
+categories: 
+- 前端
 tags:
-  - JavaScript
+- JavaScript
 ---
 
 先来个例题 看一下结果
