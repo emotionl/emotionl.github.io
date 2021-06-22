@@ -23,7 +23,7 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-theme-aurora": "^1.5.4",
-    "hexo-theme-next": "^8.1.0",
-    "prism-themes": "^1.5.0"
+    "prism-themes": "^1.5.0",
+    "hexo-filter-kroki": "^2.1.6"
   }
 }
