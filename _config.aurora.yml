@@ -47,13 +47,32 @@ menu:
   About: false
   Tags: true
   Archives: true
-  # Custom
+  # Internal Link
   websites:
     name: 'Websites'
     i18n:
       cn: '常用站点'
       en: 'Websites'
     path: '/page/websites'
+  # External Link
+  collection:
+    name: 'Collection'
+    i18n:
+      cn: '收藏'
+      en: 'Collection'
+    children:
+      article:
+        name: 'Article'
+        i18n:
+          cn: '文章'
+          en: 'Article'
+        path: 'https://www.notion.so/98088d7657a746cea5304c609aa22c2a?v=451a2989664b4fdbbcf65f7d3d66b51e'
+      tutorial:
+        name: 'Tutorial'
+        i18n:
+          cn: '教程'
+          en: 'Tutorial'
+        path: 'https://www.notion.so/ec64daa4cc664e17a885633d414e3bee?v=04a8f92657f742c994273038733f972b'
 
 #! ---------------------------------------------------------------
 #! Theme Config
