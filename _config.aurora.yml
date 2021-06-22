@@ -9,12 +9,12 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: Aurora's Blog
-  author: Aurora
-  nick: Auroral UI
-  description:
+  subtitle: ZV's Blog
+  author: ZV
+  nick: 
+  description: 致过去的时光
   link: '/'
-  language: en
+  language: cn
   multi_language: true
   logo: https://img-blog.csdnimg.cn/20210313122054101.png
   avatar: https://img-blog.csdnimg.cn/20210313122054101.png
@@ -44,9 +44,16 @@ authors:
 #！ @docs https://aurora.tridiamond.tech/guide/menu.html
 #! ---------------------------------------------------------------
 menu:
-  About: true
+  About: false
   Tags: true
   Archives: true
+  # Custom
+  websites:
+    name: 'Websites'
+    i18n:
+      cn: '常用站点'
+      en: 'Websites'
+    path: '/page/websites'
 
 #! ---------------------------------------------------------------
 #! Theme Config
